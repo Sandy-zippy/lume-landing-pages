@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Creatives: Networking Score Quiz | LUME</title>
+    <link rel="icon" type="image/png" href="../../assets/lume-logo-alt.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #C41E3A;
+            --charcoal: #1a1a1a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--charcoal);
+            color: #fff;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .header h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .header .badge {
+            background: var(--coral);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 20px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--coral); }
+        .controls {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        .controls h3 {
+            font-size: 0.875rem;
+            margin-bottom: 15px;
+            color: var(--coral);
+        }
+        .controls button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .controls button:hover { background: var(--coral); }
+        .controls .download-all {
+            background: var(--coral);
+            margin-top: 15px;
+        }
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            max-width: 1600px;
+            margin-right: 240px;
+        }
+        .ad-wrapper {
+            background: #222;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .ad-meta {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .ad-meta h3 { font-size: 1rem; margin-bottom: 5px; }
+        .ad-meta p { font-size: 0.75rem; color: #888; }
+        .ad-canvas-wrapper {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+        .ad-copy {
+            padding: 20px;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+        .ad-copy h4 {
+            font-size: 0.7rem;
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        .ad-copy p {
+            font-size: 0.85rem;
+            color: #ccc;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .ad-copy .label {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .ad-canvas {
+            font-family: 'Outfit', sans-serif;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* AD 01: Big Question */
+        #ad-01 {
+            width: 540px;
+            height: 540px;
+            background: var(--charcoal);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+        #ad-01 .logo-corner {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-01 .logo-corner img { height: 28px; }
+        #ad-01 .logo-corner span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-01 .quiz-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--coral);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #ad-01 .question {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        #ad-01 .question em {
+            font-style: italic;
+            color: var(--coral);
+        }
+        #ad-01 .subtext {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+        }
+        #ad-01 .cta-btn {
+            background: var(--coral);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        #ad-01 .time-note {
+            margin-top: 15px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* AD 02: Score Display */
+        #ad-02 {
+            width: 540px;
+            height: 675px;
+            background: var(--charcoal);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-02 .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        #ad-02 .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-02 .logo-mark img { height: 30px; }
+        #ad-02 .logo-mark span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-02 .quiz-badge {
+            background: var(--coral);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #ad-02 .score-display {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #ad-02 .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--coral) 0deg 252deg, #333 252deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        #ad-02 .score-circle::before {
+            content: '';
+            width: 160px;
+            height: 160px;
+            background: var(--charcoal);
+            border-radius: 50%;
+            position: absolute;
+        }
+        #ad-02 .score-value {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        #ad-02 .score-number {
+            font-family: 'Cormorant', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        #ad-02 .score-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+        #ad-02 .question-mark {
+            position: absolute;
+            font-size: 3rem;
+            color: var(--coral);
+            opacity: 0.8;
+        }
+        #ad-02 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #ad-02 .subhead {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+        }
+        #ad-02 .cta-row {
+            padding-top: 25px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ad-02 .cta-btn {
+            background: var(--coral);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        #ad-02 .time-text {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* AD 03: Hero + Quiz */
+        #ad-03 {
+            width: 540px;
+            height: 540px;
+            background: url('../../assets/hero-banner.png') center center;
+            background-size: cover;
+            position: relative;
+        }
+        #ad-03::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.75) 100%);
+        }
+        #ad-03 .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-03 .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ad-03 .logo-white {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-03 .logo-white img { height: 30px; }
+        #ad-03 .logo-white span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-03 .free-badge {
+            background: var(--coral);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #ad-03 .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        #ad-03 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 2.25rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        #ad-03 .headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+        #ad-03 .subhead {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 25px;
+        }
+        #ad-03 .cta-btn {
+            display: inline-block;
+            background: var(--coral);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 0 auto;
+        }
+        #ad-03 .bottom-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: auto;
+        }
+
+        /* AD 04: Categories */
+        #ad-04 {
+            width: 540px;
+            height: 675px;
+            background: var(--charcoal);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-04 .header-section {
+            margin-bottom: 25px;
+        }
+        #ad-04 .logo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #ad-04 .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-04 .logo-mark img { height: 28px; }
+        #ad-04 .logo-mark span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-04 .quiz-badge {
+            background: var(--coral);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #ad-04 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        #ad-04 .categories {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        #ad-04 .category {
+            background: #222;
+            border-radius: 10px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #ad-04 .cat-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        #ad-04 .cat-bar {
+            width: 120px;
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        #ad-04 .cat-fill {
+            height: 100%;
+            background: var(--coral);
+            border-radius: 4px;
+        }
+        #ad-04 .cat-question {
+            width: 24px;
+            height: 24px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        #ad-04 .cta-section {
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+        #ad-04 .cta-btn {
+            display: inline-block;
+            background: var(--coral);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        #ad-04 .time-note {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* AD 05: Bold Coral */
+        #ad-05 {
+            width: 540px;
+            height: 540px;
+            background: var(--coral);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+        #ad-05 .logo-white {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-05 .logo-white img {
+            height: 28px;
+            filter: brightness(0) invert(1);
+        }
+        #ad-05 .logo-white span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-05 .big-number {
+            font-family: 'Cormorant', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        #ad-05 .headline {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        #ad-05 .subhead {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        #ad-05 .cta-dark {
+            background: var(--charcoal);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* AD 06: Statue + Quiz */
+        #ad-06 {
+            width: 540px;
+            height: 675px;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+        #ad-06 .statue-bg {
+            position: absolute;
+            right: -60px;
+            bottom: 80px;
+            width: 350px;
+            opacity: 0.7;
+        }
+        #ad-06 .content {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-06 .logo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        #ad-06 .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-06 .logo-mark img { height: 30px; }
+        #ad-06 .logo-mark span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-06 .quiz-badge {
+            background: var(--coral);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #ad-06 .main-text {
+            max-width: 300px;
+        }
+        #ad-06 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 2.25rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        #ad-06 .headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+        #ad-06 .subhead {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        #ad-06 .bottom-bar {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ad-06 .cta-btn {
+            background: var(--coral);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        #ad-06 .time-text {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .ad-canvas { transform-origin: top left; }
+        .scale-half { transform: scale(0.5); }
+        #wrapper-01, #wrapper-03, #wrapper-05 { height: 290px; }
+        #wrapper-02, #wrapper-04, #wrapper-06 { height: 357px; }
+
+        @media (max-width: 1200px) {
+            .ad-grid { margin-right: 0; }
+            .controls { position: static; max-width: 100%; margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Back to Ad Library
+    </a>
+
+    <div class="header">
+        <h1>Ad Creatives: Networking Score Quiz</h1>
+        <div class="badge">Lead Magnet #3</div>
+    </div>
+
+    <div class="controls">
+        <h3>Download Creatives</h3>
+        <button onclick="downloadAd('ad-01', 'LUME-Quiz-Ad-01-Question')">Ad 01 - Question</button>
+        <button onclick="downloadAd('ad-02', 'LUME-Quiz-Ad-02-Score')">Ad 02 - Score</button>
+        <button onclick="downloadAd('ad-03', 'LUME-Quiz-Ad-03-Hero')">Ad 03 - Hero</button>
+        <button onclick="downloadAd('ad-04', 'LUME-Quiz-Ad-04-Categories')">Ad 04 - Categories</button>
+        <button onclick="downloadAd('ad-05', 'LUME-Quiz-Ad-05-Bold')">Ad 05 - Bold</button>
+        <button onclick="downloadAd('ad-06', 'LUME-Quiz-Ad-06-Statue')">Ad 06 - Statue</button>
+        <button class="download-all" onclick="downloadAll()">Download All (6)</button>
+    </div>
+
+    <div class="ad-grid">
+        <!-- AD 01 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 01: Big Question</h3>
+                <p>1080x1080 • Curiosity angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-01">
+                <div id="ad-01" class="ad-canvas scale-half">
+                    <div class="logo-corner">
+                        <img src="../../assets/lume-logo-official.png" alt="LUME">
+                        <span>LUME</span>
+                    </div>
+                    <div class="quiz-badge">2-Min Quiz</div>
+                    <div class="question">What's your <em>networking score</em>?</div>
+                    <div class="subtext">Find your strengths, blind spots, and personalized strategies</div>
+                    <div class="cta-btn">Take the Free Quiz</div>
+                    <div class="time-note">12 questions • Instant results</div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Most professionals don't know their networking blind spots. Take this 2-minute quiz to find yours.</p>
+                <div class="label">Headline</div>
+                <p>What's Your Networking Score?</p>
+            </div>
+        </div>
+
+        <!-- AD 02 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 02: Score Display</h3>
+                <p>1080x1350 • Result preview angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-02">
+                <div id="ad-02" class="ad-canvas scale-half">
+                    <div class="header-row">
+                        <div class="logo-mark">
+                            <img src="../../assets/lume-logo-official.png" alt="LUME">
+                            <span>LUME</span>
+                        </div>
+                        <div class="quiz-badge">Free Quiz</div>
+                    </div>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <div class="score-value">
+                                <div class="score-number">?</div>
+                                <div class="score-label">out of 100</div>
+                            </div>
+                        </div>
+                        <div class="headline">Discover your networking score</div>
+                        <div class="subhead">Get personalized recommendations to build better relationships</div>
+                    </div>
+                    <div class="cta-row">
+                        <div class="cta-btn">Take the Quiz</div>
+                        <div class="time-text">2 minutes • 12 questions</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Where do you rank? Take the 2-minute networking assessment and get personalized strategies.</p>
+                <div class="label">Headline</div>
+                <p>Discover Your Score</p>
+            </div>
+        </div>
+
+        <!-- AD 03 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 03: Hero Background</h3>
+                <p>1080x1080 • Aspiration angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-03">
+                <div id="ad-03" class="ad-canvas scale-half">
+                    <div class="content">
+                        <div class="top-row">
+                            <div class="logo-white">
+                                <img src="../../assets/lume-logo-official.png" alt="LUME">
+                                <span>LUME</span>
+                            </div>
+                            <div class="free-badge">Free Quiz</div>
+                        </div>
+                        <div class="main-content">
+                            <div class="headline">Are you networking <em>smart</em>?</div>
+                            <div class="subhead">Take the assessment. Get your score. Unlock personalized strategies.</div>
+                            <div class="cta-btn">Start Free Quiz</div>
+                        </div>
+                        <div class="bottom-note">2 minutes • 12 questions • Instant results</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Busy doesn't mean effective. Are you networking smart? Take the 2-min assessment.</p>
+                <div class="label">Headline</div>
+                <p>Are You Networking Smart?</p>
+            </div>
+        </div>
+
+        <!-- AD 04 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 04: Category Breakdown</h3>
+                <p>1080x1350 • Detailed angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-04">
+                <div id="ad-04" class="ad-canvas scale-half">
+                    <div class="header-section">
+                        <div class="logo-row">
+                            <div class="logo-mark">
+                                <img src="../../assets/lume-logo-official.png" alt="LUME">
+                                <span>LUME</span>
+                            </div>
+                            <div class="quiz-badge">Free Assessment</div>
+                        </div>
+                        <div class="headline">Get scored in 5 key areas</div>
+                    </div>
+                    <div class="categories">
+                        <div class="category">
+                            <span class="cat-name">Preparation</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width: 0%;"></div></div>
+                            <span class="cat-question">?</span>
+                        </div>
+                        <div class="category">
+                            <span class="cat-name">Engagement</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width: 0%;"></div></div>
+                            <span class="cat-question">?</span>
+                        </div>
+                        <div class="category">
+                            <span class="cat-name">Follow-up</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width: 0%;"></div></div>
+                            <span class="cat-question">?</span>
+                        </div>
+                        <div class="category">
+                            <span class="cat-name">Value Creation</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width: 0%;"></div></div>
+                            <span class="cat-question">?</span>
+                        </div>
+                        <div class="category">
+                            <span class="cat-name">Strategy</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width: 0%;"></div></div>
+                            <span class="cat-question">?</span>
+                        </div>
+                    </div>
+                    <div class="cta-section">
+                        <div class="cta-btn">Take the Free Quiz</div>
+                        <div class="time-note">2 minutes • Instant results</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Get scored across 5 key networking areas: Preparation, Engagement, Follow-up, Value Creation, Strategy.</p>
+                <div class="label">Headline</div>
+                <p>The 5-Category Networking Quiz</p>
+            </div>
+        </div>
+
+        <!-- AD 05 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 05: Bold Coral</h3>
+                <p>1080x1080 • Direct angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-05">
+                <div id="ad-05" class="ad-canvas scale-half">
+                    <div class="logo-white">
+                        <img src="../../assets/lume-logo-official.png" alt="LUME">
+                        <span>LUME</span>
+                    </div>
+                    <div class="big-number">?</div>
+                    <div class="headline">What's your number?</div>
+                    <div class="subhead">Take the 2-minute networking assessment</div>
+                    <div class="cta-dark">Get Your Score</div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> 12 questions. 2 minutes. Find out if you're a networking novice or a strategic connector.</p>
+                <div class="label">Headline</div>
+                <p>What's Your Networking Score?</p>
+            </div>
+        </div>
+
+        <!-- AD 06 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 06: Statue + Quiz</h3>
+                <p>1080x1350 • Credibility angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-06">
+                <div id="ad-06" class="ad-canvas scale-half">
+                    <img src="../../assets/slide-1.png" class="statue-bg" alt="">
+                    <div class="content">
+                        <div class="logo-row">
+                            <div class="logo-mark">
+                                <img src="../../assets/lume-logo-official.png" alt="LUME">
+                                <span>LUME</span>
+                            </div>
+                            <div class="quiz-badge">Free Quiz</div>
+                        </div>
+                        <div class="main-text">
+                            <div class="headline">Think you're a <em>great networker</em>?</div>
+                            <div class="subhead">Most professionals overestimate their skills. Take the 2-minute quiz and find out where you really stand.</div>
+                        </div>
+                        <div class="bottom-bar">
+                            <div class="cta-btn">Take the Quiz</div>
+                            <div class="time-text">12 questions • Instant results</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Think you're a great networker? Most people overestimate. Take the quiz and find out.</p>
+                <div class="label">Headline</div>
+                <p>Are You Sure?</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        async function downloadAd(elementId, fileName) {
+            const element = document.getElementById(elementId);
+            element.classList.remove('scale-half');
+            const canvas = await html2canvas(element, {
+                scale: 2,
+                backgroundColor: null,
+                logging: false,
+                useCORS: true,
+                allowTaint: true
+            });
+            element.classList.add('scale-half');
+            const link = document.createElement('a');
+            link.download = fileName + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        async function downloadAll() {
+            const ads = [
+                { id: 'ad-01', name: 'LUME-Quiz-Ad-01-Question' },
+                { id: 'ad-02', name: 'LUME-Quiz-Ad-02-Score' },
+                { id: 'ad-03', name: 'LUME-Quiz-Ad-03-Hero' },
+                { id: 'ad-04', name: 'LUME-Quiz-Ad-04-Categories' },
+                { id: 'ad-05', name: 'LUME-Quiz-Ad-05-Bold' },
+                { id: 'ad-06', name: 'LUME-Quiz-Ad-06-Statue' }
+            ];
+            for (const ad of ads) {
+                await downloadAd(ad.id, ad.name);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Creatives: HNI Networking Playbook | LUME</title>
+    <link rel="icon" type="image/png" href="../../assets/lume-logo-alt.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #C41E3A;
+            --charcoal: #1a1a1a;
+            --cream: #f8f6f3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--charcoal);
+            color: #fff;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .header h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .header .badge {
+            background: var(--coral);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .controls {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        .controls h3 {
+            font-size: 0.875rem;
+            margin-bottom: 15px;
+            color: var(--coral);
+        }
+        .controls button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .controls button:hover {
+            background: var(--coral);
+        }
+        .controls .download-all {
+            background: var(--coral);
+            margin-top: 15px;
+        }
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            max-width: 1600px;
+            margin-right: 240px;
+        }
+        .ad-wrapper {
+            background: #222;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .ad-meta {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .ad-meta h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        .ad-meta p {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        .ad-canvas-wrapper {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+        .ad-copy {
+            padding: 20px;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+        .ad-copy h4 {
+            font-size: 0.7rem;
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        .ad-copy p {
+            font-size: 0.85rem;
+            color: #ccc;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .ad-copy .label {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* Ad Canvas Base */
+        .ad-canvas {
+            font-family: 'Outfit', sans-serif;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* ==================== AD 01: Hero Image + Logo ==================== */
+        #ad-01 {
+            width: 540px;
+            height: 540px;
+            background: url('../../assets/hero-banner.png') center center;
+            background-size: cover;
+            position: relative;
+        }
+        #ad-01::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.6) 50%, rgba(26,26,26,0.85) 100%);
+        }
+        #ad-01 .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+        }
+        #ad-01 .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        #ad-01 .logo-section img {
+            height: 40px;
+        }
+        #ad-01 .logo-section span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+        #ad-01 .main-content {
+            text-align: center;
+        }
+        #ad-01 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        #ad-01 .headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+        #ad-01 .subhead {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 25px;
+        }
+        #ad-01 .cta-btn {
+            display: inline-block;
+            background: var(--coral);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        #ad-01 .footer-text {
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ==================== AD 02: Statue Conversation ==================== */
+        #ad-02 {
+            width: 540px;
+            height: 675px;
+            background: var(--charcoal);
+            position: relative;
+        }
+        #ad-02 .image-section {
+            height: 280px;
+            background: url('../../assets/statue-hires.png') center center;
+            background-size: cover;
+            position: relative;
+        }
+        #ad-02 .image-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--charcoal), transparent);
+        }
+        #ad-02 .content-section {
+            padding: 25px 30px 30px;
+        }
+        #ad-02 .badge {
+            display: inline-block;
+            background: var(--coral);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+        #ad-02 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+        #ad-02 .subhead {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        #ad-02 .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+        #ad-02 .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #ad-02 .logo-mark img {
+            height: 32px;
+        }
+        #ad-02 .logo-mark span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-02 .cta-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--coral);
+        }
+
+        /* ==================== AD 03: Bold Statue with Sunglasses ==================== */
+        #ad-03 {
+            width: 540px;
+            height: 540px;
+            background: var(--coral);
+            position: relative;
+            overflow: hidden;
+        }
+        #ad-03 .statue-img {
+            position: absolute;
+            right: -50px;
+            bottom: -30px;
+            width: 380px;
+            height: auto;
+            opacity: 0.9;
+        }
+        #ad-03 .content {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-03 .top-section {
+            flex: 1;
+        }
+        #ad-03 .logo-white {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        #ad-03 .logo-white img {
+            height: 36px;
+            filter: brightness(0) invert(1);
+        }
+        #ad-03 .logo-white span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-03 .headline {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 280px;
+        }
+        #ad-03 .bottom-section {
+            background: var(--charcoal);
+            margin: 0 -30px -30px;
+            padding: 20px 30px;
+        }
+        #ad-03 .offer-text {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        #ad-03 .offer-detail {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ==================== AD 04: Stats Grid ==================== */
+        #ad-04 {
+            width: 540px;
+            height: 675px;
+            background: var(--charcoal);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-04 .logo-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        #ad-04 .logo-row img {
+            height: 36px;
+        }
+        #ad-04 .logo-row span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-04 .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        #ad-04 .stat-card {
+            background: rgba(255,81,73,0.1);
+            border: 1px solid rgba(255,81,73,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #ad-04 .stat-number {
+            font-family: 'Cormorant', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--coral);
+            line-height: 1;
+        }
+        #ad-04 .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 5px;
+        }
+        #ad-04 .main-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #ad-04 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+        #ad-04 .subhead {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        #ad-04 .cta-row {
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ad-04 .cta-btn {
+            background: var(--coral);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        #ad-04 .free-badge {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ==================== AD 05: Mockup + Checklist ==================== */
+        #ad-05 {
+            width: 540px;
+            height: 540px;
+            background: var(--charcoal);
+            display: flex;
+        }
+        #ad-05 .left-panel {
+            width: 45%;
+            background: var(--coral);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #ad-05 .book-mockup {
+            background: var(--charcoal);
+            padding: 20px 15px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-top: 4px solid #fff;
+        }
+        #ad-05 .book-mockup .label {
+            font-size: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 12px;
+        }
+        #ad-05 .book-mockup .logo-small {
+            height: 28px;
+            margin-bottom: 12px;
+        }
+        #ad-05 .book-mockup .title {
+            font-family: 'Cormorant', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        #ad-05 .book-mockup .pages {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.5);
+        }
+        #ad-05 .left-cta {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        #ad-05 .right-panel {
+            flex: 1;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #ad-05 .right-headline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        #ad-05 .checklist {
+            list-style: none;
+        }
+        #ad-05 .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+        #ad-05 .checklist li::before {
+            content: '→';
+            color: var(--coral);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        #ad-05 .brand-footer {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-05 .brand-footer img {
+            height: 24px;
+        }
+        #ad-05 .brand-footer span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            color: var(--coral);
+        }
+
+        /* ==================== AD 06: Myth vs Truth ==================== */
+        #ad-06 {
+            width: 540px;
+            height: 675px;
+            background: var(--charcoal);
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-06 .logo-bar {
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #333;
+        }
+        #ad-06 .logo-bar img {
+            height: 32px;
+        }
+        #ad-06 .logo-bar span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-06 .myth-section {
+            background: rgba(255,81,73,0.08);
+            border-left: 4px solid var(--coral);
+            padding: 25px;
+            margin: 20px;
+            margin-bottom: 10px;
+        }
+        #ad-06 .section-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--coral);
+            margin-bottom: 10px;
+        }
+        #ad-06 .myth-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+        #ad-06 .myth-debunk {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        #ad-06 .truth-section {
+            flex: 1;
+            padding: 20px 25px;
+        }
+        #ad-06 .truth-headline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+        #ad-06 .truth-headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+        #ad-06 .truth-desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        #ad-06 .cta-bar {
+            padding: 20px 25px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ad-06 .cta-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--coral);
+        }
+        #ad-06 .free-text {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Scale for preview */
+        .ad-canvas { transform-origin: top left; }
+        .scale-half { transform: scale(0.5); }
+        .ad-canvas-wrapper { height: auto; }
+        #wrapper-01, #wrapper-03, #wrapper-05 { height: 290px; }
+        #wrapper-02, #wrapper-04, #wrapper-06 { height: 357px; }
+
+        @media (max-width: 1200px) {
+            .ad-grid { margin-right: 0; }
+            .controls { position: static; max-width: 100%; margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ad Creatives: HNI Networking Playbook</h1>
+        <div class="badge">Lead Magnet #1</div>
+    </div>
+
+    <div class="controls">
+        <h3>Download Creatives</h3>
+        <button onclick="downloadAd('ad-01', 'LUME-Playbook-Ad-01-Hero')">Ad 01 - Hero</button>
+        <button onclick="downloadAd('ad-02', 'LUME-Playbook-Ad-02-Statue')">Ad 02 - Statue</button>
+        <button onclick="downloadAd('ad-03', 'LUME-Playbook-Ad-03-Bold')">Ad 03 - Bold</button>
+        <button onclick="downloadAd('ad-04', 'LUME-Playbook-Ad-04-Stats')">Ad 04 - Stats</button>
+        <button onclick="downloadAd('ad-05', 'LUME-Playbook-Ad-05-Mockup')">Ad 05 - Mockup</button>
+        <button onclick="downloadAd('ad-06', 'LUME-Playbook-Ad-06-Myth')">Ad 06 - Myth</button>
+        <button class="download-all" onclick="downloadAll()">Download All (6)</button>
+    </div>
+
+    <div class="ad-grid">
+        <!-- AD 01: Hero Image -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 01: Hero Image + Logo</h3>
+                <p>1080x1080 • Aspiration angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-01">
+                <div id="ad-01" class="ad-canvas scale-half">
+                    <div class="content">
+                        <div class="logo-section">
+                            <img src="../../assets/lume-logo-official.png" alt="LUME">
+                            <span>LUME</span>
+                        </div>
+                        <div class="main-content">
+                            <div class="headline">Build a network that<br>creates <em>opportunities</em></div>
+                            <div class="subhead">The playbook used by Hyderabad's most connected professionals</div>
+                            <div class="cta-btn">Download Free Guide</div>
+                        </div>
+                        <div class="footer-text">29 Pages • Frameworks • Worksheets</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Your network is your net worth. Learn to build one that actually compounds. Free playbook for founders and executives.</p>
+                <div class="label">Headline</div>
+                <p>Build a Network That Compounds</p>
+                <div class="label">Description</div>
+                <p>Free 29-Page Playbook</p>
+            </div>
+        </div>
+
+        <!-- AD 02: Statue Conversation -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 02: Philosopher Conversation</h3>
+                <p>1080x1350 • Curiosity angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-02">
+                <div id="ad-02" class="ad-canvas scale-half">
+                    <div class="image-section"></div>
+                    <div class="content-section">
+                        <div class="badge">Free Playbook</div>
+                        <div class="headline">The art of building relationships that compound</div>
+                        <div class="subhead">Most networking feels transactional. Learn the framework that transforms contacts into genuine connections.</div>
+                        <div class="bottom-bar">
+                            <div class="logo-mark">
+                                <img src="../../assets/lume-logo-official.png" alt="LUME">
+                                <span>LUME</span>
+                            </div>
+                            <div class="cta-text">Download Now →</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Most networking feels transactional because it is. Learn the compound network effect from Hyderabad's top professionals.</p>
+                <div class="label">Headline</div>
+                <p>The HNI Networking Playbook</p>
+                <div class="label">Description</div>
+                <p>Free Download - 29 Pages</p>
+            </div>
+        </div>
+
+        <!-- AD 03: Bold Statue -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 03: Bold Statement</h3>
+                <p>1080x1080 • Pain point angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-03">
+                <div id="ad-03" class="ad-canvas scale-half">
+                    <img src="../../assets/slide-1.png" class="statue-img" alt="">
+                    <div class="content">
+                        <div class="top-section">
+                            <div class="logo-white">
+                                <img src="../../assets/lume-logo-official.png" alt="LUME">
+                                <span>LUME</span>
+                            </div>
+                            <div class="headline">Stop collecting business cards.<br><br>Start building empires.</div>
+                        </div>
+                        <div class="bottom-section">
+                            <div class="offer-text">Free HNI Networking Playbook</div>
+                            <div class="offer-detail">29 pages of frameworks, strategies & worksheets</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Business cards don't build businesses. Relationships do. Download the HNI Networking Playbook (Free).</p>
+                <div class="label">Headline</div>
+                <p>Stop Collecting. Start Connecting.</p>
+                <div class="label">Description</div>
+                <p>Free Playbook Inside</p>
+            </div>
+        </div>
+
+        <!-- AD 04: Stats Grid -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 04: Social Proof Stats</h3>
+                <p>1080x1350 • Social proof angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-04">
+                <div id="ad-04" class="ad-canvas scale-half">
+                    <div class="logo-row">
+                        <img src="../../assets/lume-logo-official.png" alt="LUME">
+                        <span>LUME</span>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">29</div>
+                            <div class="stat-label">Pages</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Connection Types</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">90</div>
+                            <div class="stat-label">Day System</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Free</div>
+                        </div>
+                    </div>
+                    <div class="main-text">
+                        <div class="headline">The complete system for building high-value relationships</div>
+                        <div class="subhead">Frameworks, worksheets, and strategies used by Hyderabad's most connected professionals.</div>
+                    </div>
+                    <div class="cta-row">
+                        <div class="cta-btn">Download Free Playbook</div>
+                        <div class="free-badge">No email required to preview</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> 29 pages. 5 connection types. 90-day system. One free playbook. Learn the compound network effect.</p>
+                <div class="label">Headline</div>
+                <p>The Complete Networking System</p>
+                <div class="label">Description</div>
+                <p>Free Download</p>
+            </div>
+        </div>
+
+        <!-- AD 05: Mockup + Checklist -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 05: Mockup + Value List</h3>
+                <p>1080x1080 • Direct value angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-05">
+                <div id="ad-05" class="ad-canvas scale-half">
+                    <div class="left-panel">
+                        <div class="book-mockup">
+                            <div class="label">Free Download</div>
+                            <img src="../../assets/lume-logo-official.png" class="logo-small" alt="LUME">
+                            <div class="title">THE HNI<br>NETWORKING<br>PLAYBOOK</div>
+                            <div class="pages">29 PAGES</div>
+                        </div>
+                        <div class="left-cta">Download Your Copy</div>
+                    </div>
+                    <div class="right-panel">
+                        <div class="right-headline">What's Inside:</div>
+                        <ul class="checklist">
+                            <li>The Compound Network Effect</li>
+                            <li>5 types of connections you need</li>
+                            <li>90-day relationship system</li>
+                            <li>Where HNIs actually meet</li>
+                            <li>Warm intro templates</li>
+                            <li>Network audit worksheet</li>
+                        </ul>
+                        <div class="brand-footer">
+                            <img src="../../assets/lume-logo-official.png" alt="LUME">
+                            <span>LUME</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Everything you need to build a high-value network. 29 pages. Free download. No catch.</p>
+                <div class="label">Headline</div>
+                <p>Your Networking Playbook</p>
+                <div class="label">Description</div>
+                <p>Free 29-Page PDF</p>
+            </div>
+        </div>
+
+        <!-- AD 06: Myth vs Truth -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 06: Myth vs Truth</h3>
+                <p>1080x1350 • Contrarian angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-06">
+                <div id="ad-06" class="ad-canvas scale-half">
+                    <div class="logo-bar">
+                        <img src="../../assets/lume-logo-official.png" alt="LUME">
+                        <span>LUME</span>
+                    </div>
+                    <div class="myth-section">
+                        <div class="section-label">Common Myth</div>
+                        <div class="myth-text">"Networking is about meeting as many people as possible"</div>
+                        <div class="myth-debunk">Wrong. Research shows 30 curated relationships beat 300 random connections.</div>
+                    </div>
+                    <div class="truth-section">
+                        <div class="section-label" style="color: #fff;">The Truth</div>
+                        <div class="truth-headline">It's not about collecting.<br>It's about <em>compounding</em>.</div>
+                        <div class="truth-desc">Learn the framework used by Hyderabad's most connected professionals. Free 29-page playbook with strategies, worksheets, and systems.</div>
+                    </div>
+                    <div class="cta-bar">
+                        <div class="cta-text">FREE PLAYBOOK DOWNLOAD</div>
+                        <div class="free-text">29 Pages • Instant Access</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Most networking advice is wrong. Quality beats quantity. Learn why 30 curated relationships win. Free playbook.</p>
+                <div class="label">Headline</div>
+                <p>Why Most Networking Fails</p>
+                <div class="label">Description</div>
+                <p>Free Playbook Inside</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        async function downloadAd(elementId, fileName) {
+            const element = document.getElementById(elementId);
+            // Remove scale for capture
+            element.classList.remove('scale-half');
+
+            const canvas = await html2canvas(element, {
+                scale: 2,
+                backgroundColor: null,
+                logging: false,
+                useCORS: true,
+                allowTaint: true
+            });
+
+            // Restore scale
+            element.classList.add('scale-half');
+
+            const link = document.createElement('a');
+            link.download = fileName + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        async function downloadAll() {
+            const ads = [
+                { id: 'ad-01', name: 'LUME-Playbook-Ad-01-Hero' },
+                { id: 'ad-02', name: 'LUME-Playbook-Ad-02-Statue' },
+                { id: 'ad-03', name: 'LUME-Playbook-Ad-03-Bold' },
+                { id: 'ad-04', name: 'LUME-Playbook-Ad-04-Stats' },
+                { id: 'ad-05', name: 'LUME-Playbook-Ad-05-Mockup' },
+                { id: 'ad-06', name: 'LUME-Playbook-Ad-06-Myth' }
+            ];
+
+            for (const ad of ads) {
+                await downloadAd(ad.id, ad.name);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        }
+    </script>
+</body>
+</html>

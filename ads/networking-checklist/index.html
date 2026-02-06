@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Creatives: Networking Checklist | LUME</title>
+    <link rel="icon" type="image/png" href="../../assets/lume-logo-alt.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #C41E3A;
+            --charcoal: #1a1a1a;
+            --cream: #f8f6f3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--charcoal);
+            color: #fff;
+            padding: 40px;
+            min-height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .header h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .header .badge {
+            background: var(--coral);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 20px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--coral); }
+        .controls {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: #222;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        .controls h3 {
+            font-size: 0.875rem;
+            margin-bottom: 15px;
+            color: var(--coral);
+        }
+        .controls button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .controls button:hover { background: var(--coral); }
+        .controls .download-all {
+            background: var(--coral);
+            margin-top: 15px;
+        }
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            max-width: 1600px;
+            margin-right: 240px;
+        }
+        .ad-wrapper {
+            background: #222;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .ad-meta {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .ad-meta h3 { font-size: 1rem; margin-bottom: 5px; }
+        .ad-meta p { font-size: 0.75rem; color: #888; }
+        .ad-canvas-wrapper {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            background: #1a1a1a;
+        }
+        .ad-copy {
+            padding: 20px;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+        .ad-copy h4 {
+            font-size: 0.7rem;
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        .ad-copy p {
+            font-size: 0.85rem;
+            color: #ccc;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .ad-copy .label {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .ad-canvas {
+            font-family: 'Outfit', sans-serif;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* AD 01: Simple & Bold */
+        #ad-01 {
+            width: 540px;
+            height: 540px;
+            background: var(--charcoal);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+        #ad-01 .logo-top {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-01 .logo-top img { height: 30px; }
+        #ad-01 .logo-top span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-01 .badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--coral);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        #ad-01 .big-text {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--coral);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        #ad-01 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        #ad-01 .subhead {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 25px;
+        }
+        #ad-01 .cta-btn {
+            background: var(--coral);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* AD 02: Three Phases */
+        #ad-02 {
+            width: 540px;
+            height: 675px;
+            background: var(--charcoal);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-02 .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        #ad-02 .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-02 .logo-mark img { height: 30px; }
+        #ad-02 .logo-mark span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-02 .free-badge {
+            background: var(--coral);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #ad-02 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        #ad-02 .phases {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #ad-02 .phase {
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid var(--coral);
+        }
+        #ad-02 .phase-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+        #ad-02 .phase-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        #ad-02 .phase-desc {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+        #ad-02 .cta-row {
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ad-02 .cta-btn {
+            background: var(--coral);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        #ad-02 .cta-note {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* AD 03: Hero Background */
+        #ad-03 {
+            width: 540px;
+            height: 540px;
+            background: url('../../assets/hero-banner.png') center center;
+            background-size: cover;
+            position: relative;
+        }
+        #ad-03::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.7) 50%, rgba(26,26,26,0.95) 100%);
+        }
+        #ad-03 .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+        }
+        #ad-03 .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: auto;
+        }
+        #ad-03 .logo-white {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #ad-03 .logo-white img { height: 32px; }
+        #ad-03 .logo-white span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-03 .one-page {
+            background: var(--coral);
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #ad-03 .main-content {
+            text-align: center;
+            margin-bottom: auto;
+        }
+        #ad-03 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 2.25rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        #ad-03 .headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+        #ad-03 .subhead {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+        #ad-03 .bottom-cta {
+            text-align: center;
+        }
+        #ad-03 .cta-btn {
+            display: inline-block;
+            background: var(--coral);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        #ad-03 .cta-sub {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* AD 04: Checklist Preview */
+        #ad-04 {
+            width: 540px;
+            height: 675px;
+            background: var(--coral);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-04 .logo-white {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+        #ad-04 .logo-white img {
+            height: 32px;
+            filter: brightness(0) invert(1);
+        }
+        #ad-04 .logo-white span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-04 .checklist-card {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 25px;
+            flex: 1;
+        }
+        #ad-04 .checklist-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+        #ad-04 .checklist-title {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+        #ad-04 .checklist-sub {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+        }
+        #ad-04 .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        #ad-04 .check-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+        }
+        #ad-04 .check-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--coral);
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        #ad-04 .bottom-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #ad-04 .cta-dark {
+            display: inline-block;
+            background: var(--charcoal);
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        #ad-04 .free-note {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* AD 05: Statue + Simple Message */
+        #ad-05 {
+            width: 540px;
+            height: 540px;
+            background: var(--charcoal);
+            display: flex;
+        }
+        #ad-05 .image-side {
+            width: 45%;
+            background: url('../../assets/statue-hires.png') center center;
+            background-size: cover;
+            position: relative;
+        }
+        #ad-05 .image-side::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent 0%, var(--charcoal) 100%);
+        }
+        #ad-05 .content-side {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #ad-05 .logo-small {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+        #ad-05 .logo-small img { height: 28px; }
+        #ad-05 .logo-small span {
+            font-family: 'Cormorant', serif;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-05 .headline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+        #ad-05 .subhead {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        #ad-05 .cta-btn {
+            display: inline-block;
+            background: var(--coral);
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            align-self: flex-start;
+        }
+        #ad-05 .free-text {
+            margin-top: 12px;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* AD 06: Bold Statue */
+        #ad-06 {
+            width: 540px;
+            height: 675px;
+            background: var(--coral);
+            position: relative;
+            overflow: hidden;
+        }
+        #ad-06 .statue-img {
+            position: absolute;
+            right: -80px;
+            bottom: -50px;
+            width: 420px;
+            opacity: 0.85;
+        }
+        #ad-06 .content {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        #ad-06 .logo-white {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        #ad-06 .logo-white img {
+            height: 32px;
+            filter: brightness(0) invert(1);
+        }
+        #ad-06 .logo-white span {
+            font-family: 'Cormorant', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+        }
+        #ad-06 .main-text {
+            max-width: 260px;
+        }
+        #ad-06 .headline {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        #ad-06 .subhead {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        #ad-06 .bottom-bar {
+            margin-top: auto;
+            background: var(--charcoal);
+            margin: auto -30px -30px;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ad-06 .offer {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        #ad-06 .pages {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .ad-canvas { transform-origin: top left; }
+        .scale-half { transform: scale(0.5); }
+        #wrapper-01, #wrapper-03, #wrapper-05 { height: 290px; }
+        #wrapper-02, #wrapper-04, #wrapper-06 { height: 357px; }
+
+        @media (max-width: 1200px) {
+            .ad-grid { margin-right: 0; }
+            .controls { position: static; max-width: 100%; margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Back to Ad Library
+    </a>
+
+    <div class="header">
+        <h1>Ad Creatives: Networking Checklist</h1>
+        <div class="badge">Lead Magnet #2</div>
+    </div>
+
+    <div class="controls">
+        <h3>Download Creatives</h3>
+        <button onclick="downloadAd('ad-01', 'LUME-Checklist-Ad-01-Bold')">Ad 01 - Bold</button>
+        <button onclick="downloadAd('ad-02', 'LUME-Checklist-Ad-02-Phases')">Ad 02 - Phases</button>
+        <button onclick="downloadAd('ad-03', 'LUME-Checklist-Ad-03-Hero')">Ad 03 - Hero</button>
+        <button onclick="downloadAd('ad-04', 'LUME-Checklist-Ad-04-Preview')">Ad 04 - Preview</button>
+        <button onclick="downloadAd('ad-05', 'LUME-Checklist-Ad-05-Split')">Ad 05 - Split</button>
+        <button onclick="downloadAd('ad-06', 'LUME-Checklist-Ad-06-Statue')">Ad 06 - Statue</button>
+        <button class="download-all" onclick="downloadAll()">Download All (6)</button>
+    </div>
+
+    <div class="ad-grid">
+        <!-- AD 01 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 01: Bold Number</h3>
+                <p>1080x1080 • Simplicity angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-01">
+                <div id="ad-01" class="ad-canvas scale-half">
+                    <div class="logo-top">
+                        <img src="../../assets/lume-logo-official.png" alt="LUME">
+                        <span>LUME</span>
+                    </div>
+                    <div class="badge">Free Download</div>
+                    <div class="big-text">1</div>
+                    <div class="headline">One page.<br>Every networking interaction.</div>
+                    <div class="subhead">Before. During. After. Never miss a step.</div>
+                    <div class="cta-btn">Get the Checklist</div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> One page. 21 items. Every networking interaction covered. Download the free checklist.</p>
+                <div class="label">Headline</div>
+                <p>The 1-Page Networking Checklist</p>
+            </div>
+        </div>
+
+        <!-- AD 02 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 02: Three Phases</h3>
+                <p>1080x1350 • Structure angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-02">
+                <div id="ad-02" class="ad-canvas scale-half">
+                    <div class="header-row">
+                        <div class="logo-mark">
+                            <img src="../../assets/lume-logo-official.png" alt="LUME">
+                            <span>LUME</span>
+                        </div>
+                        <div class="free-badge">Free PDF</div>
+                    </div>
+                    <div class="headline">The complete networking checklist</div>
+                    <div class="phases">
+                        <div class="phase">
+                            <div class="phase-label">Before</div>
+                            <div class="phase-title">Preparation</div>
+                            <div class="phase-desc">Research, goals, talking points, intro prep</div>
+                        </div>
+                        <div class="phase">
+                            <div class="phase-label">During</div>
+                            <div class="phase-title">Engagement</div>
+                            <div class="phase-desc">Questions, listening, value exchange, connections</div>
+                        </div>
+                        <div class="phase">
+                            <div class="phase-label">After</div>
+                            <div class="phase-title">Follow-up</div>
+                            <div class="phase-desc">48-hour rule, CRM, nurture cycle, intros</div>
+                        </div>
+                    </div>
+                    <div class="cta-row">
+                        <div class="cta-btn">Download Free Checklist</div>
+                        <div class="cta-note">1 page • Instant access</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Before. During. After. The 3-phase networking checklist. Never miss a step again. Free download.</p>
+                <div class="label">Headline</div>
+                <p>Never Wing Networking Again</p>
+            </div>
+        </div>
+
+        <!-- AD 03 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 03: Hero Background</h3>
+                <p>1080x1080 • Aspiration angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-03">
+                <div id="ad-03" class="ad-canvas scale-half">
+                    <div class="content">
+                        <div class="top-row">
+                            <div class="logo-white">
+                                <img src="../../assets/lume-logo-official.png" alt="LUME">
+                                <span>LUME</span>
+                            </div>
+                            <div class="one-page">1 Page</div>
+                        </div>
+                        <div class="main-content">
+                            <div class="headline">Network like a <em>pro</em></div>
+                            <div class="subhead">21 items. Before, during, and after every interaction.</div>
+                        </div>
+                        <div class="bottom-cta">
+                            <div class="cta-btn">Download Free Checklist</div>
+                            <div class="cta-sub">Used by Hyderabad's top professionals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Stop winging your networking. Use this 1-page checklist before, during, and after every interaction.</p>
+                <div class="label">Headline</div>
+                <p>The Pro's Networking Checklist</p>
+            </div>
+        </div>
+
+        <!-- AD 04 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 04: Checklist Preview</h3>
+                <p>1080x1350 • Direct value angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-04">
+                <div id="ad-04" class="ad-canvas scale-half">
+                    <div class="logo-white">
+                        <img src="../../assets/lume-logo-official.png" alt="LUME">
+                        <span>LUME</span>
+                    </div>
+                    <div class="checklist-card">
+                        <div class="checklist-header">
+                            <div class="checklist-title">High-Value Networking Checklist</div>
+                            <div class="checklist-sub">Before • During • After</div>
+                        </div>
+                        <div class="checklist-items">
+                            <div class="check-item"><div class="check-box"></div>Research attendees/host</div>
+                            <div class="check-item"><div class="check-box"></div>Prepare 2-3 talking points</div>
+                            <div class="check-item"><div class="check-box"></div>Set a connection goal</div>
+                            <div class="check-item"><div class="check-box"></div>Ask open-ended questions</div>
+                            <div class="check-item"><div class="check-box"></div>Listen more than you talk</div>
+                            <div class="check-item"><div class="check-box"></div>Send follow-up within 48 hours</div>
+                            <div class="check-item"><div class="check-box"></div>Add to CRM with notes</div>
+                            <div class="check-item" style="color: rgba(255,255,255,0.4);">+ 14 more items...</div>
+                        </div>
+                    </div>
+                    <div class="bottom-section">
+                        <div class="cta-dark">Download Full Checklist</div>
+                        <div class="free-note">Free • 1 Page • Instant Download</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> 21 items. One page. Never forget a networking step again. Download the free checklist.</p>
+                <div class="label">Headline</div>
+                <p>Your Networking Checklist</p>
+            </div>
+        </div>
+
+        <!-- AD 05 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 05: Split Image</h3>
+                <p>1080x1080 • Credibility angle • Feed square</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-05">
+                <div id="ad-05" class="ad-canvas scale-half">
+                    <div class="image-side"></div>
+                    <div class="content-side">
+                        <div class="logo-small">
+                            <img src="../../assets/lume-logo-official.png" alt="LUME">
+                            <span>LUME</span>
+                        </div>
+                        <div class="headline">The checklist behind great networkers</div>
+                        <div class="subhead">Simple. Systematic. One page that covers every interaction.</div>
+                        <div class="cta-btn">Get Free Checklist</div>
+                        <div class="free-text">21 items • Before/During/After</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Great networkers don't wing it. They use systems. Get the 1-page checklist. Free.</p>
+                <div class="label">Headline</div>
+                <p>Networking Made Systematic</p>
+            </div>
+        </div>
+
+        <!-- AD 06 -->
+        <div class="ad-wrapper">
+            <div class="ad-meta">
+                <h3>Ad 06: Bold Statue</h3>
+                <p>1080x1350 • Pain point angle • Feed portrait</p>
+            </div>
+            <div class="ad-canvas-wrapper" id="wrapper-06">
+                <div id="ad-06" class="ad-canvas scale-half">
+                    <img src="../../assets/slide-1.png" class="statue-img" alt="">
+                    <div class="content">
+                        <div class="logo-white">
+                            <img src="../../assets/lume-logo-official.png" alt="LUME">
+                            <span>LUME</span>
+                        </div>
+                        <div class="main-text">
+                            <div class="headline">Stop forgetting to follow up.</div>
+                            <div class="subhead">One simple checklist. Before, during, and after every networking interaction.</div>
+                        </div>
+                        <div class="bottom-bar">
+                            <div class="offer">Free Networking Checklist</div>
+                            <div class="pages">1 Page • 21 Items</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-copy">
+                <h4>Ad Copy</h4>
+                <p><strong>Primary:</strong> Forgetting to follow up? Blanking on names? Get the 1-page checklist that covers every step.</p>
+                <div class="label">Headline</div>
+                <p>Never Forget Follow-Up Again</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        async function downloadAd(elementId, fileName) {
+            const element = document.getElementById(elementId);
+            element.classList.remove('scale-half');
+            const canvas = await html2canvas(element, {
+                scale: 2,
+                backgroundColor: null,
+                logging: false,
+                useCORS: true,
+                allowTaint: true
+            });
+            element.classList.add('scale-half');
+            const link = document.createElement('a');
+            link.download = fileName + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        async function downloadAll() {
+            const ads = [
+                { id: 'ad-01', name: 'LUME-Checklist-Ad-01-Bold' },
+                { id: 'ad-02', name: 'LUME-Checklist-Ad-02-Phases' },
+                { id: 'ad-03', name: 'LUME-Checklist-Ad-03-Hero' },
+                { id: 'ad-04', name: 'LUME-Checklist-Ad-04-Preview' },
+                { id: 'ad-05', name: 'LUME-Checklist-Ad-05-Split' },
+                { id: 'ad-06', name: 'LUME-Checklist-Ad-06-Statue' }
+            ];
+            for (const ad of ads) {
+                await downloadAd(ad.id, ad.name);
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        }
+    </script>
+</body>
+</html>

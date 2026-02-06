@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Creatives Library | LUME</title>
+    <link rel="icon" type="image/png" href="../assets/lume-logo-alt.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #C41E3A;
+            --charcoal: #1a1a1a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--charcoal);
+            color: #fff;
+            min-height: 100vh;
+            padding: 60px 40px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .logo span {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+        }
+        h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 1rem;
+        }
+        .lead-magnets-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .lead-magnet-card {
+            background: #222;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #333;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .lead-magnet-card:hover {
+            border-color: var(--coral);
+            transform: translateY(-4px);
+        }
+        .card-preview {
+            height: 200px;
+            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-preview img {
+            height: 80%;
+            opacity: 0.8;
+        }
+        .card-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 36px;
+            height: 36px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .card-count {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.6);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+        .card-content {
+            padding: 25px;
+        }
+        .card-content h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .card-content p {
+            font-size: 0.875rem;
+            color: #888;
+            line-height: 1.5;
+        }
+        .card-cta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            color: var(--coral);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .card-cta svg {
+            width: 16px;
+            height: 16px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 30px;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: var(--coral);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+        }
+        .footer p {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        .footer a {
+            color: var(--coral);
+            text-decoration: none;
+        }
+        @media (max-width: 700px) {
+            .lead-magnets-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Back to Landing Pages
+        </a>
+
+        <header class="header">
+            <div class="logo">
+                <img src="../assets/lume-logo-official.png" alt="LUME">
+                <span>LUME</span>
+            </div>
+            <h1>Ad Creatives Library</h1>
+            <p class="subtitle">Meta ad creatives for all LUME lead magnets</p>
+        </header>
+
+        <div class="lead-magnets-grid">
+            <a href="hni-networking-playbook/index.html" class="lead-magnet-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #2a1a1a 0%, #1a1a1a 100%);">
+                    <span class="card-number">1</span>
+                    <span class="card-count">6 Creatives</span>
+                    <img src="../assets/lume-logo-official.png" alt="">
+                </div>
+                <div class="card-content">
+                    <h2>HNI Networking Playbook</h2>
+                    <p>29-page PDF guide. 6 diverse ad creatives with brand imagery, multiple angles, and formats.</p>
+                    <div class="card-cta">
+                        View Creatives
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="networking-checklist/index.html" class="lead-magnet-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #1a2a1a 0%, #1a1a1a 100%);">
+                    <span class="card-number">2</span>
+                    <span class="card-count">6 Creatives</span>
+                    <img src="../assets/lume-logo-official.png" alt="">
+                </div>
+                <div class="card-content">
+                    <h2>Networking Checklist</h2>
+                    <p>1-page checklist. Quick-win creatives focused on simplicity and immediate value.</p>
+                    <div class="card-cta">
+                        View Creatives
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="networking-score-quiz/index.html" class="lead-magnet-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #1a1a2a 0%, #1a1a1a 100%);">
+                    <span class="card-number">3</span>
+                    <span class="card-count">6 Creatives</span>
+                    <img src="../assets/lume-logo-official.png" alt="">
+                </div>
+                <div class="card-content">
+                    <h2>Networking Score Quiz</h2>
+                    <p>Interactive assessment. Curiosity-driven creatives to drive quiz engagement.</p>
+                    <div class="card-cta">
+                        View Creatives
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="5-day-email-course/index.html" class="lead-magnet-card">
+                <div class="card-preview" style="background: linear-gradient(135deg, #2a2a1a 0%, #1a1a1a 100%);">
+                    <span class="card-number">4</span>
+                    <span class="card-count">6 Creatives</span>
+                    <img src="../assets/lume-logo-official.png" alt="">
+                </div>
+                <div class="card-content">
+                    <h2>5-Day Email Course</h2>
+                    <p>Email drip sequence. Journey-focused creatives emphasizing daily value.</p>
+                    <div class="card-cta">
+                        View Creatives
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <footer class="footer">
+            <p>LUME Ad Creatives Library | <a href="https://thelumeproject.com">thelumeproject.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
