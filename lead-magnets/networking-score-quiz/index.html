@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Your Networking Score? | LUME</title>
+    <link rel="icon" type="image/png" href="../../../assets/lume-logo-alt.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #E84439;
+            --charcoal: #1a1a1a;
+            --dark-gray: #2B323A;
+            --gray: #6B6B6B;
+            --light-gray: #F0F0F0;
+            --cream: #FAFAFA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--charcoal);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo img {
+            height: 36px;
+        }
+
+        .logo-text {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Quiz Intro */
+        .quiz-intro {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .quiz-intro h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .quiz-intro h1 span {
+            color: var(--coral);
+        }
+
+        .quiz-intro p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .quiz-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .quiz-meta-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--coral);
+        }
+
+        .start-btn {
+            background: var(--coral);
+            color: #fff;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .start-btn:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            display: none;
+            margin-bottom: 2rem;
+        }
+
+        .progress-container.active {
+            display: block;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--coral);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        /* Quiz Questions */
+        .quiz-container {
+            display: none;
+        }
+
+        .quiz-container.active {
+            display: block;
+        }
+
+        .question-card {
+            display: none;
+            background: #222;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid #333;
+        }
+
+        .question-card.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-category {
+            font-size: 0.75rem;
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: var(--charcoal);
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option:hover {
+            border-color: var(--coral);
+            background: rgba(255, 81, 73, 0.05);
+        }
+
+        .option.selected {
+            border-color: var(--coral);
+            background: rgba(255, 81, 73, 0.1);
+        }
+
+        .option-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #555;
+            border-radius: 50%;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .option.selected .option-radio {
+            border-color: var(--coral);
+        }
+
+        .option.selected .option-radio::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: var(--coral);
+            border-radius: 50%;
+        }
+
+        .option-text {
+            font-size: 0.95rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: var(--gray);
+            border: 1px solid #444;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            font-family: 'Outfit', sans-serif;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            border-color: #666;
+            color: #fff;
+        }
+
+        .nav-btn.next {
+            background: var(--coral);
+            color: #fff;
+            border: none;
+        }
+
+        .nav-btn.next:hover {
+            background: var(--coral-dark);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Email Capture */
+        .email-capture {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .email-capture.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .email-capture h2 {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .email-capture p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .email-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .email-form input {
+            width: 100%;
+            padding: 1rem;
+            background: #222;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .email-form input:focus {
+            outline: none;
+            border-color: var(--coral);
+        }
+
+        .email-form input::placeholder {
+            color: var(--gray);
+        }
+
+        .email-form button {
+            width: 100%;
+            background: var(--coral);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .email-form button:hover {
+            background: var(--coral-dark);
+        }
+
+        /* Results */
+        .results-container {
+            display: none;
+            padding: 2rem 0;
+        }
+
+        .results-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .score-display {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .score-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(var(--coral) 0deg, var(--coral) calc(var(--score) * 3.6deg), #333 calc(var(--score) * 3.6deg));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .score-circle::before {
+            content: '';
+            width: 140px;
+            height: 140px;
+            background: var(--charcoal);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .score-value {
+            position: relative;
+            z-index: 1;
+        }
+
+        .score-number {
+            font-family: 'Cormorant', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .score-title {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-subtitle {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Category Scores */
+        .category-scores {
+            background: #222;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+        }
+
+        .category-scores h3 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-item {
+            margin-bottom: 1rem;
+        }
+
+        .category-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-name {
+            color: var(--gray);
+        }
+
+        .category-score {
+            color: var(--coral);
+            font-weight: 500;
+        }
+
+        .category-bar {
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .category-fill {
+            height: 100%;
+            background: var(--coral);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+
+        /* Recommendations */
+        .recommendations {
+            margin-bottom: 2rem;
+        }
+
+        .recommendations h3 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .rec-card {
+            background: #222;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            border-left: 3px solid var(--coral);
+        }
+
+        .rec-card h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .rec-card p {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* CTA Section */
+        .results-cta {
+            background: linear-gradient(135deg, #222 0%, var(--charcoal) 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--coral);
+        }
+
+        .results-cta h3 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .results-cta p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 0.875rem 1.5rem;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn.primary {
+            background: var(--coral);
+            color: #fff;
+        }
+
+        .cta-btn.primary:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        .cta-btn.secondary:hover {
+            border-color: var(--coral);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .footer a {
+            color: var(--coral);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .quiz-intro h1 {
+                font-size: 2rem;
+            }
+
+            .quiz-meta {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .question-text {
+                font-size: 1.25rem;
+            }
+
+            .score-circle {
+                width: 150px;
+                height: 150px;
+            }
+
+            .score-circle::before {
+                width: 110px;
+                height: 110px;
+            }
+
+            .score-number {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="../../../assets/lume-logo-alt.png" alt="LUME">
+                <span class="logo-text">LUME</span>
+            </div>
+            <p class="tagline">Where Business Becomes Personal</p>
+        </header>
+
+        <!-- Quiz Intro -->
+        <section class="quiz-intro" id="quizIntro">
+            <h1>What's Your <span>Networking Score</span>?</h1>
+            <p>Take this 2-minute assessment to discover your networking strengths, blind spots, and personalized strategies to build more meaningful connections.</p>
+
+            <div class="quiz-meta">
+                <div class="quiz-meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>2 minutes</span>
+                </div>
+                <div class="quiz-meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                    </svg>
+                    <span>12 questions</span>
+                </div>
+                <div class="quiz-meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                    </svg>
+                    <span>Instant results</span>
+                </div>
+            </div>
+
+            <button class="start-btn" onclick="startQuiz()">Start the Assessment</button>
+        </section>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-text">
+                <span id="progressLabel">Question 1 of 12</span>
+                <span id="progressPercent">8%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 8%"></div>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="quiz-container" id="quizContainer">
+            <!-- Questions will be injected here -->
+        </div>
+
+        <!-- Email Capture -->
+        <section class="email-capture" id="emailCapture">
+            <h2>Your Results Are Ready</h2>
+            <p>Enter your email to see your Networking Score and personalized recommendations.</p>
+            <form class="email-form" onsubmit="showResults(event)">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <button type="submit">See My Results</button>
+            </form>
+        </section>
+
+        <!-- Results Container -->
+        <section class="results-container" id="resultsContainer">
+            <div class="score-display">
+                <div class="score-circle" id="scoreCircle" style="--score: 0">
+                    <div class="score-value">
+                        <div class="score-number" id="scoreNumber">0</div>
+                        <div class="score-label">out of 100</div>
+                    </div>
+                </div>
+                <h2 class="score-title" id="scoreTitle">Loading...</h2>
+                <p class="score-subtitle" id="scoreSubtitle"></p>
+            </div>
+
+            <div class="category-scores">
+                <h3>Your Breakdown</h3>
+                <div id="categoryBreakdown">
+                    <!-- Category scores will be injected here -->
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>Personalized Recommendations</h3>
+                <div id="recommendationsList">
+                    <!-- Recommendations will be injected here -->
+                </div>
+            </div>
+
+            <div class="results-cta">
+                <h3>Ready to Elevate Your Networking?</h3>
+                <p>Get the complete system to build high-value relationships that create real opportunities.</p>
+                <div class="cta-buttons">
+                    <a href="../hni-networking-playbook/index.html" class="cta-btn primary">Get the Full Playbook</a>
+                    <a href="../networking-checklist/index.html" class="cta-btn secondary">Download the Checklist</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>LUME | <a href="https://thelumeproject.com">thelumeproject.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Quiz Questions Data
+        const questions = [
+            {
+                category: "Preparation",
+                question: "Before attending a networking event, how much research do you do on other attendees?",
+                options: [
+                    { text: "I look up key attendees and prepare talking points", score: 4 },
+                    { text: "I skim the guest list if it's available", score: 3 },
+                    { text: "I check the event theme/topic only", score: 2 },
+                    { text: "I rarely prepare - I prefer to be spontaneous", score: 1 }
+                ]
+            },
+            {
+                category: "Preparation",
+                question: "How would you describe your current networking goals?",
+                options: [
+                    { text: "Clear, specific goals with metrics I track", score: 4 },
+                    { text: "General goals like 'meet more people in my industry'", score: 3 },
+                    { text: "I want to network more but haven't set specific goals", score: 2 },
+                    { text: "I don't really have networking goals", score: 1 }
+                ]
+            },
+            {
+                category: "Engagement",
+                question: "In conversations, what's your typical talking-to-listening ratio?",
+                options: [
+                    { text: "I listen more (70%+) and ask lots of questions", score: 4 },
+                    { text: "About 50-50 - balanced exchange", score: 3 },
+                    { text: "I tend to talk more than listen", score: 2 },
+                    { text: "I'm often unsure what to say", score: 1 }
+                ]
+            },
+            {
+                category: "Engagement",
+                question: "When meeting someone new, how do you typically introduce yourself?",
+                options: [
+                    { text: "Concise intro with an interesting hook that invites questions", score: 4 },
+                    { text: "Standard intro: name, title, company", score: 3 },
+                    { text: "I struggle to describe what I do clearly", score: 2 },
+                    { text: "I wait for others to ask questions", score: 1 }
+                ]
+            },
+            {
+                category: "Engagement",
+                question: "How often do you offer value first in networking interactions?",
+                options: [
+                    { text: "Always - I look for ways to help before asking for anything", score: 4 },
+                    { text: "Often - when I see an obvious opportunity", score: 3 },
+                    { text: "Sometimes - if it comes up naturally", score: 2 },
+                    { text: "Rarely - I'm usually focused on my own needs", score: 1 }
+                ]
+            },
+            {
+                category: "Follow-up",
+                question: "After meeting someone interesting, when do you typically follow up?",
+                options: [
+                    { text: "Within 24-48 hours with a personalized message", score: 4 },
+                    { text: "Within a week", score: 3 },
+                    { text: "When I need something from them", score: 2 },
+                    { text: "I often forget to follow up", score: 1 }
+                ]
+            },
+            {
+                category: "Follow-up",
+                question: "How do you track and manage your professional relationships?",
+                options: [
+                    { text: "Dedicated CRM or system with notes, tags, and reminders", score: 4 },
+                    { text: "Spreadsheet or notes app with key contacts", score: 3 },
+                    { text: "LinkedIn connections and mental notes", score: 2 },
+                    { text: "I don't really track relationships systematically", score: 1 }
+                ]
+            },
+            {
+                category: "Follow-up",
+                question: "How often do you reach out to contacts when you DON'T need anything?",
+                options: [
+                    { text: "Regularly - I nurture relationships proactively", score: 4 },
+                    { text: "Occasionally - maybe a few times a year", score: 3 },
+                    { text: "Rarely - usually only when I need something", score: 2 },
+                    { text: "Almost never", score: 1 }
+                ]
+            },
+            {
+                category: "Value Creation",
+                question: "How often do you make introductions between people in your network?",
+                options: [
+                    { text: "Weekly - I'm always connecting people", score: 4 },
+                    { text: "Monthly - when I see good fits", score: 3 },
+                    { text: "A few times a year", score: 2 },
+                    { text: "Rarely or never", score: 1 }
+                ]
+            },
+            {
+                category: "Value Creation",
+                question: "Do you have a clear understanding of the value you bring to your network?",
+                options: [
+                    { text: "Yes - I know exactly what expertise, connections, or resources I offer", score: 4 },
+                    { text: "Somewhat - I have a general idea", score: 3 },
+                    { text: "Not really sure what I have to offer", score: 2 },
+                    { text: "I feel like I have nothing valuable to offer", score: 1 }
+                ]
+            },
+            {
+                category: "Strategy",
+                question: "How intentional are you about WHO you network with?",
+                options: [
+                    { text: "Very - I have clear criteria and actively seek specific people", score: 4 },
+                    { text: "Somewhat - I focus on certain industries/roles", score: 3 },
+                    { text: "I network with whoever I happen to meet", score: 2 },
+                    { text: "I avoid networking when possible", score: 1 }
+                ]
+            },
+            {
+                category: "Strategy",
+                question: "How would you describe your current professional network?",
+                options: [
+                    { text: "Deep relationships with key people who actively help each other", score: 4 },
+                    { text: "Mix of strong and weak ties across my industry", score: 3 },
+                    { text: "Mostly surface-level connections", score: 2 },
+                    { text: "Small or non-existent", score: 1 }
+                ]
+            }
+        ];
+
+        // Score levels
+        const scoreLevels = [
+            { min: 0, max: 24, title: "Network Novice", subtitle: "You're just getting started - huge growth potential ahead" },
+            { min: 25, max: 36, title: "Casual Connector", subtitle: "You network occasionally but lack a systematic approach" },
+            { min: 37, max: 44, title: "Active Networker", subtitle: "Good foundation but missing key strategies for deeper impact" },
+            { min: 45, max: 48, title: "Strategic Networker", subtitle: "Strong skills with room to optimize for even better results" }
+        ];
+
+        // Category-specific recommendations
+        const recommendations = {
+            Preparation: {
+                low: { title: "Build Your Pre-Event Routine", text: "Research 3 people before every event. Know their role, interests, and one recent accomplishment." },
+                high: { title: "Optimize Your Targeting", text: "You're prepared. Now focus on identifying the 2-3 highest-value conversations at each event." }
+            },
+            Engagement: {
+                low: { title: "Master the Art of Questions", text: "Shift to a 70/30 listening ratio. Ask open-ended questions and show genuine curiosity." },
+                high: { title: "Deepen Your Conversations", text: "You engage well. Try asking more vulnerable questions to move conversations from surface to substance." }
+            },
+            "Follow-up": {
+                low: { title: "Systematize Your Follow-up", text: "Create a 48-hour follow-up rule. Use a simple CRM to track contacts and set reminders." },
+                high: { title: "Add Value in Your Follow-ups", text: "You follow up well. Include something valuable (article, intro, insight) in every message." }
+            },
+            "Value Creation": {
+                low: { title: "Become a Connector", text: "Make one introduction per week. Being known as a connector multiplies your network value exponentially." },
+                high: { title: "Scale Your Impact", text: "You create value. Consider hosting small gatherings or creating content that serves your network at scale." }
+            },
+            Strategy: {
+                low: { title: "Define Your Network Strategy", text: "Identify 20 'dream connections' and create a plan to build relationships with them over 12 months." },
+                high: { title: "Build Your Inner Circle", text: "Focus on converting 5-10 connections into true advocates who actively champion you." }
+            }
+        };
+
+        let currentQuestion = 0;
+        let answers = [];
+        let categoryScores = {};
+
+        function startQuiz() {
+            document.getElementById('quizIntro').style.display = 'none';
+            document.getElementById('progressContainer').classList.add('active');
+            document.getElementById('quizContainer').classList.add('active');
+            renderQuestions();
+            showQuestion(0);
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('quizContainer');
+            container.innerHTML = questions.map((q, i) => `
+                <div class="question-card" id="question${i}" ${i === 0 ? 'class="active"' : ''}>
+                    <div class="question-category">${q.category}</div>
+                    <div class="question-text">${q.question}</div>
+                    <div class="options">
+                        ${q.options.map((opt, j) => `
+                            <div class="option" onclick="selectOption(${i}, ${j}, ${opt.score})">
+                                <div class="option-radio"></div>
+                                <div class="option-text">${opt.text}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="nav-buttons">
+                        <button class="nav-btn" onclick="prevQuestion()" ${i === 0 ? 'style="visibility:hidden"' : ''}>Back</button>
+                        <button class="nav-btn next" id="nextBtn${i}" onclick="nextQuestion()" disabled>Next</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showQuestion(index) {
+            document.querySelectorAll('.question-card').forEach(card => card.classList.remove('active'));
+            document.getElementById(`question${index}`).classList.add('active');
+
+            const progress = ((index + 1) / questions.length) * 100;
+            document.getElementById('progressLabel').textContent = `Question ${index + 1} of ${questions.length}`;
+            document.getElementById('progressPercent').textContent = `${Math.round(progress)}%`;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+        }
+
+        function selectOption(questionIndex, optionIndex, score) {
+            const options = document.querySelectorAll(`#question${questionIndex} .option`);
+            options.forEach(opt => opt.classList.remove('selected'));
+            options[optionIndex].classList.add('selected');
+
+            answers[questionIndex] = {
+                category: questions[questionIndex].category,
+                score: score
+            };
+
+            document.getElementById(`nextBtn${questionIndex}`).disabled = false;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                showEmailCapture();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        function showEmailCapture() {
+            document.getElementById('progressContainer').classList.remove('active');
+            document.getElementById('quizContainer').classList.remove('active');
+            document.getElementById('emailCapture').classList.add('active');
+        }
+
+        function showResults(e) {
+            e.preventDefault();
+
+            document.getElementById('emailCapture').classList.remove('active');
+            document.getElementById('resultsContainer').classList.add('active');
+
+            // Calculate scores
+            let totalScore = 0;
+            categoryScores = {};
+
+            answers.forEach(answer => {
+                totalScore += answer.score;
+                if (!categoryScores[answer.category]) {
+                    categoryScores[answer.category] = { total: 0, count: 0 };
+                }
+                categoryScores[answer.category].total += answer.score;
+                categoryScores[answer.category].count++;
+            });
+
+            // Normalize to 100
+            const maxPossible = questions.length * 4;
+            const percentScore = Math.round((totalScore / maxPossible) * 100);
+
+            // Animate score
+            animateScore(percentScore);
+
+            // Set score level
+            const level = scoreLevels.find(l => totalScore >= l.min && totalScore <= l.max);
+            document.getElementById('scoreTitle').textContent = level.title;
+            document.getElementById('scoreSubtitle').textContent = level.subtitle;
+
+            // Render category breakdown
+            renderCategoryBreakdown();
+
+            // Render recommendations
+            renderRecommendations();
+        }
+
+        function animateScore(target) {
+            let current = 0;
+            const scoreCircle = document.getElementById('scoreCircle');
+            const scoreNumber = document.getElementById('scoreNumber');
+
+            const interval = setInterval(() => {
+                current++;
+                scoreNumber.textContent = current;
+                scoreCircle.style.setProperty('--score', current);
+
+                if (current >= target) {
+                    clearInterval(interval);
+                }
+            }, 20);
+        }
+
+        function renderCategoryBreakdown() {
+            const container = document.getElementById('categoryBreakdown');
+            const categories = ['Preparation', 'Engagement', 'Follow-up', 'Value Creation', 'Strategy'];
+
+            container.innerHTML = categories.map(cat => {
+                const data = categoryScores[cat] || { total: 0, count: 1 };
+                const maxForCat = data.count * 4;
+                const percent = Math.round((data.total / maxForCat) * 100);
+
+                return `
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-name">${cat}</span>
+                            <span class="category-score">${percent}%</span>
+                        </div>
+                        <div class="category-bar">
+                            <div class="category-fill" style="width: ${percent}%"></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderRecommendations() {
+            const container = document.getElementById('recommendationsList');
+            const recs = [];
+
+            // Find lowest 3 categories
+            const categoryPercentages = Object.entries(categoryScores).map(([cat, data]) => ({
+                category: cat,
+                percent: (data.total / (data.count * 4)) * 100
+            })).sort((a, b) => a.percent - b.percent);
+
+            categoryPercentages.slice(0, 3).forEach(({ category, percent }) => {
+                const rec = percent < 75 ? recommendations[category].low : recommendations[category].high;
+                recs.push(rec);
+            });
+
+            container.innerHTML = recs.map(rec => `
+                <div class="rec-card">
+                    <h4>${rec.title}</h4>
+                    <p>${rec.text}</p>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
