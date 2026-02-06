@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Download: The HNI Networking Playbook | LUME</title>
+    <meta name="description" content="Download the free playbook: How Hyderabad's most connected professionals build relationships that compound. A guide for founders, executives, and professionals.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/lume-logo-alt.png">
+
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #E8443D;
+            --deep-red: #B80000;
+            --black: #000000;
+            --charcoal: #1a1a1a;
+            --dark-gray: #2B323A;
+            --gray: #6b6b6b;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --cream: #FAFAFA;
+
+            --font-display: 'Cormorant', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            color: var(--charcoal);
+            background: var(--charcoal);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+            background: var(--charcoal);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 81, 73, 0.1);
+            border: 1px solid rgba(255, 81, 73, 0.3);
+            color: var(--coral);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4vw, 52px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+
+        .hero-subheadline {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 480px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .benefits-list li::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--coral);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-size: 12px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-proof-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .social-proof-text strong {
+            color: var(--coral);
+        }
+
+        /* Form Section */
+        .hero-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: var(--white);
+        }
+
+        .form-card {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .book-preview-placeholder {
+            width: 180px;
+            height: 240px;
+            margin: 0 auto 24px;
+            background: var(--charcoal);
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .book-spine {
+            width: 12px;
+            background: linear-gradient(180deg, #333 0%, #1a1a1a 100%);
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .book-content {
+            flex: 1;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(180deg, var(--charcoal) 0%, #0d0d0d 100%);
+            border-top: 4px solid var(--coral);
+        }
+
+        .book-label {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--coral);
+            text-transform: uppercase;
+        }
+
+        .book-title {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .book-pages {
+            font-size: 10px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .form-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--charcoal);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(255, 81, 73, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: #aaa;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid var(--gray);
+            pointer-events: none;
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            padding-right: 40px;
+        }
+
+        .btn-download {
+            width: 100%;
+            padding: 16px 32px;
+            background: var(--coral);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-download:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.3);
+        }
+
+        .btn-download svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 16px;
+            line-height: 1.5;
+        }
+
+        /* What's Inside Section */
+        .whats-inside {
+            padding: 100px 60px;
+            background: var(--cream);
+        }
+
+        .section-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--coral);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 42px);
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 48px;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .chapter-card {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--coral);
+        }
+
+        .chapter-number {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--coral);
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+
+        .chapter-title {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .chapter-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* About LUME Section */
+        .about-lume {
+            padding: 100px 60px;
+            background: var(--charcoal);
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-lume .section-label {
+            justify-content: center;
+        }
+
+        .about-lume .section-label::before {
+            display: none;
+        }
+
+        .about-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .about-text {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--charcoal);
+            border-color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 60px;
+            background: var(--black);
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            height: 36px;
+        }
+
+        .footer-logo span {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Success State */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .success-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .success-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .success-text {
+            font-size: 15px;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .btn-download-now {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--coral);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download-now:hover {
+            background: var(--coral-dark);
+        }
+
+        #lead-form.hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 100px 40px 60px;
+                order: 1;
+            }
+
+            .hero-form {
+                padding: 40px;
+                order: 2;
+            }
+
+            .chapters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whats-inside,
+            .about-lume {
+                padding: 60px 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .site-header {
+                padding: 16px 20px;
+            }
+
+            .hero-content {
+                padding: 80px 24px 40px;
+            }
+
+            .hero-form {
+                padding: 32px 24px;
+            }
+
+            .form-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/lume-logo-alt.png" alt="LUME">
+            <span class="logo-text">LUME</span>
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Free Download</div>
+            <h1 class="hero-headline">
+                The HNI Networking<br>
+                <em>Playbook</em>
+            </h1>
+            <p class="hero-subheadline">
+                How Hyderabad's most connected professionals build relationships that compound. A practical guide for founders, executives, and professionals who want more than business cards and small talk.
+            </p>
+
+            <ul class="benefits-list">
+                <li>The Compound Network Effect framework</li>
+                <li>5 types of connections every professional needs</li>
+                <li>The 90-day system for turning contacts into relationships</li>
+                <li>Where high-value people actually meet (hint: not networking events)</li>
+                <li>Network audit worksheet to identify your gaps</li>
+            </ul>
+
+            <div class="social-proof">
+                <span class="social-proof-text"><strong>29 pages</strong> of actionable strategies</span>
+            </div>
+        </div>
+
+        <div class="hero-form">
+            <div class="form-card">
+                <div class="form-header">
+                    <!-- Book cover preview - uses CSS-styled placeholder -->
+                    <div class="book-preview-placeholder">
+                        <div class="book-spine"></div>
+                        <div class="book-content">
+                            <span class="book-label">FREE DOWNLOAD</span>
+                            <span class="book-title">THE HNI<br>NETWORKING<br>PLAYBOOK</span>
+                            <span class="book-pages">29 Pages</span>
+                        </div>
+                    </div>
+                    <h2 class="form-title">Get Your Free Copy</h2>
+                    <p class="form-subtitle">Enter your details below</p>
+                </div>
+
+                <form id="lead-form">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 98765 43210" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="profession">What do you do? *</label>
+                        <div class="select-wrapper">
+                            <select id="profession" name="profession" class="form-select" required>
+                                <option value="" disabled selected>Select your profession</option>
+                                <option value="business-owner">Business Owner / Entrepreneur</option>
+                                <option value="cxo-executive">CXO / Senior Executive</option>
+                                <option value="doctor">Doctor / Healthcare Professional</option>
+                                <option value="lawyer">Lawyer / Legal Professional</option>
+                                <option value="ca-finance">CA / Finance Professional</option>
+                                <option value="real-estate">Real Estate Professional</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-download">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download Free Playbook
+                    </button>
+                </form>
+
+                <div class="success-message" id="success-message">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </div>
+                    <h3 class="success-title">Your playbook is ready!</h3>
+                    <p class="success-text">Click below to download your copy of The HNI Networking Playbook.</p>
+                    <a href="hni-networking-playbook.pdf" download class="btn-download-now">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download PDF Now
+                    </a>
+                </div>
+
+                <p class="form-note">
+                    We respect your privacy. No spam, ever.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside Section -->
+    <section class="whats-inside">
+        <div class="section-container">
+            <span class="section-label">What's Inside</span>
+            <h2 class="section-title">29 pages of actionable networking strategies</h2>
+
+            <div class="chapters-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">01</div>
+                    <h3 class="chapter-title">The Compound Network Effect</h3>
+                    <p class="chapter-desc">Why some relationships multiply while others fizzle. The framework for building connections that grow over time.</p>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">02</div>
+                    <h3 class="chapter-title">The 5 Types of Connections</h3>
+                    <p class="chapter-desc">Mentors, Peers, Operators, Connectors, Rising Stars. Why you need all five in your portfolio.</p>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">03</div>
+                    <h3 class="chapter-title">Quality Over Quantity</h3>
+                    <p class="chapter-desc">The Dunbar number and why 30 curated relationships beat 300 random connections.</p>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">04</div>
+                    <h3 class="chapter-title">Where High-Value People Meet</h3>
+                    <p class="chapter-desc">Spoiler: it's not at "networking events." Where to actually find the connections you want.</p>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">05</div>
+                    <h3 class="chapter-title">The Art of Warm Introductions</h3>
+                    <p class="chapter-desc">How to ask for and give introductions without being awkward or transactional.</p>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">06</div>
+                    <h3 class="chapter-title">The 90-Day System</h3>
+                    <p class="chapter-desc">A step-by-step framework for turning a first meeting into a lasting relationship.</p>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">07</div>
+                    <h3 class="chapter-title">Reputation Killers</h3>
+                    <p class="chapter-desc">The common mistakes that silently destroy your professional reputation.</p>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">08</div>
+                    <h3 class="chapter-title">Network Audit Worksheet</h3>
+                    <p class="chapter-desc">A practical tool to assess your current network and create an action plan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About LUME Section -->
+    <section class="about-lume">
+        <div class="about-content">
+            <span class="section-label">About LUME</span>
+            <h2 class="about-title">This playbook is brought to you by LUME</h2>
+            <p class="about-text">
+                LUME is Hyderabad's invite-only community for founders, executives, and professionals who want more than business cards and small talk. We've built exactly what this playbook describes: a curated network of high-value connections with built-in contexts for meaningful relationships.
+            </p>
+            <a href="../../lp2-lead-capture.html" class="btn-secondary">
+                Learn More About LUME
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="../../assets/lume-logo-alt.png" alt="LUME">
+            <span>LUME</span>
+        </div>
+        <p class="footer-text">2026 Lume Project Private Limited. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                profession: document.getElementById('profession').value,
+                source: 'hni-networking-playbook'
+            };
+
+            // Here you would send to your backend/CRM
+            console.log('Lead captured:', formData);
+
+            // Show success state
+            document.getElementById('lead-form').classList.add('hidden');
+            document.getElementById('success-message').classList.add('active');
+        });
+    </script>
+</body>
+</html>
