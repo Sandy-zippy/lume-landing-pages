@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Day Networking Mastery Course | LUME</title>
+    <link rel="icon" type="image/png" href="../../../assets/lume-logo-alt.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #E84439;
+            --charcoal: #1a1a1a;
+            --dark-gray: #2B323A;
+            --gray: #6B6B6B;
+            --light-gray: #F0F0F0;
+            --cream: #FAFAFA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--charcoal);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo img {
+            height: 36px;
+        }
+
+        .logo-text {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 81, 73, 0.15);
+            color: var(--coral);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 2.75rem;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--coral);
+        }
+
+        .hero p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* Value Props */
+        .value-props {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .value-prop {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .value-prop svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--coral);
+            flex-shrink: 0;
+        }
+
+        /* Course Preview */
+        .course-preview {
+            padding: 2rem 0;
+        }
+
+        .course-preview h2 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .day-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .day-card {
+            background: #222;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid #333;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            border-color: var(--coral);
+            transform: translateX(4px);
+        }
+
+        .day-number {
+            width: 44px;
+            height: 44px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .day-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .day-content p {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .day-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, #222 0%, var(--charcoal) 100%);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--coral);
+            text-align: center;
+        }
+
+        .form-section h2 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-section p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .signup-form {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            margin-bottom: 0.75rem;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--charcoal);
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+        }
+
+        .signup-form input:focus {
+            outline: none;
+            border-color: var(--coral);
+        }
+
+        .signup-form input::placeholder {
+            color: var(--gray);
+        }
+
+        .signup-form button {
+            width: 100%;
+            background: var(--coral);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .signup-form button:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 1rem;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: #222;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 3px solid var(--coral);
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .testimonial-info {
+            font-size: 0.875rem;
+        }
+
+        .testimonial-name {
+            font-weight: 500;
+        }
+
+        .testimonial-title {
+            color: var(--gray);
+        }
+
+        /* About */
+        .about-section {
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .about-section h2 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section a {
+            color: var(--coral);
+            text-decoration: none;
+        }
+
+        .about-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Other Resources */
+        .resources {
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+        }
+
+        .resources h2 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .resource-card {
+            background: #222;
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .resource-card:hover {
+            border-color: var(--coral);
+            transform: translateY(-2px);
+        }
+
+        .resource-card h3 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-card p {
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .footer a {
+            color: var(--coral);
+            text-decoration: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .success-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: #fff;
+        }
+
+        .success-message h2 {
+            font-family: 'Cormorant', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: var(--gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .value-props {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .day-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .day-number {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="../../../assets/lume-logo-alt.png" alt="LUME">
+                <span class="logo-text">LUME</span>
+            </div>
+            <p class="tagline">Where Business Becomes Personal</p>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="badge">Free Email Course</div>
+            <h1>The LUME Method:<br><span>5 Days to Better Networking</span></h1>
+            <p>One actionable lesson delivered to your inbox every morning. Transform how you build professional relationships in just one week.</p>
+        </section>
+
+        <!-- Value Props -->
+        <div class="value-props">
+            <div class="value-prop">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>5 minutes per day</span>
+            </div>
+            <div class="value-prop">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                </svg>
+                <span>Actionable exercises</span>
+            </div>
+            <div class="value-prop">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                </svg>
+                <span>100% free</span>
+            </div>
+        </div>
+
+        <!-- Course Preview -->
+        <section class="course-preview">
+            <h2>What You'll Learn</h2>
+            <div class="day-cards">
+                <div class="day-card">
+                    <div class="day-number">1</div>
+                    <div class="day-content">
+                        <h3>The Networking Mindset Shift</h3>
+                        <p>Why most professionals network wrong - and the simple reframe that changes everything.</p>
+                        <span class="day-tag">Foundation</span>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">2</div>
+                    <div class="day-content">
+                        <h3>Your Value Stack</h3>
+                        <p>Identify and articulate the unique value you bring to every relationship.</p>
+                        <span class="day-tag">Clarity</span>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">3</div>
+                    <div class="day-content">
+                        <h3>The Art of Quality Conversations</h3>
+                        <p>Questions, listening techniques, and conversation frameworks that build real rapport.</p>
+                        <span class="day-tag">Engagement</span>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">4</div>
+                    <div class="day-content">
+                        <h3>The Follow-Up Formula</h3>
+                        <p>Turn one conversation into an ongoing relationship with our proven follow-up system.</p>
+                        <span class="day-tag">Systems</span>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-number">5</div>
+                    <div class="day-content">
+                        <h3>Building Your Inner Circle</h3>
+                        <p>The strategy for cultivating 10 relationships that can transform your career.</p>
+                        <span class="day-tag">Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup Form -->
+        <section class="form-section" id="signupSection">
+            <h2>Start Your 5-Day Journey</h2>
+            <p>Join 500+ professionals upgrading their networking skills</p>
+            <form class="signup-form" id="signupForm" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your first name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                </div>
+                <button type="submit">Send Me Day 1</button>
+            </form>
+            <p class="form-note">No spam, ever. Unsubscribe anytime.</p>
+        </section>
+
+        <!-- Success Message -->
+        <section class="form-section success-message" id="successSection">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+            </div>
+            <h2>You're In!</h2>
+            <p>Check your inbox - Day 1 is on its way.<br>Add us to your contacts so we don't end up in spam.</p>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="testimonial">
+            <p class="testimonial-text">"I've read dozens of networking books, but this email course finally made it click. Simple, actionable, and actually works."</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">R</div>
+                <div class="testimonial-info">
+                    <div class="testimonial-name">Rahul M.</div>
+                    <div class="testimonial-title">Founder, Series A Startup</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About LUME</h2>
+            <p>LUME is an invite-only community for high-net-worth professionals who believe in the power of meaningful relationships. We host curated events, facilitate introductions, and provide the frameworks for building a network that creates real opportunities.</p>
+            <p><a href="https://thelumeproject.com">Learn more about LUME</a></p>
+        </section>
+
+        <!-- Other Resources -->
+        <section class="resources">
+            <h2>Want to Go Deeper?</h2>
+            <div class="resource-grid">
+                <a href="../hni-networking-playbook/index.html" class="resource-card">
+                    <h3>Full Playbook</h3>
+                    <p>29-page comprehensive guide</p>
+                </a>
+                <a href="../networking-checklist/index.html" class="resource-card">
+                    <h3>Quick Checklist</h3>
+                    <p>1-page before/during/after</p>
+                </a>
+                <a href="../networking-score-quiz/index.html" class="resource-card">
+                    <h3>Score Quiz</h3>
+                    <p>2-minute self-assessment</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>LUME | <a href="https://thelumeproject.com">thelumeproject.com</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            // Hide form, show success
+            document.getElementById('signupSection').style.display = 'none';
+            document.getElementById('successSection').classList.add('active');
+
+            // Scroll to success message
+            document.getElementById('successSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
