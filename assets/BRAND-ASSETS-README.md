@@ -3,11 +3,18 @@
 ## Asset Inventory
 
 ### Logos
-| File | Dimensions | Transparency | Status |
-|------|-----------|--------------|--------|
-| `lume-logo-alt.png` | 250x150 | YES (RGBA) | **USE THIS** |
-| `lume-logo-official.png` | 250x150 | YES (RGBA) | Same as alt |
-| `lume-logo-with-background-DO-NOT-USE.png` | 765x881 | NO (RGB) | **DO NOT USE** - has landscape background |
+| File | Dimensions | Background | Use Case |
+|------|-----------|------------|----------|
+| `lume-logo-transparent.png` | 250x150 | Transparent | **PRIMARY** - Light backgrounds |
+| `lume-logo-white.png` | 250x150 | Transparent | **PRIMARY** - Dark backgrounds |
+| `lume-logo-alt.png` | 250x150 | White | Source file - has white bg |
+| `lume-logo-official.png` | 250x150 | White | Source file - has white bg |
+| `lume-logo-with-background-DO-NOT-USE.png` | 765x881 | Landscape | **DO NOT USE** |
+
+**Logo Usage Rules:**
+- Light backgrounds → `lume-logo-transparent.png`
+- Dark backgrounds → `lume-logo-white.png`
+- NEVER use CSS filters to change logo colors - use the correct file
 
 ### Images
 | File | Dimensions | Use Case |
