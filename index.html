@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUME Landing Pages</title>
+    <link rel="icon" type="image/png" href="assets/lume-logo-alt.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            text-align: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .logo img {
+            height: 60px;
+        }
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #999;
+            margin-bottom: 3rem;
+        }
+        .funnels {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .funnel-card {
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+        .funnel-card:hover {
+            background: #333;
+            transform: translateY(-4px);
+            border-color: #FF5149;
+        }
+        .funnel-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #FF5149;
+            border-radius: 50%;
+            line-height: 32px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .funnel-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .funnel-desc {
+            font-size: 0.875rem;
+            color: #999;
+            line-height: 1.5;
+        }
+        @media (max-width: 600px) {
+            .funnels {
+                grid-template-columns: 1fr;
+            }
+        }
+        footer {
+            margin-top: 3rem;
+            color: #666;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="assets/lume-logo-alt.png" alt="LUME">
+            <span class="logo-text">LUME</span>
+        </div>
+        <h1>Landing Page Funnels</h1>
+
+        <div class="funnels">
+            <a href="lp1-discovery-call.html" class="funnel-card">
+                <span class="funnel-number">1</span>
+                <div class="funnel-title">Discovery Call</div>
+                <div class="funnel-desc">Book a 30-minute call with Sid to explore if LUME is right for you.</div>
+            </a>
+
+            <a href="lp2-lead-capture.html" class="funnel-card">
+                <span class="funnel-number">2</span>
+                <div class="funnel-title">Lead Capture</div>
+                <div class="funnel-desc">Invite-only community lead gen page with value proposition.</div>
+            </a>
+
+            <a href="lp3-event-registration.html" class="funnel-card">
+                <span class="funnel-number">3</span>
+                <div class="funnel-title">Event Registration</div>
+                <div class="funnel-desc">Register for curated LUME events as a guest.</div>
+            </a>
+
+            <a href="lp4-membership-application.html" class="funnel-card">
+                <span class="funnel-number">4</span>
+                <div class="funnel-title">Membership Application</div>
+                <div class="funnel-desc">Full membership application with pricing and benefits.</div>
+            </a>
+        </div>
+
+        <footer>
+            LUME Landing Pages | Prepared for client review
+        </footer>
+    </div>
+</body>
+</html>

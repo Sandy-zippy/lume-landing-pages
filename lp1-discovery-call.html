@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Sid | LUME Founder Discovery Call</title>
+    <meta name="description" content="Book a 30-minute discovery conversation with Sid, founder of LUME. Discuss your business challenges and see if LUME is the right fit for you.">
+    <link rel="icon" type="image/png" href="assets/lume-logo-alt.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #E5403A;
+            --deep-red: #B80000;
+            --black: #000000;
+            --charcoal: #1a1a1a;
+            --gray-dark: #333333;
+            --gray: #666666;
+            --gray-light: #999999;
+            --off-white: #f8f7f5;
+            --white: #ffffff;
+            --cream: #FAF9F7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Cormorant', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p {
+            font-size: 1.0625rem;
+            color: var(--gray-dark);
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            letter-spacing: 0.05em;
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-link {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .header-link:hover {
+            color: var(--coral);
+        }
+
+        .btn-header {
+            background: var(--coral);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-header:hover {
+            background: var(--coral-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section - Split Layout */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 5rem;
+            background: var(--white);
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            width: fit-content;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--coral);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--coral);
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--gray-dark);
+        }
+
+        .hero-bullets li svg {
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--coral);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.0625rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .btn-primary:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 81, 73, 0.3);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        .hero-image {
+            position: relative;
+            background:
+                linear-gradient(135deg, rgba(26, 26, 26, 0.3) 0%, rgba(26, 26, 26, 0.5) 100%),
+                url('assets/team-photo.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 3rem;
+        }
+
+        .hero-quote {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 400px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-quote blockquote {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .hero-quote cite {
+            font-style: normal;
+            font-size: 0.875rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* About Sid Section */
+        .about-sid {
+            padding: 6rem 5rem;
+            background: var(--cream);
+        }
+
+        .about-sid-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sid-image {
+            position: relative;
+        }
+
+        .sid-image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .sid-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--coral);
+            border-radius: 16px;
+            z-index: -1;
+        }
+
+        .sid-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sid-content .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--coral);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .sid-content .section-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--coral);
+        }
+
+        .sid-content h2 {
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .sid-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .sid-content p strong {
+            color: var(--charcoal);
+        }
+
+        .sid-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .sid-stat {
+            text-align: left;
+        }
+
+        .sid-stat-number {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--coral);
+            line-height: 1;
+        }
+
+        .sid-stat-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        /* What to Expect Section */
+        .what-to-expect {
+            padding: 6rem 5rem;
+            background: var(--white);
+        }
+
+        .what-to-expect-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .what-to-expect .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--coral);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--coral);
+        }
+
+        .expect-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .expect-card {
+            background: var(--cream);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .expect-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .expect-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .expect-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--white);
+        }
+
+        .expect-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .expect-card p {
+            font-size: 0.9375rem;
+            color: var(--gray);
+        }
+
+        /* Video Preview Section */
+        .video-preview {
+            padding: 5rem 5rem;
+            background: var(--off-white);
+        }
+
+        .video-preview-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-preview .section-eyebrow {
+            color: var(--coral);
+            margin-bottom: 0.75rem;
+        }
+
+        .video-preview h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .video-subtitle {
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .video-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .video-embed {
+            aspect-ratio: 9/16;
+            background: var(--charcoal);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 640px) {
+            .video-row {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+
+            .video-embed {
+                min-height: 480px;
+            }
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 6rem 5rem;
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .booking-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .booking .section-eyebrow {
+            color: var(--coral);
+            justify-content: center;
+        }
+
+        .booking h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calendly-embed {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendly-placeholder {
+            text-align: center;
+            color: var(--gray);
+        }
+
+        .calendly-placeholder h3 {
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .calendly-placeholder p {
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-note {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5rem;
+            background: var(--cream);
+        }
+
+        .testimonials-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonials .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-quote {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .testimonial-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5rem;
+            background: var(--charcoal);
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        footer p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .hero-image {
+                min-height: 50vh;
+            }
+
+            .about-sid-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .sid-image-wrapper::before {
+                display: none;
+            }
+
+            .expect-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 1rem;
+            }
+
+            .header-link {
+                display: none;
+            }
+
+            .hero-content,
+            .about-sid,
+            .what-to-expect,
+            .booking,
+            .testimonials,
+            footer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .sid-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .hero-quote {
+                max-width: 100%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <a href="#" class="logo">
+            <img src="assets/lume-logo-alt.png" alt="LUME">
+            <span class="logo-text">LUME</span>
+        </a>
+        <div class="header-cta">
+            <a href="https://thelumeproject.com/about/" class="header-link">About</a>
+            <a href="https://thelumeproject.com/networking/" class="header-link">Networking</a>
+            <a href="#book" class="btn-header">Book a Call</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-eyebrow">Free 30-Minute Call</div>
+            <h1>Let's see if LUME is <em>right for you.</em></h1>
+            <p class="hero-subtitle">
+                Book a discovery conversation with Sid, founder of LUME. No pitch. No pressure. Just an honest chat about your business and whether LUME can genuinely help.
+            </p>
+            <ul class="hero-bullets">
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="10" fill="#FF5149"/>
+                        <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Discuss your current business challenges
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="10" fill="#FF5149"/>
+                        <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Learn how LUME's network could help
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="10" fill="#FF5149"/>
+                        <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Get honest advice — even if LUME isn't the fit
+                </li>
+            </ul>
+            <a href="#book" class="btn-primary">
+                Book Your Free Call
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-quote">
+                <blockquote>"Sid doesn't just connect people. He connects dots. That 30-minute call changed how I approached my entire business."</blockquote>
+                <cite>— Real Estate Developer, LUME Member</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Sid Section -->
+    <section class="about-sid">
+        <div class="about-sid-inner">
+            <div class="sid-image">
+                <div class="sid-image-wrapper">
+                    <img src="assets/about-team.jpeg" alt="Sid, Founder of LUME">
+                </div>
+            </div>
+            <div class="sid-content">
+                <div class="section-eyebrow">Meet Your Host</div>
+                <h2>Who is Sid?</h2>
+                <p>
+                    Siddharth is the founder of LUME and your first point of contact. He's built a career on one simple belief: <strong>the right relationship at the right time changes everything.</strong>
+                </p>
+                <p>
+                    Before LUME, Sid spent years connecting founders, executives, and professionals across industries. He noticed a pattern — the most successful people weren't just talented, they had trusted networks they could rely on.
+                </p>
+                <p>
+                    LUME was born from that insight. Today, Sid personally meets every potential member to understand their goals, challenges, and whether LUME can genuinely add value.
+                </p>
+                <div class="sid-stats">
+                    <div class="sid-stat">
+                        <div class="sid-stat-number">500+</div>
+                        <div class="sid-stat-label">Conversations</div>
+                    </div>
+                    <div class="sid-stat">
+                        <div class="sid-stat-number">100+</div>
+                        <div class="sid-stat-label">Active Members</div>
+                    </div>
+                    <div class="sid-stat">
+                        <div class="sid-stat-number">2+</div>
+                        <div class="sid-stat-label">Years Building LUME</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect Section -->
+    <section class="what-to-expect">
+        <div class="what-to-expect-inner">
+            <div class="section-header">
+                <div class="section-eyebrow">The Conversation</div>
+                <h2>What to expect in 30 minutes</h2>
+            </div>
+            <div class="expect-grid">
+                <div class="expect-card">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>Your Story</h3>
+                    <p>Sid wants to understand you — your business, your goals, and what keeps you up at night. This isn't a pitch, it's a conversation.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <path d="M12 17h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Honest Assessment</h3>
+                    <p>Not everyone is a fit for LUME. Sid will be straight with you about whether the community can actually help with what you need.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <path d="M22 4L12 14.01l-3-3"/>
+                        </svg>
+                    </div>
+                    <h3>Clear Next Steps</h3>
+                    <p>If there's a mutual fit, Sid will walk you through exactly how LUME works and what membership looks like. No surprises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Preview Section -->
+    <section class="video-preview">
+        <div class="video-preview-inner">
+            <div class="section-eyebrow">Experience LUME</div>
+            <h2>See what LUME looks like</h2>
+            <p class="video-subtitle">Real moments from our community events and gatherings</p>
+            <div class="video-row">
+                <div class="video-embed">
+                    <iframe src="https://www.instagram.com/reel/DNlNdzeTiLc/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe>
+                </div>
+                <div class="video-embed">
+                    <iframe src="https://www.instagram.com/reel/DNs5HvzZg9z/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="book">
+        <div class="booking-inner">
+            <div class="section-eyebrow">Book Your Call</div>
+            <h2>Ready to have an honest conversation?</h2>
+            <p class="booking-subtitle">
+                Pick a time that works for you. Sid will call you directly — no assistants, no gatekeepers.
+            </p>
+
+            <div class="calendly-embed">
+                <div class="calendly-placeholder">
+                    <h3>Calendly Integration</h3>
+                    <p>Your Calendly booking widget will be embedded here.</p>
+                    <p style="font-size: 0.875rem; color: var(--gray-light);">
+                        Replace this placeholder with:<br>
+                        <code>&lt;div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-LINK"&gt;&lt;/div&gt;</code>
+                    </p>
+                </div>
+            </div>
+
+            <p class="booking-note">
+                Can't find a suitable time? WhatsApp us at +91 98765 43210 and we'll find a slot.
+            </p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-inner">
+            <div class="section-header">
+                <div class="section-eyebrow">Member Stories</div>
+                <h2>What members say about Sid</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "I came in skeptical — I've been pitched a hundred networking groups. The call with Sid was different. He actually listened, asked smart questions, and told me honestly that LUME might not be what I needed right then. That honesty made me trust him more."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Punit</span>
+                            <span class="testimonial-role">Tech Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "The discovery call felt like talking to a friend who happens to know everyone. Sid understood my business challenges better than most consultants I've paid. Joining LUME was an easy decision after that."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Surya</span>
+                            <span class="testimonial-role">LUME Member</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/lume-logo-alt.png" alt="LUME">
+            <span class="footer-logo-text">LUME</span>
+        </div>
+        <p>&copy; 2026 Lume Project Private Limited. All rights reserved.</p>
+    </footer>
+</body>
+</html>

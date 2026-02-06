@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUME | Hyderabad's Invite-Only Growth Community</title>
+    <meta name="description" content="Join Hyderabad's most ambitious professionals. LUME offers curated networking, business consulting & concierge services for founders, executives & HNIs. Apply now.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/lume-logo-alt.png">
+
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #E8443D;
+            --deep-red: #B80000;
+            --black: #000000;
+            --charcoal: #1a1a1a;
+            --dark-gray: #2B323A;
+            --gray: #6b6b6b;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --cream: #FAFAFA;
+
+            --font-display: 'Cormorant', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            color: var(--charcoal);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header/Nav */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .site-header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 40px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: color 0.3s ease;
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .header-link {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header-link:hover {
+            color: var(--coral);
+        }
+
+        .btn-header {
+            background: var(--coral);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .btn-header:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            width: fit-content;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s var(--ease-out-expo) 0.2s forwards;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--coral);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            font-size: clamp(42px, 5vw, 64px);
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--black);
+            margin-bottom: 24px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s var(--ease-out-expo) 0.4s forwards;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+
+        .hero-subheadline {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 480px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s var(--ease-out-expo) 0.6s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s var(--ease-out-expo) 0.8s forwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--coral);
+            color: var(--white);
+            padding: 18px 32px;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.3);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        .hero-visual {
+            position: relative;
+            background: var(--charcoal);
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(26, 26, 26, 0.7) 100%),
+                url('assets/about-team.jpeg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: fadeIn 1s var(--ease-out-expo) 0.3s forwards;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(255, 81, 73, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(255, 81, 73, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-quote {
+            position: absolute;
+            bottom: 60px;
+            left: 60px;
+            right: 60px;
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s var(--ease-out-expo) 1s forwards;
+        }
+
+        .hero-quote blockquote {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-quote cite {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-style: normal;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 0.8s var(--ease-out-expo) 1.2s forwards;
+        }
+
+        .scroll-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--coral);
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 120px 0;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .problem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--coral), transparent);
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 24px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--coral);
+        }
+
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problem-headline {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--black);
+        }
+
+        .problem-text p {
+            font-size: 17px;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .problem-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .problem-text strong {
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: var(--white);
+            border-left: 3px solid var(--coral);
+            padding: 24px 28px;
+            margin-top: 32px;
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-style: italic;
+            color: var(--charcoal);
+            line-height: 1.5;
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .solution-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 80px;
+        }
+
+        .solution-headline {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4vw, 52px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .solution-headline span {
+            color: var(--coral);
+        }
+
+        .solution-subhead {
+            font-size: 18px;
+            color: var(--gray);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .benefit-card {
+            padding: 48px;
+            background: var(--cream);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--coral), var(--deep-red));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-number {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 300;
+            color: var(--coral);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 12px;
+        }
+
+        .benefit-desc {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            padding: 100px 0;
+            background: var(--charcoal);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-proof::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 81, 73, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .proof-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .proof-headline {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 3.5vw, 44px);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .proof-text {
+            font-size: 17px;
+            opacity: 0.8;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .member-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .member-tag {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 400;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .member-tag:hover {
+            background: var(--coral);
+            border-color: var(--coral);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 48px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 120px;
+            color: var(--coral);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--coral), var(--deep-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .author-info {
+            font-size: 14px;
+        }
+
+        .author-name {
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .author-role {
+            opacity: 0.6;
+        }
+
+        /* Video Highlights Section */
+        .video-highlights {
+            padding: 100px 0;
+            background: var(--charcoal);
+        }
+
+        .video-highlights .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .video-highlights .section-label {
+            color: var(--coral);
+        }
+
+        .video-highlights h2 {
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .video-highlights p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            aspect-ratio: 9/16;
+            background: var(--black);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 900px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+
+            .video-card {
+                min-height: 550px;
+            }
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 120px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .form-intro {
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-headline {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .form-subhead {
+            font-size: 17px;
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .trust-points {
+            list-style: none;
+        }
+
+        .trust-points li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 15px;
+            color: var(--dark-gray);
+        }
+
+        .trust-points li:last-child {
+            border-bottom: none;
+        }
+
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-icon svg {
+            width: 12px;
+            height: 12px;
+            color: var(--white);
+        }
+
+        .form-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--coral), var(--deep-red));
+        }
+
+        .form-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--charcoal);
+            background: var(--white);
+            transition: all 0.3s ease;
+            appearance: none;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(255, 81, 73, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: #aaa;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid var(--gray);
+            pointer-events: none;
+        }
+
+        .form-select {
+            cursor: pointer;
+            padding-right: 48px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 20px 32px;
+            background: var(--coral);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.3);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            padding: 100px 0;
+            background: var(--charcoal);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(255, 81, 73, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(255, 81, 73, 0.08) 0%, transparent 50%);
+        }
+
+        .footer-headline {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .footer-subhead {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--white);
+            padding: 18px 32px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--charcoal);
+            border-color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--black);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 120px 40px 80px;
+                order: 1;
+            }
+
+            .hero-visual {
+                order: 2;
+                min-height: 400px;
+            }
+
+            .hero-quote {
+                bottom: 40px;
+                left: 40px;
+                right: 40px;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .problem-content,
+            .proof-content,
+            .form-wrapper {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-intro {
+                position: static;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content {
+                padding: 100px 24px 60px;
+            }
+
+            .hero-badge {
+                font-size: 10px;
+            }
+
+            .problem,
+            .solution,
+            .form-section {
+                padding: 80px 0;
+            }
+
+            .benefit-card {
+                padding: 32px;
+            }
+
+            .form-card {
+                padding: 32px 24px;
+            }
+
+            .testimonial-card {
+                padding: 32px;
+            }
+
+            .testimonial-text {
+                font-size: 20px;
+            }
+        }
+
+        /* Animations on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <a href="#" class="logo">
+            <img src="assets/lume-logo-alt.png" alt="LUME">
+            <span class="logo-text">LUME</span>
+        </a>
+        <div class="header-cta">
+            <a href="https://thelumeproject.com/about/" class="header-link">About</a>
+            <a href="https://thelumeproject.com/networking/" class="header-link">Networking</a>
+            <a href="#apply" class="btn-header">Join Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Invite-Only Community</div>
+            <h1 class="hero-headline">
+                Your network determines your net worth.<br>
+                <em>Is yours working?</em>
+            </h1>
+            <p class="hero-subheadline">
+                LUME is an invite-only community for founders, executives, and professionals who want more than business cards and small talk.
+            </p>
+            <div class="hero-cta">
+                <a href="#apply" class="btn-primary">
+                    Get Exclusive Access
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-line"></span>
+                Scroll to explore
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image">
+                <div class="hero-pattern"></div>
+            </div>
+            <div class="hero-quote">
+                <blockquote>
+                    "LUME isn't a networking club. It's like having a well-connected friend who actually picks up the phone."
+                </blockquote>
+                <cite>— LUME Member</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content">
+                <div class="problem-left reveal">
+                    <span class="section-label">The Reality</span>
+                    <h2 class="problem-headline">
+                        Tired of networking that goes nowhere?
+                    </h2>
+                </div>
+                <div class="problem-text reveal">
+                    <p>
+                        You've done the rounds. Industry meetups. WhatsApp groups. "Let's connect" messages that never convert.
+                    </p>
+                    <p>
+                        Everyone wants something from you. <strong>No one's actually investing in a relationship.</strong>
+                    </p>
+                    <p>
+                        Meanwhile, you're still solving problems alone — hunting for the right CA, the right lawyer, the right intro.
+                    </p>
+                    <div class="highlight-box">
+                        What if your network actually had your back?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <div class="solution-header reveal">
+                <span class="section-label">The Solution</span>
+                <h2 class="solution-headline">
+                    LUME: Your <span>growth partner</span>,<br>not another group.
+                </h2>
+                <p class="solution-subhead">
+                    We're not here to swap business cards. We're here to build relationships that compound.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-number">01</div>
+                    <h3 class="benefit-title">Curated Community</h3>
+                    <p class="benefit-desc">
+                        Founders, CXOs, doctors, lawyers, real estate leaders — vetted, not random. Every member adds value to the room.
+                    </p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-number">02</div>
+                    <h3 class="benefit-title">Experiences, Not Events</h3>
+                    <p class="benefit-desc">
+                        2 immersive gatherings monthly. Quality rooms. Real conversations. No awkward networking games.
+                    </p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-number">03</div>
+                    <h3 class="benefit-title">Concierge Access</h3>
+                    <p class="benefit-desc">
+                        Need a connection? A recommendation? A hard-to-get reservation? Consider it done. We've got your back.
+                    </p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-number">04</div>
+                    <h3 class="benefit-title">Business Consulting</h3>
+                    <p class="benefit-desc">
+                        Direct access to our founder for your specific challenges. Not generic advice — actual help with your bottlenecks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-content">
+                <div class="proof-left reveal">
+                    <span class="section-label" style="color: var(--coral);">Who's Inside</span>
+                    <h2 class="proof-headline">
+                        Built for people like you
+                    </h2>
+                    <p class="proof-text">
+                        Our members include tech executives from top MNCs, real estate developers, senior lawyers, practice-owning doctors, and entrepreneurs scaling serious businesses.
+                    </p>
+                    <div class="member-types">
+                        <span class="member-tag">Founders</span>
+                        <span class="member-tag">CXOs</span>
+                        <span class="member-tag">Doctors</span>
+                        <span class="member-tag">Lawyers</span>
+                        <span class="member-tag">Real Estate</span>
+                        <span class="member-tag">Finance</span>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <p class="testimonial-text">
+                        LUME isn't about leads. It's about relationships that compound over time. The right intro at the right time has changed my business trajectory.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <div class="author-name">Surya</div>
+                            <div class="author-role">LUME Member</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Highlights Section -->
+    <section class="video-highlights">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">See Us In Action</span>
+                <h2>LUME Moments</h2>
+                <p>Real experiences from our community events</p>
+            </div>
+            <div class="video-grid reveal">
+                <div class="video-card">
+                    <iframe src="https://www.instagram.com/reel/DNlNdzeTiLc/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.instagram.com/reel/DQ8gr5RkbYv/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe>
+                </div>
+                <div class="video-card">
+                    <iframe src="https://www.instagram.com/reel/DRPlyuJE5XX/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="apply">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-intro reveal">
+                    <span class="section-label">Join Us</span>
+                    <h2 class="form-headline">
+                        Interested?<br>Let's talk.
+                    </h2>
+                    <p class="form-subhead">
+                        We're selective about who joins — it's what keeps the room valuable. Fill in your details and we'll reach out within 24 hours to see if there's a fit.
+                    </p>
+                    <ul class="trust-points">
+                        <li>
+                            <span class="trust-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
+                            Invite-only community
+                        </li>
+                        <li>
+                            <span class="trust-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
+                            No spam, ever
+                        </li>
+                        <li>
+                            <span class="trust-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
+                            Hyderabad's premium network
+                        </li>
+                        <li>
+                            <span class="trust-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
+                            Response within 24 hours
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-card reveal">
+                    <h3 class="form-title">Request Access</h3>
+                    <p class="form-subtitle">Limited memberships available</p>
+                    <form id="lead-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 98765 43210" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="profession">What do you do? *</label>
+                            <div class="select-wrapper">
+                                <select id="profession" name="profession" class="form-select" required>
+                                    <option value="" disabled selected>Select your profession</option>
+                                    <option value="business-owner">Business Owner / Entrepreneur</option>
+                                    <option value="cxo-executive">CXO / Senior Executive</option>
+                                    <option value="doctor">Doctor / Healthcare Professional</option>
+                                    <option value="lawyer">Lawyer / Legal Professional</option>
+                                    <option value="ca-finance">CA / Finance Professional</option>
+                                    <option value="real-estate">Real Estate Professional</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="location">Where in Hyderabad? *</label>
+                            <div class="select-wrapper">
+                                <select id="location" name="location" class="form-select" required>
+                                    <option value="" disabled selected>Select your area</option>
+                                    <option value="jubilee-banjara">Jubilee Hills / Banjara Hills</option>
+                                    <option value="madhapur-gachibowli">Madhapur / Gachibowli</option>
+                                    <option value="kondapur">Kondapur</option>
+                                    <option value="hitech-city">Hi-Tech City</option>
+                                    <option value="film-nagar">Film Nagar</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">Request Access</button>
+                    </form>
+                    <p class="form-note">
+                        We're selective about who joins. Expect a call within 24 hours to see if there's a fit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2 class="footer-headline reveal">Not ready to apply?</h2>
+            <p class="footer-subhead reveal">
+                See us in action. Attend an upcoming LUME experience as a guest.
+            </p>
+            <a href="#" class="btn-secondary reveal">
+                View Upcoming Events
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="assets/lume-logo-alt.png" alt="LUME" style="height: 48px; margin-bottom: 12px;">
+                <div>LUME</div>
+            </div>
+            <p class="footer-text">© 2026 Lume Project Private Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll behavior
+        const header = document.querySelector('.site-header');
+
+        const handleHeaderScroll = () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+
+        window.addEventListener('scroll', handleHeaderScroll);
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Form submission
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                profession: document.getElementById('profession').value,
+                location: document.getElementById('location').value
+            };
+
+            // Here you would send to your backend/CRM
+            console.log('Form submitted:', formData);
+
+            // Show success state
+            const btn = document.querySelector('.btn-submit');
+            btn.textContent = 'Request Submitted!';
+            btn.style.background = '#28a745';
+            btn.disabled = true;
+
+            // Reset after 3 seconds (for demo)
+            setTimeout(() => {
+                btn.textContent = 'Request Access';
+                btn.style.background = '';
+                btn.disabled = false;
+                document.getElementById('lead-form').reset();
+            }, 3000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
