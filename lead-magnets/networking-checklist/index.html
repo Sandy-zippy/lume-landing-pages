@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Checklist: The High-Value Networking Checklist | LUME</title>
+    <meta name="description" content="Download the free one-page checklist: What to do before, during, and after every networking interaction to build relationships that compound.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/lume-logo-alt.png">
+
+    <style>
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #E8443D;
+            --charcoal: #1a1a1a;
+            --dark-gray: #2B323A;
+            --gray: #6b6b6b;
+            --white: #ffffff;
+            --cream: #FAFAFA;
+
+            --font-display: 'Cormorant', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--charcoal);
+            background: var(--charcoal);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img { height: 40px; width: auto; }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+            background: var(--charcoal);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 81, 73, 0.1);
+            border: 1px solid rgba(255, 81, 73, 0.3);
+            color: var(--coral);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 3.5vw, 46px);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            color: var(--coral);
+        }
+
+        .hero-subheadline {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 450px;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .checklist-preview {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .checklist-preview li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .checklist-preview li::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--coral);
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .social-proof strong { color: var(--coral); }
+
+        /* Form */
+        .hero-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: var(--white);
+        }
+
+        .form-card {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .checklist-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--coral) 0%, var(--coral-dark) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 15px 40px rgba(255, 81, 73, 0.3);
+        }
+
+        .checklist-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .form-title {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .form-group { margin-bottom: 18px; }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 6px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--charcoal);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(255, 81, 73, 0.1);
+        }
+
+        .form-input::placeholder { color: #aaa; }
+
+        .btn-download {
+            width: 100%;
+            padding: 16px 32px;
+            background: var(--coral);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-download:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.3);
+        }
+
+        .btn-download svg { width: 20px; height: 20px; }
+
+        .form-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 14px;
+        }
+
+        /* Success */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-message.active { display: block; }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .success-icon svg { width: 32px; height: 32px; color: white; }
+
+        .success-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--charcoal);
+            margin-bottom: 12px;
+        }
+
+        .success-text {
+            font-size: 15px;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .btn-download-now {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--coral);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download-now:hover { background: var(--coral-dark); }
+
+        #lead-form.hidden { display: none; }
+
+        /* Sections Preview */
+        .sections-preview {
+            padding: 80px 60px;
+            background: var(--cream);
+        }
+
+        .sections-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--coral);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 48px;
+        }
+
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .phase-card {
+            background: var(--white);
+            padding: 32px 28px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .phase-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--coral);
+        }
+
+        .phase-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 81, 73, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .phase-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--coral);
+        }
+
+        .phase-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+        }
+
+        .phase-count {
+            font-size: 13px;
+            color: var(--coral);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .phase-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .bottom-cta {
+            padding: 80px 60px;
+            background: var(--charcoal);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(26px, 3vw, 34px);
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 28px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 14px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--charcoal);
+            border-color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 60px;
+            background: var(--charcoal);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo img { height: 32px; }
+        .footer-logo span {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--white);
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-content { padding: 100px 40px 60px; order: 1; }
+            .hero-form { padding: 40px; order: 2; }
+            .phases-grid { grid-template-columns: 1fr; }
+            .sections-preview, .bottom-cta { padding: 60px 24px; }
+        }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 16px 20px; }
+            .hero-content { padding: 80px 24px 40px; }
+            .hero-form { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/lume-logo-alt.png" alt="LUME">
+            <span class="logo-text">LUME</span>
+        </a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Free One-Page Checklist</div>
+            <h1 class="hero-headline">
+                The High-Value<br>
+                <em>Networking Checklist</em>
+            </h1>
+            <p class="hero-subheadline">
+                A simple, actionable checklist for what to do before, during, and after every networking interaction. Turn random encounters into relationships that compound.
+            </p>
+
+            <ul class="checklist-preview">
+                <li>Research and prepare talking points</li>
+                <li>Ask the right questions during conversations</li>
+                <li>Follow up within 48 hours (with templates)</li>
+                <li>Add value before asking for anything</li>
+                <li>Track and nurture new connections</li>
+            </ul>
+
+            <div class="social-proof">
+                <strong>1-page PDF</strong> | Print it, save it, use it every time
+            </div>
+        </div>
+
+        <div class="hero-form">
+            <div class="form-card">
+                <div class="form-header">
+                    <div class="checklist-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                        </svg>
+                    </div>
+                    <h2 class="form-title">Get Your Checklist</h2>
+                    <p class="form-subtitle">Instant download</p>
+                </div>
+
+                <form id="lead-form">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <button type="submit" class="btn-download">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download Free Checklist
+                    </button>
+                </form>
+
+                <div class="success-message" id="success-message">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </div>
+                    <h3 class="success-title">Your checklist is ready!</h3>
+                    <p class="success-text">Click below to download.</p>
+                    <a href="networking-checklist.pdf" download class="btn-download-now">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download PDF
+                    </a>
+                </div>
+
+                <p class="form-note">No spam. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sections-preview">
+        <div class="sections-container">
+            <span class="section-label">What's Included</span>
+            <h2 class="section-title">Three phases, one powerful system</h2>
+
+            <div class="phases-grid">
+                <div class="phase-card">
+                    <div class="phase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="phase-title">Before</h3>
+                    <p class="phase-count">6 action items</p>
+                    <p class="phase-desc">Research, prepare talking points, set intentions, and know what you want to give and get.</p>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 010 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="phase-title">During</h3>
+                    <p class="phase-count">8 action items</p>
+                    <p class="phase-desc">Questions to ask, signals to watch for, and how to have memorable conversations.</p>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="phase-title">After</h3>
+                    <p class="phase-count">7 action items</p>
+                    <p class="phase-desc">Follow-up templates, value-adds, and the 90-day nurture system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bottom-cta">
+        <div class="cta-content">
+            <h2 class="cta-title">Want the complete system?</h2>
+            <p class="cta-text">This checklist is from our 29-page HNI Networking Playbook. Get the full guide with frameworks, examples, and worksheets.</p>
+            <a href="../hni-networking-playbook/index.html" class="btn-secondary">
+                Get the Full Playbook
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="../../assets/lume-logo-alt.png" alt="LUME">
+            <span>LUME</span>
+        </div>
+        <p class="footer-text">2026 Lume Project Private Limited. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                source: 'networking-checklist'
+            };
+            console.log('Lead captured:', formData);
+            document.getElementById('lead-form').classList.add('hidden');
+            document.getElementById('success-message').classList.add('active');
+        });
+    </script>
+</body>
+</html>
