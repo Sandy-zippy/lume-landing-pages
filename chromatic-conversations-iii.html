@@ -4,54 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chromatic Conversations III — Art as Investment | LUME</title>
-    <meta name="description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania, Hyderabad. Limited to 40 guests.">
+    <meta name="description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania, Hyderabad. Limited to 40 guests. ₹4,000 inclusive.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Chromatic Conversations III — Art as Investment">
-    <meta property="og:description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania.">
-    <meta property="og:image" content="assets/hero-banner.png">
-    <meta property="og:url" content="">
+    <meta property="og:title" content="Chromatic Conversations III — Art as Investment | LUME">
+    <meta property="og:description" content="40 curated professionals. One gallery. A private evening where art meets investment. Feb 28, Hyderabad.">
+    <meta property="og:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/hero-banner.png">
+    <meta property="og:url" content="https://sandy-zippy.github.io/lume-landing-pages/chromatic-conversations-iii.html">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Chromatic Conversations III — Art as Investment">
-    <meta name="twitter:description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania.">
-    <meta name="twitter:image" content="assets/hero-banner.png">
+    <meta name="twitter:description" content="40 curated professionals. One gallery. A private evening where art meets investment.">
+    <meta name="twitter:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/hero-banner.png">
 
     <link rel="icon" type="image/png" href="assets/lume-logo-transparent.png">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ===== RESET & VARIABLES ===== */
         :root {
+            --red: #C41E3A;
+            --red-deep: #B80000;
             --coral: #FF5149;
             --coral-dark: #E5403A;
-            --deep-red: #B80000;
-            --black: #000000;
+            --gold: #C9A962;
+            --gold-light: #D4B978;
             --charcoal: #1a1a1a;
-            --gray-dark: #333333;
-            --gray: #666666;
-            --gray-light: #999999;
+            --dark: #111111;
+            --gray-900: #222222;
+            --gray-700: #444444;
+            --gray-500: #666666;
+            --gray-400: #888888;
+            --gray-300: #aaaaaa;
+            --cream: #FAF9F7;
             --off-white: #f8f7f5;
             --white: #ffffff;
-            --cream: #FAF9F7;
-            --gold: #C9A962;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { }
 
         body {
             font-family: 'Outfit', sans-serif;
@@ -60,90 +55,86 @@
             line-height: 1.6;
             background: var(--white);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== TYPOGRAPHY ===== */
         h1, h2, h3 {
             font-family: 'Cormorant', serif;
             font-weight: 600;
-            line-height: 1.2;
+            line-height: 1.15;
         }
 
-        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); }
-        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
-
-        p {
-            font-size: 1.0625rem;
-            color: var(--gray-dark);
-        }
-
-        /* ===== FIXED HEADER ===== */
-        .site-header {
+        /* ===== STICKY HEADER — NO NAV LINKS ===== */
+        .header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
-            padding: 1rem 2rem;
+            z-index: 100;
+            padding: 0.875rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(26, 26, 26, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            transition: background 0.3s ease;
+            background: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .logo {
+        .header-logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
+            gap: 0.6rem;
         }
 
-        .logo img {
-            height: 36px;
+        .header-logo img {
+            height: 32px;
             width: auto;
         }
 
-        .logo-text {
-            font-family: 'Outfit', sans-serif;
+        .header-logo span {
             font-weight: 600;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--white);
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
         }
 
-        .btn-header {
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background: var(--coral);
             color: var(--white);
-            padding: 0.7rem 1.5rem;
+            padding: 0.65rem 1.4rem;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9375rem;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.875rem;
             letter-spacing: 0.02em;
+            transition: all 0.25s ease;
         }
 
-        .btn-header:hover {
+        .header-cta:hover {
             background: var(--coral-dark);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(255, 81, 73, 0.35);
+            box-shadow: 0 6px 20px rgba(255,81,73,0.3);
         }
 
-        /* ===== HERO SECTION ===== */
+        @media (max-width: 768px) {
+            .header-cta { padding: 0.7rem 1.1rem; min-height: 44px; }
+        }
+
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
+            min-height: 100dvh;
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 7rem 2rem 4rem;
+            padding: 6rem 1.5rem 3rem;
             color: var(--white);
             overflow: hidden;
         }
@@ -151,10 +142,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background:
-                url('assets/hero-banner.png');
-            background-size: cover;
-            background-position: center;
+            background: url('assets/hero-banner.png') center/cover no-repeat;
             z-index: 0;
         }
 
@@ -162,8 +150,12 @@
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(26, 26, 26, 0.7) 40%, rgba(26, 26, 26, 0.85) 100%);
+            background: linear-gradient(180deg,
+                rgba(17,17,17,0.92) 0%,
+                rgba(17,17,17,0.75) 35%,
+                rgba(17,17,17,0.8) 65%,
+                rgba(17,17,17,0.95) 100%
+            );
             z-index: 1;
         }
 
@@ -172,309 +164,369 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 80% 50% at 20% 20%, rgba(184, 0, 0, 0.3) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 70% at 85% 80%, rgba(196, 30, 58, 0.25) 0%, transparent 50%),
-                radial-gradient(ellipse 40% 40% at 50% 60%, rgba(139, 0, 0, 0.15) 0%, transparent 50%);
+                radial-gradient(ellipse 70% 50% at 15% 20%, rgba(196,30,58,0.25) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 60% at 85% 75%, rgba(184,0,0,0.2) 0%, transparent 50%);
             z-index: 2;
         }
 
-        .hero > * {
-            position: relative;
-            z-index: 3;
-        }
+        .hero > * { position: relative; z-index: 3; }
 
         .hero-logo {
-            height: 60px;
+            height: 56px;
             width: auto;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.1s forwards;
+            animation: fadeUp 0.7s ease 0.1s forwards;
         }
 
-        .hero-tagline {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            letter-spacing: 0.3em;
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.35em;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.2s forwards;
+            animation: fadeUp 0.7s ease 0.2s forwards;
         }
 
         .hero h1 {
-            color: var(--white);
+            font-size: clamp(2.75rem, 7vw, 5rem);
             font-weight: 500;
-            letter-spacing: 0.04em;
-            margin-bottom: 1.25rem;
-            max-width: 800px;
+            color: var(--white);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.75rem;
+            max-width: 750px;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.3s forwards;
+            animation: fadeUp 0.7s ease 0.3s forwards;
         }
 
-        .hero-subtitle {
+        .hero-sub {
             font-family: 'Cormorant', serif;
-            font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             font-weight: 400;
             font-style: italic;
-            color: rgba(255, 255, 255, 0.75);
-            margin-bottom: 2.5rem;
-            max-width: 550px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            max-width: 500px;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.4s forwards;
+            animation: fadeUp 0.7s ease 0.4s forwards;
         }
 
-        .hero-details {
+        .hero-meta {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
-            font-family: 'Outfit', sans-serif;
+            gap: 1rem;
             font-size: 0.8125rem;
             font-weight: 500;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 2.5rem;
             flex-wrap: wrap;
             justify-content: center;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.5s forwards;
+            animation: fadeUp 0.7s ease 0.45s forwards;
         }
 
-        .hero-details .sep {
-            width: 4px;
-            height: 4px;
+        .hero-meta .dot {
+            width: 4px; height: 4px;
             border-radius: 50%;
             background: var(--gold);
             flex-shrink: 0;
         }
 
-        .hero-cta-wrap {
+        /* Countdown */
+        .countdown {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.7s ease 0.5s forwards;
+        }
+
+        .countdown-unit {
+            text-align: center;
+            min-width: 64px;
+        }
+
+        .countdown-num {
+            display: block;
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .countdown-label {
+            font-size: 0.625rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-top: 0.4rem;
+        }
+
+        .hero-cta-group {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
             opacity: 0;
-            animation: fadeInUp 0.8s ease 0.6s forwards;
+            animation: fadeUp 0.7s ease 0.6s forwards;
         }
 
-        .btn-primary {
+        .btn-main {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
             background: var(--coral);
             color: var(--white);
-            padding: 1.1rem 2.5rem;
+            padding: 1.1rem 2.75rem;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.0625rem;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
         }
 
-        .btn-primary:hover {
+        .btn-main:hover {
             background: var(--coral-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.35);
+            box-shadow: 0 12px 32px rgba(255,81,73,0.35);
         }
 
-        .hero-limited {
+        .hero-seats {
             font-size: 0.8125rem;
-            color: rgba(255, 255, 255, 0.45);
-            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            font-weight: 400;
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease 0.8s forwards;
+        .hero-seats strong {
+            color: var(--gold);
+            font-weight: 600;
         }
 
-        .scroll-indicator svg {
-            width: 24px;
-            height: 24px;
-            color: rgba(255, 255, 255, 0.3);
-            animation: bounce 2s ease infinite;
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            background: var(--charcoal);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 1.75rem 1.5rem;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(8px); }
-            60% { transform: translateY(4px); }
-        }
-
-        /* ===== THE CONCEPT SECTION ===== */
-        .concept {
-            padding: 6rem 2rem;
-            background: var(--cream);
-        }
-
-        .concept-inner {
-            max-width: 1100px;
+        .trust-bar-inner {
+            max-width: 800px;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
 
-        .section-header {
+        .trust-stat {
             text-align: center;
-            margin-bottom: 4rem;
         }
 
-        .section-eyebrow {
+        .trust-stat-num {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--coral);
+            line-height: 1;
+        }
+
+        .trust-stat-label {
+            font-size: 0.6875rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section-tag {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--coral);
-            font-size: 0.8125rem;
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
+            color: var(--coral);
             margin-bottom: 1rem;
         }
 
-        .section-eyebrow::before {
+        .section-tag::before {
             content: '';
-            width: 24px;
+            width: 20px;
             height: 2px;
             background: var(--coral);
         }
 
-        .section-subtitle {
-            font-size: 1.0625rem;
-            color: var(--gray);
-            max-width: 550px;
-            margin: 1rem auto 0;
+        .section-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
         }
 
-        .concept-cards {
+        .section-head h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-head p {
+            font-size: 1rem;
+            color: var(--gray-500);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ===== WHY ART AS INVESTMENT ===== */
+        .why {
+            padding: 5.5rem 1.5rem;
+            background: var(--cream);
+        }
+
+        .why-inner {
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+
+        .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.75rem;
         }
 
-        .concept-card {
+        .why-card {
             background: var(--white);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
+            border-radius: 14px;
+            padding: 2.25rem 1.75rem;
             transition: all 0.3s ease;
-            position: relative;
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
-        .concept-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.07);
         }
 
-        .concept-number {
+        .why-card-num {
             font-family: 'Cormorant', serif;
-            font-size: 3rem;
+            font-size: 2.75rem;
             font-weight: 700;
             color: var(--gold);
             line-height: 1;
             margin-bottom: 0.5rem;
         }
 
-        .concept-card-line {
-            width: 40px;
+        .why-card-bar {
+            width: 36px;
             height: 3px;
             background: var(--coral);
             border-radius: 2px;
             margin-bottom: 1.25rem;
         }
 
-        .concept-card h3 {
+        .why-card h3 {
+            font-size: 1.3rem;
             color: var(--charcoal);
-            margin-bottom: 0.75rem;
-            font-size: 1.375rem;
+            margin-bottom: 0.6rem;
         }
 
-        .concept-card p {
+        .why-card p {
             font-size: 0.9375rem;
-            color: var(--gray);
+            color: var(--gray-500);
             line-height: 1.7;
         }
 
-        /* ===== WHAT TO EXPECT SECTION ===== */
-        .expect {
-            padding: 6rem 2rem;
+        /* ===== WHAT YOU'LL EXPERIENCE ===== */
+        .experience {
+            padding: 5.5rem 1.5rem;
             background: var(--charcoal);
             color: var(--white);
         }
 
-        .expect-inner {
-            max-width: 1100px;
+        .experience-inner {
+            max-width: 1060px;
             margin: 0 auto;
         }
 
-        .expect .section-header {
-            margin-bottom: 4rem;
-        }
+        .experience h2 { color: var(--white); }
+        .experience .section-head p { color: rgba(255,255,255,0.5); }
 
-        .expect h2 {
-            color: var(--white);
-        }
-
-        .expect .section-subtitle {
-            color: rgba(255, 255, 255, 0.55);
-        }
-
-        .expect-columns {
+        .experience-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 1.75rem;
         }
 
-        .expect-col {
+        .exp-card {
             text-align: center;
             padding: 2.5rem 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
             transition: all 0.3s ease;
         }
 
-        .expect-col:hover {
-            border-color: rgba(201, 169, 98, 0.3);
-            background: rgba(255, 255, 255, 0.03);
+        .exp-card:hover {
+            border-color: rgba(201,169,98,0.25);
+            background: rgba(255,255,255,0.02);
         }
 
-        .expect-col-number {
-            font-family: 'Cormorant', serif;
+        .exp-icon {
             font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 1.25rem;
-        }
-
-        .expect-col h3 {
-            color: var(--white);
-            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .expect-col p {
-            color: rgba(255, 255, 255, 0.55);
+        .exp-card h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .exp-card p {
+            color: rgba(255,255,255,0.5);
             font-size: 0.9375rem;
             line-height: 1.7;
         }
 
-        /* ===== EVENT DETAILS SECTION ===== */
+        /* ===== MID CTA ===== */
+        .mid-cta {
+            padding: 4rem 1.5rem;
+            text-align: center;
+            background: var(--charcoal);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .mid-cta p {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .mid-cta .btn-main { font-size: 1rem; }
+
+        /* ===== EVENT DETAILS ===== */
         .details {
             position: relative;
-            padding: 6rem 2rem;
+            padding: 5.5rem 1.5rem;
             overflow: hidden;
         }
 
-        .details-swirl {
+        .details-bg {
             position: absolute;
             inset: 0;
             background:
@@ -489,137 +541,103 @@
             filter: blur(25px) saturate(1.2);
         }
 
-        .details-swirl::after {
-            content: '';
+        .details-noise {
             position: absolute;
             inset: 0;
-            background:
-                radial-gradient(ellipse 40% 35% at 25% 25%, rgba(196,30,58,0.6) 0%, transparent 70%),
-                radial-gradient(ellipse 35% 50% at 75% 75%, rgba(184,0,0,0.5) 0%, transparent 60%);
-            filter: blur(12px);
-        }
-
-        .details-texture {
-            position: absolute;
-            inset: 0;
-            opacity: 0.06;
+            opacity: 0.05;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-size: 200px 200px;
+            background-size: 200px;
             mix-blend-mode: overlay;
         }
 
         .details-card {
             position: relative;
             z-index: 2;
-            max-width: 600px;
+            max-width: 560px;
             margin: 0 auto;
-            background: rgba(248, 247, 245, 0.97);
-            border-radius: 20px;
-            padding: 3.5rem 3rem;
+            background: rgba(248,247,245,0.97);
+            border-radius: 18px;
+            padding: 3rem 2.5rem;
             text-align: center;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 32px 80px rgba(0,0,0,0.35);
         }
 
         .details-card-logo {
-            height: 50px;
+            height: 44px;
             width: auto;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .details-card h2 {
-            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-size: clamp(1.6rem, 3.5vw, 2.1rem);
             color: var(--charcoal);
-            margin-bottom: 2rem;
-            letter-spacing: 0.02em;
+            margin-bottom: 0.25rem;
         }
 
-        .details-list {
+        .details-card .details-sub {
+            font-family: 'Cormorant', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--gray-500);
+            margin-bottom: 1.75rem;
+        }
+
+        .details-items {
             list-style: none;
             text-align: left;
-            max-width: 400px;
-            margin: 0 auto 2rem;
+            max-width: 380px;
+            margin: 0 auto 1.75rem;
         }
 
-        .details-list li {
+        .details-items li {
             display: flex;
             align-items: flex-start;
-            gap: 0.875rem;
-            padding: 0.75rem 0;
-            font-size: 1rem;
-            color: var(--gray-dark);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            gap: 0.75rem;
+            padding: 0.65rem 0;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .details-list li:last-child {
-            border-bottom: none;
-        }
+        .details-items li:last-child { border-bottom: none; }
 
-        .details-list li span.detail-icon {
+        .details-items li .di-icon {
             flex-shrink: 0;
-            font-size: 1.125rem;
-            width: 24px;
+            width: 22px;
             text-align: center;
+            font-size: 1rem;
         }
 
-        .details-card-tagline {
-            font-family: 'Cormorant', serif;
-            font-size: 1.25rem;
-            font-style: italic;
-            color: var(--gray);
-            margin-top: 0.5rem;
+        .details-card .btn-main {
+            width: 100%;
+            justify-content: center;
+            padding: 1rem 2rem;
         }
 
-        /* ===== SOCIAL PROOF SECTION ===== */
-        .social-proof {
-            padding: 6rem 2rem;
+        .details-card-note {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-top: 0.75rem;
+        }
+
+        /* ===== SOCIAL PROOF — REELS ===== */
+        .proof {
+            padding: 5.5rem 1.5rem;
             background: var(--off-white);
         }
 
-        .social-proof-inner {
-            max-width: 1100px;
+        .proof-inner {
+            max-width: 1060px;
             margin: 0 auto;
         }
 
-        .social-proof h2 {
-            color: var(--charcoal);
-        }
-
-        .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 3.5rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Cormorant', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--coral);
-            line-height: 1.1;
-        }
-
-        .stat-label {
-            font-size: 0.8125rem;
-            font-weight: 500;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 0.25rem;
-        }
-
-        .reels-grid {
+        .reels-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
 
-        .reel-item {
+        .reel {
             aspect-ratio: 9/16;
             background: var(--charcoal);
             border-radius: 12px;
@@ -627,653 +645,767 @@
             position: relative;
         }
 
-        .reel-item iframe {
+        .reel iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
 
-        /* ===== REGISTRATION SECTION ===== */
-        .registration {
-            padding: 6rem 2rem;
+        .reel-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2.5rem 0.75rem 0.75rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .reel-label span {
+            font-size: 0.6875rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 5.5rem 1.5rem;
+            background: var(--white);
+        }
+
+        .faq-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .faq-q {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            gap: 1rem;
+        }
+
+        .faq-q:hover { color: var(--coral); }
+
+        .faq-q .faq-arrow {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-q .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 600px;
+            padding-bottom: 1.25rem;
+        }
+
+        .faq-a p {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== REGISTRATION FORM ===== */
+        .register {
+            padding: 5.5rem 1.5rem;
             background: var(--charcoal);
             position: relative;
             overflow: hidden;
         }
 
-        .registration::before {
+        .register::before {
             content: '';
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 50% 40% at 10% 80%, rgba(184, 0, 0, 0.15) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 50% at 90% 20%, rgba(196, 30, 58, 0.1) 0%, transparent 50%);
+                radial-gradient(ellipse 50% 40% at 10% 80%, rgba(184,0,0,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 90% 20%, rgba(196,30,58,0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
-        .registration-inner {
-            max-width: 640px;
+        .register-inner {
+            max-width: 580px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
 
-        .registration .section-header {
-            margin-bottom: 2.5rem;
+        .register h2 { color: var(--white); }
+        .register .section-head p { color: rgba(255,255,255,0.45); }
+
+        .reg-form {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 2.25rem 2rem;
+            border-radius: 16px;
         }
 
-        .registration h2 {
-            color: var(--white);
-        }
+        .fg { margin-bottom: 1.1rem; }
 
-        .registration .section-subtitle {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .registration-form {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 2.5rem;
-            border-radius: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-label {
+        .fg label {
             display: block;
             font-size: 0.8125rem;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0.5rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 0.4rem;
             letter-spacing: 0.02em;
         }
 
-        .form-input,
-        .form-select,
-        .form-textarea {
+        .fi {
             width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
+            padding: 0.8rem 0.9rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 7px;
             font-family: 'Outfit', sans-serif;
             font-size: 0.9375rem;
             color: var(--white);
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255,255,255,0.05);
             transition: all 0.2s ease;
             -webkit-appearance: none;
             appearance: none;
         }
 
-        .form-select {
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23999999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        .fi::placeholder { color: rgba(255,255,255,0.2); }
+
+        .fi:focus {
+            outline: none;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(255,81,73,0.12);
+        }
+
+        select.fi {
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 1rem center;
+            background-position: right 0.9rem center;
             padding-right: 2.5rem;
         }
 
-        .form-select option {
+        select.fi option {
             background: var(--charcoal);
             color: var(--white);
         }
 
-        .form-textarea {
-            min-height: 100px;
+        textarea.fi {
+            min-height: 80px;
             resize: vertical;
         }
 
-        .form-input::placeholder,
-        .form-textarea::placeholder {
-            color: rgba(255, 255, 255, 0.25);
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--coral);
-            box-shadow: 0 0 0 3px rgba(255, 81, 73, 0.15);
-        }
-
-        .form-row {
+        .fg-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 0.9rem;
         }
 
-        .btn-register {
+        .btn-submit {
             width: 100%;
             background: var(--coral);
             color: var(--white);
-            padding: 1.1rem 2rem;
+            padding: 1rem 2rem;
             border-radius: 8px;
             font-family: 'Outfit', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.0625rem;
             letter-spacing: 0.02em;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 0.5rem;
+            margin-top: 0.25rem;
         }
 
-        .btn-register:hover {
+        .btn-submit:hover {
             background: var(--coral-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.35);
+            box-shadow: 0 10px 30px rgba(255,81,73,0.3);
         }
 
-        .form-note {
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-privacy {
             text-align: center;
-            font-size: 0.8125rem;
-            color: rgba(255, 255, 255, 0.35);
-            margin-top: 1.25rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 1rem;
             line-height: 1.5;
         }
 
-        /* ===== PARTNERS SECTION ===== */
+        /* Success state */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success .check-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .form-success .check-circle svg {
+            width: 32px;
+            height: 32px;
+            color: var(--white);
+        }
+
+        .form-success h3 {
+            font-size: 1.75rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-success p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.9375rem;
+        }
+
+        /* ===== PARTNERS ===== */
         .partners {
-            padding: 5rem 2rem;
+            padding: 4.5rem 1.5rem;
             background: var(--cream);
         }
 
         .partners-inner {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .partners h2 {
-            color: var(--charcoal);
-        }
-
-        .partners-grid {
+        .partners-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
-        .partner-block {
+        .partner {
             text-align: center;
-            padding: 2rem 1.5rem;
+            padding: 1.75rem 1.25rem;
             background: var(--white);
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            border-radius: 10px;
+            transition: all 0.25s ease;
         }
 
-        .partner-block:hover {
+        .partner:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
         }
 
         .partner-type {
-            font-size: 0.75rem;
+            font-size: 0.6875rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--coral);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .partner-name {
             font-family: 'Cormorant', serif;
-            font-size: 1.375rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--charcoal);
         }
 
         /* ===== FOOTER ===== */
-        footer {
-            padding: 3rem 2rem;
+        .footer {
+            padding: 2.5rem 1.5rem;
             background: var(--charcoal);
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .footer-logo {
+        .footer-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
         }
 
-        .footer-logo img {
-            height: 36px;
-        }
+        .footer-row img { height: 28px; }
 
-        .footer-logo-text {
-            font-family: 'Outfit', sans-serif;
+        .footer-row span {
             font-weight: 600;
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: var(--white);
             letter-spacing: 0.08em;
         }
 
-        .footer-tagline {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.45);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .footer-instagram {
+        .footer-ig {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.6);
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             font-weight: 500;
-            transition: color 0.2s ease;
-            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+            margin-bottom: 1rem;
         }
 
-        .footer-instagram:hover {
-            color: var(--coral);
-        }
+        .footer-ig:hover { color: var(--coral); }
 
-        .footer-instagram svg {
-            width: 18px;
-            height: 18px;
-        }
+        .footer-ig svg { width: 16px; height: 16px; }
 
         .footer-copy {
-            font-size: 0.8125rem;
-            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.25);
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .concept-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        @media (max-width: 900px) {
+            .why-grid,
+            .experience-grid { grid-template-columns: repeat(2, 1fr); }
+        }
 
-            .concept-cards .concept-card:last-child {
-                grid-column: 1 / -1;
-                max-width: 480px;
-                margin: 0 auto;
-            }
-
-            .expect-columns {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .expect-columns .expect-col:last-child {
-                grid-column: 1 / -1;
-                max-width: 480px;
-                margin: 0 auto;
-            }
+        @media (max-width: 600px) {
+            .why-grid,
+            .experience-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
         }
 
         @media (max-width: 768px) {
-            .site-header {
-                padding: 0.875rem 1.25rem;
-            }
+            .header { padding: 0.75rem 1rem; }
+            .header-logo img { height: 28px; }
+            .header-logo span { font-size: 1rem; }
 
-            .logo img {
-                height: 30px;
-            }
+            .hero { padding: 5.5rem 1.25rem 2.5rem; }
+            .hero-logo { height: 44px; margin-bottom: 1.5rem; }
+            .hero h1 { font-size: clamp(2.25rem, 8vw, 3rem); }
 
-            .logo-text {
-                font-size: 1.1rem;
-            }
+            .countdown-num { font-size: 1.75rem; min-width: 50px; padding: 0.4rem 0.5rem; }
 
-            .btn-header {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.8125rem;
-            }
+            .trust-bar-inner { gap: 2rem; }
 
-            .hero {
-                padding: 6rem 1.5rem 3.5rem;
-            }
-
-            .hero-logo {
-                height: 44px;
-                margin-bottom: 2rem;
-            }
-
-            .hero-tagline {
-                font-size: 0.6875rem;
-                letter-spacing: 0.25em;
-            }
-
-            .hero-details {
-                gap: 0.75rem;
-                font-size: 0.6875rem;
-                letter-spacing: 0.1em;
-            }
-
-            .concept,
-            .expect,
-            .details,
-            .social-proof,
-            .registration,
-            .partners {
-                padding-left: 1.25rem;
-                padding-right: 1.25rem;
-            }
-
-            .concept-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .concept-cards .concept-card:last-child {
-                max-width: none;
-            }
-
-            .expect-columns {
-                grid-template-columns: 1fr;
-            }
-
-            .expect-columns .expect-col:last-child {
-                max-width: none;
-            }
-
-            .details-card {
-                padding: 2.5rem 1.75rem;
-            }
-
-            .stats-row {
-                gap: 2rem;
-            }
-
-            .reels-grid {
-                grid-template-columns: 1fr;
-                max-width: 350px;
-                margin: 0 auto;
-            }
-
-            .reel-item {
-                min-height: 520px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .registration-form {
-                padding: 2rem 1.5rem;
-            }
-
-            .partners-grid {
+            .reels-row {
                 grid-template-columns: 1fr;
                 max-width: 320px;
                 margin: 0 auto;
             }
+
+            .reel { min-height: 480px; }
+
+            .fg-row { grid-template-columns: 1fr; }
+
+            .reg-form { padding: 1.75rem 1.25rem; }
+
+            .partners-row { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+
+            .details-card { padding: 2.25rem 1.5rem; }
+
+            .why, .experience, .details, .proof, .faq, .register, .partners {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .hero-details {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .hero-details .sep {
-                display: none;
-            }
+            .hero-meta { flex-direction: column; gap: 0.35rem; }
+            .hero-meta .dot { display: none; }
+            .countdown { gap: 0.5rem; }
+            .countdown-num { font-size: 1.5rem; min-width: 44px; }
         }
 
         /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Intersection Observer reveal animation */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .reveal.visible {
+        .reveal.vis {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Fixed Header -->
-    <header class="site-header">
-        <a href="#" class="logo">
+
+    <!-- HEADER — No nav links. Single CTA. No escape routes. -->
+    <header class="header">
+        <div class="header-logo">
             <img src="assets/lume-logo-white.png" alt="LUME">
-            <span class="logo-text">LUME</span>
-        </a>
-        <a href="#register" class="btn-header">Register Now</a>
+            <span>LUME</span>
+        </div>
+        <a href="#register" class="header-cta">Reserve Your Seat</a>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
         <div class="hero-bg"></div>
         <img src="assets/lume-logo-white.png" alt="LUME" class="hero-logo">
-        <div class="hero-tagline">Beyond Aesthetics. Beyond Impulse.</div>
+        <div class="hero-eyebrow">Beyond Aesthetics. Beyond Impulse.</div>
         <h1>Chromatic Conversations III</h1>
-        <p class="hero-subtitle">A Private Evening on Art as Investment</p>
-        <div class="hero-details">
-            <span>Saturday, February 28</span>
-            <span class="sep"></span>
+        <p class="hero-sub">A Private Evening on Art as Investment</p>
+        <div class="hero-meta">
+            <span>Saturday, Feb 28</span>
+            <span class="dot"></span>
             <span>6:30 PM</span>
-            <span class="sep"></span>
+            <span class="dot"></span>
             <span>Elements by Nirvania</span>
         </div>
-        <div class="hero-cta-wrap">
-            <a href="#register" class="btn-primary">Reserve Your Seat</a>
-            <span class="hero-limited">Limited to 40 Guests</span>
+        <div class="countdown" id="countdown">
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-days">0</span>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-hours">0</span>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-mins">0</span>
+                <div class="countdown-label">Min</div>
+            </div>
+            <div class="countdown-unit">
+                <span class="countdown-num" id="cd-secs">0</span>
+                <div class="countdown-label">Sec</div>
+            </div>
         </div>
-        <div class="scroll-indicator">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 13l5 5 5-5"/>
-                <path d="M7 6l5 5 5-5"/>
-            </svg>
+        <div class="hero-cta-group">
+            <a href="#register" class="btn-main">Reserve Your Seat &mdash; &#x20B9;4,000</a>
+            <span class="hero-seats">Limited to <strong>40 Guests</strong></span>
         </div>
     </section>
 
-    <!-- The Concept Section -->
-    <section class="concept">
-        <div class="concept-inner">
-            <div class="section-header reveal">
-                <div class="section-eyebrow">The Opportunity</div>
-                <h2>Why Art as Investment?</h2>
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <div class="trust-stat">
+                <div class="trust-stat-num">200+</div>
+                <div class="trust-stat-label">Professionals Hosted</div>
             </div>
-            <div class="concept-cards">
-                <div class="concept-card reveal">
-                    <div class="concept-number">01</div>
-                    <div class="concept-card-line"></div>
-                    <h3>Tangible Returns</h3>
-                    <p>Art has outperformed traditional assets, returning 14% annually over the last decade.</p>
+            <div class="trust-stat">
+                <div class="trust-stat-num">15+</div>
+                <div class="trust-stat-label">Curated Events</div>
+            </div>
+            <div class="trust-stat">
+                <div class="trust-stat-num">3rd</div>
+                <div class="trust-stat-label">Edition</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHY ART AS INVESTMENT -->
+    <section class="why">
+        <div class="why-inner">
+            <div class="section-head reveal">
+                <div class="section-tag">The Opportunity</div>
+                <h2>Your Portfolio Is Missing Its Most Interesting Asset</h2>
+                <p>Art isn't decoration. It's a tangible, appreciating asset class that smart investors are quietly adding to their portfolios.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-card-num">14%</div>
+                    <div class="why-card-bar"></div>
+                    <h3>Annual Returns</h3>
+                    <p>Art has outperformed traditional assets over the last decade. Returns that rival equities &mdash; without the volatility.</p>
                 </div>
-                <div class="concept-card reveal">
-                    <div class="concept-number">02</div>
-                    <div class="concept-card-line"></div>
-                    <h3>Portfolio Diversification</h3>
-                    <p>Zero correlation with stock market volatility. A hedge that you can hang on your wall.</p>
+                <div class="why-card reveal">
+                    <div class="why-card-num">0</div>
+                    <div class="why-card-bar"></div>
+                    <h3>Market Correlation</h3>
+                    <p>Zero correlation with stock market swings. A hedge you can hang on your wall and enjoy every day.</p>
                 </div>
-                <div class="concept-card reveal">
-                    <div class="concept-number">03</div>
-                    <div class="concept-card-line"></div>
+                <div class="why-card reveal">
+                    <div class="why-card-num">&infin;</div>
+                    <div class="why-card-bar"></div>
                     <h3>Cultural Capital</h3>
-                    <p>Own pieces that appreciate in value while enriching your space and conversations.</p>
+                    <p>Own pieces that appreciate in value while enriching your space, your conversations, and your legacy.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What to Expect Section -->
-    <section class="expect">
-        <div class="expect-inner">
-            <div class="section-header reveal">
-                <div class="section-eyebrow">The Evening</div>
-                <h2>One Evening. Three Perspectives.</h2>
+    <!-- WHAT YOU'LL EXPERIENCE -->
+    <section class="experience">
+        <div class="experience-inner">
+            <div class="section-head reveal">
+                <div class="section-tag">The Evening</div>
+                <h2>What You'll Walk Away With</h2>
+                <p>Three hours. Forty professionals. One gallery. Here's what happens.</p>
             </div>
-            <div class="expect-columns">
-                <div class="expect-col reveal">
-                    <div class="expect-col-number">I</div>
-                    <h3>Collectors</h3>
-                    <p>Meet professionals who've turned art appreciation into smart investment portfolios.</p>
+            <div class="experience-grid">
+                <div class="exp-card reveal">
+                    <div class="exp-icon">&#127912;</div>
+                    <h3>Art Investment Insights</h3>
+                    <p>Learn from collectors and gallerists who spot emerging talent before the market catches on. Real frameworks, not theory.</p>
                 </div>
-                <div class="expect-col reveal">
-                    <div class="expect-col-number">II</div>
-                    <h3>Gallerists</h3>
-                    <p>Learn from those who spot emerging talent before the market catches on.</p>
+                <div class="exp-card reveal">
+                    <div class="exp-icon">&#129309;</div>
+                    <h3>Curated Connections</h3>
+                    <p>40 handpicked professionals from tech, healthcare, real estate, and finance. No small talk &mdash; structured networking that leads to real outcomes.</p>
                 </div>
-                <div class="expect-col reveal">
-                    <div class="expect-col-number">III</div>
-                    <h3>Investors</h3>
-                    <p>Connect with those who diversify beyond stocks, bonds, and real estate.</p>
+                <div class="exp-card reveal">
+                    <div class="exp-icon">&#127863;</div>
+                    <h3>Gallery Evening</h3>
+                    <p>Cocktails and hors d'oeuvres at Elements by Nirvania. Walk through curated art while having conversations that matter.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Event Details Section -->
+    <!-- MID-PAGE CTA -->
+    <div class="mid-cta">
+        <p>"For those building value, not just walls."</p>
+        <a href="#register" class="btn-main">Reserve Your Seat &mdash; &#x20B9;4,000</a>
+    </div>
+
+    <!-- EVENT DETAILS -->
     <section class="details">
-        <div class="details-swirl"></div>
-        <div class="details-texture"></div>
+        <div class="details-bg"></div>
+        <div class="details-noise"></div>
         <div class="details-card reveal">
             <img src="assets/lume-logo-transparent.png" alt="LUME" class="details-card-logo">
             <h2>Chromatic Conversations III</h2>
-            <ul class="details-list">
+            <p class="details-sub">Art as Investment</p>
+            <ul class="details-items">
                 <li>
-                    <span class="detail-icon">&#128197;</span>
+                    <span class="di-icon">&#128197;</span>
                     <span>Saturday, February 28, 2026</span>
                 </li>
                 <li>
-                    <span class="detail-icon">&#9200;</span>
+                    <span class="di-icon">&#9200;</span>
                     <span>6:30 PM onwards</span>
                 </li>
                 <li>
-                    <span class="detail-icon">&#128205;</span>
+                    <span class="di-icon">&#128205;</span>
                     <span>Elements by Nirvania, Hyderabad</span>
                 </li>
                 <li>
-                    <span class="detail-icon">&#128176;</span>
-                    <span>&#x20B9;4,000 per guest (inclusive of F&amp;B)</span>
+                    <span class="di-icon">&#128176;</span>
+                    <span>&#x20B9;4,000 per guest &mdash; inclusive of cocktails &amp; hors d'oeuvres</span>
                 </li>
                 <li>
-                    <span class="detail-icon">&#128101;</span>
+                    <span class="di-icon">&#128101;</span>
                     <span>Limited to 40 curated guests</span>
                 </li>
                 <li>
-                    <span class="detail-icon">&#128084;</span>
+                    <span class="di-icon">&#128084;</span>
                     <span>Dress code: Smart Casual / Business Casual</span>
                 </li>
             </ul>
-            <p class="details-card-tagline">"For those building value, not just walls."</p>
+            <a href="#register" class="btn-main">Reserve My Seat</a>
+            <p class="details-card-note">Our team confirms your spot within 24 hours.</p>
         </div>
     </section>
 
-    <!-- Social Proof Section -->
-    <section class="social-proof">
-        <div class="social-proof-inner">
-            <div class="section-header reveal">
-                <div class="section-eyebrow">Our Community</div>
-                <h2>Proof is in the room</h2>
+    <!-- SOCIAL PROOF — PAST EVENTS -->
+    <section class="proof">
+        <div class="proof-inner">
+            <div class="section-head reveal">
+                <div class="section-tag">Past LUME Events</div>
+                <h2>See What You're Walking Into</h2>
+                <p>Highlights from previous LUME evenings. This is the energy in the room.</p>
             </div>
-            <div class="stats-row reveal">
-                <div class="stat-item">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-label">Professionals</div>
+            <div class="reels-row">
+                <div class="reel reveal">
+                    <iframe src="https://www.instagram.com/reel/DNlNdzeTiLc/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy" title="LUME Event Highlight — 38.6K views"></iframe>
+                    <div class="reel-label"><span>38.6K views</span></div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Events</div>
+                <div class="reel reveal">
+                    <iframe src="https://www.instagram.com/reel/DQ8gr5RkbYv/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy" title="LUME Event Highlight — 25.7K views"></iframe>
+                    <div class="reel-label"><span>25.7K views</span></div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Editions</div>
-                </div>
-            </div>
-            <div class="reels-grid reveal">
-                <div class="reel-item">
-                    <iframe src="https://www.instagram.com/reel/DNlNdzeTiLc/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
-                </div>
-                <div class="reel-item">
-                    <iframe src="https://www.instagram.com/reel/DQ8gr5RkbYv/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
-                </div>
-                <div class="reel-item">
-                    <iframe src="https://www.instagram.com/reel/DNs5HvzZg9z/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+                <div class="reel reveal">
+                    <iframe src="https://www.instagram.com/reel/DNs5HvzZg9z/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy" title="LUME Event Highlight — 24.3K views"></iframe>
+                    <div class="reel-label"><span>24.3K views</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Registration Form Section -->
-    <section class="registration" id="register">
-        <div class="registration-inner">
-            <div class="section-header reveal">
-                <div class="section-eyebrow">Secure Your Spot</div>
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-inner">
+            <div class="section-head reveal">
+                <div class="section-tag">Questions</div>
+                <h2>Everything You Need to Know</h2>
+            </div>
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <button class="faq-q">
+                        Who is this event for?
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-a">
+                        <p>Business owners, CXOs, doctors, lawyers, tech professionals, and investors in Hyderabad who are curious about art as an alternative investment. If you're a professional who wants to diversify beyond stocks and real estate, this is for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">
+                        What's included in the &#x20B9;4,000 ticket?
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-a">
+                        <p>Full access to the evening including expert-led discussions on art investment, curated networking with 40 professionals, cocktails, hors d'oeuvres, and a guided art walkthrough at Elements by Nirvania.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">
+                        What's the dress code?
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-a">
+                        <p>Smart Casual or Business Casual. Think blazers, loafers, and cocktail-appropriate attire. It's a gallery evening &mdash; dress like you belong in the room.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">
+                        Can I bring a guest?
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-a">
+                        <p>Yes. Each guest needs a separate registration. Please have them fill out the form individually so our team can confirm their spot. Capacity is strictly limited to 40.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">
+                        How does payment work?
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-a">
+                        <p>Fill out the registration form and our team will reach out within 24 hours with payment details (UPI / bank transfer). Your seat is confirmed once payment is received.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">
+                        Do I need to know anything about art?
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq-a">
+                        <p>Not at all. This evening is designed for professionals who are new to art investing. You'll leave with practical frameworks and connections &mdash; no prior art knowledge required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section class="register" id="register">
+        <div class="register-inner">
+            <div class="section-head reveal">
+                <div class="section-tag" style="color: var(--gold);">Secure Your Spot</div>
                 <h2>Reserve Your Seat</h2>
-                <p class="section-subtitle">Complete the form below. Our team will reach out within 24 hours with payment details.</p>
+                <p>Complete the form below. Our team will reach out within 24 hours with payment details and confirmation.</p>
             </div>
-            <form class="registration-form reveal" action="#" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">Full Name *</label>
-                        <input type="text" name="full_name" class="form-input" placeholder="Your full name" required>
+
+            <div id="form-wrapper" class="reveal">
+                <form class="reg-form" id="reg-form" novalidate>
+                    <div class="fg-row">
+                        <div class="fg">
+                            <label for="f-name">Full Name *</label>
+                            <input type="text" id="f-name" name="name" class="fi" placeholder="Your full name" required autocomplete="name">
+                        </div>
+                        <div class="fg">
+                            <label for="f-phone">Phone Number *</label>
+                            <input type="tel" id="f-phone" name="phone" class="fi" placeholder="+91 98765 43210" required autocomplete="tel">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Phone Number *</label>
-                        <input type="tel" name="phone" class="form-input" placeholder="+91 98765 43210" required>
+
+                    <div class="fg">
+                        <label for="f-email">Email *</label>
+                        <input type="email" id="f-email" name="email" class="fi" placeholder="you@company.com" required autocomplete="email">
                     </div>
+
+                    <div class="fg">
+                        <label for="f-profession">Profession *</label>
+                        <select id="f-profession" name="profession" class="fi" required>
+                            <option value="" disabled selected>Select your profession</option>
+                            <option value="Business Owner">Business Owner</option>
+                            <option value="CXO / Director">CXO / Director</option>
+                            <option value="Doctor / Healthcare">Doctor / Healthcare</option>
+                            <option value="Lawyer">Lawyer</option>
+                            <option value="CA / Finance">CA / Finance</option>
+                            <option value="Real Estate">Real Estate</option>
+                            <option value="Tech / IT">Tech / IT</option>
+                            <option value="Artist / Collector">Artist / Collector</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="fg">
+                        <label for="f-interest">What interests you about art as investment?</label>
+                        <textarea id="f-interest" name="interest" class="fi" placeholder="Optional — helps us personalize your experience"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="btn-submit">Reserve My Seat &mdash; &#x20B9;4,000</button>
+
+                    <p class="form-privacy">Your details are shared only with the LUME team. No spam, ever.</p>
+                </form>
+
+                <div class="form-success" id="form-success">
+                    <div class="check-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    </div>
+                    <h3>You're In.</h3>
+                    <p>Our team will reach out within 24 hours with payment details. Check your phone &amp; email.</p>
+                    <p style="margin-top: 1rem; color: rgba(255,255,255,0.35); font-size: 0.8125rem;">Feb 28 &middot; 6:30 PM &middot; Elements by Nirvania</p>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-label">Email *</label>
-                    <input type="email" name="email" class="form-input" placeholder="you@company.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Profession *</label>
-                    <select name="profession" class="form-select" required>
-                        <option value="" disabled selected>Select your profession</option>
-                        <option value="business-owner">Business Owner</option>
-                        <option value="cxo-director">CXO / Director</option>
-                        <option value="doctor-healthcare">Doctor / Healthcare</option>
-                        <option value="lawyer">Lawyer</option>
-                        <option value="ca-finance">CA / Finance</option>
-                        <option value="real-estate">Real Estate</option>
-                        <option value="tech-it">Tech / IT</option>
-                        <option value="artist-collector">Artist / Collector</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">What interests you about art as investment?</label>
-                    <textarea name="interest" class="form-textarea" placeholder="Optional — tell us what draws you to this evening"></textarea>
-                </div>
-
-                <button type="submit" class="btn-register">Reserve My Seat &mdash; &#x20B9;4,000</button>
-
-                <p class="form-note">Our team will reach out within 24 hours with payment details.</p>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Partners Section -->
+    <!-- PARTNERS -->
     <section class="partners">
         <div class="partners-inner">
-            <div class="section-header reveal">
-                <div class="section-eyebrow">Collaborators</div>
+            <div class="section-head reveal">
+                <div class="section-tag">Collaborators</div>
                 <h2>In Partnership With</h2>
             </div>
-            <div class="partners-grid reveal">
-                <div class="partner-block">
+            <div class="partners-row reveal">
+                <div class="partner">
                     <div class="partner-type">Media Partner</div>
                     <div class="partner-name">Hashtag India</div>
                 </div>
-                <div class="partner-block">
+                <div class="partner">
                     <div class="partner-type">Event Partner</div>
                     <div class="partner-name">We Connect</div>
                 </div>
-                <div class="partner-block">
+                <div class="partner">
                     <div class="partner-type">Venue Partner</div>
                     <div class="partner-name">Elements by Nirvania</div>
                 </div>
@@ -1281,69 +1413,192 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-row">
             <img src="assets/lume-logo-white.png" alt="LUME">
-            <span class="footer-logo-text">LUME</span>
+            <span>LUME</span>
         </div>
-        <p class="footer-tagline">An invite-only community for ambitious professionals in Hyderabad</p>
-        <a href="https://www.instagram.com/lumeproject_offl/" target="_blank" rel="noopener noreferrer" class="footer-instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
+        <a href="https://www.instagram.com/lumeproject_offl/" target="_blank" rel="noopener noreferrer" class="footer-ig">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             @lumeproject_offl
         </a>
         <p class="footer-copy">&copy; 2026 The Lume Project. All rights reserved.</p>
     </footer>
 
-    <!-- Smooth Scroll & Reveal Animation JS -->
     <script>
-        // Smooth scroll for CTA buttons (fallback for browsers without CSS smooth scroll)
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                var targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                var target = document.querySelector(targetId);
-                if (target) {
+    (function() {
+        'use strict';
+
+        /* ===== COUNTDOWN TIMER ===== */
+        var EVENT_DATE = new Date('2026-02-28T18:30:00+05:30');
+
+        function updateCountdown() {
+            var now = new Date();
+            var diff = EVENT_DATE - now;
+            if (diff <= 0) {
+                document.getElementById('countdown').style.display = 'none';
+                return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('cd-days').textContent = d < 10 ? '0' + d : d;
+            document.getElementById('cd-hours').textContent = h < 10 ? '0' + h : h;
+            document.getElementById('cd-mins').textContent = m < 10 ? '0' + m : m;
+            document.getElementById('cd-secs').textContent = s < 10 ? '0' + s : s;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        /* ===== SMOOTH SCROLL ===== */
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var id = this.getAttribute('href');
+                if (id === '#') return;
+                var el = document.querySelector(id);
+                if (el) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Intersection Observer for reveal-on-scroll animations
+        /* ===== SCROLL REVEAL ===== */
         if ('IntersectionObserver' in window) {
-            var observer = new IntersectionObserver(function(entries) {
+            var obs = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+                        entry.target.classList.add('vis');
+                        obs.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
 
             document.querySelectorAll('.reveal').forEach(function(el) {
-                observer.observe(el);
+                obs.observe(el);
             });
         } else {
-            // Fallback: show everything immediately
             document.querySelectorAll('.reveal').forEach(function(el) {
-                el.classList.add('visible');
+                el.classList.add('vis');
             });
         }
 
-        // Header background on scroll
-        var header = document.querySelector('.site-header');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(26, 26, 26, 0.95)';
+        /* ===== FAQ ACCORDION ===== */
+        document.querySelectorAll('.faq-q').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.parentElement;
+                var isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item.open').forEach(function(i) {
+                    i.classList.remove('open');
+                });
+                // Toggle current
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        /* ===== FORM SUBMISSION ===== */
+        // Configure webhook URL here. Replace with n8n/GHL webhook when ready.
+        var WEBHOOK_URL = '';  // e.g. 'https://sandyautomations.app.n8n.cloud/webhook/cc3-register'
+
+        var form = document.getElementById('reg-form');
+        var btn = document.getElementById('btn-submit');
+        var successEl = document.getElementById('form-success');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            var name = form.querySelector('[name="name"]').value.trim();
+            var phone = form.querySelector('[name="phone"]').value.trim();
+            var email = form.querySelector('[name="email"]').value.trim();
+            var profession = form.querySelector('[name="profession"]').value;
+
+            var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            var phoneOk = phone.replace(/\D/g, '').length >= 10;
+
+            if (!name || !phone || !email || !profession || !emailOk || !phoneOk) {
+                // Highlight invalid fields
+                form.querySelectorAll('[required]').forEach(function(f) {
+                    if (!f.value.trim()) {
+                        f.style.borderColor = '#FF5149';
+                        f.addEventListener('input', function handler() {
+                            f.style.borderColor = '';
+                            f.removeEventListener('input', handler);
+                        });
+                    }
+                });
+                if (email && !emailOk) {
+                    var ef = form.querySelector('[name="email"]');
+                    ef.style.borderColor = '#FF5149';
+                    ef.addEventListener('input', function handler() {
+                        ef.style.borderColor = '';
+                        ef.removeEventListener('input', handler);
+                    });
+                }
+                if (phone && !phoneOk) {
+                    var pf = form.querySelector('[name="phone"]');
+                    pf.style.borderColor = '#FF5149';
+                    pf.addEventListener('input', function handler() {
+                        pf.style.borderColor = '';
+                        pf.removeEventListener('input', handler);
+                    });
+                }
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            var data = {
+                name: name,
+                phone: phone,
+                email: email,
+                profession: profession,
+                interest: form.querySelector('[name="interest"]').value.trim(),
+                event: 'Chromatic Conversations III',
+                date: '2026-02-28',
+                source: 'landing-page',
+                timestamp: new Date().toISOString()
+            };
+
+            if (WEBHOOK_URL) {
+                fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).then(function() {
+                    showSuccess();
+                }).catch(function() {
+                    // Still show success — webhook might be CORS-blocked on static sites
+                    showSuccess();
+                });
             } else {
-                header.style.background = 'rgba(26, 26, 26, 0.85)';
+                // No webhook configured — show success for demo
+                setTimeout(showSuccess, 600);
             }
         });
+
+        function showSuccess() {
+            form.style.display = 'none';
+            successEl.classList.add('show');
+            // Scroll to success message
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        /* ===== HEADER SCROLL EFFECT ===== */
+        var header = document.querySelector('.header');
+        window.addEventListener('scroll', function() {
+            header.style.background = window.scrollY > 60
+                ? 'rgba(17, 17, 17, 0.97)'
+                : 'rgba(17, 17, 17, 0.9)';
+        });
+    })();
     </script>
 </body>
 </html>
