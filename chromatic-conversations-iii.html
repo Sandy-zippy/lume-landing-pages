@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromatic Conversations III — Art as Investment | LUME</title>
+    <meta name="description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania, Hyderabad. Limited to 40 guests.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chromatic Conversations III — Art as Investment">
+    <meta property="og:description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania.">
+    <meta property="og:image" content="assets/hero-banner.png">
+    <meta property="og:url" content="">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chromatic Conversations III — Art as Investment">
+    <meta name="twitter:description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania.">
+    <meta name="twitter:image" content="assets/hero-banner.png">
+
+    <link rel="icon" type="image/png" href="assets/lume-logo-transparent.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        :root {
+            --coral: #FF5149;
+            --coral-dark: #E5403A;
+            --deep-red: #B80000;
+            --black: #000000;
+            --charcoal: #1a1a1a;
+            --gray-dark: #333333;
+            --gray: #666666;
+            --gray-light: #999999;
+            --off-white: #f8f7f5;
+            --white: #ffffff;
+            --cream: #FAF9F7;
+            --gold: #C9A962;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3 {
+            font-family: 'Cormorant', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p {
+            font-size: 1.0625rem;
+            color: var(--gray-dark);
+        }
+
+        /* ===== FIXED HEADER ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: background 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--white);
+            letter-spacing: 0.08em;
+        }
+
+        .btn-header {
+            background: var(--coral);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-header:hover {
+            background: var(--coral-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(255, 81, 73, 0.35);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 7rem 2rem 4rem;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                url('assets/hero-banner.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(26, 26, 26, 0.7) 40%, rgba(26, 26, 26, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 20%, rgba(184, 0, 0, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 70% at 85% 80%, rgba(196, 30, 58, 0.25) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 40% at 50% 60%, rgba(139, 0, 0, 0.15) 0%, transparent 50%);
+            z-index: 2;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+        }
+
+        .hero-tagline {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.25rem;
+            max-width: 800px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant', serif;
+            font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero-details {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+        }
+
+        .hero-details .sep {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .hero-cta-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--coral);
+            color: var(--white);
+            padding: 1.1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.0625rem;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.35);
+        }
+
+        .hero-limited {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            color: rgba(255, 255, 255, 0.3);
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(8px); }
+            60% { transform: translateY(4px); }
+        }
+
+        /* ===== THE CONCEPT SECTION ===== */
+        .concept {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .concept-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--coral);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--coral);
+        }
+
+        .section-subtitle {
+            font-size: 1.0625rem;
+            color: var(--gray);
+            max-width: 550px;
+            margin: 1rem auto 0;
+        }
+
+        .concept-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .concept-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .concept-number {
+            font-family: 'Cormorant', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .concept-card-line {
+            width: 40px;
+            height: 3px;
+            background: var(--coral);
+            border-radius: 2px;
+            margin-bottom: 1.25rem;
+        }
+
+        .concept-card h3 {
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+            font-size: 1.375rem;
+        }
+
+        .concept-card p {
+            font-size: 0.9375rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ===== WHAT TO EXPECT SECTION ===== */
+        .expect {
+            padding: 6rem 2rem;
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .expect-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .expect .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .expect h2 {
+            color: var(--white);
+        }
+
+        .expect .section-subtitle {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .expect-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .expect-col {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .expect-col:hover {
+            border-color: rgba(201, 169, 98, 0.3);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .expect-col-number {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 1.25rem;
+        }
+
+        .expect-col h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .expect-col p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        /* ===== EVENT DETAILS SECTION ===== */
+        .details {
+            position: relative;
+            padding: 6rem 2rem;
+            overflow: hidden;
+        }
+
+        .details-swirl {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 15%, #C41E3A 0%, transparent 50%),
+                radial-gradient(ellipse 70% 90% at 85% 80%, #B80000 0%, transparent 45%),
+                radial-gradient(ellipse 50% 40% at 50% 50%, #8B0000 0%, transparent 60%),
+                radial-gradient(circle at 10% 90%, #C41E3A 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, #9B1B30 0%, transparent 35%),
+                conic-gradient(from 45deg at 30% 70%, #B80000, #C41E3A, #8B0000, #A01525, #B80000),
+                conic-gradient(from 200deg at 70% 30%, #C41E3A, #6B0F1A, #B80000, #C41E3A),
+                radial-gradient(ellipse 120% 80% at 50% 50%, #7A0A1E, #4A0510);
+            filter: blur(25px) saturate(1.2);
+        }
+
+        .details-swirl::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 40% 35% at 25% 25%, rgba(196,30,58,0.6) 0%, transparent 70%),
+                radial-gradient(ellipse 35% 50% at 75% 75%, rgba(184,0,0,0.5) 0%, transparent 60%);
+            filter: blur(12px);
+        }
+
+        .details-texture {
+            position: absolute;
+            inset: 0;
+            opacity: 0.06;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            mix-blend-mode: overlay;
+        }
+
+        .details-card {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(248, 247, 245, 0.97);
+            border-radius: 20px;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .details-card-logo {
+            height: 50px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-card h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .details-list {
+            list-style: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 2rem;
+        }
+
+        .details-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.875rem;
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            color: var(--gray-dark);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .details-list li:last-child {
+            border-bottom: none;
+        }
+
+        .details-list li span.detail-icon {
+            flex-shrink: 0;
+            font-size: 1.125rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .details-card-tagline {
+            font-family: 'Cormorant', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* ===== SOCIAL PROOF SECTION ===== */
+        .social-proof {
+            padding: 6rem 2rem;
+            background: var(--off-white);
+        }
+
+        .social-proof-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .social-proof h2 {
+            color: var(--charcoal);
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--coral);
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+
+        .reels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .reel-item {
+            aspect-ratio: 9/16;
+            background: var(--charcoal);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reel-item iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== REGISTRATION SECTION ===== */
+        .registration {
+            padding: 6rem 2rem;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .registration::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 50% 40% at 10% 80%, rgba(184, 0, 0, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 90% 20%, rgba(196, 30, 58, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .registration-inner {
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .registration .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .registration h2 {
+            color: var(--white);
+        }
+
+        .registration .section-subtitle {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .registration-form {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9375rem;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.06);
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-select {
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23999999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .form-select option {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(255, 81, 73, 0.15);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-register {
+            width: 100%;
+            background: var(--coral);
+            color: var(--white);
+            padding: 1.1rem 2rem;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            letter-spacing: 0.02em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .btn-register:hover {
+            background: var(--coral-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.35);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 1.25rem;
+            line-height: 1.5;
+        }
+
+        /* ===== PARTNERS SECTION ===== */
+        .partners {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .partners-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .partners h2 {
+            color: var(--charcoal);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .partner-block {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--white);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .partner-block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .partner-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--coral);
+            margin-bottom: 0.75rem;
+        }
+
+        .partner-name {
+            font-family: 'Cormorant', serif;
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--charcoal);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-logo img {
+            height: 36px;
+        }
+
+        .footer-logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--white);
+            letter-spacing: 0.08em;
+        }
+
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .footer-instagram {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-instagram:hover {
+            color: var(--coral);
+        }
+
+        .footer-instagram svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-copy {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .concept-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .concept-cards .concept-card:last-child {
+                grid-column: 1 / -1;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .expect-columns {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .expect-columns .expect-col:last-child {
+                grid-column: 1 / -1;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0.875rem 1.25rem;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .btn-header {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8125rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3.5rem;
+            }
+
+            .hero-logo {
+                height: 44px;
+                margin-bottom: 2rem;
+            }
+
+            .hero-tagline {
+                font-size: 0.6875rem;
+                letter-spacing: 0.25em;
+            }
+
+            .hero-details {
+                gap: 0.75rem;
+                font-size: 0.6875rem;
+                letter-spacing: 0.1em;
+            }
+
+            .concept,
+            .expect,
+            .details,
+            .social-proof,
+            .registration,
+            .partners {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+
+            .concept-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .concept-cards .concept-card:last-child {
+                max-width: none;
+            }
+
+            .expect-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .expect-columns .expect-col:last-child {
+                max-width: none;
+            }
+
+            .details-card {
+                padding: 2.5rem 1.75rem;
+            }
+
+            .stats-row {
+                gap: 2rem;
+            }
+
+            .reels-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .reel-item {
+                min-height: 520px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-details {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero-details .sep {
+                display: none;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Intersection Observer reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="site-header">
+        <a href="#" class="logo">
+            <img src="assets/lume-logo-white.png" alt="LUME">
+            <span class="logo-text">LUME</span>
+        </a>
+        <a href="#register" class="btn-header">Register Now</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <img src="assets/lume-logo-white.png" alt="LUME" class="hero-logo">
+        <div class="hero-tagline">Beyond Aesthetics. Beyond Impulse.</div>
+        <h1>Chromatic Conversations III</h1>
+        <p class="hero-subtitle">A Private Evening on Art as Investment</p>
+        <div class="hero-details">
+            <span>Saturday, February 28</span>
+            <span class="sep"></span>
+            <span>6:30 PM</span>
+            <span class="sep"></span>
+            <span>Elements by Nirvania</span>
+        </div>
+        <div class="hero-cta-wrap">
+            <a href="#register" class="btn-primary">Reserve Your Seat</a>
+            <span class="hero-limited">Limited to 40 Guests</span>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5"/>
+                <path d="M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- The Concept Section -->
+    <section class="concept">
+        <div class="concept-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">The Opportunity</div>
+                <h2>Why Art as Investment?</h2>
+            </div>
+            <div class="concept-cards">
+                <div class="concept-card reveal">
+                    <div class="concept-number">01</div>
+                    <div class="concept-card-line"></div>
+                    <h3>Tangible Returns</h3>
+                    <p>Art has outperformed traditional assets, returning 14% annually over the last decade.</p>
+                </div>
+                <div class="concept-card reveal">
+                    <div class="concept-number">02</div>
+                    <div class="concept-card-line"></div>
+                    <h3>Portfolio Diversification</h3>
+                    <p>Zero correlation with stock market volatility. A hedge that you can hang on your wall.</p>
+                </div>
+                <div class="concept-card reveal">
+                    <div class="concept-number">03</div>
+                    <div class="concept-card-line"></div>
+                    <h3>Cultural Capital</h3>
+                    <p>Own pieces that appreciate in value while enriching your space and conversations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect Section -->
+    <section class="expect">
+        <div class="expect-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">The Evening</div>
+                <h2>One Evening. Three Perspectives.</h2>
+            </div>
+            <div class="expect-columns">
+                <div class="expect-col reveal">
+                    <div class="expect-col-number">I</div>
+                    <h3>Collectors</h3>
+                    <p>Meet professionals who've turned art appreciation into smart investment portfolios.</p>
+                </div>
+                <div class="expect-col reveal">
+                    <div class="expect-col-number">II</div>
+                    <h3>Gallerists</h3>
+                    <p>Learn from those who spot emerging talent before the market catches on.</p>
+                </div>
+                <div class="expect-col reveal">
+                    <div class="expect-col-number">III</div>
+                    <h3>Investors</h3>
+                    <p>Connect with those who diversify beyond stocks, bonds, and real estate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="details">
+        <div class="details-swirl"></div>
+        <div class="details-texture"></div>
+        <div class="details-card reveal">
+            <img src="assets/lume-logo-transparent.png" alt="LUME" class="details-card-logo">
+            <h2>Chromatic Conversations III</h2>
+            <ul class="details-list">
+                <li>
+                    <span class="detail-icon">&#128197;</span>
+                    <span>Saturday, February 28, 2026</span>
+                </li>
+                <li>
+                    <span class="detail-icon">&#9200;</span>
+                    <span>6:30 PM onwards</span>
+                </li>
+                <li>
+                    <span class="detail-icon">&#128205;</span>
+                    <span>Elements by Nirvania, Hyderabad</span>
+                </li>
+                <li>
+                    <span class="detail-icon">&#128176;</span>
+                    <span>&#x20B9;4,000 per guest (inclusive of F&amp;B)</span>
+                </li>
+                <li>
+                    <span class="detail-icon">&#128101;</span>
+                    <span>Limited to 40 curated guests</span>
+                </li>
+                <li>
+                    <span class="detail-icon">&#128084;</span>
+                    <span>Dress code: Smart Casual / Business Casual</span>
+                </li>
+            </ul>
+            <p class="details-card-tagline">"For those building value, not just walls."</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="social-proof-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Our Community</div>
+                <h2>Proof is in the room</h2>
+            </div>
+            <div class="stats-row reveal">
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Professionals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Editions</div>
+                </div>
+            </div>
+            <div class="reels-grid reveal">
+                <div class="reel-item">
+                    <iframe src="https://www.instagram.com/reel/DNlNdzeTiLc/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+                </div>
+                <div class="reel-item">
+                    <iframe src="https://www.instagram.com/reel/DQ8gr5RkbYv/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+                </div>
+                <div class="reel-item">
+                    <iframe src="https://www.instagram.com/reel/DNs5HvzZg9z/embed/" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration" id="register">
+        <div class="registration-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Secure Your Spot</div>
+                <h2>Reserve Your Seat</h2>
+                <p class="section-subtitle">Complete the form below. Our team will reach out within 24 hours with payment details.</p>
+            </div>
+            <form class="registration-form reveal" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" name="full_name" class="form-input" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number *</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="+91 98765 43210" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email *</label>
+                    <input type="email" name="email" class="form-input" placeholder="you@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Profession *</label>
+                    <select name="profession" class="form-select" required>
+                        <option value="" disabled selected>Select your profession</option>
+                        <option value="business-owner">Business Owner</option>
+                        <option value="cxo-director">CXO / Director</option>
+                        <option value="doctor-healthcare">Doctor / Healthcare</option>
+                        <option value="lawyer">Lawyer</option>
+                        <option value="ca-finance">CA / Finance</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="tech-it">Tech / IT</option>
+                        <option value="artist-collector">Artist / Collector</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">What interests you about art as investment?</label>
+                    <textarea name="interest" class="form-textarea" placeholder="Optional — tell us what draws you to this evening"></textarea>
+                </div>
+
+                <button type="submit" class="btn-register">Reserve My Seat &mdash; &#x20B9;4,000</button>
+
+                <p class="form-note">Our team will reach out within 24 hours with payment details.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="partners-inner">
+            <div class="section-header reveal">
+                <div class="section-eyebrow">Collaborators</div>
+                <h2>In Partnership With</h2>
+            </div>
+            <div class="partners-grid reveal">
+                <div class="partner-block">
+                    <div class="partner-type">Media Partner</div>
+                    <div class="partner-name">Hashtag India</div>
+                </div>
+                <div class="partner-block">
+                    <div class="partner-type">Event Partner</div>
+                    <div class="partner-name">We Connect</div>
+                </div>
+                <div class="partner-block">
+                    <div class="partner-type">Venue Partner</div>
+                    <div class="partner-name">Elements by Nirvania</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/lume-logo-white.png" alt="LUME">
+            <span class="footer-logo-text">LUME</span>
+        </div>
+        <p class="footer-tagline">An invite-only community for ambitious professionals in Hyderabad</p>
+        <a href="https://www.instagram.com/lumeproject_offl/" target="_blank" rel="noopener noreferrer" class="footer-instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+            @lumeproject_offl
+        </a>
+        <p class="footer-copy">&copy; 2026 The Lume Project. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth Scroll & Reveal Animation JS -->
+    <script>
+        // Smooth scroll for CTA buttons (fallback for browsers without CSS smooth scroll)
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                var target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for reveal-on-scroll animations
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(function(el) {
+                observer.observe(el);
+            });
+        } else {
+            // Fallback: show everything immediately
+            document.querySelectorAll('.reveal').forEach(function(el) {
+                el.classList.add('visible');
+            });
+        }
+
+        // Header background on scroll
+        var header = document.querySelector('.site-header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(26, 26, 26, 0.95)';
+            } else {
+                header.style.background = 'rgba(26, 26, 26, 0.85)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LUME — Curiosity Hook</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    background: #1a1a1a;
+  }
+
+  /* Diagonal split: dark left, red swirl right */
+  .bg-dark {
+    position: absolute;
+    inset: 0;
+    background: #1a1a1a;
+    clip-path: polygon(0 0, 55% 0, 40% 100%, 0 100%);
+    z-index: 1;
+  }
+
+  .bg-red {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 80% at 80% 40%, #C41E3A 0%, transparent 50%),
+      radial-gradient(ellipse 60% 60% at 60% 80%, #B80000 0%, transparent 45%),
+      conic-gradient(from 60deg at 75% 50%, #C41E3A, #8B0000, #B80000, #6B0F1A, #C41E3A),
+      radial-gradient(ellipse 100% 100% at 70% 50%, #5A0A15, #3A0610);
+    filter: blur(25px) saturate(1.3);
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 40% 100%);
+    z-index: 1;
+  }
+
+  .bg-red::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 40% 40% at 70% 35%, rgba(196,30,58,0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 30% 40% at 80% 75%, rgba(139,0,0,0.4) 0%, transparent 60%);
+    filter: blur(15px);
+  }
+
+  /* Diagonal split line with gold */
+  .split-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .split-line::after {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: 47%;
+    width: 2px;
+    height: 115%;
+    background: linear-gradient(to bottom, transparent 5%, rgba(201,169,98,0.4) 30%, rgba(201,169,98,0.6) 50%, rgba(201,169,98,0.4) 70%, transparent 95%);
+    transform: rotate(-10deg);
+    transform-origin: center;
+  }
+
+  .texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    z-index: 3;
+  }
+
+  .content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 110px;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo-container img {
+    height: 60px;
+    width: auto;
+  }
+
+  .headline {
+    font-family: 'Cormorant', serif;
+    font-size: 58px;
+    font-weight: 600;
+    color: #f8f6f3;
+    text-align: center;
+    line-height: 1.15;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #C9A962;
+  }
+
+  .gold-divider {
+    width: 60px;
+    height: 1px;
+    background: #C9A962;
+    margin-bottom: 35px;
+  }
+
+  .subtext {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.7);
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 15px rgba(0,0,0,0.4);
+  }
+
+  .subtext strong {
+    font-weight: 500;
+    color: rgba(248,246,243,0.9);
+  }
+
+  .bottom-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .bottom-details .item {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(248,246,243,0.65);
+    text-shadow: 0 1px 10px rgba(0,0,0,0.4);
+  }
+
+  .bottom-details .sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #C9A962;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-dark"></div>
+  <div class="bg-red"></div>
+  <div class="split-line"></div>
+  <div class="texture"></div>
+
+  <div class="content">
+    <div class="logo-container">
+      <img src="../../assets/lume-logo-white.png" alt="LUME">
+    </div>
+
+    <div class="headline">
+      What if your<br>next investment<br>was <em>hanging<br>on a wall?</em>
+    </div>
+
+    <div class="gold-divider"></div>
+
+    <div class="subtext">
+      <strong>Art as Investment</strong> — a curated evening by LUME
+    </div>
+
+    <div class="bottom-details">
+      <div class="item">Feb 28</div>
+      <div class="sep"></div>
+      <div class="item">Elements by Nirvania</div>
+      <div class="sep"></div>
+      <div class="item">₹4,000</div>
+    </div>
+  </div>
+</body>
+</html>

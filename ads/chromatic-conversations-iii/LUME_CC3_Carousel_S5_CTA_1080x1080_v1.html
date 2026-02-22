@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LUME CC3 Carousel — Slide 5: CTA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    background: #1a1a1a;
+  }
+
+  /* Dark bg with red glow */
+  .bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 55%, rgba(196,30,58,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 50%, rgba(184,0,0,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 90% 80% at 30% 80%, rgba(139,0,0,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 70% at 70% 20%, rgba(196,30,58,0.04) 0%, transparent 50%),
+      #1a1a1a;
+  }
+
+  /* Subtle glow behind CTA */
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,30,58,0.1) 0%, rgba(196,30,58,0.03) 40%, transparent 70%);
+    filter: blur(40px);
+  }
+
+  .texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    mix-blend-mode: overlay;
+  }
+
+  /* Content */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 100px;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 60px;
+  }
+
+  .logo img {
+    height: 65px;
+    width: auto;
+    opacity: 0.9;
+  }
+
+  .cta-headline {
+    font-family: 'Cormorant', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #C9A962;
+    line-height: 1.15;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 20px rgba(201,169,98,0.2);
+  }
+
+  .gold-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #C9A962, transparent);
+    margin-bottom: 30px;
+  }
+
+  .urgency {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.7);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .urgency strong {
+    font-weight: 500;
+    color: #f8f6f3;
+  }
+
+  .seats-count {
+    font-family: 'Cormorant', serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    color: #C41E3A;
+    margin-bottom: 60px;
+  }
+
+  .tap-cta {
+    display: inline-block;
+    padding: 18px 50px;
+    border: 1px solid #C9A962;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #C9A962;
+  }
+
+  /* Gold accent corners */
+  .corner-tl, .corner-br {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+  }
+
+  .corner-tl {
+    top: 60px;
+    left: 60px;
+    border-top: 1px solid rgba(201,169,98,0.3);
+    border-left: 1px solid rgba(201,169,98,0.3);
+  }
+
+  .corner-br {
+    bottom: 60px;
+    right: 60px;
+    border-bottom: 1px solid rgba(201,169,98,0.3);
+    border-right: 1px solid rgba(201,169,98,0.3);
+  }
+
+  /* No swipe indicator on last slide */
+
+  .slide-counter {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .dot.active {
+    background: #C9A962;
+    box-shadow: 0 0 6px rgba(201,169,98,0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="glow"></div>
+  <div class="texture"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+
+  <div class="content">
+    <div class="logo">
+      <img src="../../assets/lume-logo-white.png" alt="LUME">
+    </div>
+
+    <div class="cta-headline">Reserve<br>Your Seat</div>
+
+    <div class="gold-divider"></div>
+
+    <div class="urgency">Before the <strong>40 spots</strong> are taken.</div>
+    <div class="seats-count">February 28 &middot; Elements by Nirvania</div>
+
+    <div class="tap-cta">Tap &lsquo;Learn More&rsquo; Below</div>
+  </div>
+
+  <div class="slide-counter">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+  </div>
+</body>
+</html>

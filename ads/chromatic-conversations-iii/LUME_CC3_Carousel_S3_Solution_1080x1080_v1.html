@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LUME CC3 Carousel — Slide 3: The Solution</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    background: #f8f6f3;
+  }
+
+  /* Red accent stripe — left edge */
+  .stripe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: linear-gradient(to bottom, #C41E3A, #B80000);
+  }
+
+  /* Subtle warm texture */
+  .texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  /* Content */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 120px;
+  }
+
+  .headline {
+    font-family: 'Cormorant', serif;
+    font-size: 46px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 50px;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #C41E3A;
+    font-weight: 400;
+  }
+
+  .gold-divider {
+    width: 50px;
+    height: 1px;
+    background: #C9A962;
+    margin-bottom: 50px;
+  }
+
+  /* Three bullet sections */
+  .bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 50px;
+  }
+
+  .bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .bullet-marker {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    background: #C9A962;
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: 0 0 8px rgba(201,169,98,0.3);
+  }
+
+  .bullet-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #333;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+  }
+
+  .bullet-text strong {
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+
+  .gold-divider-sm {
+    width: 40px;
+    height: 1px;
+    background: #C9A962;
+    margin-bottom: 30px;
+  }
+
+  .closer {
+    font-family: 'Cormorant', serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+  }
+
+  /* Red accent — subtle circle */
+  .accent-circle {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,30,58,0.08) 0%, transparent 70%);
+  }
+
+  .accent-circle-bl {
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,30,58,0.06) 0%, transparent 70%);
+  }
+
+  /* Swipe indicator */
+  .swipe {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .swipe-arrow {
+    width: 28px;
+    height: 28px;
+    border-right: 2px solid rgba(26,26,26,0.2);
+    border-bottom: 2px solid rgba(26,26,26,0.2);
+    transform: rotate(-45deg);
+  }
+
+  .swipe-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(26,26,26,0.25);
+    writing-mode: vertical-rl;
+    margin-top: 6px;
+  }
+
+  .slide-counter {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(26,26,26,0.12);
+  }
+
+  .dot.active {
+    background: #C9A962;
+    box-shadow: 0 0 6px rgba(201,169,98,0.4);
+  }
+</style>
+</head>
+<body>
+  <div class="stripe"></div>
+  <div class="texture"></div>
+  <div class="accent-circle"></div>
+  <div class="accent-circle-bl"></div>
+
+  <div class="content">
+    <div class="headline">One evening.<br><em>Three perspectives.</em></div>
+
+    <div class="gold-divider"></div>
+
+    <div class="bullets">
+      <div class="bullet-item">
+        <div class="bullet-marker"></div>
+        <div class="bullet-text">Meet <strong>collectors</strong> who've turned passion into returns</div>
+      </div>
+      <div class="bullet-item">
+        <div class="bullet-marker"></div>
+        <div class="bullet-text">Learn from <strong>gallerists</strong> who spot the next big names</div>
+      </div>
+      <div class="bullet-item">
+        <div class="bullet-marker"></div>
+        <div class="bullet-text">Connect with <strong>investors</strong> who diversify with art</div>
+      </div>
+    </div>
+
+    <div class="gold-divider-sm"></div>
+
+    <div class="closer">All in one curated room.</div>
+  </div>
+
+  <div class="swipe">
+    <div class="swipe-arrow"></div>
+    <div class="swipe-text">Swipe</div>
+  </div>
+
+  <div class="slide-counter">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</body>
+</html>

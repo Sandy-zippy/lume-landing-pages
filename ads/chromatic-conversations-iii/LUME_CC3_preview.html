@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chromatic Conversations III — Ad Creatives Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a1a;
+    color: #f8f6f3;
+    font-family: 'Outfit', sans-serif;
+    padding: 60px 40px;
+    min-height: 100vh;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(201,169,98,0.2);
+  }
+
+  .header h1 {
+    font-family: 'Cormorant', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #f8f6f3;
+    margin-bottom: 8px;
+  }
+
+  .header h1 em {
+    color: #C9A962;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .header p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #C9A962;
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.4);
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .card:hover {
+    border-color: rgba(201,169,98,0.3);
+  }
+
+  .iframe-wrap {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+  }
+
+  /* 1080x1080 previews */
+  .size-1080x1080 .iframe-wrap {
+    width: 320px;
+    height: 320px;
+  }
+
+  .size-1080x1080 .iframe-wrap iframe {
+    width: 1080px;
+    height: 1080px;
+    transform: scale(0.2963);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+  }
+
+  /* 1080x1350 previews */
+  .size-1080x1350 .iframe-wrap {
+    width: 280px;
+    height: 350px;
+  }
+
+  .size-1080x1350 .iframe-wrap iframe {
+    width: 1080px;
+    height: 1350px;
+    transform: scale(0.2593);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+  }
+
+  /* 1080x1920 previews */
+  .size-1080x1920 .iframe-wrap {
+    width: 200px;
+    height: 356px;
+  }
+
+  .size-1080x1920 .iframe-wrap iframe {
+    width: 1080px;
+    height: 1920px;
+    transform: scale(0.1852);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+  }
+
+  .card-info {
+    padding: 14px 16px;
+  }
+
+  .card-filename {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(248,246,243,0.6);
+    margin-bottom: 8px;
+    word-break: break-all;
+    line-height: 1.4;
+    font-family: monospace;
+  }
+
+  .card-link {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C9A962;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,169,98,0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.3s;
+  }
+
+  .card-link:hover {
+    border-color: #C9A962;
+  }
+
+  /* Carousel special layout */
+  .carousel-grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .carousel-grid .card {
+    flex-shrink: 0;
+  }
+
+  .carousel-grid .iframe-wrap {
+    width: 260px;
+    height: 260px;
+  }
+
+  .carousel-grid .iframe-wrap iframe {
+    width: 1080px;
+    height: 1080px;
+    transform: scale(0.2407);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+  }
+
+  .carousel-flow-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .carousel-flow-label .arrow {
+    color: rgba(201,169,98,0.4);
+    font-size: 20px;
+  }
+
+  .carousel-flow-label .label {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .empty-note {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.3);
+    font-style: italic;
+    padding: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Chromatic Conversations <em>III</em></h1>
+    <p>Ad Creatives Preview</p>
+  </div>
+
+  <!-- Feed 1080x1080 -->
+  <div class="section">
+    <div class="section-title">Feed (1080 &times; 1080)</div>
+    <div class="section-subtitle">Square format for Instagram/Facebook feed</div>
+    <div class="grid" id="grid-feed"></div>
+  </div>
+
+  <!-- Portrait 1080x1350 -->
+  <div class="section">
+    <div class="section-title">Portrait (1080 &times; 1350)</div>
+    <div class="section-subtitle">4:5 portrait format for Instagram feed</div>
+    <div class="grid" id="grid-portrait"></div>
+  </div>
+
+  <!-- Story 1080x1920 -->
+  <div class="section">
+    <div class="section-title">Story (1080 &times; 1920)</div>
+    <div class="section-subtitle">9:16 format for Instagram/Facebook Stories</div>
+    <div class="grid" id="grid-story"></div>
+  </div>
+
+  <!-- Carousel -->
+  <div class="section">
+    <div class="section-title">Carousel</div>
+    <div class="section-subtitle">Swipeable multi-slide format</div>
+    <div class="carousel-flow-label">
+      <span class="label">Slide flow</span>
+      <span class="arrow">&rarr;</span>
+    </div>
+    <div class="carousel-grid" id="grid-carousel"></div>
+  </div>
+
+<script>
+  // All known CC3 creatives — add new files here as they're created
+  const files = [
+    // Feed 1080x1080
+    { name: "LUME_CC3_Static_Poster_1080x1080_v1.html", format: "feed" },
+    { name: "LUME_CC3_Static_ArtInvestment_1080x1080_v1.html", format: "feed" },
+    { name: "LUME_CC3_Static_Curiosity_1080x1080_v1.html", format: "feed" },
+    { name: "LUME_CC3_Static_Exclusivity_1080x1080_v1.html", format: "feed" },
+    { name: "LUME_CC3_Static_SocialProof_1080x1080_v1.html", format: "feed" },
+    { name: "LUME_CC3_Static_Value_1080x1080_v1.html", format: "feed" },
+    // Portrait 1080x1350
+    { name: "LUME_CC3_Portrait_Hero_1080x1350_v1.html", format: "portrait" },
+    { name: "LUME_CC3_Portrait_FOMO_1080x1350_v1.html", format: "portrait" },
+    { name: "LUME_CC3_Portrait_Listicle_1080x1350_v1.html", format: "portrait" },
+    { name: "LUME_CC3_Portrait_Mindset_1080x1350_v1.html", format: "portrait" },
+    // Story 1080x1920
+    { name: "LUME_CC3_Story_Countdown_1080x1920_v1.html", format: "story" },
+    { name: "LUME_CC3_Story_Impact_1080x1920_v1.html", format: "story" },
+    { name: "LUME_CC3_Story_Partners_1080x1920_v1.html", format: "story" },
+    // Carousel
+    { name: "LUME_CC3_Carousel_S1_Hook_1080x1080_v1.html", format: "carousel", slide: 1 },
+    { name: "LUME_CC3_Carousel_S2_Insight_1080x1080_v1.html", format: "carousel", slide: 2 },
+    { name: "LUME_CC3_Carousel_S3_Solution_1080x1080_v1.html", format: "carousel", slide: 3 },
+    { name: "LUME_CC3_Carousel_S4_Details_1080x1080_v1.html", format: "carousel", slide: 4 },
+    { name: "LUME_CC3_Carousel_S5_CTA_1080x1080_v1.html", format: "carousel", slide: 5 },
+  ];
+
+  function createCard(file, sizeClass) {
+    const card = document.createElement('div');
+    card.className = `card ${sizeClass}`;
+    card.innerHTML = `
+      <div class="iframe-wrap">
+        <iframe src="${file.name}" loading="lazy" scrolling="no"></iframe>
+      </div>
+      <div class="card-info">
+        <div class="card-filename">${file.name}</div>
+        <a href="${file.name}" target="_blank" class="card-link">Open Full Size &rarr;</a>
+      </div>
+    `;
+    return card;
+  }
+
+  const gridFeed = document.getElementById('grid-feed');
+  const gridPortrait = document.getElementById('grid-portrait');
+  const gridStory = document.getElementById('grid-story');
+  const gridCarousel = document.getElementById('grid-carousel');
+
+  let feedCount = 0, portraitCount = 0, storyCount = 0, carouselCount = 0;
+
+  files.forEach(file => {
+    if (file.format === 'feed') {
+      gridFeed.appendChild(createCard(file, 'size-1080x1080'));
+      feedCount++;
+    } else if (file.format === 'portrait') {
+      gridPortrait.appendChild(createCard(file, 'size-1080x1350'));
+      portraitCount++;
+    } else if (file.format === 'story') {
+      gridStory.appendChild(createCard(file, 'size-1080x1920'));
+      storyCount++;
+    } else if (file.format === 'carousel') {
+      gridCarousel.appendChild(createCard(file, ''));
+      carouselCount++;
+    }
+  });
+
+  // Show empty notes for sections with no creatives
+  if (!feedCount) gridFeed.innerHTML = '<div class="empty-note">No feed creatives yet.</div>';
+  if (!portraitCount) gridPortrait.innerHTML = '<div class="empty-note">No portrait creatives yet.</div>';
+  if (!storyCount) gridStory.innerHTML = '<div class="empty-note">No story creatives yet.</div>';
+  if (!carouselCount) gridCarousel.innerHTML = '<div class="empty-note">No carousel creatives yet.</div>';
+</script>
+
+</body>
+</html>

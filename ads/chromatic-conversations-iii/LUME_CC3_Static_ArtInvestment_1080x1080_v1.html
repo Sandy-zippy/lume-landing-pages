@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LUME — Art Investment Angle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    background: #1a1a1a;
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 100%, rgba(196,30,58,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 80% 20%, rgba(201,169,98,0.04) 0%, transparent 60%),
+      linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
+  }
+
+  /* Subtle noise */
+  .texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 100px;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo-container img {
+    height: 65px;
+    width: auto;
+  }
+
+  .gold-line-top {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #C9A962);
+    margin-bottom: 40px;
+  }
+
+  .headline {
+    font-family: 'Cormorant', serif;
+    font-size: 62px;
+    font-weight: 600;
+    color: #f8f6f3;
+    text-align: center;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    margin-bottom: 35px;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #C9A962;
+  }
+
+  .gold-divider {
+    width: 80px;
+    height: 1px;
+    background: #C9A962;
+    margin-bottom: 35px;
+  }
+
+  .subtext {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.6);
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 50px;
+    max-width: 650px;
+  }
+
+  .details-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 18px;
+  }
+
+  .details-row .item {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(248,246,243,0.7);
+  }
+
+  .details-row .sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #C9A962;
+  }
+
+  .price-seats {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .price-seats .tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #C9A962;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border: 1px solid rgba(201,169,98,0.3);
+  }
+
+  .bottom-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 10%, #C9A962 50%, transparent 90%);
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="texture"></div>
+
+  <div class="content">
+    <div class="logo-container">
+      <img src="../../assets/lume-logo-white.png" alt="LUME">
+    </div>
+
+    <div class="gold-line-top"></div>
+
+    <div class="headline">
+      Your Next Asset<br>Isn't Listed on<br><em>Any Exchange.</em>
+    </div>
+
+    <div class="gold-divider"></div>
+
+    <div class="subtext">
+      Discover art as investment at<br>Hyderabad's most curated evening.
+    </div>
+
+    <div class="details-row">
+      <div class="item">Feb 28</div>
+      <div class="sep"></div>
+      <div class="item">6:30 PM</div>
+      <div class="sep"></div>
+      <div class="item">Elements by Nirvania</div>
+    </div>
+
+    <div class="price-seats">
+      <div class="tag">₹4,000</div>
+      <div class="tag">Limited to 40 Guests</div>
+    </div>
+  </div>
+
+  <div class="bottom-accent"></div>
+</body>
+</html>

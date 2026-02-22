@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LUME — Chromatic Conversations III — Story Partners</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    background: #f8f6f3;
+  }
+
+  /* Subtle warm texture */
+  .bg-texture {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 40% 30% at 80% 15%, rgba(196,30,58,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 20% at 20% 85%, rgba(201,169,98,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, rgba(248,246,243,1) 0%, rgba(240,237,232,1) 100%);
+  }
+
+  /* Gold accent lines */
+  .accent-line-top {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 2px; height: 100px;
+    background: linear-gradient(to bottom, #C9A962, transparent);
+  }
+  .accent-line-bottom {
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 2px; height: 100px;
+    background: linear-gradient(to top, #C9A962, transparent);
+  }
+
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    padding: 0 180px; /* center in 720px safe zone */
+  }
+
+  .logo-area {
+    padding-top: 180px;
+    margin-bottom: 80px;
+  }
+  .logo {
+    width: 220px;
+  }
+
+  .brought-by {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  .event-name {
+    font-family: 'Cormorant', serif;
+    font-weight: 600;
+    font-size: 44px;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 70px;
+    line-height: 1.15;
+  }
+
+  .partners-stack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .partner-card {
+    text-align: center;
+    padding: 48px 0;
+    position: relative;
+  }
+  .partner-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A962, transparent);
+  }
+  .partner-label {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 12px;
+  }
+  .partner-name {
+    font-family: 'Cormorant', serif;
+    font-weight: 600;
+    font-size: 42px;
+    color: #1a1a1a;
+  }
+
+  .footer-details {
+    position: absolute;
+    bottom: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .footer-gold-line {
+    width: 60px; height: 2px;
+    background: #C9A962;
+    margin: 0 auto 24px;
+  }
+  .footer-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #666;
+    letter-spacing: 2px;
+  }
+  .footer-text .sep {
+    color: #C9A962;
+    margin: 0 12px;
+  }
+
+  /* Subtle red corner accents */
+  .corner-tl {
+    position: absolute;
+    top: 60px; left: 60px;
+    width: 40px; height: 40px;
+    border-top: 2px solid rgba(196,30,58,0.2);
+    border-left: 2px solid rgba(196,30,58,0.2);
+  }
+  .corner-tr {
+    position: absolute;
+    top: 60px; right: 60px;
+    width: 40px; height: 40px;
+    border-top: 2px solid rgba(196,30,58,0.2);
+    border-right: 2px solid rgba(196,30,58,0.2);
+  }
+  .corner-bl {
+    position: absolute;
+    bottom: 60px; left: 60px;
+    width: 40px; height: 40px;
+    border-bottom: 2px solid rgba(196,30,58,0.2);
+    border-left: 2px solid rgba(196,30,58,0.2);
+  }
+  .corner-br {
+    position: absolute;
+    bottom: 60px; right: 60px;
+    width: 40px; height: 40px;
+    border-bottom: 2px solid rgba(196,30,58,0.2);
+    border-right: 2px solid rgba(196,30,58,0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="bg-texture"></div>
+  <div class="accent-line-top"></div>
+  <div class="accent-line-bottom"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-tr"></div>
+  <div class="corner-bl"></div>
+  <div class="corner-br"></div>
+
+  <div class="content">
+    <div class="logo-area">
+      <img src="../../assets/lume-logo-transparent.png" alt="LUME" class="logo">
+    </div>
+
+    <div class="brought-by">Brought to you by</div>
+    <div class="event-name">Chromatic Conversations III</div>
+
+    <div class="partners-stack">
+      <div class="partner-card">
+        <div class="partner-label">Media Partner</div>
+        <div class="partner-name">Hashtag India</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-label">Event Partner</div>
+        <div class="partner-name">We Connect</div>
+      </div>
+      <div class="partner-card">
+        <div class="partner-label">Venue Partner</div>
+        <div class="partner-name">Elements by Nirvania</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-details">
+    <div class="footer-gold-line"></div>
+    <div class="footer-text">Feb 28<span class="sep">|</span>6:30 PM<span class="sep">|</span>Hyderabad</div>
+  </div>
+</body>
+</html>

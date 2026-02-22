@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chromatic Conversations III — Campaign Package | ZippyScale × LUME</title>
+<link rel="icon" type="image/png" href="assets/lume-logo-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red: #C41E3A;
+    --charcoal: #1a1a1a;
+    --cream: #f8f6f3;
+    --gold: #C9A962;
+    --coral: #FF5149;
+    --dark-surface: #111111;
+    --card-bg: #1e1e1e;
+    --card-border: rgba(201,169,98,0.15);
+    --text-muted: rgba(248,246,243,0.5);
+    --text-secondary: rgba(248,246,243,0.7);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark-surface);
+    color: var(--cream);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--card-border);
+    padding: 0 40px;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-brand img { height: 28px; }
+  .nav-brand span {
+    font-family: 'Cormorant', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 20px; }
+    .nav-links { display: none; }
+  }
+
+  /* ─── HEADER ─── */
+  .hero {
+    background: var(--charcoal);
+    padding: 80px 40px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 140%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(196,30,58,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(201,169,98,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-logo {
+    height: 48px;
+    margin-bottom: 32px;
+    opacity: 0.9;
+  }
+  .hero h1 {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero .subtitle {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+  .hero .meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .hero .meta span { color: var(--gold); }
+  .hero .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 28px auto 0;
+    opacity: 0.4;
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 70px 40px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-number {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .section { padding: 50px 20px; }
+    .hero { padding: 60px 20px 50px; }
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: #d42240;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(196,30,58,0.25);
+  }
+  .btn-gold {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+  }
+  .btn-gold:hover {
+    background: rgba(201,169,98,0.1);
+    transform: translateY(-1px);
+  }
+  .btn-coral {
+    background: var(--coral);
+    color: #fff;
+  }
+  .btn-coral:hover {
+    background: #e54540;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(255,81,73,0.25);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(248,246,243,0.2);
+  }
+  .btn-outline:hover {
+    border-color: rgba(248,246,243,0.4);
+    background: rgba(248,246,243,0.05);
+  }
+  .btn-sm {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+
+  /* ─── LANDING PAGE SECTION ─── */
+  .lp-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 800px;
+  }
+  .lp-preview {
+    background: var(--charcoal);
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .lp-preview iframe {
+    width: 1440px;
+    height: 900px;
+    border: none;
+    transform: scale(0.56);
+    transform-origin: top left;
+    pointer-events: none;
+  }
+  .lp-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(30,30,30,0.9));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 24px;
+  }
+  .lp-body {
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .lp-body p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    max-width: 480px;
+  }
+
+  @media (max-width: 600px) {
+    .lp-preview { height: 200px; }
+    .lp-preview iframe { transform: scale(0.35); }
+    .lp-body { padding: 20px; flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ─── AD CREATIVES ─── */
+  .format-group {
+    margin-bottom: 48px;
+  }
+  .format-group:last-child { margin-bottom: 0; }
+  .format-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .format-label span {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+
+  .creatives-grid {
+    display: grid;
+    gap: 20px;
+  }
+  .grid-feed { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .grid-portrait { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .grid-story { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+  .creative-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .creative-card:hover {
+    border-color: rgba(201,169,98,0.35);
+    transform: translateY(-2px);
+  }
+  .creative-thumb {
+    position: relative;
+    overflow: hidden;
+    background: var(--charcoal);
+  }
+  .creative-thumb iframe {
+    border: none;
+    pointer-events: none;
+    display: block;
+  }
+  /* Feed: 1080x1080 → 220px wide preview */
+  .thumb-feed { height: 220px; }
+  .thumb-feed iframe {
+    width: 1080px;
+    height: 1080px;
+    transform: scale(0.204);
+    transform-origin: top left;
+  }
+  /* Portrait: 1080x1350 → 200px wide preview */
+  .thumb-portrait { height: 250px; }
+  .thumb-portrait iframe {
+    width: 1080px;
+    height: 1350px;
+    transform: scale(0.185);
+    transform-origin: top left;
+  }
+  /* Story: 1080x1920 → 160px wide preview */
+  .thumb-story { height: 284px; }
+  .thumb-story iframe {
+    width: 1080px;
+    height: 1920px;
+    transform: scale(0.148);
+    transform-origin: top left;
+  }
+  /* Carousel: 1080x1080 → 200px wide */
+  .thumb-carousel { height: 200px; }
+  .thumb-carousel iframe {
+    width: 1080px;
+    height: 1080px;
+    transform: scale(0.185);
+    transform-origin: top left;
+  }
+
+  .creative-info {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .creative-name {
+    font-size: 11px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+  .creative-link {
+    font-size: 11px;
+    color: var(--gold);
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .creative-link:hover { color: #dfc07a; }
+
+  /* Carousel horizontal scroll */
+  .carousel-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+  }
+  .carousel-scroll::-webkit-scrollbar { height: 6px; }
+  .carousel-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-radius: 3px; }
+  .carousel-scroll::-webkit-scrollbar-thumb { background: rgba(201,169,98,0.2); border-radius: 3px; }
+  .carousel-scroll .creative-card {
+    flex: 0 0 200px;
+    scroll-snap-align: start;
+  }
+
+  /* ─── STRATEGY SECTION ─── */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .strategy-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .strategy-item .icon {
+    font-size: 20px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .strategy-item h4 {
+    font-family: 'Cormorant', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .strategy-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .strategy-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── Q&A SECTION ─── */
+  .qa-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 36px;
+    max-width: 700px;
+  }
+  .qa-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .qa-items {
+    list-style: none;
+    margin: 20px 0 28px;
+  }
+  .qa-items li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .qa-items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,169,98,0.1);
+    border: 1px solid rgba(201,169,98,0.25);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+  }
+
+  /* ─── TIMELINE ─── */
+  .timeline {
+    position: relative;
+    max-width: 700px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), rgba(201,169,98,0.1));
+  }
+  .tl-item {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    position: relative;
+  }
+  .tl-dot {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .tl-done {
+    background: rgba(76,175,80,0.15);
+    border: 1px solid rgba(76,175,80,0.3);
+  }
+  .tl-waiting {
+    background: rgba(201,169,98,0.15);
+    border: 1px solid rgba(201,169,98,0.3);
+  }
+  .tl-upcoming {
+    background: rgba(248,246,243,0.05);
+    border: 1px solid rgba(248,246,243,0.1);
+  }
+  .tl-content { padding-top: 6px; }
+  .tl-date {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .tl-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  /* ─── CHECKLIST ─── */
+  .checklist {
+    list-style: none;
+    max-width: 600px;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(248,246,243,0.04);
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-box {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid rgba(201,169,98,0.3);
+    border-radius: 4px;
+    margin-top: 1px;
+  }
+  .urgency-note {
+    margin-top: 28px;
+    padding: 20px 24px;
+    background: rgba(196,30,58,0.08);
+    border-left: 3px solid var(--red);
+    border-radius: 0 8px 8px 0;
+    max-width: 600px;
+  }
+  .urgency-note p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    padding: 48px 40px;
+    text-align: center;
+    border-top: 1px solid var(--card-border);
+  }
+  .footer-brand {
+    font-family: 'Cormorant', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .footer-brand span { color: var(--gold); }
+  .footer-contact {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .footer-contact a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .footer-contact a:hover { text-decoration: underline; }
+
+  /* ─── UTILITY ─── */
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  .flex-gap { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="assets/lume-logo-white.png" alt="LUME">
+      <span>LUME</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#landing-page">Landing Page</a></li>
+      <li><a href="#creatives">Ad Creatives</a></li>
+      <li><a href="#strategy">Strategy</a></li>
+      <li><a href="#qa">Q&A</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#blockers">Blockers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <img src="assets/lume-logo-white.png" alt="LUME" class="hero-logo">
+    <h1>Chromatic Conversations <em>III</em></h1>
+    <p class="subtitle">Campaign Package</p>
+    <p class="meta">Prepared by <span>ZippyScale</span> &nbsp;|&nbsp; February 2026</p>
+    <div class="divider"></div>
+  </div>
+</header>
+
+<!-- SECTION 1: LANDING PAGE -->
+<section class="section" id="landing-page">
+  <div class="section-inner">
+    <p class="section-number">01</p>
+    <h2 class="section-title">Event Landing Page</h2>
+    <p class="section-desc">A dedicated page designed for ad traffic and registrations. Optimised for mobile, fast-loading, and on-brand.</p>
+
+    <div class="lp-card">
+      <div class="lp-preview">
+        <iframe src="chromatic-conversations-iii.html" loading="lazy" title="Event Landing Page Preview"></iframe>
+        <div class="lp-preview-overlay"></div>
+      </div>
+      <div class="lp-body">
+        <p>View the event landing page designed for ad traffic and registrations.</p>
+        <a href="chromatic-conversations-iii.html" target="_blank" class="btn btn-primary">Open Landing Page &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: AD CREATIVES -->
+<section class="section" id="creatives">
+  <div class="section-inner">
+    <p class="section-number">02</p>
+    <h2 class="section-title">Ad Creatives</h2>
+    <p class="section-desc">18 purpose-built creatives across four formats — feed, portrait, story, and carousel — ready for Meta Ads deployment.</p>
+
+    <!-- Feed Ads -->
+    <div class="format-group">
+      <div class="format-label">Feed Ads &mdash; 1080 &times; 1080 <span>6 creatives</span></div>
+      <div class="creatives-grid grid-feed">
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-feed">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Static_Poster_1080x1080_v1.html" loading="lazy" title="Poster"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Poster</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Static_Poster_1080x1080_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-feed">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Static_Exclusivity_1080x1080_v1.html" loading="lazy" title="Exclusivity"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Exclusivity</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Static_Exclusivity_1080x1080_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-feed">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Static_Curiosity_1080x1080_v1.html" loading="lazy" title="Curiosity"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Curiosity</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Static_Curiosity_1080x1080_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-feed">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Static_SocialProof_1080x1080_v1.html" loading="lazy" title="Social Proof"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Social Proof</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Static_SocialProof_1080x1080_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-feed">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Static_Value_1080x1080_v1.html" loading="lazy" title="Value"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Value</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Static_Value_1080x1080_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-feed">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Static_ArtInvestment_1080x1080_v1.html" loading="lazy" title="Art Investment"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Art Investment</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Static_ArtInvestment_1080x1080_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Portrait Ads -->
+    <div class="format-group">
+      <div class="format-label">Portrait Ads &mdash; 1080 &times; 1350 <span>4 creatives</span></div>
+      <div class="creatives-grid grid-portrait">
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-portrait">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Portrait_Hero_1080x1350_v1.html" loading="lazy" title="Hero"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Hero</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Portrait_Hero_1080x1350_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-portrait">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Portrait_FOMO_1080x1350_v1.html" loading="lazy" title="FOMO"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">FOMO</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Portrait_FOMO_1080x1350_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-portrait">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Portrait_Listicle_1080x1350_v1.html" loading="lazy" title="Listicle"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Listicle</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Portrait_Listicle_1080x1350_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-portrait">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Portrait_Mindset_1080x1350_v1.html" loading="lazy" title="Mindset"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Mindset</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Portrait_Mindset_1080x1350_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Story/Reel Ads -->
+    <div class="format-group">
+      <div class="format-label">Story / Reel Ads &mdash; 1080 &times; 1920 <span>3 creatives</span></div>
+      <div class="creatives-grid grid-story">
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-story">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Story_Countdown_1080x1920_v1.html" loading="lazy" title="Countdown"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Countdown</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Story_Countdown_1080x1920_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-story">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Story_Impact_1080x1920_v1.html" loading="lazy" title="Impact"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Impact</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Story_Impact_1080x1920_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-story">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Story_Partners_1080x1920_v1.html" loading="lazy" title="Partners"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">Partners</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Story_Partners_1080x1920_v1.html" target="_blank" class="creative-link">Open Full Size</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="format-group">
+      <div class="format-label">Carousel &mdash; 5 Slides <span>1080 &times; 1080 each</span></div>
+      <div class="carousel-scroll">
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-carousel">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S1_Hook_1080x1080_v1.html" loading="lazy" title="Slide 1: Hook"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">S1 — Hook</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S1_Hook_1080x1080_v1.html" target="_blank" class="creative-link">Open</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-carousel">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S2_Insight_1080x1080_v1.html" loading="lazy" title="Slide 2: Insight"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">S2 — Insight</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S2_Insight_1080x1080_v1.html" target="_blank" class="creative-link">Open</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-carousel">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S3_Solution_1080x1080_v1.html" loading="lazy" title="Slide 3: Solution"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">S3 — Solution</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S3_Solution_1080x1080_v1.html" target="_blank" class="creative-link">Open</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-carousel">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S4_Details_1080x1080_v1.html" loading="lazy" title="Slide 4: Details"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">S4 — Details</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S4_Details_1080x1080_v1.html" target="_blank" class="creative-link">Open</a>
+          </div>
+        </div>
+
+        <div class="creative-card">
+          <div class="creative-thumb thumb-carousel">
+            <iframe src="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S5_CTA_1080x1080_v1.html" loading="lazy" title="Slide 5: CTA"></iframe>
+          </div>
+          <div class="creative-info">
+            <span class="creative-name">S5 — CTA</span>
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_Carousel_S5_CTA_1080x1080_v1.html" target="_blank" class="creative-link">Open</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 3: CAMPAIGN STRATEGY -->
+<section class="section" id="strategy">
+  <div class="section-inner">
+    <p class="section-number">03</p>
+    <h2 class="section-title">Campaign Strategy</h2>
+    <p class="section-desc">A full Meta Ads playbook covering audience targeting, ad copy, budget phasing, and day-by-day optimisation.</p>
+
+    <div class="strategy-grid">
+      <div class="strategy-item">
+        <span class="icon">&#127919;</span>
+        <h4>3 Audience Segments</h4>
+        <p>Interest-based HNIs, Lookalike audiences from past events, and Retargeting warm leads.</p>
+      </div>
+      <div class="strategy-item">
+        <span class="icon">&#9997;&#65039;</span>
+        <h4>5 Ad Copy Variations</h4>
+        <p>Tested angles: exclusivity, art investment, FOMO, social proof, and curiosity hooks.</p>
+      </div>
+      <div class="strategy-item">
+        <span class="icon">&#128176;</span>
+        <h4>&#8377;15K Budget &mdash; 6 Days</h4>
+        <p>Phased spend: launch heavy, optimise mid-flight, scale winners in final days.</p>
+      </div>
+      <div class="strategy-item">
+        <span class="icon">&#128203;</span>
+        <h4>Lead Form + Follow-ups</h4>
+        <p>Meta lead form setup, instant WhatsApp follow-up templates, and reminder sequences.</p>
+      </div>
+    </div>
+
+    <a href="https://docs.google.com/document/d/1ILC9_upVMzUbqvC0gFLxltvNAmt7xqB15zJaTCZbHo0/edit" target="_blank" class="btn btn-primary">Open Strategy Document &rarr;</a>
+  </div>
+</section>
+
+<!-- SECTION 4: Q&A FORM -->
+<section class="section" id="qa">
+  <div class="section-inner">
+    <p class="section-number">04</p>
+    <h2 class="section-title">Q&A Form</h2>
+    <p class="section-desc">We need the following information from your team before we can launch ads.</p>
+
+    <div class="qa-card">
+      <p>This document covers everything we need to set up and launch the campaign:</p>
+      <ul class="qa-items">
+        <li>Event logistics (date, time, venue address, capacity)</li>
+        <li>Venue photos and past event media</li>
+        <li>Meta Ads Manager access</li>
+        <li>Budget confirmation and payment details</li>
+        <li>Past attendee email list for lookalike targeting</li>
+      </ul>
+      <div class="flex-gap">
+        <a href="https://docs.google.com/document/d/1pCNkw-sTaBRS6GmJDCPEcI_yHDuCFDB3WhZdBaJkuE4/edit" target="_blank" class="btn btn-coral">Fill Out Q&A &rarr;</a>
+      </div>
+      <div class="status-badge mt-16">&#9203; Awaiting Response</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: TIMELINE -->
+<section class="section" id="timeline">
+  <div class="section-inner">
+    <p class="section-number">05</p>
+    <h2 class="section-title">Timeline</h2>
+    <p class="section-desc">Six days from strategy to event day. Here is where things stand.</p>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot tl-done">&#10003;</div>
+        <div class="tl-content">
+          <div class="tl-date">Feb 22</div>
+          <div class="tl-text">Campaign strategy, 18 ad creatives, and event landing page delivered.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot tl-waiting">&#9203;</div>
+        <div class="tl-content">
+          <div class="tl-date">Feb 23</div>
+          <div class="tl-text">Q&A responses + Meta Ads access from Sid's team.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot tl-upcoming">&#9654;</div>
+        <div class="tl-content">
+          <div class="tl-date">Feb 23</div>
+          <div class="tl-text">Meta Ads setup and campaign launch.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot tl-upcoming">&#9654;</div>
+        <div class="tl-content">
+          <div class="tl-date">Feb 24 &ndash; 27</div>
+          <div class="tl-text">Optimization and scaling &mdash; kill underperformers, double down on winners.</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot tl-upcoming">&#9654;</div>
+        <div class="tl-content">
+          <div class="tl-date">Feb 28</div>
+          <div class="tl-text">Event day &mdash; ads killed by 2 PM.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: WHAT WE NEED FROM YOU -->
+<section class="section" id="blockers">
+  <div class="section-inner">
+    <p class="section-number">06</p>
+    <h2 class="section-title">What We Need From You</h2>
+    <p class="section-desc">These are the outstanding items required before we can go live.</p>
+
+    <ul class="checklist">
+      <li>
+        <div class="check-box"></div>
+        <span>Meta Ads Manager access (Business Manager invite to ZippyScale)</span>
+      </li>
+      <li>
+        <div class="check-box"></div>
+        <span>Ad budget confirmation &mdash; &#8377;15K recommended for 6-day campaign</span>
+      </li>
+      <li>
+        <div class="check-box"></div>
+        <span>Venue photos for creatives (interior + exterior shots)</span>
+      </li>
+      <li>
+        <div class="check-box"></div>
+        <span>Past event media (photos, videos from CC I &amp; II)</span>
+      </li>
+      <li>
+        <div class="check-box"></div>
+        <span>Payment link URL for ticket sales / registration</span>
+      </li>
+      <li>
+        <div class="check-box"></div>
+        <span>Past attendee email list (for lookalike audience targeting)</span>
+      </li>
+    </ul>
+
+    <div class="urgency-note">
+      <p>The sooner we receive these, the more time we have to optimise. Every day of delay is a day fewer for the algorithm to learn and for us to scale what works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">ZippyScale <span>&times;</span> LUME</div>
+  <p class="footer-contact">Questions? Contact <a href="mailto:sandy@zippyscale.com">sandy@zippyscale.com</a></p>
+</footer>
+
+</body>
+</html>

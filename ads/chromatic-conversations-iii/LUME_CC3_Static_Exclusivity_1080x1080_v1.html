@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LUME — Exclusivity Angle</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    background: #1a1a1a;
+  }
+
+  /* Red swirl background — different pattern from poster */
+  .bg-swirl {
+    position: absolute;
+    inset: 0;
+    background:
+      conic-gradient(from 120deg at 70% 60%, #C41E3A, #6B0F1A, #B80000, #8B0000, #C41E3A),
+      radial-gradient(ellipse 90% 70% at 80% 90%, #B80000 0%, transparent 50%),
+      radial-gradient(ellipse 60% 80% at 10% 20%, #C41E3A 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, #5A0A15 0%, transparent 70%),
+      conic-gradient(from 300deg at 20% 80%, #8B0000, #B80000, #C41E3A, #7A0A1E, #8B0000),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #4A0510, #2A0308);
+    filter: blur(35px) saturate(1.2);
+  }
+
+  .bg-swirl::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 40% at 70% 30%, rgba(196,30,58,0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 20% 70%, rgba(139,0,0,0.4) 0%, transparent 60%);
+    filter: blur(20px);
+  }
+
+  .texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    mix-blend-mode: overlay;
+  }
+
+  /* White panel — offset to the right for visual interest */
+  .white-panel {
+    position: absolute;
+    top: 100px;
+    left: 180px;
+    right: 80px;
+    bottom: 100px;
+    background: rgba(248, 246, 243, 0.96);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 70px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+  }
+
+  .logo-container {
+    margin-bottom: 40px;
+  }
+
+  .logo-container img {
+    height: 60px;
+    width: auto;
+  }
+
+  .headline-block {
+    margin-bottom: 40px;
+  }
+
+  .headline-line {
+    font-family: 'Cormorant', serif;
+    font-size: 72px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+  }
+
+  .headline-line.red {
+    color: #C41E3A;
+  }
+
+  .headline-line.italic {
+    font-style: italic;
+    color: #555;
+    font-weight: 400;
+    font-size: 64px;
+  }
+
+  .gold-line {
+    width: 50px;
+    height: 2px;
+    background: #C9A962;
+    margin-bottom: 35px;
+  }
+
+  .subtitle {
+    font-family: 'Cormorant', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+
+  .event-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .event-info .line {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #999;
+  }
+
+  .event-info .line strong {
+    font-weight: 500;
+    color: #666;
+  }
+
+  /* Red accent strip on the left edge of white panel */
+  .red-strip {
+    position: absolute;
+    top: 100px;
+    left: 180px;
+    width: 4px;
+    bottom: 100px;
+    background: linear-gradient(to bottom, #C41E3A, #B80000);
+  }
+</style>
+</head>
+<body>
+  <div class="bg-swirl"></div>
+  <div class="texture"></div>
+
+  <div class="white-panel">
+    <div class="logo-container">
+      <img src="../../assets/lume-logo-transparent.png" alt="LUME">
+    </div>
+
+    <div class="headline-block">
+      <div class="headline-line">40 Seats.</div>
+      <div class="headline-line red">One Evening.</div>
+      <div class="headline-line italic">Art That Appreciates.</div>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="subtitle">Chromatic Conversations III</div>
+
+    <div class="event-info">
+      <div class="line"><strong>Saturday, February 28</strong> · 6:30 PM</div>
+      <div class="line">Elements by Nirvania, Hyderabad</div>
+      <div class="line">₹4,000 per guest</div>
+    </div>
+  </div>
+
+  <div class="red-strip"></div>
+</body>
+</html>

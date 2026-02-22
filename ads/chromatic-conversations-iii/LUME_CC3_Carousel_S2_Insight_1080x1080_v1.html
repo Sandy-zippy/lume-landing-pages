@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>LUME CC3 Carousel — Slide 2: The Insight</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    background: #1a1a1a;
+  }
+
+  /* Subtle texture on dark bg */
+  .bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(196,30,58,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(201,169,98,0.04) 0%, transparent 50%),
+      #1a1a1a;
+  }
+
+  .texture {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    mix-blend-mode: overlay;
+  }
+
+  /* Gold accent lines */
+  .accent-left {
+    position: absolute;
+    left: 80px;
+    top: 180px;
+    bottom: 180px;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #C9A962 30%, #C9A962 70%, transparent);
+    opacity: 0.4;
+  }
+
+  .accent-right {
+    position: absolute;
+    right: 80px;
+    top: 250px;
+    bottom: 250px;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #C9A962 30%, #C9A962 70%, transparent);
+    opacity: 0.2;
+  }
+
+  /* Content */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 140px;
+    text-align: center;
+  }
+
+  .line1 {
+    font-family: 'Cormorant', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: #f8f6f3;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .line2 {
+    font-family: 'Cormorant', serif;
+    font-size: 56px;
+    font-weight: 600;
+    font-style: italic;
+    color: #C9A962;
+    margin-bottom: 60px;
+    line-height: 1.2;
+  }
+
+  .gold-divider {
+    width: 60px;
+    height: 1px;
+    background: #C9A962;
+    margin-bottom: 60px;
+  }
+
+  .stat {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(248,246,243,0.7);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .stat strong {
+    font-weight: 500;
+    color: #f8f6f3;
+  }
+
+  .stat-highlight {
+    font-family: 'Cormorant', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #C9A962;
+    margin-bottom: 12px;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(248,246,243,0.5);
+    margin-bottom: 50px;
+  }
+
+  .kicker {
+    font-family: 'Cormorant', serif;
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(248,246,243,0.6);
+    line-height: 1.4;
+  }
+
+  /* Swipe indicator */
+  .swipe {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .swipe-arrow {
+    width: 28px;
+    height: 28px;
+    border-right: 2px solid rgba(201,169,98,0.4);
+    border-bottom: 2px solid rgba(201,169,98,0.4);
+    transform: rotate(-45deg);
+  }
+
+  .swipe-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(201,169,98,0.3);
+    writing-mode: vertical-rl;
+    margin-top: 6px;
+  }
+
+  .slide-counter {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .dot.active {
+    background: #C9A962;
+    box-shadow: 0 0 6px rgba(201,169,98,0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="texture"></div>
+  <div class="accent-left"></div>
+  <div class="accent-right"></div>
+
+  <div class="content">
+    <div class="line1">Art isn't just beautiful.</div>
+    <div class="line2">It appreciates.</div>
+
+    <div class="gold-divider"></div>
+
+    <div class="stat-highlight">$65B</div>
+    <div class="stat-label">Global Art Market, 2025</div>
+
+    <div class="kicker">Yet most investors<br>completely overlook it.</div>
+  </div>
+
+  <div class="swipe">
+    <div class="swipe-arrow"></div>
+    <div class="swipe-text">Swipe</div>
+  </div>
+
+  <div class="slide-counter">
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</body>
+</html>
