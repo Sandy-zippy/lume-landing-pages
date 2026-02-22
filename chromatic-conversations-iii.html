@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chromatic Conversations III — Art as Investment | LUME</title>
+    <title>Chromatic Conversations III — Art as an Investment | LUME</title>
     <meta name="description" content="A private evening exploring art as an alternative investment. Feb 28, 6:30 PM at Elements by Nirvania, Hyderabad. Limited to 40 guests. ₹4,000 inclusive.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Chromatic Conversations III — Art as Investment | LUME">
+    <meta property="og:title" content="Chromatic Conversations III — Art as an Investment | LUME">
     <meta property="og:description" content="40 curated professionals. One gallery. A private evening where art meets investment. Feb 28, Hyderabad.">
     <meta property="og:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/hero-banner-cc3.png">
     <meta property="og:url" content="https://sandy-zippy.github.io/lume-landing-pages/chromatic-conversations-iii.html">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Chromatic Conversations III — Art as Investment">
+    <meta name="twitter:title" content="Chromatic Conversations III — Art as an Investment">
     <meta name="twitter:description" content="40 curated professionals. One gallery. A private evening where art meets investment.">
     <meta name="twitter:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/hero-banner-cc3.png">
 
@@ -75,10 +75,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(17, 17, 17, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
         }
 
         .header-logo {
@@ -95,7 +96,7 @@
         .header-logo span {
             font-weight: 600;
             font-size: 1.1rem;
-            color: var(--white);
+            color: var(--charcoal);
             letter-spacing: 0.1em;
         }
 
@@ -323,9 +324,9 @@
 
         /* ===== TRUST BAR ===== */
         .trust-bar {
-            background: var(--charcoal);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: var(--white);
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
             padding: 1.75rem 1.5rem;
         }
 
@@ -353,7 +354,7 @@
         .trust-stat-label {
             font-size: 0.6875rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.45);
+            color: var(--gray-500);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-top: 0.25rem;
@@ -458,8 +459,8 @@
         /* ===== WHAT YOU'LL EXPERIENCE ===== */
         .experience {
             padding: 5.5rem 1.5rem;
-            background: var(--charcoal);
-            color: var(--white);
+            background: var(--white);
+            color: var(--charcoal);
         }
 
         .experience-inner {
@@ -467,8 +468,8 @@
             margin: 0 auto;
         }
 
-        .experience h2 { color: var(--white); }
-        .experience .section-head p { color: rgba(255,255,255,0.5); }
+        .experience h2 { color: var(--charcoal); }
+        .experience .section-head p { color: var(--gray-500); }
 
         .experience-grid {
             display: grid;
@@ -479,14 +480,17 @@
         .exp-card {
             text-align: center;
             padding: 2.5rem 1.5rem;
-            border: 1px solid rgba(255,255,255,0.07);
+            border: 1px solid rgba(0,0,0,0.06);
             border-radius: 14px;
             transition: all 0.3s ease;
+            background: var(--cream);
         }
 
         .exp-card:hover {
-            border-color: rgba(201,169,98,0.25);
-            background: rgba(255,255,255,0.02);
+            border-color: rgba(196,30,58,0.2);
+            background: var(--cream);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.07);
         }
 
         .exp-icon {
@@ -495,13 +499,13 @@
         }
 
         .exp-card h3 {
-            color: var(--white);
+            color: var(--charcoal);
             font-size: 1.4rem;
             margin-bottom: 0.75rem;
         }
 
         .exp-card p {
-            color: rgba(255,255,255,0.5);
+            color: var(--gray-500);
             font-size: 0.9375rem;
             line-height: 1.7;
         }
@@ -510,15 +514,15 @@
         .mid-cta {
             padding: 4rem 1.5rem;
             text-align: center;
-            background: var(--charcoal);
-            border-top: 1px solid rgba(255,255,255,0.05);
+            background: var(--cream);
+            border-top: 1px solid rgba(0,0,0,0.06);
         }
 
         .mid-cta p {
             font-family: 'Cormorant', serif;
             font-size: 1.5rem;
             font-style: italic;
-            color: rgba(255,255,255,0.6);
+            color: var(--gray-500);
             margin-bottom: 1.5rem;
         }
 
@@ -739,7 +743,7 @@
         /* ===== REGISTRATION FORM ===== */
         .register {
             padding: 5.5rem 1.5rem;
-            background: var(--charcoal);
+            background: var(--cream);
             position: relative;
             overflow: hidden;
         }
@@ -749,8 +753,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 50% 40% at 10% 80%, rgba(184,0,0,0.12) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 50% at 90% 20%, rgba(196,30,58,0.08) 0%, transparent 50%);
+                radial-gradient(ellipse 50% 40% at 10% 80%, rgba(196,30,58,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 90% 20%, rgba(196,30,58,0.03) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -761,14 +765,15 @@
             z-index: 2;
         }
 
-        .register h2 { color: var(--white); }
-        .register .section-head p { color: rgba(255,255,255,0.45); }
+        .register h2 { color: var(--charcoal); }
+        .register .section-head p { color: var(--gray-500); }
 
         .reg-form {
-            background: rgba(255,255,255,0.035);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.08);
             padding: 2.25rem 2rem;
             border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         }
 
         .fg { margin-bottom: 1.1rem; }
@@ -777,7 +782,7 @@
             display: block;
             font-size: 0.8125rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.65);
+            color: var(--gray-500);
             margin-bottom: 0.4rem;
             letter-spacing: 0.02em;
         }
@@ -785,18 +790,18 @@
         .fi {
             width: 100%;
             padding: 0.8rem 0.9rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(0,0,0,0.12);
             border-radius: 7px;
             font-family: 'Outfit', sans-serif;
             font-size: 0.9375rem;
-            color: var(--white);
-            background: rgba(255,255,255,0.05);
+            color: var(--charcoal);
+            background: var(--cream);
             transition: all 0.2s ease;
             -webkit-appearance: none;
             appearance: none;
         }
 
-        .fi::placeholder { color: rgba(255,255,255,0.2); }
+        .fi::placeholder { color: rgba(0,0,0,0.3); }
 
         .fi:focus {
             outline: none;
@@ -812,8 +817,8 @@
         }
 
         select.fi option {
-            background: var(--charcoal);
-            color: var(--white);
+            background: var(--white);
+            color: var(--charcoal);
         }
 
         textarea.fi {
@@ -858,7 +863,7 @@
         .form-privacy {
             text-align: center;
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.5);
+            color: var(--gray-400);
             margin-top: 1rem;
             line-height: 1.5;
         }
@@ -893,12 +898,12 @@
 
         .form-success h3 {
             font-size: 1.75rem;
-            color: var(--white);
+            color: var(--charcoal);
             margin-bottom: 0.5rem;
         }
 
         .form-success p {
-            color: rgba(255,255,255,0.55);
+            color: var(--gray-500);
             font-size: 0.9375rem;
         }
 
@@ -947,6 +952,123 @@
             font-weight: 600;
             color: var(--charcoal);
         }
+
+        /* ===== PRESENTER ===== */
+        .presenter {
+            padding: 5.5rem 1.5rem;
+            background: var(--white);
+        }
+
+        .presenter-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .presenter-card {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding: 2.5rem;
+            background: var(--cream);
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .presenter-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(196,30,58,0.08);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--red);
+            border: 3px solid rgba(196,30,58,0.15);
+        }
+
+        .presenter-info h3 {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .presenter-info .presenter-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--coral);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .presenter-info p {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .presenter-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            .presenter-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ===== ABOUT LUME ===== */
+        .about-lume {
+            padding: 5rem 1.5rem;
+            background: var(--cream);
+        }
+
+        .about-lume-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-lume-logo {
+            height: 64px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-lume h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .about-lume p {
+            font-size: 1rem;
+            color: var(--gray-500);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-lume p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-lume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--coral);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            margin-top: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .about-lume-link:hover { color: var(--red-deep); }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -1070,7 +1192,7 @@
     <!-- HEADER — No nav links. Single CTA. No escape routes. -->
     <header class="header">
         <div class="header-logo">
-            <img src="assets/lume-logo-white.png" alt="LUME">
+            <img src="assets/lume-logo-transparent.png" alt="LUME">
             <span>LUME</span>
         </div>
         <a href="#register" class="header-cta">Reserve Your Seat</a>
@@ -1081,10 +1203,10 @@
     <!-- HERO -->
     <section class="hero" id="top">
         <div class="hero-bg"></div>
-        <img src="assets/lume-logo-white.png" alt="LUME" class="hero-logo">
+        <img src="assets/lume-logo-transparent.png" alt="LUME" class="hero-logo">
         <div class="hero-eyebrow">Beyond Aesthetics. Beyond Impulse.</div>
         <h1>Chromatic Conversations III</h1>
-        <p class="hero-sub">A Private Evening on Art as Investment</p>
+        <p class="hero-sub">A Private Evening on Art as an Investment</p>
         <div class="hero-meta">
             <span>Saturday, Feb 28</span>
             <span class="dot"></span>
@@ -1187,7 +1309,25 @@
                 <div class="exp-card reveal">
                     <div class="exp-icon">&#127863;</div>
                     <h3>Gallery Evening</h3>
-                    <p>Cocktails and hors d'oeuvres at Elements by Nirvania. Walk through curated art while having conversations that matter.</p>
+                    <p>Light snacks and wine at Elements by Nirvania. Walk through curated art while having conversations that matter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESENTER -->
+    <section class="presenter">
+        <div class="presenter-inner">
+            <div class="section-head reveal">
+                <div class="section-tag">Your Host</div>
+                <h2>Meet the Presenter</h2>
+            </div>
+            <div class="presenter-card reveal">
+                <div class="presenter-photo">&#127912;</div>
+                <div class="presenter-info">
+                    <h3>Coming Soon</h3>
+                    <div class="presenter-title">Speaker &amp; Art Investment Expert</div>
+                    <p>Details about the presenter for Chromatic Conversations III will be announced shortly. Stay tuned for an evening of insight and inspiration.</p>
                 </div>
             </div>
         </div>
@@ -1206,7 +1346,7 @@
         <div class="details-card reveal">
             <img src="assets/lume-logo-transparent.png" alt="LUME" class="details-card-logo">
             <h2>Chromatic Conversations III</h2>
-            <p class="details-sub">Art as Investment</p>
+            <p class="details-sub">Art as an Investment</p>
             <ul class="details-items">
                 <li>
                     <span class="di-icon">&#128197;</span>
@@ -1222,7 +1362,7 @@
                 </li>
                 <li>
                     <span class="di-icon">&#128176;</span>
-                    <span>&#x20B9;4,000 per guest &mdash; inclusive of cocktails &amp; hors d'oeuvres</span>
+                    <span>&#x20B9;4,000 per guest &mdash; inclusive of light snacks &amp; wine</span>
                 </li>
                 <li>
                     <span class="di-icon">&#128101;</span>
@@ -1248,8 +1388,8 @@
             </div>
             <div class="reels-row">
                 <div class="reel reveal">
-                    <iframe src="https://www.instagram.com/reel/DVBbdRMkQ7E/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy" title="Chromatic Conversations III — Art as Investment"></iframe>
-                    <div class="reel-label"><span>CC3 — Art as Investment</span></div>
+                    <iframe src="https://www.instagram.com/reel/DVBbdRMkQ7E/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy" title="Chromatic Conversations III — Art as an Investment"></iframe>
+                    <div class="reel-label"><span>CC3 — Art as an Investment</span></div>
                 </div>
                 <div class="reel reveal">
                     <iframe src="https://www.instagram.com/p/DVEBU-cEfAp/embed/" scrolling="no" allowtransparency="true" allowfullscreen="true" loading="lazy" title="Chromatic Conversations III — Understanding Art Value"></iframe>
@@ -1282,11 +1422,11 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-q">
-                        What's included in the &#x20B9;4,000 ticket?
+                        What's included in the experience?
                         <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div class="faq-a">
-                        <p>Full access to the evening including expert-led discussions on art investment, curated networking with 40 professionals, cocktails, hors d'oeuvres, and a guided art walkthrough at Elements by Nirvania.</p>
+                        <p>Full access to the evening including expert-led discussions on art as an investment, curated networking with 40 professionals, light snacks, wine, and a guided art walkthrough at Elements by Nirvania.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1309,15 +1449,6 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-q">
-                        How does payment work?
-                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq-a">
-                        <p>Fill out the registration form and our team will reach out within 24 hours with payment details (UPI / bank transfer). Your seat is confirmed once payment is received.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-q">
                         Do I need to know anything about art?
                         <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
@@ -1333,7 +1464,7 @@
     <section class="register" id="register">
         <div class="register-inner">
             <div class="section-head reveal">
-                <div class="section-tag" style="color: var(--gold);">Secure Your Spot</div>
+                <div class="section-tag">Secure Your Spot</div>
                 <h2>Reserve Your Seat</h2>
                 <p>Complete the form below. Our team will reach out within 24 hours with payment details and confirmation.</p>
             </div>
@@ -1388,7 +1519,7 @@
                     </div>
                     <h3>You're In.</h3>
                     <p>Our team will reach out within 24 hours with payment details. Check your phone &amp; email.</p>
-                    <p style="margin-top: 1rem; color: rgba(255,255,255,0.35); font-size: 0.8125rem;">Feb 28 &middot; 6:30 PM &middot; Elements by Nirvania</p>
+                    <p style="margin-top: 1rem; color: var(--gray-400); font-size: 0.8125rem;">Feb 28 &middot; 6:30 PM &middot; Elements by Nirvania</p>
                 </div>
             </div>
         </div>
@@ -1418,12 +1549,23 @@
         </div>
     </section>
 
+    <!-- ABOUT LUME -->
+    <section class="about-lume">
+        <div class="about-lume-inner reveal">
+            <img src="assets/lume-logo-transparent.png" alt="LUME" class="about-lume-logo">
+            <h2>About LUME</h2>
+            <p>LUME is Hyderabad's premier invite-only professional community, bringing together business owners, CXOs, doctors, lawyers, and investors for curated experiences that go beyond typical networking.</p>
+            <p>With 200+ professionals hosted across 15+ events, LUME creates spaces where meaningful connections happen naturally &mdash; over art, culture, and shared ambition.</p>
+            <a href="https://thelumeproject.com" target="_blank" rel="noopener noreferrer" class="about-lume-link">Learn more at thelumeproject.com &rarr;</a>
+        </div>
+    </section>
+
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-row">
-            <img src="assets/lume-logo-white.png" alt="LUME">
+            <img src="assets/lume-logo-transparent.png" alt="LUME">
             <span>LUME</span>
         </div>
         <a href="https://www.instagram.com/lumeproject_offl/" target="_blank" rel="noopener noreferrer" class="footer-ig">
@@ -1600,8 +1742,11 @@
         var header = document.querySelector('.header');
         window.addEventListener('scroll', function() {
             header.style.background = window.scrollY > 60
-                ? 'rgba(17, 17, 17, 0.97)'
-                : 'rgba(17, 17, 17, 0.9)';
+                ? 'rgba(255, 255, 255, 0.98)'
+                : 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = window.scrollY > 60
+                ? '0 2px 12px rgba(0,0,0,0.08)'
+                : '0 1px 8px rgba(0,0,0,0.04)';
         });
     })();
     </script>
