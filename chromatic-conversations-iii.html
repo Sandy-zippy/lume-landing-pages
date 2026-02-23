@@ -936,29 +936,32 @@
 
         .presenter-card {
             display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            padding: 2.5rem;
+            align-items: stretch;
+            gap: 0;
             background: var(--cream);
             border-radius: 16px;
             border: 1px solid rgba(0,0,0,0.05);
+            overflow: hidden;
         }
 
         .presenter-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: rgba(196,30,58,0.08);
+            width: 280px;
             flex-shrink: 0;
             overflow: hidden;
-            border: 3px solid rgba(196,30,58,0.15);
         }
 
         .presenter-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
+            object-position: center 30%;
+        }
+
+        .presenter-info {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .presenter-info h3 {
@@ -984,13 +987,14 @@
         @media (max-width: 600px) {
             .presenter-card {
                 flex-direction: column;
-                text-align: center;
-                padding: 2rem 1.5rem;
             }
             .presenter-photo {
-                width: 120px;
-                height: 120px;
-                font-size: 2.5rem;
+                width: 100%;
+                height: 300px;
+            }
+            .presenter-info {
+                padding: 1.75rem 1.5rem;
+                text-align: center;
             }
         }
 
@@ -1293,7 +1297,7 @@
         <div class="presenter-inner">
             <div class="section-head reveal">
                 <div class="section-tag">Your Moderator</div>
-                <h2>Led by Someone Who Builds Artistic Legacies</h2>
+                <h2>Your Guide for the Evening</h2>
             </div>
             <div class="presenter-card reveal">
                 <div class="presenter-photo">
@@ -1302,8 +1306,7 @@
                 <div class="presenter-info">
                     <h3>Sunaina Misra</h3>
                     <div class="presenter-title">Director, Artiste Culture</div>
-                    <p>Sunaina doesn't just talk about art &mdash; she shapes how it's collected, valued, and preserved. Over 13 years across India, Europe, and the MENA region, she has advised private collectors and institutions on building collections that appreciate in both meaning and value.</p>
-                    <p style="margin-top: 0.5rem;">As Director of Artiste Culture, she leads curatorial programmes, consults on cultural strategy for museums and foundations, and publishes The Art Bridge Magazine. At CC3, she'll cut through the noise and show you exactly how to think about art as an investment.</p>
+                    <p>13+ years advising collectors and institutions across India, Europe, and the MENA region on building art collections that appreciate in both meaning and value. She'll guide the conversation at CC3.</p>
                 </div>
             </div>
         </div>
