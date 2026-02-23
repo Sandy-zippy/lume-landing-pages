@@ -950,12 +950,15 @@
             border-radius: 50%;
             background: rgba(196,30,58,0.08);
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--red);
+            overflow: hidden;
             border: 3px solid rgba(196,30,58,0.15);
+        }
+
+        .presenter-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
 
         .presenter-info h3 {
@@ -1285,19 +1288,22 @@
         </div>
     </section>
 
-    <!-- PRESENTER -->
+    <!-- MODERATOR -->
     <section class="presenter">
         <div class="presenter-inner">
             <div class="section-head reveal">
-                <div class="section-tag">Your Host</div>
-                <h2>Meet the Presenter</h2>
+                <div class="section-tag">Your Moderator</div>
+                <h2>Meet Sunaina Misra</h2>
             </div>
             <div class="presenter-card reveal">
-                <div class="presenter-photo">&#127912;</div>
+                <div class="presenter-photo">
+                    <img src="assets/sunaina-misra.jpeg" alt="Sunaina Misra" loading="lazy">
+                </div>
                 <div class="presenter-info">
-                    <h3>Coming Soon</h3>
-                    <div class="presenter-title">Speaker &amp; Art Investment Expert</div>
-                    <p>Details about the presenter for Chromatic Conversations III will be announced shortly. Stay tuned for an evening of insight and inspiration.</p>
+                    <h3>Sunaina Misra</h3>
+                    <div class="presenter-title">Director, Artiste Culture</div>
+                    <p>With over 13 years of experience across India, Europe, and the MENA region, Sunaina leads Artiste Culture &mdash; a contemporary cultural organisation dedicated to building artistic legacies through curatorial authorship and strategic cultural design.</p>
+                    <p style="margin-top: 0.5rem;">Her practice spans editorial research, museum programming, and collection advisory for private and institutional clients. In 2023, she launched The Art Bridge Magazine, a digital publication exploring cultural positioning and the evolving role of artistic practice in contemporary society.</p>
                 </div>
             </div>
         </div>
