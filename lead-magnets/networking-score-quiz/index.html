@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ffffff;
-            --primary-dark: #e0e0e0;
-            --charcoal: #1a1a1a;
+            --primary: #FF5149;
+            --primary-dark: #C41E3A;
+            --charcoal: #1A1A1A;
             --dark-gray: #2B323A;
-            --gray: #6B6B6B;
+            --gray: #666666;
             --light-gray: #F0F0F0;
-            --cream: #FAFAFA;
+            --cream: #FAF9F7;
+            --gold: #C9A962;
         }
 
         * {
@@ -27,8 +28,8 @@
 
         body {
             font-family: 'Outfit', sans-serif;
-            background: var(--charcoal);
-            color: #fff;
+            background: var(--cream);
+            color: var(--charcoal);
             min-height: 100vh;
             line-height: 1.6;
         }
@@ -43,7 +44,7 @@
         .header {
             text-align: center;
             padding: 2rem 0;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #e0e0e0;
             margin-bottom: 2rem;
         }
 
@@ -121,7 +122,7 @@
 
         .start-btn {
             background: var(--primary);
-            color: #1a1a1a;
+            color: #ffffff;
             border: none;
             padding: 1rem 3rem;
             font-size: 1rem;
@@ -157,7 +158,7 @@
 
         .progress-bar {
             height: 4px;
-            background: #333;
+            background: #e0e0e0;
             border-radius: 2px;
             overflow: hidden;
         }
@@ -180,10 +181,10 @@
 
         .question-card {
             display: none;
-            background: #222;
+            background: #ffffff;
             border-radius: 12px;
             padding: 2rem;
-            border: 1px solid #333;
+            border: 1px solid #e0e0e0;
         }
 
         .question-card.active {
@@ -222,8 +223,8 @@
             display: flex;
             align-items: center;
             padding: 1rem 1.25rem;
-            background: var(--charcoal);
-            border: 1px solid #333;
+            background: var(--cream);
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -231,18 +232,18 @@
 
         .option:hover {
             border-color: var(--primary);
-            background: rgba(0, 0, 0, 0.05);
+            background: rgba(255, 81, 73, 0.05);
         }
 
         .option.selected {
             border-color: var(--primary);
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 81, 73, 0.08);
         }
 
         .option-radio {
             width: 20px;
             height: 20px;
-            border: 2px solid #555;
+            border: 2px solid #ccc;
             border-radius: 50%;
             margin-right: 1rem;
             display: flex;
@@ -273,13 +274,13 @@
             justify-content: space-between;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid #333;
+            border-top: 1px solid #e0e0e0;
         }
 
         .nav-btn {
             background: transparent;
             color: var(--gray);
-            border: 1px solid #444;
+            border: 1px solid #ccc;
             padding: 0.75rem 1.5rem;
             font-size: 0.875rem;
             font-family: 'Outfit', sans-serif;
@@ -289,13 +290,13 @@
         }
 
         .nav-btn:hover {
-            border-color: #666;
-            color: #fff;
+            border-color: var(--gray);
+            color: var(--charcoal);
         }
 
         .nav-btn.next {
             background: var(--primary);
-            color: #1a1a1a;
+            color: #ffffff;
             border: none;
         }
 
@@ -340,10 +341,10 @@
         .email-form input {
             width: 100%;
             padding: 1rem;
-            background: #222;
-            border: 1px solid #333;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
             border-radius: 6px;
-            color: #fff;
+            color: var(--charcoal);
             font-family: 'Outfit', sans-serif;
             font-size: 1rem;
             margin-bottom: 0.75rem;
@@ -361,7 +362,7 @@
         .email-form button {
             width: 100%;
             background: var(--primary);
-            color: #1a1a1a;
+            color: #ffffff;
             border: none;
             padding: 1rem;
             font-size: 1rem;
@@ -396,7 +397,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            background: conic-gradient(var(--primary) 0deg, var(--primary) calc(var(--score) * 3.6deg), #333 calc(var(--score) * 3.6deg));
+            background: conic-gradient(var(--primary) 0deg, var(--primary) calc(var(--score) * 3.6deg), #e0e0e0 calc(var(--score) * 3.6deg));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -408,7 +409,7 @@
             content: '';
             width: 140px;
             height: 140px;
-            background: var(--charcoal);
+            background: var(--cream);
             border-radius: 50%;
             position: absolute;
         }
@@ -444,11 +445,11 @@
 
         /* Category Scores */
         .category-scores {
-            background: #222;
+            background: #ffffff;
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            border: 1px solid #333;
+            border: 1px solid #e0e0e0;
         }
 
         .category-scores h3 {
@@ -483,7 +484,7 @@
 
         .category-bar {
             height: 6px;
-            background: #333;
+            background: #e0e0e0;
             border-radius: 3px;
             overflow: hidden;
         }
@@ -507,7 +508,7 @@
         }
 
         .rec-card {
-            background: #222;
+            background: #ffffff;
             border-radius: 8px;
             padding: 1.25rem;
             margin-bottom: 0.75rem;
@@ -527,7 +528,7 @@
 
         /* CTA Section */
         .results-cta {
-            background: linear-gradient(135deg, #222 0%, var(--charcoal) 100%);
+            background: #ffffff;
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
@@ -565,7 +566,7 @@
 
         .cta-btn.primary {
             background: var(--primary);
-            color: #1a1a1a;
+            color: #ffffff;
         }
 
         .cta-btn.primary:hover {
@@ -575,8 +576,8 @@
 
         .cta-btn.secondary {
             background: transparent;
-            color: #fff;
-            border: 1px solid #444;
+            color: var(--charcoal);
+            border: 1px solid #ccc;
         }
 
         .cta-btn.secondary:hover {
@@ -587,7 +588,7 @@
         .footer {
             text-align: center;
             padding: 2rem 0;
-            border-top: 1px solid #333;
+            border-top: 1px solid #e0e0e0;
             margin-top: 2rem;
         }
 

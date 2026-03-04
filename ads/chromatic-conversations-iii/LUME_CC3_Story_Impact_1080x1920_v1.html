@@ -13,7 +13,7 @@
     overflow: hidden;
     font-family: 'Outfit', sans-serif;
     position: relative;
-    background: #1a0008;
+    background: #FAF9F7;
   }
 
   /* Red swirl background */
@@ -21,18 +21,18 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 100% 60% at 50% 40%, #000000 0%, transparent 55%),
-      radial-gradient(ellipse 70% 50% at 20% 60%, #111111 0%, transparent 50%),
-      radial-gradient(ellipse 80% 40% at 80% 30%, #0a0a0a 0%, transparent 45%),
-      radial-gradient(ellipse 60% 70% at 40% 80%, #a01030 0%, transparent 50%),
-      conic-gradient(from 90deg at 50% 50%, #000000, #0a0a0a, #0a0a0a, #111111, #000000),
-      #1a0008;
+      radial-gradient(ellipse 100% 60% at 50% 40%, #FF5149 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 20% 60%, #C41E3A 0%, transparent 50%),
+      radial-gradient(ellipse 80% 40% at 80% 30%, #C41E3A 0%, transparent 45%),
+      radial-gradient(ellipse 60% 70% at 40% 80%, rgba(196,30,58,0.12) 0%, transparent 50%),
+      conic-gradient(from 90deg at 50% 50%, #FF5149, #C41E3A, #C41E3A, #C41E3A, #FF5149),
+      rgba(255,81,73,0.03);
   }
   .bg-swirl {
     position: absolute;
     width: 1200px; height: 1200px;
     top: 200px; left: -100px;
-    background: conic-gradient(from 200deg at 50% 50%, transparent 0%, #00000022 12%, transparent 25%, #11111133 40%, transparent 55%, rgba(201,169,98,0.04) 70%, transparent 85%);
+    background: conic-gradient(from 200deg at 50% 50%, transparent 0%, #FF514922 12%, transparent 25%, #C41E3A33 40%, transparent 55%, rgba(201,169,98,0.04) 70%, transparent 85%);
     border-radius: 50%;
     filter: blur(60px);
     transform: rotate(20deg);
@@ -62,7 +62,7 @@
   }
   .logo {
     width: 200px;
-    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+    filter: none;
   }
 
   .edition-tag {
@@ -80,9 +80,9 @@
     font-weight: 700;
     font-size: 80px;
     line-height: 1.05;
-    color: #fff;
+    color: #1A1A1A;
     text-align: center;
-    text-shadow: 0 4px 40px rgba(0,0,0,0.4);
+    text-shadow: 0 4px 40px rgba(196,30,58,0.4);
     margin-bottom: 12px;
     letter-spacing: 2px;
   }
@@ -91,7 +91,7 @@
     font-weight: 400;
     font-style: italic;
     font-size: 48px;
-    color: rgba(255,255,255,0.9);
+    color: rgba(26,26,26,0.9);
     text-align: center;
     margin-bottom: 80px;
   }
@@ -110,13 +110,13 @@
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
     font-size: 30px;
-    color: rgba(255,255,255,0.85);
+    color: rgba(26,26,26,0.85);
     line-height: 1.8;
     letter-spacing: 1px;
   }
   .detail-line strong {
     font-weight: 600;
-    color: #fff;
+    color: #1A1A1A;
   }
   .detail-line.highlight {
     color: #C9A962;
@@ -129,7 +129,7 @@
     font-family: 'Cormorant', serif;
     font-style: italic;
     font-size: 34px;
-    color: rgba(255,255,255,0.7);
+    color: rgba(26,26,26,0.7);
     text-align: center;
     margin-top: 60px;
     margin-bottom: 60px;
@@ -145,7 +145,7 @@
   }
   .swipe-arrow {
     font-size: 36px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(26,26,26,0.5);
     margin-bottom: 10px;
   }
   .swipe-text {
@@ -154,7 +154,7 @@
     font-size: 26px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
+    color: rgba(26,26,26,0.85);
   }
 </style>
 </head>
@@ -165,7 +165,7 @@
 
   <div class="content">
     <div class="logo-area">
-      <img src="../../assets/lume-logo-white.png" alt="LUME" class="logo">
+      <img src="../../assets/lume-logo-transparent.png" alt="LUME" class="logo">
     </div>
     <div class="edition-tag">Edition III</div>
     <div class="main-title">CHROMATIC<br>CONVERSATIONS</div>

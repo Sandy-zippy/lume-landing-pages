@@ -14,14 +14,14 @@
     overflow: hidden;
     font-family: 'Outfit', sans-serif;
     position: relative;
-    background: #1a1a1a;
+    background: #FAF9F7;
   }
 
   /* Diagonal split: dark left, red swirl right */
   .bg-dark {
     position: absolute;
     inset: 0;
-    background: #1a1a1a;
+    background: #FAF9F7;
     clip-path: polygon(0 0, 55% 0, 40% 100%, 0 100%);
     z-index: 1;
   }
@@ -30,10 +30,10 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 70% 80% at 80% 40%, #000000 0%, transparent 50%),
-      radial-gradient(ellipse 60% 60% at 60% 80%, #111111 0%, transparent 45%),
-      conic-gradient(from 60deg at 75% 50%, #000000, #0a0a0a, #111111, #0a0a0a, #000000),
-      radial-gradient(ellipse 100% 100% at 70% 50%, #5A0A15, #3A0610);
+      radial-gradient(ellipse 70% 80% at 80% 40%, #FF5149 0%, transparent 50%),
+      radial-gradient(ellipse 60% 60% at 60% 80%, #C41E3A 0%, transparent 45%),
+      conic-gradient(from 60deg at 75% 50%, #FF5149, #C41E3A, #C41E3A, #C41E3A, #FF5149),
+      radial-gradient(ellipse 100% 100% at 70% 50%, rgba(196,30,58,0.1), rgba(196,30,58,0.06));
     filter: blur(25px) saturate(1.3);
     clip-path: polygon(55% 0, 100% 0, 100% 100%, 40% 100%);
     z-index: 1;
@@ -44,8 +44,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 40% 40% at 70% 35%, rgba(0,0,0,0.5) 0%, transparent 70%),
-      radial-gradient(ellipse 30% 40% at 80% 75%, rgba(0,0,0,0.4) 0%, transparent 60%);
+      radial-gradient(ellipse 40% 40% at 70% 35%, rgba(255,81,73,0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 30% 40% at 80% 75%, rgba(196,30,58,0.4) 0%, transparent 60%);
     filter: blur(15px);
   }
 
@@ -108,11 +108,11 @@
     font-family: 'Cormorant', serif;
     font-size: 58px;
     font-weight: 600;
-    color: #f8f6f3;
+    color: #1A1A1A;
     text-align: center;
     line-height: 1.15;
     margin-bottom: 40px;
-    text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 30px rgba(255,81,73,0.5);
   }
 
   .headline em {
@@ -131,17 +131,17 @@
     font-family: 'Outfit', sans-serif;
     font-size: 20px;
     font-weight: 300;
-    color: rgba(248,246,243,0.7);
+    color: rgba(26,26,26,0.7);
     text-align: center;
     line-height: 1.6;
     margin-bottom: 50px;
     letter-spacing: 0.3px;
-    text-shadow: 0 1px 15px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 15px rgba(196,30,58,0.4);
   }
 
   .subtext strong {
     font-weight: 500;
-    color: rgba(248,246,243,0.9);
+    color: rgba(26,26,26,0.9);
   }
 
   .bottom-details {
@@ -157,7 +157,7 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(248,246,243,0.65);
-    text-shadow: 0 1px 10px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 10px rgba(196,30,58,0.4);
   }
 
   .bottom-details .sep {
@@ -176,7 +176,7 @@
 
   <div class="content">
     <div class="logo-container">
-      <img src="../../assets/lume-logo-white.png" alt="LUME">
+      <img src="../../assets/lume-logo-transparent.png" alt="LUME">
     </div>
 
     <div class="headline">

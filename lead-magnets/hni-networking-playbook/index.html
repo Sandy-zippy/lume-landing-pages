@@ -16,16 +16,17 @@
 
     <style>
         :root {
-            --primary: #C9A96E;
-            --primary-dark: #A8884F;
-            --primary-deep: #8B7340;
-            --black: #000000;
-            --charcoal: #1a1a1a;
+            --primary: #FF5149;
+            --primary-dark: #C41E3A;
+            --primary-deep: #C41E3A;
+            --black: #1A1A1A;
+            --charcoal: #1A1A1A;
             --dark-gray: #2B323A;
-            --gray: #6b6b6b;
+            --gray: #666666;
             --light-gray: #f5f5f5;
             --white: #ffffff;
-            --cream: #FAFAFA;
+            --cream: #FAF9F7;
+            --gold: #C9A962;
 
             --font-display: 'Cormorant', Georgia, serif;
             --font-body: 'Outfit', -apple-system, sans-serif;
@@ -47,7 +48,7 @@
             font-family: var(--font-body);
             font-weight: 400;
             color: var(--charcoal);
-            background: var(--charcoal);
+            background: var(--cream);
             line-height: 1.6;
             min-height: 100vh;
         }
@@ -63,7 +64,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(250, 249, 247, 0.95);
             backdrop-filter: blur(10px);
         }
 
@@ -83,7 +84,7 @@
             font-family: var(--font-display);
             font-size: 20px;
             font-weight: 500;
-            color: var(--white);
+            color: var(--charcoal);
         }
 
         /* Hero Section */
@@ -99,16 +100,16 @@
             flex-direction: column;
             justify-content: center;
             padding: 60px 80px;
-            background: var(--charcoal);
+            background: var(--cream);
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--white);
+            background: rgba(255, 81, 73, 0.1);
+            border: 1px solid rgba(255, 81, 73, 0.3);
+            color: var(--primary);
             padding: 8px 16px;
             border-radius: 100px;
             font-size: 12px;
@@ -124,18 +125,18 @@
             font-size: clamp(36px, 4vw, 52px);
             font-weight: 400;
             line-height: 1.15;
-            color: var(--white);
+            color: var(--charcoal);
             margin-bottom: 20px;
         }
 
         .hero-headline em {
             font-style: italic;
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--primary);
         }
 
         .hero-subheadline {
             font-size: 17px;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--gray);
             max-width: 480px;
             margin-bottom: 32px;
             line-height: 1.7;
@@ -152,18 +153,18 @@
             gap: 12px;
             margin-bottom: 12px;
             font-size: 15px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--charcoal);
         }
 
         .benefits-list li::before {
             content: '';
             width: 20px;
             height: 20px;
-            background: var(--white);
+            background: var(--primary);
             border-radius: 50%;
             flex-shrink: 0;
             margin-top: 2px;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23FAF9F7' stroke-width='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
             background-size: 12px;
             background-repeat: no-repeat;
             background-position: center;
@@ -174,16 +175,16 @@
             align-items: center;
             gap: 12px;
             padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
         }
 
         .social-proof-text {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--gray);
         }
 
         .social-proof-text strong {
-            color: var(--white);
+            color: var(--charcoal);
         }
 
         /* Form Section */
@@ -230,7 +231,7 @@
             flex-direction: column;
             justify-content: space-between;
             background: linear-gradient(180deg, var(--charcoal) 0%, #0d0d0d 100%);
-            border-top: 4px solid var(--white);
+            border-top: 4px solid var(--primary);
         }
 
         .book-label {
@@ -348,7 +349,7 @@
         .btn-download:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.3);
         }
 
         .btn-download svg {
@@ -448,7 +449,7 @@
         /* About LUME Section */
         .about-lume {
             padding: 100px 60px;
-            background: var(--charcoal);
+            background: var(--cream);
             text-align: center;
         }
 
@@ -459,7 +460,7 @@
 
         .about-lume .section-label {
             justify-content: center;
-            color: var(--white);
+            color: var(--primary);
         }
 
         .about-lume .section-label::before {
@@ -470,13 +471,13 @@
             font-family: var(--font-display);
             font-size: clamp(28px, 3.5vw, 38px);
             font-weight: 400;
-            color: var(--white);
+            color: var(--charcoal);
             margin-bottom: 24px;
         }
 
         .about-text {
             font-size: 17px;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--gray);
             line-height: 1.8;
             margin-bottom: 32px;
         }
@@ -485,10 +486,10 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: transparent;
+            background: var(--primary);
             color: var(--white);
             padding: 14px 28px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--primary);
             border-radius: 4px;
             font-family: var(--font-body);
             font-size: 14px;
@@ -498,15 +499,16 @@
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--charcoal);
-            border-color: var(--white);
+            background: var(--primary-dark);
+            color: var(--white);
+            border-color: var(--primary-dark);
         }
 
         /* Footer */
         footer {
             padding: 40px 60px;
-            background: var(--black);
+            background: var(--cream);
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
             text-align: center;
         }
 
@@ -525,12 +527,12 @@
         .footer-logo span {
             font-family: var(--font-display);
             font-size: 20px;
-            color: var(--white);
+            color: var(--charcoal);
         }
 
         .footer-text {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.4);
+            color: var(--gray);
         }
 
         /* Success State */

@@ -14,10 +14,18 @@
             padding: 0;
             box-sizing: border-box;
         }
+        :root {
+            --primary: #FF5149;
+            --primary-dark: #C41E3A;
+            --primary-deep: #C41E3A;
+            --black: #1A1A1A;
+            --gold: #C9A962;
+            --crimson: #C41E3A;
+        }
         body {
             font-family: 'Outfit', sans-serif;
-            background: #1a1a1a;
-            color: #fff;
+            background: #FAF9F7;
+            color: #1A1A1A;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -47,7 +55,7 @@
         h1 {
             font-size: 1.5rem;
             font-weight: 400;
-            color: #999;
+            color: #666;
             margin-bottom: 3rem;
         }
         .funnels {
@@ -56,25 +64,26 @@
             gap: 1.5rem;
         }
         .funnel-card {
-            background: #2a2a2a;
+            background: #ffffff;
             border-radius: 12px;
             padding: 2rem;
             text-decoration: none;
-            color: #fff;
+            color: #1A1A1A;
             transition: all 0.3s ease;
-            border: 1px solid #333;
+            border: 1px solid #e0ddd8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
         .funnel-card:hover {
-            background: #333;
+            background: #f0eeeb;
             transform: translateY(-4px);
-            border-color: #fff;
+            border-color: #1A1A1A;
         }
         .funnel-number {
             display: inline-block;
             width: 32px;
             height: 32px;
-            background: #fff;
-            color: #1a1a1a;
+            background: #1A1A1A;
+            color: #ffffff;
             border-radius: 50%;
             line-height: 32px;
             font-weight: 600;
@@ -87,7 +96,7 @@
         }
         .funnel-desc {
             font-size: 0.875rem;
-            color: #999;
+            color: #666;
             line-height: 1.5;
         }
         @media (max-width: 600px) {
@@ -97,7 +106,7 @@
         }
         footer {
             margin-top: 3rem;
-            color: #666;
+            color: #999;
             font-size: 0.875rem;
         }
     </style>
@@ -110,34 +119,34 @@
         </div>
         <h1>Landing Pages & Lead Magnets</h1>
 
-        <p style="color: #fff; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; text-align: left;">Lead Magnets</p>
+        <p style="color: #1A1A1A; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; text-align: left;">Lead Magnets</p>
         <div class="funnels" style="margin-bottom: 2.5rem;">
-            <a href="lead-magnets/hni-networking-playbook/index.html" class="funnel-card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border-color: #555;">
-                <span class="funnel-number" style="background: transparent; border: 2px solid #fff; color: #fff;">1</span>
+            <a href="lead-magnets/hni-networking-playbook/index.html" class="funnel-card" style="background: linear-gradient(135deg, #f5f3f0 0%, #ece9e4 100%); border-color: #C9A962;">
+                <span class="funnel-number" style="background: transparent; border: 2px solid #C9A962; color: #C9A962;">1</span>
                 <div class="funnel-title">HNI Networking Playbook</div>
                 <div class="funnel-desc">29-page PDF guide. Comprehensive networking frameworks and strategies.</div>
             </a>
 
-            <a href="lead-magnets/networking-checklist/index.html" class="funnel-card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border-color: #555;">
-                <span class="funnel-number" style="background: transparent; border: 2px solid #fff; color: #fff;">2</span>
+            <a href="lead-magnets/networking-checklist/index.html" class="funnel-card" style="background: linear-gradient(135deg, #f5f3f0 0%, #ece9e4 100%); border-color: #C9A962;">
+                <span class="funnel-number" style="background: transparent; border: 2px solid #C9A962; color: #C9A962;">2</span>
                 <div class="funnel-title">Networking Checklist</div>
                 <div class="funnel-desc">1-page checklist. Before, during, and after every networking interaction.</div>
             </a>
 
-            <a href="lead-magnets/networking-score-quiz/index.html" class="funnel-card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border-color: #555;">
-                <span class="funnel-number" style="background: transparent; border: 2px solid #fff; color: #fff;">3</span>
+            <a href="lead-magnets/networking-score-quiz/index.html" class="funnel-card" style="background: linear-gradient(135deg, #f5f3f0 0%, #ece9e4 100%); border-color: #C9A962;">
+                <span class="funnel-number" style="background: transparent; border: 2px solid #C9A962; color: #C9A962;">3</span>
                 <div class="funnel-title">Networking Score Quiz</div>
                 <div class="funnel-desc">2-minute interactive assessment. Get your score and personalized recommendations.</div>
             </a>
 
-            <a href="lead-magnets/5-day-email-course/index.html" class="funnel-card" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border-color: #555;">
-                <span class="funnel-number" style="background: transparent; border: 2px solid #fff; color: #fff;">4</span>
+            <a href="lead-magnets/5-day-email-course/index.html" class="funnel-card" style="background: linear-gradient(135deg, #f5f3f0 0%, #ece9e4 100%); border-color: #C9A962;">
+                <span class="funnel-number" style="background: transparent; border: 2px solid #C9A962; color: #C9A962;">4</span>
                 <div class="funnel-title">5-Day Email Course</div>
                 <div class="funnel-desc">The LUME Method delivered daily. One actionable lesson per day for 5 days.</div>
             </a>
         </div>
 
-        <p style="color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; text-align: left;">Landing Page Funnels</p>
+        <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; text-align: left;">Landing Page Funnels</p>
         <div class="funnels">
             <a href="lp1-discovery-call.html" class="funnel-card">
                 <span class="funnel-number">1</span>
@@ -166,28 +175,28 @@
 
         <p style="color: #C9A962; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; margin-top: 2.5rem; text-align: left;">Upcoming Event — Feb 28, 2026</p>
         <div class="funnels">
-            <a href="chromatic-conversations-iii.html" class="funnel-card" style="background: linear-gradient(135deg, #000000 0%, #111111 100%); border-color: #C9A962;">
+            <a href="chromatic-conversations-iii.html" class="funnel-card" style="background: linear-gradient(135deg, #1A1A1A 0%, #2a2a2a 100%); border-color: #C9A962;">
                 <span class="funnel-number" style="background: #C9A962; color: #1a1a1a;">★</span>
                 <div class="funnel-title">Chromatic Conversations III</div>
                 <div class="funnel-desc">Event landing page — Art as Investment. Feb 28 at Elements by Nirvania.</div>
             </a>
 
-            <a href="showcase-chromatic-conversations-iii.html" class="funnel-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); border-color: #C9A962;">
+            <a href="showcase-chromatic-conversations-iii.html" class="funnel-card" style="background: linear-gradient(135deg, #f5f3f0 0%, #ece9e4 100%); border-color: #C9A962;">
                 <span class="funnel-number" style="background: #C9A962; color: #1a1a1a;">18</span>
                 <div class="funnel-title">CC3 Campaign Package</div>
                 <div class="funnel-desc">Full showcase: landing page, 18 ad creatives, strategy doc, Q&A — one link for client review.</div>
             </a>
         </div>
 
-        <p style="color: #fff; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; margin-top: 2.5rem; text-align: left;">Marketing Assets</p>
+        <p style="color: #1A1A1A; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; margin-top: 2.5rem; text-align: left;">Marketing Assets</p>
         <div class="funnels">
-            <a href="ads/index.html" class="funnel-card" style="background: #2a2a2a; border-color: #555;">
-                <span class="funnel-number" style="background: #fff; color: #000000;">24</span>
+            <a href="ads/index.html" class="funnel-card" style="background: #ffffff; border-color: #e0ddd8;">
+                <span class="funnel-number" style="background: #fff; color: #1A1A1A;">24</span>
                 <div class="funnel-title">Meta Ad Creatives</div>
                 <div class="funnel-desc">6 diverse creatives per lead magnet. Optimized for Andromeda algorithm.</div>
             </a>
 
-            <a href="ads/chromatic-conversations-iii/LUME_CC3_preview.html" class="funnel-card" style="background: linear-gradient(135deg, #000000 0%, #111111 100%); border-color: #C9A962;">
+            <a href="ads/chromatic-conversations-iii/LUME_CC3_preview.html" class="funnel-card" style="background: linear-gradient(135deg, #1A1A1A 0%, #2a2a2a 100%); border-color: #C9A962;">
                 <span class="funnel-number" style="background: #C9A962; color: #1a1a1a;">18</span>
                 <div class="funnel-title">CC3 Ad Creatives</div>
                 <div class="funnel-desc">18 creatives for Chromatic Conversations III. Feed, portrait, story, carousel formats.</div>

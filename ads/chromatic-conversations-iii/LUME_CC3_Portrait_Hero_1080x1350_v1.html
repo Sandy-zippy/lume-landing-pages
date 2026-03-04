@@ -13,25 +13,25 @@
     overflow: hidden;
     font-family: 'Outfit', sans-serif;
     position: relative;
-    background: #1a0008;
+    background: #FAF9F7;
   }
   .bg-canvas {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 90% 70% at 20% 30%, #000000 0%, transparent 60%),
-      radial-gradient(ellipse 80% 60% at 80% 70%, #111111 0%, transparent 55%),
-      radial-gradient(ellipse 60% 80% at 50% 50%, #0a0a0a 0%, transparent 50%),
-      radial-gradient(ellipse 40% 50% at 70% 20%, #000000 0%, transparent 45%),
-      radial-gradient(ellipse 50% 40% at 30% 80%, #a01030 0%, transparent 50%),
-      conic-gradient(from 45deg at 35% 40%, #000000, #0a0a0a, #111111, #0a0a0a, #000000),
-      #1a0008;
+      radial-gradient(ellipse 90% 70% at 20% 30%, #FF5149 0%, transparent 60%),
+      radial-gradient(ellipse 80% 60% at 80% 70%, #C41E3A 0%, transparent 55%),
+      radial-gradient(ellipse 60% 80% at 50% 50%, #C41E3A 0%, transparent 50%),
+      radial-gradient(ellipse 40% 50% at 70% 20%, #FF5149 0%, transparent 45%),
+      radial-gradient(ellipse 50% 40% at 30% 80%, rgba(196,30,58,0.12) 0%, transparent 50%),
+      conic-gradient(from 45deg at 35% 40%, #FF5149, #C41E3A, #C41E3A, #C41E3A, #FF5149),
+      rgba(255,81,73,0.03);
   }
   .bg-swirl-1 {
     position: absolute;
     width: 900px; height: 900px;
     top: -100px; left: -200px;
-    background: conic-gradient(from 120deg at 50% 50%, transparent 0%, #00000022 15%, transparent 30%, #11111133 45%, transparent 60%);
+    background: conic-gradient(from 120deg at 50% 50%, transparent 0%, #FF514922 15%, transparent 30%, #C41E3A33 45%, transparent 60%);
     border-radius: 50%;
     filter: blur(40px);
     transform: rotate(-15deg);
@@ -40,7 +40,7 @@
     position: absolute;
     width: 700px; height: 700px;
     bottom: -50px; right: -150px;
-    background: conic-gradient(from 240deg at 50% 50%, transparent 0%, #00000033 20%, transparent 40%, #0a0a0a44 60%, transparent 80%);
+    background: conic-gradient(from 240deg at 50% 50%, transparent 0%, #FF514933 20%, transparent 40%, #C41E3A44 60%, transparent 80%);
     border-radius: 50%;
     filter: blur(50px);
     transform: rotate(30deg);
@@ -65,7 +65,7 @@
   .logo {
     width: 180px;
     margin-bottom: 40px;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    filter: none;
   }
   .edition-tag {
     font-family: 'Outfit', sans-serif;
@@ -82,7 +82,7 @@
     padding: 70px 65px 60px;
     width: 860px;
     text-align: center;
-    box-shadow: 0 20px 80px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 80px rgba(196,30,58,0.4);
     position: relative;
   }
   .white-panel::before {
@@ -99,7 +99,7 @@
     font-size: 18px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    color: #000000;
+    color: #C41E3A;
     margin-bottom: 12px;
   }
   .panel-title {
@@ -139,7 +139,7 @@
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: 30px;
-    color: #000000;
+    color: #C41E3A;
     margin-top: 24px;
     margin-bottom: 24px;
   }
@@ -184,7 +184,7 @@
   <div class="bg-swirl-2"></div>
   <div class="bg-texture"></div>
   <div class="content">
-    <img src="../../assets/lume-logo-white.png" alt="LUME" class="logo">
+    <img src="../../assets/lume-logo-transparent.png" alt="LUME" class="logo">
     <div class="edition-tag">Edition III</div>
     <div class="white-panel">
       <div class="panel-label">A Private Evening</div>

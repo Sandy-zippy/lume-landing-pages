@@ -16,13 +16,14 @@
 
     <style>
         :root {
-            --primary: #C9A96E;
-            --primary-dark: #A8884F;
-            --charcoal: #1a1a1a;
+            --primary: #FF5149;
+            --primary-dark: #C41E3A;
+            --charcoal: #1A1A1A;
             --dark-gray: #2B323A;
-            --gray: #6b6b6b;
+            --gray: #666666;
             --white: #ffffff;
-            --cream: #FAFAFA;
+            --cream: #FAF9F7;
+            --gold: #C9A962;
 
             --font-display: 'Cormorant', Georgia, serif;
             --font-body: 'Outfit', -apple-system, sans-serif;
@@ -35,7 +36,7 @@
         body {
             font-family: var(--font-body);
             color: var(--charcoal);
-            background: var(--charcoal);
+            background: var(--cream);
             line-height: 1.6;
             min-height: 100vh;
         }
@@ -51,7 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(250, 249, 247, 0.95);
             backdrop-filter: blur(10px);
         }
 
@@ -68,7 +69,7 @@
             font-family: var(--font-display);
             font-size: 20px;
             font-weight: 500;
-            color: var(--white);
+            color: var(--charcoal);
         }
 
         /* Hero */
@@ -84,16 +85,16 @@
             flex-direction: column;
             justify-content: center;
             padding: 60px 80px;
-            background: var(--charcoal);
+            background: var(--cream);
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--white);
+            background: rgba(255, 81, 73, 0.1);
+            border: 1px solid rgba(255, 81, 73, 0.3);
+            color: var(--primary);
             padding: 8px 16px;
             border-radius: 100px;
             font-size: 12px;
@@ -109,18 +110,18 @@
             font-size: clamp(32px, 3.5vw, 46px);
             font-weight: 400;
             line-height: 1.15;
-            color: var(--white);
+            color: var(--charcoal);
             margin-bottom: 20px;
         }
 
         .hero-headline em {
             font-style: italic;
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--primary);
         }
 
         .hero-subheadline {
             font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--gray);
             max-width: 450px;
             margin-bottom: 32px;
             line-height: 1.7;
@@ -137,14 +138,14 @@
             gap: 12px;
             margin-bottom: 10px;
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--charcoal);
         }
 
         .checklist-preview li::before {
             content: '';
             width: 18px;
             height: 18px;
-            border: 2px solid var(--white);
+            border: 2px solid var(--primary);
             border-radius: 4px;
             flex-shrink: 0;
         }
@@ -154,10 +155,10 @@
             align-items: center;
             gap: 8px;
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--gray);
         }
 
-        .social-proof strong { color: var(--white); }
+        .social-proof strong { color: var(--charcoal); }
 
         /* Form */
         .hero-form {
@@ -181,7 +182,7 @@
         .checklist-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, #FF5149 0%, #C41E3A 100%);
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -260,7 +261,7 @@
         .btn-download:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.3);
         }
 
         .btn-download svg { width: 20px; height: 20px; }
@@ -386,7 +387,7 @@
         .phase-icon {
             width: 56px;
             height: 56px;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 81, 73, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -424,7 +425,7 @@
         /* CTA */
         .bottom-cta {
             padding: 80px 60px;
-            background: var(--charcoal);
+            background: var(--cream);
             text-align: center;
         }
 
@@ -437,13 +438,13 @@
             font-family: var(--font-display);
             font-size: clamp(26px, 3vw, 34px);
             font-weight: 400;
-            color: var(--white);
+            color: var(--charcoal);
             margin-bottom: 16px;
         }
 
         .cta-text {
             font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--gray);
             margin-bottom: 28px;
         }
 
@@ -451,10 +452,10 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: transparent;
+            background: var(--primary);
             color: var(--white);
             padding: 14px 28px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--primary);
             border-radius: 4px;
             font-family: var(--font-body);
             font-size: 14px;
@@ -464,16 +465,16 @@
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--charcoal);
-            border-color: var(--white);
+            background: var(--primary-dark);
+            color: var(--white);
+            border-color: var(--primary-dark);
         }
 
         /* Footer */
         footer {
             padding: 40px 60px;
-            background: var(--charcoal);
-            border-top: 1px solid rgba(255,255,255,0.1);
+            background: var(--cream);
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
             text-align: center;
         }
 
@@ -489,12 +490,12 @@
         .footer-logo span {
             font-family: var(--font-display);
             font-size: 18px;
-            color: var(--white);
+            color: var(--charcoal);
         }
 
         .footer-text {
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.4);
+            color: var(--gray);
         }
 
         /* Responsive */
