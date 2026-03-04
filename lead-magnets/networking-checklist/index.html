@@ -16,8 +16,8 @@
 
     <style>
         :root {
-            --coral: #FF5149;
-            --coral-dark: #E8443D;
+            --coral: #000000;
+            --coral-dark: #333333;
             --charcoal: #1a1a1a;
             --dark-gray: #2B323A;
             --gray: #6b6b6b;
@@ -91,9 +91,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 81, 73, 0.1);
-            border: 1px solid rgba(255, 81, 73, 0.3);
-            color: var(--coral);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
             padding: 8px 16px;
             border-radius: 100px;
             font-size: 12px;
@@ -115,7 +115,7 @@
 
         .hero-headline em {
             font-style: italic;
-            color: var(--coral);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .hero-subheadline {
@@ -144,7 +144,7 @@
             content: '';
             width: 18px;
             height: 18px;
-            border: 2px solid var(--coral);
+            border: 2px solid var(--white);
             border-radius: 4px;
             flex-shrink: 0;
         }
@@ -157,7 +157,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .social-proof strong { color: var(--coral); }
+        .social-proof strong { color: var(--white); }
 
         /* Form */
         .hero-form {
@@ -187,7 +187,7 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            box-shadow: 0 15px 40px rgba(255, 81, 73, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
 
         .checklist-icon svg {
@@ -234,7 +234,7 @@
         .form-input:focus {
             outline: none;
             border-color: var(--coral);
-            box-shadow: 0 0 0 3px rgba(255, 81, 73, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
         }
 
         .form-input::placeholder { color: #aaa; }
@@ -260,7 +260,7 @@
         .btn-download:hover {
             background: var(--coral-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 81, 73, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .btn-download svg { width: 20px; height: 20px; }
@@ -386,7 +386,7 @@
         .phase-icon {
             width: 56px;
             height: 56px;
-            background: rgba(255, 81, 73, 0.1);
+            background: rgba(0, 0, 0, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;

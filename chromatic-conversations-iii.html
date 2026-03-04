@@ -27,10 +27,10 @@
     <style>
         /* ===== RESET & VARIABLES ===== */
         :root {
-            --red: #C41E3A;
-            --red-deep: #B80000;
-            --coral: #FF5149;
-            --coral-dark: #E5403A;
+            --red: #000000;
+            --red-deep: #111111;
+            --coral: #000000;
+            --coral-dark: #333333;
             --gold: #C9A962;
             --gold-light: #D4B978;
             --charcoal: #1a1a1a;
@@ -118,7 +118,7 @@
         .header-cta:hover {
             background: var(--coral-dark);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(255,81,73,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         @media (max-width: 768px) {
@@ -277,7 +277,7 @@
         .btn-main:hover {
             background: var(--coral-dark);
             transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(255,81,73,0.35);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.35);
         }
 
         .hero-seats {
@@ -457,7 +457,7 @@
         }
 
         .exp-card:hover {
-            border-color: rgba(196,30,58,0.2);
+            border-color: rgba(0,0,0,0.2);
             background: var(--cream);
             transform: translateY(-4px);
             box-shadow: 0 16px 48px rgba(0,0,0,0.07);
@@ -509,14 +509,14 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 80% 60% at 20% 15%, #C41E3A 0%, transparent 50%),
-                radial-gradient(ellipse 70% 90% at 85% 80%, #B80000 0%, transparent 45%),
-                radial-gradient(ellipse 50% 40% at 50% 50%, #8B0000 0%, transparent 60%),
-                radial-gradient(circle at 10% 90%, #C41E3A 0%, transparent 40%),
+                radial-gradient(ellipse 80% 60% at 20% 15%, #000000 0%, transparent 50%),
+                radial-gradient(ellipse 70% 90% at 85% 80%, #111111 0%, transparent 45%),
+                radial-gradient(ellipse 50% 40% at 50% 50%, #0a0a0a 0%, transparent 60%),
+                radial-gradient(circle at 10% 90%, #000000 0%, transparent 40%),
                 radial-gradient(circle at 90% 10%, #9B1B30 0%, transparent 35%),
-                conic-gradient(from 45deg at 30% 70%, #B80000, #C41E3A, #8B0000, #A01525, #B80000),
-                conic-gradient(from 200deg at 70% 30%, #C41E3A, #6B0F1A, #B80000, #C41E3A),
-                radial-gradient(ellipse 120% 80% at 50% 50%, #7A0A1E, #4A0510);
+                conic-gradient(from 45deg at 30% 70%, #111111, #000000, #0a0a0a, #111111, #111111),
+                conic-gradient(from 200deg at 70% 30%, #000000, #0a0a0a, #111111, #000000),
+                radial-gradient(ellipse 120% 80% at 50% 50%, #0a0a0a, #4A0510);
             filter: blur(25px) saturate(1.2);
         }
 
@@ -723,8 +723,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 50% 40% at 10% 80%, rgba(196,30,58,0.04) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 50% at 90% 20%, rgba(196,30,58,0.03) 0%, transparent 50%);
+                radial-gradient(ellipse 50% 40% at 10% 80%, rgba(0,0,0,0.04) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 90% 20%, rgba(0,0,0,0.03) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -776,7 +776,7 @@
         .fi:focus {
             outline: none;
             border-color: var(--coral);
-            box-shadow: 0 0 0 3px rgba(255,81,73,0.12);
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.12);
         }
 
         select.fi {
@@ -821,7 +821,7 @@
         .btn-submit:hover {
             background: var(--coral-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255,81,73,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .btn-submit:disabled {
