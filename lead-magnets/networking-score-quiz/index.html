@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --coral: #ffffff;
-            --coral-dark: #e0e0e0;
+            --primary: #ffffff;
+            --primary-dark: #e0e0e0;
             --charcoal: #1a1a1a;
             --dark-gray: #2B323A;
             --gray: #6B6B6B;
@@ -88,7 +88,7 @@
         }
 
         .quiz-intro h1 span {
-            color: var(--coral);
+            color: var(--primary);
         }
 
         .quiz-intro p {
@@ -116,11 +116,11 @@
         .quiz-meta-item svg {
             width: 18px;
             height: 18px;
-            stroke: var(--coral);
+            stroke: var(--primary);
         }
 
         .start-btn {
-            background: var(--coral);
+            background: var(--primary);
             color: #1a1a1a;
             border: none;
             padding: 1rem 3rem;
@@ -133,7 +133,7 @@
         }
 
         .start-btn:hover {
-            background: var(--coral-dark);
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
@@ -164,7 +164,7 @@
 
         .progress-fill {
             height: 100%;
-            background: var(--coral);
+            background: var(--primary);
             border-radius: 2px;
             transition: width 0.3s ease;
         }
@@ -198,7 +198,7 @@
 
         .question-category {
             font-size: 0.75rem;
-            color: var(--coral);
+            color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 0.5rem;
@@ -230,12 +230,12 @@
         }
 
         .option:hover {
-            border-color: var(--coral);
+            border-color: var(--primary);
             background: rgba(0, 0, 0, 0.05);
         }
 
         .option.selected {
-            border-color: var(--coral);
+            border-color: var(--primary);
             background: rgba(0, 0, 0, 0.1);
         }
 
@@ -253,14 +253,14 @@
         }
 
         .option.selected .option-radio {
-            border-color: var(--coral);
+            border-color: var(--primary);
         }
 
         .option.selected .option-radio::after {
             content: '';
             width: 10px;
             height: 10px;
-            background: var(--coral);
+            background: var(--primary);
             border-radius: 50%;
         }
 
@@ -294,13 +294,13 @@
         }
 
         .nav-btn.next {
-            background: var(--coral);
+            background: var(--primary);
             color: #1a1a1a;
             border: none;
         }
 
         .nav-btn.next:hover {
-            background: var(--coral-dark);
+            background: var(--primary-dark);
         }
 
         .nav-btn:disabled {
@@ -351,7 +351,7 @@
 
         .email-form input:focus {
             outline: none;
-            border-color: var(--coral);
+            border-color: var(--primary);
         }
 
         .email-form input::placeholder {
@@ -360,7 +360,7 @@
 
         .email-form button {
             width: 100%;
-            background: var(--coral);
+            background: var(--primary);
             color: #1a1a1a;
             border: none;
             padding: 1rem;
@@ -373,7 +373,7 @@
         }
 
         .email-form button:hover {
-            background: var(--coral-dark);
+            background: var(--primary-dark);
         }
 
         /* Results */
@@ -396,7 +396,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            background: conic-gradient(var(--coral) 0deg, var(--coral) calc(var(--score) * 3.6deg), #333 calc(var(--score) * 3.6deg));
+            background: conic-gradient(var(--primary) 0deg, var(--primary) calc(var(--score) * 3.6deg), #333 calc(var(--score) * 3.6deg));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -477,7 +477,7 @@
         }
 
         .category-score {
-            color: var(--coral);
+            color: var(--primary);
             font-weight: 500;
         }
 
@@ -490,7 +490,7 @@
 
         .category-fill {
             height: 100%;
-            background: var(--coral);
+            background: var(--primary);
             border-radius: 3px;
             transition: width 1s ease;
         }
@@ -511,7 +511,7 @@
             border-radius: 8px;
             padding: 1.25rem;
             margin-bottom: 0.75rem;
-            border-left: 3px solid var(--coral);
+            border-left: 3px solid var(--primary);
         }
 
         .rec-card h4 {
@@ -531,7 +531,7 @@
             border-radius: 12px;
             padding: 2rem;
             text-align: center;
-            border: 1px solid var(--coral);
+            border: 1px solid var(--primary);
         }
 
         .results-cta h3 {
@@ -564,12 +564,12 @@
         }
 
         .cta-btn.primary {
-            background: var(--coral);
+            background: var(--primary);
             color: #1a1a1a;
         }
 
         .cta-btn.primary:hover {
-            background: var(--coral-dark);
+            background: var(--primary-dark);
             transform: translateY(-2px);
         }
 
@@ -580,7 +580,7 @@
         }
 
         .cta-btn.secondary:hover {
-            border-color: var(--coral);
+            border-color: var(--primary);
         }
 
         /* Footer */
@@ -597,7 +597,7 @@
         }
 
         .footer a {
-            color: var(--coral);
+            color: var(--primary);
             text-decoration: none;
         }
 
