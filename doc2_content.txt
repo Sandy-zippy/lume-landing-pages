@@ -1,0 +1,342 @@
+LUME — GHL Workflows Build Guide
+Prepared by ZippyScale  |  Last Updated: February 22, 2026
+Client: LUME (HNI Networking Community)  |  GHL Location ID: qd6VGLlBvFzJSVGCdBUd
+Replaces: n8n workflows L01-L07 (deleted)
+
+Why GHL Native?
+All 7 LUME automations run inside GHL Workflows — no external webhooks, no n8n middleware, no API keys. Triggers, conditions, SMS, email, tags, stage changes, tasks, delays, and notifications all happen internally with zero latency.
+
+Quick Reference
+W01 — Meta Ad Speed-to-Lead  |  Trigger: Contact Created + tag filter  |  ~5 min
+W02 — Event Attendee Follow-Up  |  Trigger: Tag Added: lume-event  |  ~5 min
+W03 — Appointment Reminders  |  Trigger: Appointment Booked  |  ~7 min
+W04 — No-Show Recovery  |  Trigger: Appointment Status: No Show  |  ~8 min
+W05 — Post-Discovery Nurture  |  Trigger: Stage → Discovery Done  |  ~10 min
+W06 — Payment & Onboarding  |  Trigger: Stage → Won  |  ~8 min
+W07 — Lost Lead Nurture  |  Trigger: Stage → Lost  |  ~10 min
+Build Order (simplest → hardest): W01 → W02 → W03 → W04 → W06 → W07 → W05
+
+IDs You'll Need
+Pipeline 1: LUME — Lead to Member (jpwo4D5y1g1462CvxrXn)
+New Lead → b73a59f7-42f6-4939-a71f-266c487c3443
+Contact Attempted → a52a57ab-b0d6-4892-82fe-abbf9141d762
+Engaged → c5c7c5df-5285-4a5d-820b-d20ff1c28358
+Qualified → ebd1e47c-bc4d-47af-a42f-3a00e231ab18
+Appointment Set → 44fa5c25-d0cc-4c7d-b326-dfb0d3220686
+Appointment Confirmed → 1f7105fb-e2bf-4215-aee3-bc99286439c7
+Discovery Done → 7ef63680-f3ef-415b-a832-02d39121af56
+Follow-Up → 1d94387c-c329-4ce5-94b0-c839077d455e
+Negotiation → 9b4e646f-06f1-440a-b95b-b12da6040815
+Payment Pending → 015484e6-3e8d-431b-a32d-5ce6019be269
+Won → bbee2c34-77bb-4cf1-aa69-adc2346515ae
+Lost → b610071b-1280-41e1-8c7d-42da06b1b84f
+
+Pipeline 2: LUME — Member Onboarding (0dfsvh3Vd9b9hmx8iIj3)
+Payment Confirmed → 84bb95fd-1f4e-4d3b-a639-935299687954
+Welcome Kit Sent → 133dc769-5e10-4e0c-8eb3-9e0fa0696d32
+Onboarding Call → 5898ecc5-11be-437d-aab4-4067b4ac9b9d
+First Event Attended → 83dd414e-6cd1-4347-9ecb-5ddb999af1c9
+Active Member → 802713e8-0697-458e-a439-488c6b4f248a
+
+Email Templates:
+Welcome Email → 699b0bfc272d111d2f170e3a
+Discovery Call Confirmation → 699b0bb490c80bd6f269afc0
+Post-Discovery Follow-Up → 699b0bb5386e529c7e577820
+Payment Instructions → 699b0bb5b91ee78db7ae78dc
+Onboarding Welcome → 699b0bfd272d114808170e42
+Re-engagement → 699b0bb795cd06a0f01cb67f
+
+Calendar: LUME Discovery Call → 6U6lMdnVP0YoXvlZIhlo
+
+Team:
+Sid (Founder) → eHlUC84VfN1HifgqqEP1
+Jashree (Sales) → 6KEttWxTOWhjr8Kztm5l
+Mega (Sales) → cjzrDSDuFA29XBG23ODV
+Vipon (Operations) → PO1eHQJgYj0do1VjyPCI
+
+How to Create a Workflow in GHL
+1. Log into GHL → Select LUME sub-account
+2. Left sidebar → Automation → Workflows
+3. Click + Create Workflow → Start from Scratch
+4. Name the workflow (e.g., W01 — Meta Ad Speed-to-Lead)
+5. Click Add New Trigger → select the trigger type
+6. Configure trigger filters
+7. Add actions sequentially (click + after each action)
+8. Save → Publish (toggle ON)
+
+W01: Meta Ad Speed-to-Lead (~5 min)
+Purpose: Instantly engage new leads from Meta ads — SMS + opportunity + task within seconds.
+
+TRIGGER:
+• Type: Contact Created
+• Filter: Contact Tag → contains → lume-meta-ad
+
+ACTION 1 — Send SMS
+• Message: Hi {{contact.first_name}}, thanks for your interest in LUME! Our team will call you within 15 minutes.
+
+ACTION 2 — Add Tag
+• Tag: lume-new
+
+ACTION 3 — Create Opportunity
+• Pipeline: LUME — Lead to Member (jpwo4D5y1g1462CvxrXn)
+• Stage: New Lead (b73a59f7-42f6-4939-a71f-266c487c3443)
+• Name: {{contact.name}} — Meta Lead
+• Source: Meta Ads
+
+ACTION 4 — Assign User (Round-Robin)
+• Type: Round Robin
+• Users: Jashree, Mega
+
+ACTION 5 — Create Task
+• Title: Call new Meta lead — {{contact.name}}
+• Due: 15 minutes from now
+• Assign: Round-robin assigned user
+
+ACTION 6 — Internal Notification
+• Notify: Assigned user
+• Message: New LUME lead: {{contact.name}} — {{contact.phone}}. Call NOW.
+
+W02: Event Attendee Follow-Up (~5 min)
+Purpose: Follow up with contacts who attended a LUME event.
+
+TRIGGER:
+• Type: Contact Tag Added
+• Filter: Tag = lume-event
+
+ACTION 1 — Send SMS
+• Message: Hi {{contact.first_name}}, great meeting you at the LUME event! Would love to continue the conversation.
+
+ACTION 2 — Send Email
+• Template: LUME - Post-Discovery Follow-Up (699b0bb5386e529c7e577820)
+
+ACTION 3 — Update Opportunity Stage
+• Pipeline: LUME — Lead to Member
+• Move to: Engaged (c5c7c5df-5285-4a5d-820b-d20ff1c28358)
+
+ACTION 4 — Add Tag
+• Tag: lume-engaged
+
+ACTION 5 — Create Task
+• Title: Follow up event attendee — {{contact.name}}
+• Due: 24 hours from now
+• Assign: Round Robin → Jashree, Mega
+
+W03: Appointment Reminders (~7 min)
+Purpose: Confirm discovery call booking + reminders at 24h and 1h before.
+
+TRIGGER:
+• Type: Customer Booked Appointment
+• Filter: Calendar = LUME Discovery Call (6U6lMdnVP0YoXvlZIhlo)
+
+ACTION 1 — Send SMS (Confirmation)
+• Message: Your LUME Discovery Call is confirmed for {{appointment.start_time}}. Looking forward to it!
+
+ACTION 2 — Send Email (Confirmation)
+• Template: LUME - Discovery Call Confirmation (699b0bb490c80bd6f269afc0)
+
+ACTION 3 — Update Opportunity Stage
+• Move to: Appointment Set (44fa5c25-d0cc-4c7d-b326-dfb0d3220686)
+
+ACTION 4 — Add Tag
+• Tag: lume-appointment-set
+
+ACTION 5 — Wait
+• Type: Until event time
+• Event: Appointment start time
+• Offset: 24 hours before
+
+ACTION 6 — Send SMS (24h Reminder)
+• Message: Reminder: Your LUME Discovery Call is tomorrow at {{appointment.start_time}}.
+
+ACTION 7 — Wait
+• Type: Until event time
+• Event: Appointment start time
+• Offset: 1 hour before
+
+ACTION 8 — Send SMS (1h Reminder)
+• Message: Your LUME Discovery Call starts in 1 hour. Talk soon!
+
+W04: No-Show Recovery (~8 min)
+Purpose: Re-engage no-shows with 3-touch SMS recovery over 48 hours.
+
+TRIGGER:
+• Type: Appointment Status Changed
+• Filter: Status = No Show
+
+ACTION 1 — Send SMS (Immediate)
+• Message: Hi {{contact.first_name}}, we missed you for our scheduled call. No worries — would you like to reschedule? Here's our calendar: https://thelumeproject.com/book
+
+ACTION 2 — Add Tag
+• Tag: lume-no-show
+
+ACTION 3 — Create Task (Urgent)
+• Title: No-show recovery — {{contact.name}}
+• Due: Now (immediate)
+• Assign: Original assigned rep
+• Priority: Urgent
+
+ACTION 4 — Wait
+• Duration: 24 hours
+
+ACTION 5 — Send SMS (Follow-Up 1)
+• Message: Hi {{contact.first_name}}, just following up. Would love to find a time that works better for you.
+
+ACTION 6 — Wait
+• Duration: 24 hours
+
+ACTION 7 — Send SMS (Final)
+• Message: Last check-in — if you'd still like to explore LUME, we're here. Just reply to reschedule.
+
+ACTION 8 — If/Else: Contact Replied?
+• Condition: Contact replied (check last message activity)
+→ IF YES: Add tag lume-rescheduled
+→ IF NO: Add tag lume-cold
+
+W05: Post-Discovery Nurture (~10 min)
+Purpose: 8-day nurture sequence after discovery call.
+
+TRIGGER:
+• Type: Pipeline Stage Changed
+• Pipeline: LUME — Lead to Member (jpwo4D5y1g1462CvxrXn)
+• Stage: Discovery Done (7ef63680-f3ef-415b-a832-02d39121af56)
+
+ACTION 1 — Send SMS (Day 0)
+• Message: Hi {{contact.first_name}}, great speaking with you! I'll send over a summary shortly.
+
+ACTION 2 — Send Email (Day 0)
+• Template: LUME - Post-Discovery Follow-Up (699b0bb5386e529c7e577820)
+
+ACTION 3 — Add Tag
+• Tag: lume-discovery-done
+
+ACTION 4 — Wait
+• Duration: 2 days
+
+ACTION 5 — Send Email (Day 2 — Social Proof)
+• Subject: A LUME member's story I thought you'd appreciate
+• Body: Social proof / member success story. Include a real member testimonial. End with soft CTA.
+
+ACTION 6 — Create Task (Day 3 Follow-Up)
+• Title: Day 3 follow-up — {{contact.name}}
+• Due: 1 day from now
+• Assign: Assigned rep
+
+ACTION 7 — Wait
+• Duration: 3 days
+
+ACTION 8 — Send SMS (Day 5)
+• Message: {{contact.first_name}}, I wanted to share one more thing about LUME that I think you'd find valuable...
+
+ACTION 9 — Send Email (Day 5 — Value Proposition)
+• Subject: What makes LUME different, {{contact.first_name}}
+• Body: Final value proposition. Curated HNI network, exclusive events, art-as-investment. Clear CTA.
+
+ACTION 10 — Wait
+• Duration: 3 days
+
+ACTION 11 — If/Else: Contact Replied?
+• Condition: Contact replied (check last inbound message)
+→ IF YES: Move to Negotiation (9b4e646f-06f1-440a-b95b-b12da6040815) + Notify Sid
+→ IF NO: Move to Follow-Up (1d94387c-c329-4ce5-94b0-c839077d455e) + Add tag lume-nurture-active
+
+W06: Payment & Onboarding (~8 min)
+Purpose: Welcome new member, create onboarding pipeline opportunity, assign Vipon, notify Sid.
+
+TRIGGER:
+• Type: Pipeline Stage Changed
+• Pipeline: LUME — Lead to Member (jpwo4D5y1g1462CvxrXn)
+• Stage: Won (bbee2c34-77bb-4cf1-aa69-adc2346515ae)
+
+ACTION 1 — Send SMS (Welcome)
+• Message: Welcome to LUME, {{contact.first_name}}! You're officially part of something special.
+
+ACTION 2 — Send Email (Onboarding Welcome)
+• Template: LUME - Onboarding Welcome (699b0bfd272d114808170e42)
+
+ACTION 3 — Add Tags
+• Tags: lume-won, lume-member
+
+ACTION 4 — Remove Tags
+• Tags: lume-nurture-active, lume-warm, lume-hot
+
+ACTION 5 — Create Opportunity (Pipeline 2)
+• Pipeline: LUME — Member Onboarding (0dfsvh3Vd9b9hmx8iIj3)
+• Stage: Payment Confirmed (84bb95fd-1f4e-4d3b-a639-935299687954)
+• Name: {{contact.name}} — Onboarding
+
+ACTION 6 — Assign Opportunity
+• User: Vipon
+
+ACTION 7 — Create Task: Welcome Kit
+• Title: Send welcome kit — {{contact.name}}
+• Due: 24 hours from now
+• Assign: Vipon
+
+ACTION 8 — Create Task: Onboarding Call
+• Title: Schedule onboarding call — {{contact.name}}
+• Due: 48 hours from now
+• Assign: Vipon
+
+ACTION 9 — Internal Notification
+• Notify: Sid
+• Message: New LUME member: {{contact.name}}
+
+W07: Lost Lead Nurture (~10 min)
+Purpose: 90-day re-engagement sequence for lost leads.
+
+TRIGGER:
+• Type: Pipeline Stage Changed
+• Pipeline: LUME — Lead to Member (jpwo4D5y1g1462CvxrXn)
+• Stage: Lost (b610071b-1280-41e1-8c7d-42da06b1b84f)
+
+ACTION 1 — Send Email (Re-engagement)
+• Template: LUME - Re-engagement (699b0bb795cd06a0f01cb67f)
+
+ACTION 2 — Send SMS
+• Message: Hi {{contact.first_name}}, the door to LUME is always open. We'd love to welcome you when the time is right.
+
+ACTION 3 — Add Tag
+• Tag: lume-lost
+
+ACTION 4 — Remove Tags
+• Tags: lume-nurture-active, lume-hot, lume-warm
+
+ACTION 5 — Wait
+• Duration: 30 days
+
+ACTION 6 — Send Email (Day 30)
+• Subject: We've been thinking about you, {{contact.first_name}}
+• Body: Share a new event, member milestone, or community update. Warm, not salesy.
+
+ACTION 7 — Wait
+• Duration: 30 days
+
+ACTION 8 — Send SMS (Day 60)
+• Message: Hi {{contact.first_name}}, LUME has some exciting things coming up. Would love to reconnect.
+
+ACTION 9 — Wait
+• Duration: 30 days
+
+ACTION 10 — Send Email (Day 90 — Final)
+• Subject: One last invite, {{contact.first_name}}
+• Body: Final re-engagement. Upcoming event or new benefit. Direct CTA.
+
+ACTION 11 — If/Else: Contact Re-engaged?
+• Condition: Contact replied or clicked a link
+→ IF YES: Remove lume-lost, Add lume-re-engaged, Move to New Lead, Task for Jashree/Mega (24h)
+→ IF NO: Add lume-cold (workflow ends)
+
+Testing Checklist
+Use dummy contacts with naming pattern: Test — [Your Name]
+
+W01: Create contact with tag lume-meta-ad → SMS, opportunity in New Lead, task (15 min), notification
+W02: Add tag lume-event → SMS, email, opportunity → Engaged, task (24h)
+W03: Book on LUME Discovery Call calendar → Confirmation SMS + email, reminders at 24h + 1h
+W04: Mark appointment No Show → SMS, tag lume-no-show, urgent task, follow-ups at 24h + 48h
+W05: Move to Discovery Done → Day 0: SMS + email. Day 2: email. Day 5: SMS + email. Day 8: if/else
+W06: Move to Won → Welcome SMS + email, tags, Pipeline 2 opportunity, Vipon tasks, Sid notified
+W07: Move to Lost → Re-engagement email + SMS, tags, 30/60/90 day sequence
+
+Clean up: Delete test contacts and opportunities after testing.
+
+Prepared by ZippyScale  |  www.zippyscale.com
