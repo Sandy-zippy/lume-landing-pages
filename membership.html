@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUME | Curated Experiences for Hyderabad's Most Intentional People</title>
-    <meta name="description" content="LUME curates two premium experiences per month for selected guests in Hyderabad. 40 seats per evening. By application only.">
+    <meta name="description" content="LUME curates premium experiences for selected people in Hyderabad. By application only.">
     <link rel="icon" type="image/png" href="assets/lume-logo-transparent.png">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="LUME | Where Hyderabad's Most Intentional People Gather">
-    <meta property="og:description" content="Curated experiences. Selected guests. Designed evenings. Two experiences per month. By application only.">
+    <meta property="og:title" content="LUME | The Real World Growth Playbook">
+    <meta property="og:description" content="Curated experiences. Selected guests. Designed evenings. By application only.">
     <meta property="og:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/hero-banner.png">
     <meta property="og:url" content="https://sandy-zippy.github.io/lume-landing-pages/membership.html">
     <meta property="og:type" content="website">
@@ -29,24 +28,24 @@
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #C41E3A;
-            --primary-light: #FF5149;
-            --cream: #FAF9F7;
+            --accent: #4150F7;
+            --accent-hover: #3143E3;
+            --accent-light: #EEF0FF;
+            --red: #E63329;
             --white: #ffffff;
+            --bg: #ffffff;
+            --bg-alt: #F3F5F7;
             --charcoal: #1A1A1A;
-            --gray-dark: #333333;
-            --gray: #666666;
-            --gray-light: #999999;
-            --off-white: #f0eeeb;
-            --border: #e0ddd8;
-            --gold: #C9A962;
+            --text: #262626;
+            --text-secondary: #737373;
+            --text-muted: #8E8E8E;
+            --border: #EFEFEF;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -55,10 +54,10 @@
         body {
             font-family: 'Outfit', sans-serif;
             font-weight: 400;
-            color: var(--charcoal);
+            color: var(--text);
             line-height: 1.6;
+            background: var(--bg);
             overflow-x: hidden;
-            background: var(--cream);
         }
 
         h1, h2, h3, h4 {
@@ -68,813 +67,512 @@
             color: var(--charcoal);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
         /* ═══════════ HEADER ═══════════ */
         .site-header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 16px 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(250,249,247,0.95);
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 20px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255,255,255,0.96);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            transition: padding 0.3s;
+            transition: all 0.3s;
         }
-        .site-header.scrolled { padding: 10px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-        .site-header .logo img { height: 32px; }
-        .cta-btn {
+        .site-header.scrolled {
+            padding: 14px 40px;
+            box-shadow: 0 1px 0 var(--border);
+        }
+        .site-header .logo img { height: 36px; }
+        .header-cta {
             font-family: 'Outfit', sans-serif;
             font-size: 14px; font-weight: 500;
             padding: 10px 28px;
-            background: var(--primary);
+            background: var(--accent);
             color: var(--white);
-            border: none; border-radius: 6px;
+            border: none; border-radius: 100px;
             cursor: pointer; text-decoration: none;
             transition: background 0.2s;
         }
-        .cta-btn:hover { background: var(--primary-light); }
+        .header-cta:hover { background: var(--accent-hover); }
 
         /* ═══════════ HERO ═══════════ */
         .hero {
-            position: relative;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             text-align: center;
-            background: var(--white);
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('assets/hero-banner.png') center/cover no-repeat;
-            opacity: 0.08;
-        }
-        .hero-content {
+            padding: 120px 24px 80px;
+            background: var(--bg);
             position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 24px;
         }
-        .hero-logo { margin-bottom: 48px; }
-        .hero-logo img { height: 48px; }
-        .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.2rem);
-            color: var(--charcoal);
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
-        .hero .subtitle {
+        .hero-content { max-width: 720px; }
+        .hero-logo { margin-bottom: 40px; }
+        .hero-logo img { height: 52px; }
+        .hero-label {
             font-family: 'Outfit', sans-serif;
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--primary);
-            margin-bottom: 16px;
-            font-weight: 500;
-            letter-spacing: 0.06em;
+            font-size: 13px; font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.14em;
             text-transform: uppercase;
+            margin-bottom: 24px;
         }
-        .hero .body-text {
-            font-size: 1.1rem;
-            color: var(--gray);
-            max-width: 560px;
+        .hero h1 {
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 520px;
             margin: 0 auto 40px;
             line-height: 1.7;
         }
         .btn-primary {
             display: inline-block;
             font-family: 'Outfit', sans-serif;
-            font-size: 16px; font-weight: 500;
-            padding: 16px 48px;
-            background: var(--primary);
+            font-size: 15px; font-weight: 500;
+            padding: 16px 44px;
+            background: var(--accent);
             color: var(--white);
-            border: none; border-radius: 8px;
+            border: none; border-radius: 100px;
             cursor: pointer; text-decoration: none;
             transition: all 0.25s;
-            letter-spacing: 0.02em;
         }
         .btn-primary:hover {
-            background: var(--primary-light);
+            background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(196,30,58,0.2);
+            box-shadow: 0 8px 24px rgba(65,80,247,0.2);
         }
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px; left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            animation: bounce 2s infinite;
-        }
-        .scroll-indicator svg { width: 24px; height: 24px; stroke: var(--gray-light); }
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(8px); }
-        }
-
-        /* ═══════════ STATS BAR ═══════════ */
-        .stats-bar {
-            background: var(--primary);
-            padding: 24px 0;
-        }
-        .stats-bar .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-        .stat {
+        .btn-outline {
+            display: inline-block;
             font-family: 'Outfit', sans-serif;
-            font-size: 15px; font-weight: 400;
-            color: var(--white);
-            letter-spacing: 0.04em;
+            font-size: 15px; font-weight: 500;
+            padding: 16px 44px;
+            background: transparent;
+            color: var(--accent);
+            border: 1.5px solid var(--accent);
+            border-radius: 100px;
+            cursor: pointer; text-decoration: none;
+            transition: all 0.25s;
+            margin-left: 12px;
         }
-        .stat-divider {
-            width: 1px; height: 20px;
-            background: rgba(255,255,255,0.3);
+        .btn-outline:hover { background: var(--accent-light); }
+        .scroll-hint {
+            position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+            animation: float 2.5s infinite;
+        }
+        .scroll-hint svg { width: 20px; stroke: var(--text-muted); }
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(6px); }
         }
 
         /* ═══════════ SECTIONS ═══════════ */
-        .section-cream {
-            background: var(--cream);
-            padding: 100px 0;
-        }
-        .section-white {
-            background: var(--white);
-            padding: 100px 0;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-        .section-title h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 16px;
-            color: var(--charcoal);
-        }
-        .section-title p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--gray);
-        }
+        .section { padding: 100px 0; }
+        .section-alt { padding: 100px 0; background: var(--bg-alt); }
+        .section-red { padding: 80px 0; background: var(--red); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 16px; }
+        .section-title p { font-size: 1.05rem; color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
 
-        /* ═══════════ THREE COLUMNS ═══════════ */
-        .three-col {
+        /* ═══════════ WHY LUME ═══════════ */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .why-text h2 { font-size: 2.4rem; margin-bottom: 20px; }
+        .why-text p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        .why-image {
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        .why-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ═══════════ VALUES ═══════════ */
+        .values-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 24px;
         }
-        .three-col .col {
-            text-align: center;
-            padding: 40px 24px;
+        .value-card {
+            padding: 36px 28px;
             background: var(--white);
             border-radius: 16px;
             border: 1px solid var(--border);
             transition: border-color 0.3s;
         }
-        .three-col .col:hover { border-color: var(--primary); }
-        .three-col .col-icon {
-            width: 56px; height: 56px;
-            margin: 0 auto 24px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .value-card:hover { border-color: var(--accent); }
+        .value-icon {
+            width: 48px; height: 48px;
+            background: var(--accent-light);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
         }
-        .three-col .col-icon svg { width: 24px; height: 24px; stroke: var(--white); fill: none; }
-        .three-col .col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-        .three-col .col p {
-            font-size: 1rem;
-            color: var(--gray);
-            line-height: 1.7;
-        }
+        .value-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; }
+        .value-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .value-card p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
 
-        /* ═══════════ PAST EXPERIENCES ═══════════ */
-        .experience-grid {
+        /* ═══════════ EXPERIENCE GALLERY ═══════════ */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-bottom: 48px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
         }
-        .exp-img {
-            aspect-ratio: 16/10;
-            background: var(--off-white);
-            border-radius: 16px;
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 12px;
             overflow: hidden;
+            background: var(--bg-alt);
         }
-        .exp-img img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
-        .exp-img:hover img { transform: scale(1.03); }
-        .experience-caption {
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-caption {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 32px;
-        }
-        .experience-caption p {
-            color: var(--gray-dark);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        .pull-quote {
-            text-align: center;
-            font-family: 'Cormorant', serif;
-            font-style: italic;
-            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-            color: var(--primary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ═══════════ STEPS ═══════════ */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-        .step { text-align: center; padding: 24px 16px; }
-        .step-number {
-            font-family: 'Cormorant', serif;
-            font-size: 3rem; font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-        .step h3 { font-size: 1.4rem; margin-bottom: 12px; }
-        .step p { font-size: 0.95rem; color: var(--gray); line-height: 1.6; }
-
-        /* ═══════════ EVENT CARDS ═══════════ */
-        .event-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-        .event-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        .event-card:hover { border-color: var(--primary); transform: translateY(-4px); }
-        .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: var(--primary);
-        }
-        .event-tag {
-            font-family: 'Outfit', sans-serif;
-            font-size: 12px; font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-        .event-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-        .event-card p {
-            color: var(--gray);
-            font-size: 1rem; line-height: 1.6;
-        }
-        .event-footer-note {
-            text-align: center;
+            margin-top: 24px;
             font-size: 14px;
-            color: var(--gray-light);
-            font-style: italic;
+            color: var(--text-muted);
         }
+        .gallery-caption a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+        /* ═══════════ HOW IT WORKS ═══════════ */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            counter-reset: step;
+        }
+        .step-item { counter-increment: step; }
+        .step-item::before {
+            content: counter(step, decimal-leading-zero);
+            font-family: 'Cormorant', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 16px;
+        }
+        .step-item h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .step-item p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
 
         /* ═══════════ QUIZ ═══════════ */
-        .quiz-section { background: var(--white); padding: 100px 0; }
         .quiz-wrapper {
-            max-width: 640px;
+            max-width: 600px;
             margin: 0 auto;
-            background: var(--cream);
+            background: var(--white);
             border-radius: 20px;
             padding: 48px 40px;
             border: 1px solid var(--border);
         }
-        .quiz-progress {
-            display: flex; gap: 6px;
-            margin-bottom: 40px;
-        }
+        .quiz-progress { display: flex; gap: 6px; margin-bottom: 36px; }
         .quiz-progress .bar {
             flex: 1; height: 3px;
             background: var(--border);
             border-radius: 3px;
             transition: background 0.3s;
         }
-        .quiz-progress .bar.active { background: var(--primary); }
-        .quiz-question-num {
-            font-family: 'Outfit', sans-serif;
+        .quiz-progress .bar.active { background: var(--accent); }
+        .quiz-qnum {
             font-size: 13px; font-weight: 500;
-            color: var(--primary);
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-bottom: 12px;
         }
-        .quiz-question {
+        .quiz-q {
             font-family: 'Cormorant', serif;
-            font-size: 1.8rem; font-weight: 600;
+            font-size: 1.7rem; font-weight: 600;
             color: var(--charcoal);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
             line-height: 1.3;
         }
-        .quiz-options { display: flex; flex-direction: column; gap: 12px; }
-        .quiz-option {
-            display: block; width: 100%;
-            text-align: left;
+        .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-opt {
+            display: block; width: 100%; text-align: left;
             font-family: 'Outfit', sans-serif;
-            font-size: 1rem; font-weight: 400;
-            padding: 18px 24px;
-            background: var(--white);
+            font-size: 0.95rem;
+            padding: 16px 22px;
+            background: var(--bg-alt);
             border: 2px solid transparent;
             border-radius: 12px;
             cursor: pointer;
-            color: var(--charcoal);
+            color: var(--text);
             transition: all 0.2s;
         }
-        .quiz-option:hover {
-            border-color: var(--primary);
-            background: #fdf5f6;
-        }
-        .quiz-option.selected {
-            border-color: var(--primary);
-            background: #fdf5f6;
-        }
-
+        .quiz-opt:hover { border-color: var(--accent); background: var(--accent-light); }
+        .quiz-opt.selected { border-color: var(--accent); background: var(--accent-light); }
         .quiz-result { text-align: center; }
-        .quiz-result h2 { font-size: 2.2rem; margin-bottom: 16px; }
-        .quiz-result p {
-            font-size: 1.05rem; color: var(--gray);
-            max-width: 480px;
-            margin: 0 auto 32px;
-            line-height: 1.7;
-        }
-        .quiz-result .score-badge {
+        .quiz-result h2 { font-size: 2rem; margin-bottom: 12px; }
+        .quiz-result p { font-size: 1rem; color: var(--text-secondary); max-width: 440px; margin: 0 auto 28px; line-height: 1.7; }
+        .quiz-badge {
             display: inline-block;
-            font-family: 'Outfit', sans-serif;
-            font-size: 13px; font-weight: 500;
+            font-size: 12px; font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--primary);
-            background: #fdf5f6;
-            padding: 8px 20px;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 6px 18px;
             border-radius: 20px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
-
-        .quiz-form { margin-top: 24px; }
         .quiz-form input {
-            width: 100%;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            padding: 16px 20px;
+            width: 100%; font-family: 'Outfit', sans-serif; font-size: 1rem;
+            padding: 14px 18px;
             border: 1px solid var(--border);
             border-radius: 10px;
-            margin-bottom: 12px;
-            background: var(--white);
-            color: var(--charcoal);
-            transition: border-color 0.2s;
+            margin-bottom: 10px;
+            background: var(--bg-alt);
+            color: var(--text);
         }
-        .quiz-form input:focus { outline: none; border-color: var(--primary); }
-        .quiz-form input::placeholder { color: var(--gray-light); }
+        .quiz-form input:focus { outline: none; border-color: var(--accent); }
+        .quiz-form input::placeholder { color: var(--text-muted); }
         .quiz-form .btn-primary { width: 100%; text-align: center; border: none; }
 
-        /* ═══════════ MEMBERSHIP CARDS ═══════════ */
-        .membership-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
+        /* ═══════════ MARQUEE ═══════════ */
+        .marquee-section {
+            background: var(--red);
+            padding: 40px 0;
+            overflow: hidden;
         }
-        .membership-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 48px 40px;
-            text-align: center;
-            transition: border-color 0.3s, transform 0.3s;
+        .marquee-track {
+            display: flex;
+            animation: marquee 20s linear infinite;
+            white-space: nowrap;
         }
-        .membership-card:hover { transform: translateY(-4px); }
-        .membership-card.featured {
-            border-color: var(--primary);
-            border-width: 2px;
-            position: relative;
-        }
-        .membership-card.featured::after {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -12px; left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Outfit', sans-serif;
-            font-size: 11px; font-weight: 600;
-            letter-spacing: 0.1em;
-            background: var(--primary);
-            color: var(--white);
-            padding: 4px 16px;
-            border-radius: 20px;
-        }
-        .membership-tier {
-            font-family: 'Outfit', sans-serif;
-            font-size: 13px; font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-        .membership-price {
+        .marquee-track span {
             font-family: 'Cormorant', serif;
-            font-size: 2.8rem; font-weight: 600;
-            color: var(--charcoal);
-            margin-bottom: 8px;
-        }
-        .membership-period {
-            font-size: 14px;
-            color: var(--gray-light);
-            margin-bottom: 32px;
-        }
-        .membership-features {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 32px;
-        }
-        .membership-features li {
-            font-size: 0.95rem;
-            color: var(--gray-dark);
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            padding-left: 24px;
-            position: relative;
-        }
-        .membership-features li::before {
-            content: '✓';
-            position: absolute; left: 0;
-            color: var(--primary);
+            font-size: clamp(2rem, 4vw, 3.5rem);
             font-weight: 600;
+            color: var(--white);
+            padding: 0 48px;
         }
-        .membership-note {
-            text-align: center;
-            font-size: 14px;
-            color: var(--gray-light);
-            font-style: italic;
-            margin-top: 32px;
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* ═══════════ FAQ ═══════════ */
-        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-list { max-width: 700px; margin: 0 auto; }
         .faq-item { border-bottom: 1px solid var(--border); }
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 0;
-            cursor: pointer;
+        .faq-q {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 22px 0; cursor: pointer;
             font-family: 'Cormorant', serif;
-            font-size: 1.35rem; font-weight: 600;
+            font-size: 1.25rem; font-weight: 600;
             color: var(--charcoal);
             background: none; border: none;
             width: 100%; text-align: left;
         }
-        .faq-question svg {
-            min-width: 20px;
-            stroke: var(--charcoal);
-            transition: transform 0.3s;
-        }
-        .faq-item.open .faq-question svg { transform: rotate(45deg); }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .faq-answer p {
-            padding: 0 0 24px;
-            font-size: 1rem;
-            color: var(--gray);
-            line-height: 1.7;
-        }
-        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-q svg { min-width: 18px; stroke: var(--text-muted); transition: transform 0.3s; }
+        .faq-item.open .faq-q svg { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+        .faq-a p { padding: 0 0 22px; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+        .faq-item.open .faq-a { max-height: 300px; }
 
         /* ═══════════ FOOTER ═══════════ */
         .site-footer {
-            background: var(--white);
+            padding: 48px 0 24px;
+            text-align: center;
             border-top: 1px solid var(--border);
-            padding: 64px 0 32px;
-            text-align: center;
         }
-        .site-footer .logo img { height: 36px; margin-bottom: 20px; }
-        .site-footer .tagline {
-            font-family: 'Cormorant', serif;
-            font-style: italic;
-            font-size: 1.15rem;
-            color: var(--gray-light);
-            margin-bottom: 20px;
-        }
-        .site-footer .social a {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 15px; font-weight: 500;
-        }
-        .site-footer .social a:hover { text-decoration: underline; }
-        .site-footer .copyright {
-            margin-top: 32px;
-            font-size: 13px;
-            color: var(--gray-light);
-        }
+        .site-footer .logo img { height: 32px; margin-bottom: 16px; }
+        .site-footer p { font-size: 13px; color: var(--text-muted); }
+        .site-footer a { color: var(--accent); text-decoration: none; }
 
-        /* ═══════════ THANK YOU OVERLAY ═══════════ */
-        .thank-you-overlay {
-            display: none;
-            position: fixed; inset: 0;
-            z-index: 9999;
-            background: rgba(250,249,247,0.97);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 24px;
+        /* ═══════════ OVERLAY ═══════════ */
+        .overlay {
+            display: none; position: fixed; inset: 0; z-index: 9999;
+            background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+            align-items: center; justify-content: center; text-align: center; padding: 24px;
         }
-        .thank-you-overlay.active { display: flex; }
-        .thank-you-content h2 {
-            font-size: 2.5rem;
-            color: var(--charcoal);
-            margin-bottom: 16px;
-        }
-        .thank-you-content p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            max-width: 500px;
-            margin: 0 auto 32px;
-            line-height: 1.7;
-        }
+        .overlay.active { display: flex; }
+        .overlay h2 { font-size: 2.2rem; margin-bottom: 12px; }
+        .overlay p { font-size: 1.05rem; color: var(--text-secondary); max-width: 460px; margin: 0 auto 28px; line-height: 1.7; }
 
         /* ═══════════ RESPONSIVE ═══════════ */
         @media (max-width: 768px) {
-            .three-col { grid-template-columns: 1fr; gap: 20px; }
-            .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
-            .event-cards { grid-template-columns: 1fr; }
-            .membership-cards { grid-template-columns: 1fr; max-width: 440px; }
-            .experience-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; gap: 32px; }
+            .values-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: 1fr; gap: 32px; }
             .quiz-wrapper { padding: 32px 24px; }
-            .section-cream, .section-white { padding: 72px 0; }
-            .hero { min-height: 90vh; }
-            .stat-divider { display: none; }
-            .stats-bar .container { gap: 16px; }
-            .stat { font-size: 13px; }
+            .section, .section-alt { padding: 72px 0; }
+            .hero { min-height: auto; padding: 140px 24px 80px; }
         }
         @media (max-width: 480px) {
-            .steps { grid-template-columns: 1fr; }
-            .site-header { padding: 12px 16px; }
-            .cta-btn { padding: 8px 20px; font-size: 13px; }
+            .site-header { padding: 14px 16px; }
+            .header-cta { padding: 8px 20px; font-size: 13px; }
+            .hero .btn-ctas { flex-direction: column; gap: 12px; }
+            .btn-outline { margin-left: 0; }
         }
 
-        /* ═══════════ ANIMATIONS ═══════════ */
-        .reveal {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s, transform 0.5s; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
-    <div class="logo">
-        <a href="#"><img src="assets/lume-logo-transparent.png" alt="LUME"></a>
-    </div>
-    <a href="#quiz" class="cta-btn">See If You're A Fit</a>
+    <div class="logo"><a href="https://thelumeproject.com"><img src="assets/lume-logo-transparent.png" alt="LUME"></a></div>
+    <a href="#apply" class="header-cta">Apply</a>
 </header>
 
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-logo">
-            <img src="assets/lume-logo-transparent.png" alt="LUME">
+        <div class="hero-logo"><img src="assets/lume-logo-transparent.png" alt="LUME"></div>
+        <div class="hero-label">Hyderabad's curated experience community</div>
+        <h1>Growth that feels personal, not performative.</h1>
+        <p>Curated experiences, intentional rooms, and a community built for people who value depth over noise. Twice a month. Selected guests only.</p>
+        <div class="btn-ctas" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a href="#apply" class="btn-primary">See If You're A Fit</a>
+            <a href="#how" class="btn-outline">How It Works</a>
         </div>
-        <p class="subtitle">Curated experiences. Selected guests. Designed evenings.</p>
-        <h1>Where Hyderabad's most intentional people gather.</h1>
-        <p class="body-text">Two experiences per month. One that expands your mind, one that deepens your life. Every room is filtered. Every evening is shaped. Every detail is considered.</p>
-        <a href="#quiz" class="btn-primary">See If You're A Fit</a>
     </div>
-    <div class="scroll-indicator">
+    <div class="scroll-hint">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </div>
 </section>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
+<!-- WHY LUME -->
+<section class="section-alt">
     <div class="container">
-        <span class="stat">40 curated guests per evening</span>
-        <span class="stat-divider"></span>
-        <span class="stat">2 designed experiences per month</span>
-        <span class="stat-divider"></span>
-        <span class="stat">24 gatherings per year</span>
-    </div>
-</div>
-
-<!-- THE LUME DIFFERENCE -->
-<section class="section-cream">
-    <div class="container">
-        <div class="section-title reveal">
-            <h2>Not another event. A different standard.</h2>
-        </div>
-        <div class="three-col">
-            <div class="col reveal">
-                <div class="col-icon">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                </div>
-                <h3>Curated Rooms</h3>
-                <p>Every guest is selected. Every seat is intentional. The people beside you are there because someone with taste decided they should be.</p>
+        <div class="why-grid reveal">
+            <div class="why-text">
+                <h2>Why LUME feels different.</h2>
+                <p>Not just another networking club. Not just another consulting firm. LUME creates space for intentional conversations, cultural curiosity, and meaningful momentum.</p>
+                <p>We curate, not accumulate. Every member and moment is handpicked for alignment, not just attendance. In a world full of noise, that matters.</p>
             </div>
-            <div class="col reveal">
-                <div class="col-icon">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                </div>
-                <h3>Designed Experiences</h3>
-                <p>From art evenings to private tastings to conversations with industry shapers. Nothing at LUME is accidental. Every element is chosen.</p>
-            </div>
-            <div class="col reveal">
-                <div class="col-icon">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3>Selective Belonging</h3>
-                <p>This isn't a community that needs more people. It's one that chooses the right ones. That selectivity is what makes it valuable.</p>
+            <div class="why-image">
+                <img src="assets/about-team.jpeg" alt="The LUME Community">
             </div>
         </div>
     </div>
 </section>
 
-<!-- PAST EXPERIENCES -->
-<section class="section-white">
+<!-- WHAT YOU GET -->
+<section class="section">
     <div class="container">
         <div class="section-title reveal">
-            <h2>What a LUME evening looks like.</h2>
+            <h2>What you really get.</h2>
+            <p>Beyond the surface. Beyond the hype.</p>
         </div>
-        <div class="experience-grid reveal">
-            <div class="exp-img"><img src="assets/hero-banner-cc3.png" alt="LUME Experience"></div>
-            <div class="exp-img"><img src="assets/about-team.jpeg" alt="LUME Community"></div>
+        <div class="values-grid">
+            <div class="value-card reveal">
+                <div class="value-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                </div>
+                <h3>Your Circle, Curated</h3>
+                <p>A handpicked community that feels like home but works like magic. These aren't contacts. They're collaborators, mentors, and friends.</p>
+            </div>
+            <div class="value-card reveal">
+                <div class="value-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Experiences That Stay</h3>
+                <p>Immersive, designed, unforgettable. Two per month. One that expands your mind. One that deepens your life.</p>
+            </div>
+            <div class="value-card reveal">
+                <div class="value-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Wisdom, Minus the Fluff</h3>
+                <p>Real insights from people who've done it. Industry leaders, practitioners, and operators. Not motivational speakers.</p>
+            </div>
         </div>
-        <div class="experience-caption reveal">
-            <p><strong>Chromatic Conversations III</strong> — An intimate evening exploring art as investment with Sunaina Misra, a director with 13 years across India, Europe, and MENA. 40 selected guests. Wine, conversation, and perspectives that don't come from a Google search.</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section-alt">
+    <div class="container">
+        <div class="section-title reveal">
+            <h2>Inside the room.</h2>
         </div>
-        <p class="pull-quote reveal">The best evenings are the ones you can't describe to people who weren't there.</p>
+        <div class="gallery-grid reveal">
+            <div class="gallery-item"><img src="assets/hero-banner-cc3.png" alt="LUME Experience"></div>
+            <div class="gallery-item"><img src="assets/about-team.jpeg" alt="LUME Community"></div>
+            <div class="gallery-item"><img src="assets/team-photo.jpeg" alt="LUME Members"></div>
+        </div>
+        <p class="gallery-caption reveal">Follow <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a> to see what happens inside.</p>
+    </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="marquee-section">
+    <div class="marquee-track">
+        <span>Find your fire, fuel your flow, rise with your people.</span>
+        <span>Find your fire, fuel your flow, rise with your people.</span>
+        <span>Find your fire, fuel your flow, rise with your people.</span>
+        <span>Find your fire, fuel your flow, rise with your people.</span>
     </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section-cream">
+<section class="section" id="how">
     <div class="container">
         <div class="section-title reveal">
-            <h2>Four steps to the room.</h2>
+            <h2>How it works.</h2>
+            <p>Simple. Intentional. No pressure.</p>
         </div>
-        <div class="steps">
-            <div class="step reveal">
-                <div class="step-number">01</div>
-                <h3>Assessment</h3>
-                <p>Take a 2-minute quiz. We use it to understand what you're looking for and whether LUME is the right fit.</p>
+        <div class="steps-grid">
+            <div class="step-item reveal">
+                <h3>Take a quick assessment</h3>
+                <p>2 minutes. Seven questions. We use it to understand who you are and what you're looking for.</p>
             </div>
-            <div class="step reveal">
-                <div class="step-number">02</div>
-                <h3>Conversation</h3>
-                <p>If your profile matches, our team invites you to a brief call. No pitch. Just an honest conversation about what you want.</p>
+            <div class="step-item reveal">
+                <h3>We'll reach out</h3>
+                <p>If your profile is a fit, our team sets up a brief conversation. No pitch. Just alignment.</p>
             </div>
-            <div class="step reveal">
-                <div class="step-number">03</div>
-                <h3>Your First Evening</h3>
-                <p>Experience LUME in person. See the room. Feel the curation. Decide if this is what you've been looking for.</p>
-            </div>
-            <div class="step reveal">
-                <div class="step-number">04</div>
-                <h3>Decide</h3>
-                <p>If it's right, you apply for membership. If not, no pressure. The door stays open for the right time.</p>
+            <div class="step-item reveal">
+                <h3>Experience it yourself</h3>
+                <p>Join a LUME experience. Feel the room. Meet the people. Then decide if this is where you belong.</p>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- UPCOMING EXPERIENCES -->
-<section class="section-white">
-    <div class="container">
-        <div class="section-title reveal">
-            <h2>What's coming next.</h2>
-        </div>
-        <div class="event-cards">
-            <div class="event-card reveal">
-                <div class="event-tag">Entertainment</div>
-                <h3>Pitcher Perfect</h3>
-                <p>An evening of craft, competition, and conversation. Designed for people who believe the best moments happen with the right company. Details releasing soon.</p>
-            </div>
-            <div class="event-card reveal">
-                <div class="event-tag">Education</div>
-                <h3>Coming Soon</h3>
-                <p>An evening with thought leaders who've shaped their fields. For people who believe the best education happens outside classrooms.</p>
-            </div>
-        </div>
-        <p class="event-footer-note reveal">Members attend every experience at no additional cost.</p>
     </div>
 </section>
 
 <!-- QUIZ -->
-<section class="quiz-section" id="quiz">
+<section class="section-alt" id="apply">
     <div class="container">
         <div class="section-title reveal">
             <h2>Is LUME right for you?</h2>
-            <p>A 2-minute assessment. Not everyone qualifies — and that's by design.</p>
+            <p>A 2-minute assessment. Not everyone qualifies. That's by design.</p>
         </div>
         <div class="quiz-wrapper reveal" id="quizWrapper"></div>
     </div>
 </section>
 
-<!-- MEMBERSHIP -->
-<section class="section-cream" id="membership">
-    <div class="container">
-        <div class="section-title reveal">
-            <h2>Two ways to belong.</h2>
-        </div>
-        <div class="membership-cards">
-            <div class="membership-card reveal">
-                <div class="membership-tier">Standard Residency</div>
-                <div class="membership-price">₹1,18,000</div>
-                <div class="membership-period">per year</div>
-                <ul class="membership-features">
-                    <li>Access to all 24 curated experiences</li>
-                    <li>Member directory</li>
-                    <li>Priority RSVP for every gathering</li>
-                    <li>The social layer that matches your standards</li>
-                </ul>
-                <a href="#quiz" class="btn-primary" style="width:100%;text-align:center;display:block;">Take the Assessment</a>
-            </div>
-            <div class="membership-card featured reveal">
-                <div class="membership-tier">Premium Residency</div>
-                <div class="membership-price">₹2,36,000</div>
-                <div class="membership-period">per year</div>
-                <ul class="membership-features">
-                    <li>Everything in Standard</li>
-                    <li>VIP seating at every experience</li>
-                    <li>Exclusive private dinners (4/year)</li>
-                    <li>Personal introductions to fellow members</li>
-                    <li>Direct line to the LUME curation team</li>
-                </ul>
-                <a href="#quiz" class="btn-primary" style="width:100%;text-align:center;display:block;">Take the Assessment</a>
-            </div>
-        </div>
-        <p class="membership-note reveal">Membership is by application only. We review every profile personally.</p>
-    </div>
-</section>
-
 <!-- FAQ -->
-<section class="section-white">
+<section class="section">
     <div class="container">
         <div class="section-title reveal">
             <h2>Questions worth asking.</h2>
         </div>
         <div class="faq-list">
             <div class="faq-item reveal">
-                <button class="faq-question">What kind of events does LUME host?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-                <div class="faq-answer"><p>Two curated experiences per month. One entertainment: private art evenings, craft tastings, cultural immersion. One education: industry leaders, investment conversations, master practitioners. Never generic. Never mass-market.</p></div>
+                <button class="faq-q">What does LUME actually do?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-a"><p>We curate two experiences per month for selected members in Hyderabad. One broadens your thinking. One enriches your life. Think intimate art evenings, private tastings, conversations with people who've shaped their industries.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">How many people attend each event?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-                <div class="faq-answer"><p>30 to 50. We optimize for the quality of the room, not the size of the guest list.</p></div>
+                <button class="faq-q">How many people are in each room?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-a"><p>30 to 50. We optimize for the quality of the room, not the size of the guest list.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">Is LUME only for business owners?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-                <div class="faq-answer"><p>LUME welcomes founders, senior executives, creative professionals, and culturally discerning individuals. The filter is taste and intentionality, not title.</p></div>
+                <button class="faq-q">Who is this for?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-a"><p>Founders, senior professionals, creative leaders, and culturally discerning people who want growth that feels intentional. The filter is taste and alignment, not title.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">Can I attend an event before becoming a member?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-                <div class="faq-answer"><p>Yes. Select experiences are open to non-members at ₹3,500 to ₹5,000 per evening. It's the best way to feel what a curated room looks like.</p></div>
+                <button class="faq-q">Can I try before I commit?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-a"><p>Yes. Select experiences are open for non-members. It's the best way to feel what a curated room looks like before deciding.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">How is LUME different from other Hyderabad events?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-                <div class="faq-answer"><p>Most events sell tickets. LUME selects guests. That difference shapes everything: from who's in the room to how the evening unfolds.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-question">What does the membership fee cover?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-                <div class="faq-answer"><p>All 24 annual experiences, member directory access, priority RSVP, and depending on your tier, VIP privileges, exclusive dinners, and personal introductions.</p></div>
+                <button class="faq-q">How is this different from other communities?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-a"><p>Most communities optimize for scale. LUME optimizes for signal. Every person in the room was chosen for a reason. That difference shapes everything.</p></div>
             </div>
         </div>
     </div>
@@ -884,219 +582,146 @@
 <footer class="site-footer">
     <div class="container">
         <div class="logo"><img src="assets/lume-logo-transparent.png" alt="LUME"></div>
-        <p class="tagline">The classes, not the masses.</p>
-        <div class="social">
-            <a href="https://www.instagram.com/lumeproject_offl" target="_blank" rel="noopener">@lumeproject_offl</a>
-        </div>
-        <p class="copyright">© 2026 The Lume Project. Hyderabad, India.</p>
+        <p>Lume Project Private Limited &bull; Hyderabad, India</p>
+        <p style="margin-top:8px;"><a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a> &bull; <a href="https://thelumeproject.com" target="_blank">thelumeproject.com</a></p>
+        <p style="margin-top:16px;">© 2026 The Lume Project</p>
     </div>
 </footer>
 
-<!-- THANK YOU OVERLAY -->
-<div class="thank-you-overlay" id="thankYou">
-    <div class="thank-you-content">
-        <img src="assets/lume-logo-transparent.png" alt="LUME" style="height:40px;margin-bottom:32px;">
-        <h2 id="tyTitle">You belong in the room.</h2>
-        <p id="tyBody">Based on your responses, you're exactly the kind of person LUME was designed for. Our team will review your profile and reach out within 24 hours to set up a brief conversation.</p>
-        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary" id="tyCta">Follow LUME on Instagram</a>
+<!-- THANK YOU -->
+<div class="overlay" id="thankYou">
+    <div>
+        <img src="assets/lume-logo-transparent.png" alt="LUME" style="height:40px;margin-bottom:28px;">
+        <h2 id="tyTitle">We'll be in touch.</h2>
+        <p id="tyBody">Your profile has been submitted. Our team will review it and reach out within 24 hours.</p>
+        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary">Follow @lumeproject_offl</a>
     </div>
 </div>
 
 <script>
-// ═══════════ QUIZ ENGINE ═══════════
 const quizData = [
-    {
-        num: "Question 1 of 7",
-        q: "What brings you here?",
-        options: [
-            { text: "I'm looking for curated experiences with like-minded people", score: 3 },
-            { text: "I want access to Hyderabad's most interesting rooms", score: 3 },
-            { text: "Someone I know recommended LUME", score: 4 },
-            { text: "I'm curious about what LUME offers", score: 2 },
-            { text: "I want to grow my professional circle", score: 1 }
-        ]
-    },
-    {
-        num: "Question 2 of 7",
-        q: "Which best describes your professional life?",
-        options: [
-            { text: "I run my own business (₹1Cr+ revenue)", score: 4 },
-            { text: "I'm a senior executive (VP / Director / CXO)", score: 4 },
-            { text: "I'm a professional with 10+ years of experience", score: 3 },
-            { text: "I'm in creative arts, design, or culture", score: 3 },
-            { text: "I'm building something early-stage", score: 1 }
-        ]
-    },
-    {
-        num: "Question 3 of 7",
-        q: "What does your ideal evening look like?",
-        options: [
-            { text: "An intimate gathering with fascinating conversations", score: 4 },
-            { text: "A curated cultural experience I can't find elsewhere", score: 4 },
-            { text: "Good food, good company, no agenda", score: 3 },
-            { text: "A structured event with clear takeaways", score: 2 },
-            { text: "A high-energy social scene with lots of people", score: 0 }
-        ]
-    },
-    {
-        num: "Question 4 of 7",
-        q: "How do you typically discover experiences worth your time?",
-        options: [
-            { text: "I seek out curated, invite-only experiences", score: 4 },
-            { text: "Through people I trust", score: 3 },
-            { text: "Through premium lifestyle content", score: 2 },
-            { text: "I wait for things to come to me", score: 1 }
-        ]
-    },
-    {
-        num: "Question 5 of 7",
-        q: "What matters most in a community?",
-        options: [
-            { text: "The quality of people in the room", score: 4 },
-            { text: "The experiences and events offered", score: 3 },
-            { text: "The access it provides to opportunities", score: 2 },
-            { text: "The size and reach of the network", score: 0 }
-        ]
-    },
-    {
-        num: "Question 6 of 7",
-        q: "What's your comfort level with premium experiences?",
-        options: [
-            { text: "I regularly invest in experiences that enrich my life", score: 4 },
-            { text: "I'm selective but willing to invest in the right things", score: 3 },
-            { text: "I prefer to try before I commit", score: 2 },
-            { text: "I look for the best value for money", score: 1 }
-        ]
-    },
-    {
-        num: "Question 7 of 7",
-        q: "Where in Hyderabad are you based?",
-        options: [
-            { text: "Banjara Hills / Jubilee Hills", score: 3 },
-            { text: "Kondapur / Hitec City / Madhapur", score: 3 },
-            { text: "Gachibowli / Financial District", score: 2 },
-            { text: "Other areas in Hyderabad", score: 1 },
-            { text: "I'm not based in Hyderabad", score: 0 }
-        ]
-    }
+    { num:"Question 1 of 7", q:"What brings you here?", options:[
+        {text:"I'm looking for curated experiences with like-minded people",score:3},
+        {text:"I want access to Hyderabad's most interesting rooms",score:3},
+        {text:"Someone I know recommended LUME",score:4},
+        {text:"I'm curious about what LUME offers",score:2},
+        {text:"I want to grow my professional circle",score:1}
+    ]},
+    { num:"Question 2 of 7", q:"Which best describes you?", options:[
+        {text:"I run my own business",score:4},
+        {text:"I'm a senior executive (VP / Director / CXO)",score:4},
+        {text:"I'm a professional with 10+ years of experience",score:3},
+        {text:"I'm in creative arts, design, or culture",score:3},
+        {text:"I'm building something early-stage",score:1}
+    ]},
+    { num:"Question 3 of 7", q:"What does your ideal evening look like?", options:[
+        {text:"An intimate gathering with fascinating conversations",score:4},
+        {text:"A curated cultural experience I can't find elsewhere",score:4},
+        {text:"Good food, good company, no agenda",score:3},
+        {text:"A structured session with clear takeaways",score:2},
+        {text:"A high-energy social scene with lots of people",score:0}
+    ]},
+    { num:"Question 4 of 7", q:"How do you discover experiences worth your time?", options:[
+        {text:"I seek out curated, invite-only experiences",score:4},
+        {text:"Through people I trust",score:3},
+        {text:"Through premium lifestyle content",score:2},
+        {text:"I wait for things to come to me",score:1}
+    ]},
+    { num:"Question 5 of 7", q:"What matters most in a community?", options:[
+        {text:"The quality of people in the room",score:4},
+        {text:"The experiences offered",score:3},
+        {text:"The access it provides",score:2},
+        {text:"The size and reach",score:0}
+    ]},
+    { num:"Question 6 of 7", q:"How do you approach premium experiences?", options:[
+        {text:"I regularly invest in experiences that enrich my life",score:4},
+        {text:"I'm selective but willing to invest in the right things",score:3},
+        {text:"I prefer to try before I commit",score:2},
+        {text:"I look for the best value",score:1}
+    ]},
+    { num:"Question 7 of 7", q:"Where in Hyderabad are you based?", options:[
+        {text:"Banjara Hills / Jubilee Hills",score:3},
+        {text:"Kondapur / Hitec City / Madhapur",score:3},
+        {text:"Gachibowli / Financial District",score:2},
+        {text:"Other areas in Hyderabad",score:1},
+        {text:"I'm not based in Hyderabad",score:0}
+    ]}
 ];
 
-let currentQ = 0;
-let totalScore = 0;
-let answers = [];
-const wrapper = document.getElementById('quizWrapper');
+let currentQ=0, totalScore=0, answers=[];
+const wrapper=document.getElementById('quizWrapper');
 
-function renderQuestion() {
-    const q = quizData[currentQ];
-    const bars = quizData.map((_, i) => `<div class="bar ${i <= currentQ ? 'active' : ''}"></div>`).join('');
-    wrapper.innerHTML = `
-        <div class="quiz-progress">${bars}</div>
-        <div class="quiz-question-num">${q.num}</div>
-        <div class="quiz-question">${q.q}</div>
-        <div class="quiz-options">
-            ${q.options.map((opt, i) => `
-                <button class="quiz-option" onclick="selectOption(${i}, ${opt.score})">${opt.text}</button>
-            `).join('')}
-        </div>
-    `;
+function renderQ(){
+    const q=quizData[currentQ];
+    const bars=quizData.map((_,i)=>`<div class="bar ${i<=currentQ?'active':''}"></div>`).join('');
+    wrapper.innerHTML=`<div class="quiz-progress">${bars}</div>
+        <div class="quiz-qnum">${q.num}</div>
+        <div class="quiz-q">${q.q}</div>
+        <div class="quiz-opts">${q.options.map((o,i)=>`<button class="quiz-opt" onclick="pick(${i},${o.score})">${o.text}</button>`).join('')}</div>`;
 }
 
-function selectOption(index, score) {
-    totalScore += score;
-    answers.push({ question: quizData[currentQ].q, answer: quizData[currentQ].options[index].text, score });
-    const options = wrapper.querySelectorAll('.quiz-option');
-    options[index].classList.add('selected');
-    setTimeout(() => {
-        currentQ++;
-        if (currentQ < quizData.length) { renderQuestion(); }
-        else { showResult(); }
-    }, 300);
+function pick(i,score){
+    totalScore+=score;
+    answers.push({q:quizData[currentQ].q,a:quizData[currentQ].options[i].text,score});
+    wrapper.querySelectorAll('.quiz-opt')[i].classList.add('selected');
+    setTimeout(()=>{currentQ++;currentQ<quizData.length?renderQ():showResult();},300);
 }
 
-function showResult() {
-    let tier, title, body;
-    if (totalScore >= 22) {
-        tier = "Perfect Fit"; title = "You belong in the room.";
-        body = "Based on your responses, you're exactly the kind of person LUME was designed for. Hyderabad's most curated experience community is selective by design, and your profile signals a strong fit.";
-    } else if (totalScore >= 15) {
-        tier = "Strong Fit"; title = "You'd be a great addition to the room.";
-        body = "Your responses suggest you value the kind of intentionality LUME brings to every gathering. The next step is a brief conversation with our team about what you're looking for.";
-    } else if (totalScore >= 8) {
-        tier = "Potential Fit"; title = "Experience LUME first.";
-        body = "The best way to understand LUME is to be in the room. We have upcoming experiences designed for people like you. Join us for an evening and see if this is the social layer you've been looking for.";
-    } else {
-        tier = "Not Right Now"; title = "LUME isn't for everyone.";
-        body = "That's by design. We curate every room to ensure the experience matches the expectations of our members. Follow us to see what LUME looks like from the inside, and apply again when the time feels right.";
-    }
-    if (typeof fbq !== 'undefined') { fbq('track', 'Lead', { content_name: 'LUME Quiz', quiz_tier: tier, quiz_score: totalScore }); }
-    const bars = quizData.map(() => '<div class="bar active"></div>').join('');
-    wrapper.innerHTML = `
-        <div class="quiz-progress">${bars}</div>
+function showResult(){
+    let tier,title,body;
+    if(totalScore>=22){tier="Perfect Fit";title="You belong in the room.";body="Your profile signals a strong fit. The next step is a brief conversation with our team.";}
+    else if(totalScore>=15){tier="Strong Fit";title="You'd be a great addition.";body="Your responses suggest real alignment. Let's set up a quick call to explore further.";}
+    else if(totalScore>=8){tier="Potential Fit";title="Experience LUME first.";body="The best way to understand LUME is to be in the room. We'll share upcoming experiences you can join.";}
+    else{tier="Not Right Now";title="LUME isn't for everyone.";body="That's by design. Follow us on Instagram to stay connected, and apply again when the time feels right.";}
+    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'LUME Quiz',quiz_tier:tier,quiz_score:totalScore});
+    const bars=quizData.map(()=>'<div class="bar active"></div>').join('');
+    wrapper.innerHTML=`<div class="quiz-progress">${bars}</div>
         <div class="quiz-result">
-            <div class="score-badge">${tier}</div>
+            <div class="quiz-badge">${tier}</div>
             <h2>${title}</h2>
             <p>${body}</p>
-            ${totalScore >= 15 ? `
-            <div class="quiz-form" id="quizForm">
-                <input type="text" id="qName" placeholder="Your full name" required>
-                <input type="tel" id="qPhone" placeholder="Phone number" required>
-                <input type="email" id="qEmail" placeholder="Email address" required>
-                <button class="btn-primary" onclick="submitLead()">Reserve Your Conversation</button>
-            </div>` : totalScore >= 8 ? `
-            <a href="#" class="btn-primary" onclick="document.querySelector('.event-cards').scrollIntoView({behavior:'smooth'});return false;">See Upcoming Experiences</a>` : `
-            <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary">Follow LUME on Instagram</a>`}
+            ${totalScore>=15?`<div class="quiz-form" id="qf">
+                <input type="text" id="qN" placeholder="Full name" required>
+                <input type="tel" id="qP" placeholder="Phone number" required>
+                <input type="email" id="qE" placeholder="Email" required>
+                <button class="btn-primary" onclick="submitLead()">Let's Talk</button>
+            </div>`:totalScore>=8?`<a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary">Follow @lumeproject_offl</a>`
+            :`<a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary">Follow LUME</a>`}
         </div>`;
 }
 
-function submitLead() {
-    const name = document.getElementById('qName').value.trim();
-    const phone = document.getElementById('qPhone').value.trim();
-    const email = document.getElementById('qEmail').value.trim();
-    if (!name || !phone || !email) { alert('Please fill in all fields.'); return; }
-    let tier = totalScore >= 22 ? 'perfect-fit' : 'strong-fit';
-    const payload = {
-        name, phone, email,
-        quiz_score: totalScore, quiz_tier: tier,
-        source: 'lume-membership-quiz',
-        answers: answers.map(a => a.answer).join(' | '),
-        tags: ['quiz-completed', 'quiz-' + tier, 'fb-lead', 'mar-2026']
-    };
-    const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE';
-    fetch(WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(() => {});
-    if (typeof fbq !== 'undefined') { fbq('track', 'Schedule', { content_name: 'LUME Discovery Call', value: 118000, currency: 'INR' }); }
-    const ty = document.getElementById('thankYou');
-    document.getElementById('tyTitle').textContent = 'Thank you, ' + name.split(' ')[0] + '.';
-    document.getElementById('tyBody').textContent = 'Your profile has been submitted. Our team will review it and reach out within 24 hours to schedule a brief conversation. Welcome to the beginning.';
-    ty.classList.add('active');
+function submitLead(){
+    const n=document.getElementById('qN').value.trim(),p=document.getElementById('qP').value.trim(),e=document.getElementById('qE').value.trim();
+    if(!n||!p||!e){alert('Please fill in all fields.');return;}
+    const tier=totalScore>=22?'perfect-fit':'strong-fit';
+    fetch('https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name:n,phone:p,email:e,quiz_score:totalScore,quiz_tier:tier,source:'lume-membership-quiz',answers:answers.map(a=>a.a).join(' | '),tags:['quiz-completed','quiz-'+tier,'fb-lead','mar-2026']})
+    }).catch(()=>{});
+    if(typeof fbq!=='undefined')fbq('track','Schedule',{content_name:'LUME Call',value:118000,currency:'INR'});
+    document.getElementById('tyTitle').textContent='Thank you, '+n.split(' ')[0]+'.';
+    document.getElementById('thankYou').classList.add('active');
 }
 
-renderQuestion();
+renderQ();
 
-// Scroll animations
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-reveals.forEach(el => observer.observe(el));
+// Animations
+document.querySelectorAll('.reveal').forEach(el=>{
+    new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('visible');},{threshold:0.15}).observe(el);
+});
 
 // Header scroll
-window.addEventListener('scroll', () => {
-    document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
-});
+window.addEventListener('scroll',()=>document.querySelector('.site-header').classList.toggle('scrolled',window.scrollY>50));
 
-// FAQ accordion
-document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('open'); });
-        item.classList.toggle('open');
-    });
-});
+// FAQ
+document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{
+    const item=b.parentElement;
+    document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item)i.classList.remove('open');});
+    item.classList.toggle('open');
+}));
 
-// Close thank you
-document.getElementById('thankYou').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('thankYou')) e.target.classList.remove('active');
-});
+// Close overlay
+document.getElementById('thankYou').addEventListener('click',e=>{if(e.target.id==='thankYou')e.target.classList.remove('active');});
 </script>
 </body>
 </html>
