@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUME | By Invitation Only</title>
-    <meta name="description" content="Intimate cultural experiences for Hyderabad's most interesting people. By invitation only.">
+    <meta name="description" content="Hyderabad's invite-only community of founders, creatives, and cultural leaders. Two curated experiences a month. Selected guests only.">
     <link rel="icon" type="image/png" href="assets/lume-logo-transparent.png">
     <meta property="og:title" content="LUME | By Invitation Only">
-    <meta property="og:description" content="Two intimate experiences a month. 30 to 50 selected guests. Hyderabad.">
+    <meta property="og:description" content="Hyderabad's most interesting people. One room. Two evenings a month.">
     <meta property="og:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/ig-melody-mingle-hd.jpg">
     <meta property="og:type" content="website">
+    <!-- Meta Pixel -->
     <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID_HERE');fbq('track','PageView');</script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,151 +19,140 @@
     <style>
         :root{--red:#B80000;--black:#0A0A0A;--charcoal:#1C1C1C;--text:#2A2A2A;--soft:#6B6B6B;--muted:#9E9E9E;--faint:#C4C4C4;--border:#E8E5E0;--warm:#F7F5F2;--warm2:#F0EDEA;--white:#FFFFFF}
         *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-        body{font-family:'Poppins',sans-serif;color:var(--text);line-height:1.7;background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-        h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--charcoal)}
+        body{font-family:'Poppins',sans-serif;color:var(--text);line-height:1.7;background:var(--warm);overflow-x:hidden;-webkit-font-smoothing:antialiased}
         ::selection{background:rgba(184,0,0,.08)}
         img{display:block;max-width:100%}
-        .wrap{max-width:1120px;margin:0 auto;padding:0 40px}
 
-        /* ═══ NAV ═══ */
+        /* NAV */
         nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
         nav.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:16px 48px;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
-        nav .logo-white{display:block}
-        nav .logo-dark{display:none}
-        nav.solid .logo-white{display:none}
-        nav.solid .logo-dark{display:block}
+        nav .logo-white{display:block}nav .logo-dark{display:none}
+        nav.solid .logo-white{display:none}nav.solid .logo-dark{display:block}
         nav img{height:28px}
         nav .nc{font-size:12px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.8);text-decoration:none;padding:10px 28px;border:1px solid rgba(255,255,255,.25);border-radius:100px;transition:all .3s;backdrop-filter:blur(8px)}
         nav .nc:hover{background:rgba(255,255,255,.15)}
         nav.solid .nc{color:var(--charcoal);border-color:rgba(0,0,0,.1);backdrop-filter:none}
         nav.solid .nc:hover{border-color:var(--red);color:var(--red)}
 
-        /* ═══ HERO ═══ */
+        /* HERO */
         .hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
         .hero-bg{position:absolute;inset:0}
         .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-        .hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.08) 35%,rgba(0,0,0,.15) 60%,rgba(0,0,0,.5) 100%)}
-        .hero-c{position:relative;z-index:2;max-width:580px;padding:0 24px}
-        .hero-c .tag{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:36px}
-        .hero-c h1{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:300;color:#fff;letter-spacing:-.8px;line-height:1.22;margin-bottom:22px;text-shadow:0 2px 48px rgba(0,0,0,.25)}
-        .hero-c h1 em{font-style:italic}
-        .hero-c .sub{font-size:15px;font-weight:300;color:rgba(255,255,255,.58);line-height:1.85;margin-bottom:44px;max-width:400px;margin-left:auto;margin-right:auto}
-        .btn-hero{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.22);padding:18px 52px;border-radius:100px;text-decoration:none;transition:all .4s}
-        .btn-hero:hover{background:var(--red);border-color:var(--red)}
+        .hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.05) 30%,rgba(0,0,0,.12) 55%,rgba(247,245,242,.6) 78%,rgba(247,245,242,.88) 88%,#F7F5F2 98%)}
+        .hero-c{position:relative;z-index:2;max-width:620px;padding:0 24px;margin-top:-60px}
+        .hero-c .tag{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:32px}
+        .hero-c h1{font-size:clamp(2rem,4.2vw,2.8rem);font-weight:300;color:#fff;letter-spacing:-.6px;line-height:1.28;margin-bottom:20px;text-shadow:0 2px 40px rgba(0,0,0,.3)}
+        .hero-c h1 strong{font-weight:600}
+        .hero-c .sub{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:40px;max-width:440px;margin-left:auto;margin-right:auto}
+        .btn-hero{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--red);padding:18px 52px;border-radius:100px;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+        .btn-hero:hover{background:#9a0000}
 
-        /* ═══ SECTIONS ═══ */
-        .s{padding:128px 0}
-        .s-warm{padding:128px 0;background:var(--warm)}
-        .s-title{margin-bottom:72px}
-        .s-title .line{width:28px;height:1px;background:var(--red);margin-bottom:20px;opacity:.5}
-        .s-title h2{font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:300;letter-spacing:-.4px;line-height:1.35;margin-bottom:12px}
-        .s-title h2 strong{font-weight:600}
-        .s-title p{font-size:14px;color:var(--soft);line-height:1.8;max-width:400px}
-        .s-center{text-align:center}.s-center .line{margin:0 auto 20px}.s-center p{margin:0 auto}
+        /* SOCIAL PROOF STRIP */
+        .proof{padding:40px 0 56px;background:var(--warm)}
+        .proof-wrap{max-width:900px;margin:0 auto;padding:0 24px}
+        .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px}
+        .proof-card{display:flex;align-items:center;gap:16px;padding:20px 24px;background:var(--white);border-radius:14px;border:1px solid var(--border)}
+        .proof-card img{width:56px;height:56px;border-radius:10px;object-fit:cover;flex-shrink:0}
+        .proof-card .pc-info{min-width:0}
+        .proof-card .pc-name{font-size:14px;font-weight:500;color:var(--charcoal);line-height:1.3}
+        .proof-card .pc-meta{font-size:12px;color:var(--muted);margin-top:2px}
+        .proof-line{text-align:center;font-size:14px;color:var(--soft);font-weight:300;font-style:italic}
 
-        /* ═══ IDENTITY — CARD DESIGN ═══ */
-        .id-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-        .id-card{padding:48px 40px;border-radius:16px;border:1px solid var(--border)}
-        .id-card.yes{background:var(--white);border-color:rgba(184,0,0,.12)}
-        .id-card.no{background:var(--warm)}
-        .id-card h3{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:28px}
-        .id-card.yes h3{color:var(--red)}
-        .id-card.no h3{color:var(--faint)}
-        .id-card ul{list-style:none}
-        .id-card li{font-size:14px;padding:14px 0;border-bottom:1px solid var(--border);line-height:1.6}
-        .id-card li:last-child{border:none;padding-bottom:0}
-        .id-card.yes li{color:var(--text)}
-        .id-card.no li{color:var(--muted)}
+        /* QUIZ SECTION */
+        .quiz-section{padding:80px 0 100px;background:var(--white)}
+        .quiz-wrap{max-width:520px;margin:0 auto;padding:0 24px}
+        .quiz-header{text-align:center;margin-bottom:48px}
+        .quiz-header .line{width:28px;height:1px;background:var(--red);margin:0 auto 20px;opacity:.5}
+        .quiz-header h2{font-size:clamp(1.4rem,2.5vw,1.75rem);font-weight:300;letter-spacing:-.4px;color:var(--charcoal);margin-bottom:8px}
+        .quiz-header h2 strong{font-weight:600}
+        .quiz-header p{font-size:14px;color:var(--soft)}
 
-        /* ═══ MID CTA ═══ */
-        .mid{text-align:center;padding:72px 0}
-        .mid p{font-size:17px;font-weight:300;font-style:italic;color:var(--soft);margin-bottom:32px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.65}
-        .btn-dark{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:16px 48px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+        /* Progress bar */
+        .progress{height:3px;background:var(--border);border-radius:4px;margin-bottom:48px;overflow:hidden}
+        .progress-fill{height:100%;background:var(--red);border-radius:4px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0}
+
+        /* Quiz steps */
+        .quiz-steps{position:relative;overflow:hidden;min-height:320px}
+        .q-step{position:absolute;top:0;left:0;width:100%;opacity:0;transform:translateX(40px);transition:all .45s cubic-bezier(.4,0,.2,1);pointer-events:none}
+        .q-step.active{opacity:1;transform:translateX(0);pointer-events:auto;position:relative}
+        .q-step.exit{opacity:0;transform:translateX(-40px)}
+        .q-step .q-num{font-size:10px;font-weight:600;color:var(--red);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+        .q-step .q-text{font-size:clamp(1.1rem,2vw,1.3rem);font-weight:400;color:var(--charcoal);letter-spacing:-.3px;line-height:1.45;margin-bottom:32px}
+
+        /* Options */
+        .q-opts{display:flex;flex-direction:column;gap:12px}
+        .q-opt{display:block;width:100%;text-align:left;font-family:'Poppins',sans-serif;font-size:15px;font-weight:300;color:var(--text);padding:18px 24px;background:var(--warm);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:all .25s;-webkit-appearance:none;appearance:none}
+        .q-opt:hover{border-color:var(--red);color:var(--red);background:rgba(184,0,0,.02)}
+        .q-opt.selected{border-color:var(--red);color:var(--red);background:rgba(184,0,0,.04);font-weight:400}
+        .q-other{display:none;margin-top:12px}
+        .q-other.show{display:block}
+        .q-other input{width:100%;font-family:'Poppins',sans-serif;font-size:14px;font-weight:300;padding:14px 20px;border:1px solid var(--border);border-radius:12px;background:var(--white);color:var(--charcoal);outline:none}
+        .q-other input:focus{border-color:var(--red)}
+        .q-back{display:inline-flex;align-items:center;gap:6px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:400;color:var(--muted);background:none;border:none;cursor:pointer;margin-bottom:20px;padding:0;transition:color .2s}
+        .q-back:hover{color:var(--red)}
+        .q-back svg{width:14px;height:14px}
+
+        /* Loading screen */
+        .q-loading{display:none;text-align:center;padding:80px 0}
+        .q-loading.active{display:block}
+        .q-loading .dots{display:flex;gap:6px;justify-content:center;margin-bottom:28px}
+        .q-loading .dot{width:8px;height:8px;border-radius:50%;background:var(--red);opacity:.3;animation:pulse 1.2s ease-in-out infinite}
+        .q-loading .dot:nth-child(2){animation-delay:.2s}
+        .q-loading .dot:nth-child(3){animation-delay:.4s}
+        @keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+        .q-loading p{font-size:15px;color:var(--soft);font-weight:300;font-style:italic}
+
+        /* Selection + Contact capture */
+        .q-result{display:none;text-align:center}
+        .q-result.active{display:block}
+        .q-result .badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);background:rgba(184,0,0,.06);padding:8px 20px;border-radius:100px;margin-bottom:24px}
+        .q-result h2{font-size:clamp(1.4rem,2.5vw,1.75rem);font-weight:300;color:var(--charcoal);letter-spacing:-.4px;margin-bottom:8px}
+        .q-result .r-sub{font-size:14px;color:var(--soft);margin-bottom:40px;line-height:1.7}
+
+        /* Contact form */
+        .q-form{text-align:left}
+        .fg{margin-bottom:28px}
+        .fl{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:block}
+        .fi{width:100%;font-family:'Poppins',sans-serif;font-size:15px;font-weight:300;padding:16px 0;border:none;border-bottom:1px solid var(--border);background:transparent;color:var(--charcoal);outline:none;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
+        .fi:focus{border-color:var(--red)}
+        .fi::placeholder{color:var(--faint)}
+        .f-sub{margin-top:36px;width:100%;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px;background:var(--charcoal);color:var(--white);border:none;border-radius:100px;cursor:pointer;transition:background .3s}
+        .f-sub:hover{background:var(--red)}
+        .f-note{text-align:center;margin-top:16px;font-size:11px;color:var(--muted);font-style:italic}
+
+        /* Thank You Overlay */
+        .ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(247,245,242,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;text-align:center;padding:32px}
+        .ov.on{display:flex}
+        .ov-in{max-width:380px}
+        .ov-in img{height:24px;margin:0 auto 28px;opacity:.5}
+        .ov h2{font-size:1.5rem;font-weight:300;letter-spacing:-.4px;margin-bottom:12px;color:var(--charcoal)}
+        .ov p{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:28px}
+        .btn-dark{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:14px 36px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
         .btn-dark:hover{background:var(--red)}
 
-        /* ═══ EXPERIENCES — EDITORIAL ═══ */
-        .exp{margin-bottom:96px}
-        .exp:last-child{margin-bottom:0}
-        .exp-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
-        .exp.flip .exp-layout{grid-template-columns:1fr 1.1fr}
-        .exp.flip .exp-img{order:2}
-        .exp.flip .exp-body{order:1}
-        .exp-img{border-radius:14px;overflow:hidden;aspect-ratio:3/2;position:relative}
-        .exp-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
-        .exp:hover .exp-img img{transform:scale(1.02)}
-        .exp-img .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.15);opacity:0;transition:opacity .3s;cursor:pointer;text-decoration:none}
-        .exp-img .play svg{width:48px;height:48px;fill:rgba(255,255,255,.9);filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
-        .exp:hover .exp-img .play{opacity:1}
-        .exp-tag{font-size:10px;font-weight:600;color:var(--red);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
-        .exp-body h3{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:400;letter-spacing:-.4px;margin-bottom:16px;line-height:1.35}
-        .exp-body .desc{font-size:14px;color:var(--soft);line-height:1.9}
-        .exp-body .meta{font-size:12px;color:var(--muted);margin-top:20px}
-        .exp-body .vibe{display:inline-flex;gap:6px;margin-top:14px}
-        .exp-body .vibe span{font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--red);background:rgba(184,0,0,.05);padding:5px 12px;border-radius:100px}
-
-        /* ═══ REEL GALLERY ═══ */
-        .reels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-        .reel{aspect-ratio:9/16;border-radius:12px;overflow:hidden;position:relative;background:var(--warm2)}
-        .reel iframe{width:100%;height:100%;border:none}
-        .reel-static{position:relative;cursor:pointer}
-        .reel-static img{width:100%;height:100%;object-fit:cover;filter:brightness(.92)}
-        .reel-static .play-sm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-        .reel-static .play-sm svg{width:36px;height:36px;fill:rgba(255,255,255,.85);filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
-        .reels-note{text-align:center;margin-top:24px;font-size:12px;color:var(--muted)}
-        .reels-note a{color:var(--red);text-decoration:none;font-weight:500}
-
-        /* ═══ PEOPLE ═══ */
-        .people{text-align:center;max-width:520px;margin:0 auto}
-        .people p{font-size:15px;color:var(--soft);line-height:1.9;margin-bottom:32px}
-        .ptags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-        .ptag{font-size:12px;padding:10px 22px;border:1px solid var(--border);border-radius:100px;color:var(--text);background:var(--white);transition:all .25s}
-        .ptag:hover{border-color:var(--red);color:var(--red)}
-
-        /* ═══ PROCESS ═══ */
-        .proc{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:72px}
-        .proc-i .num{font-size:10px;font-weight:600;color:var(--red);letter-spacing:.14em;margin-bottom:16px}
-        .proc-i h3{font-size:1rem;font-weight:500;letter-spacing:-.2px;margin-bottom:8px}
-        .proc-i p{font-size:13px;color:var(--soft);line-height:1.75}
-
-        /* ═══ FORM ═══ */
-        .form-c{max-width:480px;margin:0 auto}
-        .fg{margin-bottom:32px}
-        .fl{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:block}
-        .fi,.ft,.fs{width:100%;font-family:'Poppins',sans-serif;font-size:15px;font-weight:300;padding:16px 0;border:none;border-bottom:1px solid var(--border);background:transparent;color:var(--charcoal);outline:none;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
-        .fi:focus,.ft:focus,.fs:focus{border-color:var(--red)}
-        .fi::placeholder,.ft::placeholder{color:var(--faint)}
-        .ft{resize:vertical;min-height:48px;line-height:1.6}
-        .fs{appearance:none;cursor:pointer;color:var(--faint)}
-        .fs:valid{color:var(--charcoal)}
-        .fs option{color:var(--charcoal)}
-        .f-sub{margin-top:44px;width:100%;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px;background:var(--charcoal);color:var(--white);border:none;border-radius:100px;cursor:pointer;transition:background .3s}
-        .f-sub:hover{background:var(--red)}
-        .f-note{text-align:center;margin-top:20px;font-size:11px;color:var(--muted);font-style:italic}
-
-        /* ═══ CLOSE ═══ */
-        .close-s{text-align:center;padding:100px 0;border-top:1px solid var(--border)}
-        .close-s img{height:24px;margin:0 auto 20px;opacity:.5}
-        .close-s p{font-size:15px;font-weight:300;font-style:italic;color:var(--soft);max-width:360px;margin:0 auto 24px;line-height:1.7}
+        /* Footer */
+        .close-s{text-align:center;padding:80px 0 40px;border-top:1px solid var(--border);background:var(--warm)}
+        .close-s img{height:24px;margin:0 auto 16px;opacity:.4}
+        .close-s p{font-size:13px;font-weight:300;color:var(--soft);max-width:300px;margin:0 auto 16px;line-height:1.6}
         .close-s a{color:var(--red);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.04em}
-        footer{padding:16px 0;text-align:center}footer p{font-size:10px;color:var(--muted)}footer a{color:var(--muted);text-decoration:none}
+        footer{padding:16px 0;text-align:center;background:var(--warm)}
+        footer p{font-size:10px;color:var(--muted)}footer a{color:var(--muted);text-decoration:none}
 
-        /* ═══ OVERLAY ═══ */
-        .ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(247,245,242,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;text-align:center;padding:32px}
-        .ov.on{display:flex}.ov-in{max-width:380px}
-        .ov h2{font-size:1.5rem;font-weight:300;letter-spacing:-.4px;margin-bottom:12px}
-        .ov p{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:28px}
-
+        /* MOBILE */
         @media(max-width:768px){
-            .wrap{padding:0 24px}nav{padding:16px 20px}nav.solid{padding:12px 20px}
-            .hero{height:90vh;min-height:580px}
-            .id-grid{grid-template-columns:1fr;gap:16px}.id-card{padding:36px 28px}
-            .exp-layout,.exp.flip .exp-layout{grid-template-columns:1fr;gap:28px}
-            .exp.flip .exp-img{order:0}.exp.flip .exp-body{order:0}
-            .reels{grid-template-columns:repeat(3,1fr);gap:6px}
-            .proc{grid-template-columns:1fr;gap:32px}
-            .s,.s-warm{padding:88px 0}
+            nav{padding:16px 20px}nav.solid{padding:12px 20px}
+            .hero{height:92vh;min-height:580px}
+            .hero-c{margin-top:-40px}
+            .proof-grid{grid-template-columns:1fr;gap:12px}
+            .quiz-section{padding:60px 0 80px}
         }
-        @media(max-width:480px){nav{padding:12px 16px}.reels{grid-template-columns:1fr 1fr 1fr}}
+        @media(max-width:480px){
+            nav{padding:12px 16px}
+            .hero-c h1{font-size:1.75rem}
+            .btn-hero{padding:16px 40px}
+        }
+
+        /* Reveal animation */
         .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
         .reveal.vis{opacity:1;transform:none}
     </style>
@@ -174,295 +164,372 @@
         <img src="assets/lume-logo-white.png" alt="LUME" class="logo-white">
         <img src="assets/lume-logo-transparent.png" alt="LUME" class="logo-dark">
     </a>
-    <a href="#apply" class="nc">Request an Invitation</a>
+    <a href="#quiz" class="nc">Check Your Eligibility</a>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-bg"><img src="assets/ig-melody-mingle-hd.jpg" alt="A LUME Evening"></div>
     <div class="hero-shade"></div>
     <div class="hero-c">
-        <div class="tag">By Invitation &bull; Hyderabad</div>
-        <h1>Some rooms you <em>feel</em> the moment you walk in.</h1>
-        <p class="sub">Intimate cultural experiences for Hyderabad's most interesting people. Two evenings a month. Selected guests only.</p>
-        <a href="#apply" class="btn-hero">Request an Invitation</a>
+        <div class="tag">By Invitation Only</div>
+        <h1>Hyderabad's most interesting people. <strong>One room. Two evenings a month.</strong></h1>
+        <p class="sub">An invite-only community of founders, creatives, and cultural leaders. 30 to 50 selected guests per experience.</p>
+        <a href="#quiz" class="btn-hero">Check Your Eligibility</a>
     </div>
 </section>
 
-<!-- ═══════════ IDENTITY ═══════════ -->
-<section class="s">
-    <div class="wrap">
-        <div class="s-title s-center reveal">
-            <div class="line"></div>
-            <h2>Before you scroll further.</h2>
-        </div>
-        <div class="id-grid reveal">
-            <div class="id-card yes">
-                <h3>This is for you if</h3>
-                <ul>
-                    <li>You value the quality of a room over the size of a guest list</li>
-                    <li>You seek cultural experiences that genuinely surprise you</li>
-                    <li>You care deeply about who you spend your evenings with</li>
-                    <li>You've outgrown what Hyderabad currently offers socially</li>
-                    <li>You invest in experiences that match your standards</li>
-                </ul>
-            </div>
-            <div class="id-card no">
-                <h3>This is not for you if</h3>
-                <ul>
-                    <li>You prefer large-scale public events</li>
-                    <li>You measure evenings by contacts made</li>
-                    <li>You want something casual and open to everyone</li>
-                    <li>You're not ready to commit to a curated community</li>
-                    <li>You prioritize cost over quality of experience</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════ MID CTA ═══════════ -->
-<section class="mid">
-    <p>The right room changes everything. The question is whether you should be in it.</p>
-    <a href="#apply" class="btn-dark">Request an Invitation</a>
-</section>
-
-<!-- ═══════════ PAST EXPERIENCES ═══════════ -->
-<section class="s-warm">
-    <div class="wrap">
-        <div class="s-title reveal">
-            <div class="line"></div>
-            <h2>Experiences we've <strong>designed.</strong></h2>
-            <p>A glimpse into past LUME evenings. Each one unrepeatable.</p>
-        </div>
-
-        <div class="exp reveal">
-            <div class="exp-layout">
-                <div class="exp-img">
-                    <img src="assets/ig-resonance-room-hd.jpg" alt="The Resonance Room">
-                    <a href="https://www.instagram.com/reel/DV6NHbokTSN/" target="_blank" class="play">
-                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </a>
-                </div>
-                <div class="exp-body">
-                    <div class="exp-tag">Sound &bull; Stillness</div>
-                    <h3>The Resonance Room</h3>
-                    <p class="desc">A guided sound bath at Aaromale in Film Nagar. Singing bowls fill a candlelit room. Thirty people lie still, eyes closed, letting therapeutic vibrations move through them. No phones. No conversation. Just sound, stillness, and the rare permission to simply be present.</p>
-                    <div class="meta">Facilitated by Pallavi Marshall &bull; Aaromale, Film Nagar</div>
-                    <div class="vibe"><span>Intimate</span><span>Restorative</span><span>30 guests</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="exp flip reveal">
-            <div class="exp-layout">
-                <div class="exp-img">
-                    <img src="assets/ig-cc3-art-hd.jpg" alt="Chromatic Conversations">
-                    <a href="https://www.instagram.com/reel/DVX6sY8kYyr/" target="_blank" class="play">
-                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </a>
-                </div>
-                <div class="exp-body">
-                    <div class="exp-tag">Art &bull; Investment</div>
-                    <h3>Chromatic Conversations</h3>
-                    <p class="desc">An evening exploring art as a serious asset class. Forty selected guests. Wine in hand. A gallery director with 13 years across India, Europe, and MENA leading the conversation. Where collectors began thinking long term. Not about decor. About positioning.</p>
-                    <div class="meta">Elements by Nirvania &bull; Banjara Hills</div>
-                    <div class="vibe"><span>Cultural</span><span>Intellectual</span><span>40 guests</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="exp reveal">
-            <div class="exp-layout">
-                <div class="exp-img">
-                    <img src="assets/ig-melody-mingle-hd.jpg" alt="Melody & Mingle">
-                    <a href="https://www.instagram.com/reel/DU5PZQ4kaqR/" target="_blank" class="play">
-                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </a>
-                </div>
-                <div class="exp-body">
-                    <div class="exp-tag">Music &bull; Connection</div>
-                    <h3>Melody &amp; Mingle</h3>
-                    <p class="desc">An open mic evening where every voice in the room was chosen. Voices shook a little. Smiles stayed a little longer. Between lyrics and laughter, people found their people. The kind of night you reference months later when someone asks what you did last weekend.</p>
-                    <div class="meta">Where hearts found a mic</div>
-                    <div class="vibe"><span>Warm</span><span>Creative</span><span>40 guests</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════ REELS ═══════════ -->
-<section class="s">
-    <div class="wrap">
-        <div class="s-title s-center reveal">
-            <div class="line"></div>
-            <h2>Real rooms. <strong>Real people.</strong></h2>
-        </div>
-        <div class="reels reveal">
-            <a href="https://www.instagram.com/reel/DVX6sY8kYyr/" target="_blank" class="reel reel-static">
-                <img src="assets/ig-cc3-art.jpg" alt="Art as Investment">
-                <div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="white"/></svg></div>
-            </a>
-            <a href="https://www.instagram.com/reel/DV6NHbokTSN/" target="_blank" class="reel reel-static">
+<!-- SOCIAL PROOF STRIP -->
+<section class="proof">
+    <div class="proof-wrap">
+        <div class="proof-grid">
+            <div class="proof-card">
                 <img src="assets/ig-resonance-room.jpg" alt="The Resonance Room">
-                <div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="white"/></svg></div>
-            </a>
-            <a href="https://www.instagram.com/reel/DU5PZQ4kaqR/" target="_blank" class="reel reel-static">
-                <img src="assets/ig-cc3-poster.jpg" alt="Chromatic Conversations">
-                <div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="white"/></svg></div>
-            </a>
+                <div class="pc-info">
+                    <div class="pc-name">The Resonance Room</div>
+                    <div class="pc-meta">Sound healing &bull; 30 guests</div>
+                </div>
+            </div>
+            <div class="proof-card">
+                <img src="assets/ig-cc3-art.jpg" alt="Chromatic Conversations">
+                <div class="pc-info">
+                    <div class="pc-name">Chromatic Conversations</div>
+                    <div class="pc-meta">Art as investment &bull; 40 guests</div>
+                </div>
+            </div>
+            <div class="proof-card">
+                <img src="assets/ig-melody-mingle.jpg" alt="Melody & Mingle">
+                <div class="pc-info">
+                    <div class="pc-name">Melody &amp; Mingle</div>
+                    <div class="pc-meta">Open mic night &bull; 40 guests</div>
+                </div>
+            </div>
         </div>
-        <p class="reels-note reveal">Watch the full reels &mdash; <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a></p>
+        <p class="proof-line">3 experiences designed. 110 selected guests. Every evening unrepeatable.</p>
     </div>
 </section>
 
-<!-- ═══════════ PEOPLE ═══════════ -->
-<section class="s-warm">
-    <div class="wrap">
-        <div class="people reveal">
-            <div class="s-center">
-                <div class="line"></div>
-                <h2>The people <strong>in the room.</strong></h2>
-            </div>
-            <p>Founders building something real. Creative directors shaping culture. Operators who choose their rooms carefully. People who hold their evenings to the same standard as their work.</p>
-            <div class="ptags">
-                <span class="ptag">Founders</span>
-                <span class="ptag">Creative Directors</span>
-                <span class="ptag">Cultural Leaders</span>
-                <span class="ptag">Senior Professionals</span>
-                <span class="ptag">Tastemakers</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════ PROCESS ═══════════ -->
-<section class="s">
-    <div class="wrap">
-        <div class="s-title reveal">
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+    <div class="quiz-wrap">
+        <div class="quiz-header">
             <div class="line"></div>
-            <h2>How you get <strong>invited.</strong></h2>
-            <p>We don't sell tickets. Access is through application.</p>
+            <h2>Check your <strong>eligibility.</strong></h2>
+            <p>5 quick questions. Takes under a minute.</p>
         </div>
-        <div class="proc">
-            <div class="proc-i reveal">
-                <div class="num">Step 01</div>
-                <h3>Tell us about yourself</h3>
-                <p>A short application. What draws you, what you value, and what kind of room you're looking for.</p>
+
+        <div class="progress"><div class="progress-fill" id="pBar"></div></div>
+
+        <div class="quiz-steps" id="qSteps">
+            <!-- Step 1 -->
+            <div class="q-step active" data-step="1">
+                <div class="q-num">Question 01</div>
+                <div class="q-text">What best describes you?</div>
+                <div class="q-opts">
+                    <button class="q-opt" data-q="profile">Founder / Business Owner</button>
+                    <button class="q-opt" data-q="profile">Senior Executive / CXO</button>
+                    <button class="q-opt" data-q="profile">Creative Professional</button>
+                    <button class="q-opt" data-q="profile">Consultant / Advisor</button>
+                    <button class="q-opt" data-q="profile">Artist / Cultural Practitioner</button>
+                    <button class="q-opt" data-q="profile" data-other="true">Other</button>
+                </div>
+                <div class="q-other" id="otherField">
+                    <input type="text" id="otherInput" placeholder="Tell us more about what you do">
+                    <button class="q-opt" style="margin-top:12px;text-align:center;font-weight:500;color:var(--red)" onclick="submitOther()">Continue</button>
+                </div>
             </div>
-            <div class="proc-i reveal">
-                <div class="num">Step 02</div>
-                <h3>We review personally</h3>
-                <p>Every submission is read by our team. If there's alignment, we reach out within 48 hours.</p>
+            <!-- Step 2 -->
+            <div class="q-step" data-step="2">
+                <button class="q-back" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+                <div class="q-num">Question 02</div>
+                <div class="q-text">What kind of evenings do you gravitate toward?</div>
+                <div class="q-opts">
+                    <button class="q-opt" data-q="evening">Cultural and artistic</button>
+                    <button class="q-opt" data-q="evening">Intellectual and conversational</button>
+                    <button class="q-opt" data-q="evening">Social and high-energy</button>
+                    <button class="q-opt" data-q="evening">Wellness and introspective</button>
+                </div>
             </div>
-            <div class="proc-i reveal">
-                <div class="num">Step 03</div>
-                <h3>Your first evening</h3>
-                <p>If invited, join your first LUME experience. Feel the room. Meet the people. Then decide if this is where you belong.</p>
+            <!-- Step 3 -->
+            <div class="q-step" data-step="3">
+                <button class="q-back" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+                <div class="q-num">Question 03</div>
+                <div class="q-text">How do you typically discover new experiences?</div>
+                <div class="q-opts">
+                    <button class="q-opt" data-q="discovery">Curated invitations and personal recommendations</button>
+                    <button class="q-opt" data-q="discovery">Social media and content</button>
+                    <button class="q-opt" data-q="discovery">Friends and professional circles</button>
+                    <button class="q-opt" data-q="discovery">I seek them out myself</button>
+                </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="q-step" data-step="4">
+                <button class="q-back" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+                <div class="q-num">Question 04</div>
+                <div class="q-text">When it comes to experiences, what matters most?</div>
+                <div class="q-opts">
+                    <button class="q-opt" data-q="values">The quality of people in the room</button>
+                    <button class="q-opt" data-q="values">Exclusivity and curation</button>
+                    <button class="q-opt" data-q="values">Learning something new</button>
+                    <button class="q-opt" data-q="values">The atmosphere and setting</button>
+                </div>
+            </div>
+            <!-- Step 5 -->
+            <div class="q-step" data-step="5">
+                <button class="q-back" onclick="prevStep()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+                <div class="q-num">Question 05</div>
+                <div class="q-text">LUME is an annual commitment to curated experiences. How does that sit with you?</div>
+                <div class="q-opts">
+                    <button class="q-opt" data-q="commitment">I regularly invest in premium experiences</button>
+                    <button class="q-opt" data-q="commitment">I'm open to it if the fit is right</button>
+                    <button class="q-opt" data-q="commitment">I'd like to attend as a guest first</button>
+                    <button class="q-opt" data-q="commitment">I'm just exploring for now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="q-loading" id="qLoad">
+            <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <p>Reviewing your profile...</p>
+        </div>
+
+        <!-- Result + Contact Form -->
+        <div class="q-result" id="qResult">
+            <div class="badge">Shortlisted</div>
+            <h2>You've been shortlisted.</h2>
+            <p class="r-sub">We'd like to learn a little more before your invitation.</p>
+            <div class="q-form">
+                <div class="fg">
+                    <label class="fl">Full name</label>
+                    <input class="fi" type="text" id="fN" placeholder="Your name">
+                </div>
+                <div class="fg">
+                    <label class="fl">WhatsApp number</label>
+                    <input class="fi" type="tel" id="fP" placeholder="+91">
+                </div>
+                <div class="fg">
+                    <label class="fl">Email</label>
+                    <input class="fi" type="email" id="fE" placeholder="Your email">
+                </div>
+                <button class="f-sub" onclick="submitApp()">Complete Your Application</button>
+                <p class="f-note">Every application reviewed personally. We respond within 48 hours.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════ APPLICATION ═══════════ -->
-<section class="s-warm" id="apply">
-    <div class="wrap">
-        <div class="s-title s-center reveal">
-            <div class="line"></div>
-            <h2>Request an <strong>invitation.</strong></h2>
-            <p>Not everyone qualifies. That's what makes this worth your time.</p>
-        </div>
-        <div class="form-c reveal">
-            <div class="fg">
-                <label class="fl">Your name</label>
-                <input class="fi" type="text" id="fN" placeholder="Full name">
-            </div>
-            <div class="fg">
-                <label class="fl">Phone</label>
-                <input class="fi" type="tel" id="fP" placeholder="WhatsApp preferred">
-            </div>
-            <div class="fg">
-                <label class="fl">Email</label>
-                <input class="fi" type="email" id="fE" placeholder="Email address">
-            </div>
-            <div class="fg">
-                <label class="fl">What do you do?</label>
-                <select class="fs" id="fR" required>
-                    <option value="" disabled selected>Select one</option>
-                    <option>Founder / Business Owner</option>
-                    <option>Senior Executive</option>
-                    <option>Creative Professional</option>
-                    <option>Consultant / Advisor</option>
-                    <option>Artist / Cultural Practitioner</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <div class="fg">
-                <label class="fl">What draws you to LUME?</label>
-                <textarea class="ft" id="fD" placeholder="What made you curious?"></textarea>
-            </div>
-            <div class="fg">
-                <label class="fl">LUME membership is an annual commitment to curated experiences. How does that sit with you?</label>
-                <select class="fs" id="fC" required>
-                    <option value="" disabled selected>Select one</option>
-                    <option>I regularly invest in premium experiences</option>
-                    <option>I'm open to it if the fit is right</option>
-                    <option>I'd like to attend as a guest first</option>
-                    <option>I'm just exploring for now</option>
-                </select>
-            </div>
-            <div class="fg">
-                <label class="fl">How did you hear about us?</label>
-                <select class="fs" id="fS" required>
-                    <option value="" disabled selected>Select one</option>
-                    <option>Instagram</option>
-                    <option>A friend or colleague</option>
-                    <option>Facebook ad</option>
-                    <option>Google</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <button class="f-sub" onclick="go()">Request an Invitation</button>
-            <p class="f-note">Every application reviewed personally. We respond within 48 hours.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════ CLOSING ═══════════ -->
+<!-- CLOSING -->
 <section class="close-s">
     <img src="assets/lume-logo-transparent.png" alt="LUME">
     <p>The next experience is being designed. If you belong in the room, we'll find you.</p>
     <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a>
 </section>
-<footer><div class="wrap"><p>Lume Project Private Limited &bull; Hyderabad &bull; <a href="https://thelumeproject.com">thelumeproject.com</a> &bull; © 2026</p></div></footer>
+<footer><div><p>Lume Project Private Limited &bull; Hyderabad &bull; <a href="https://thelumeproject.com">thelumeproject.com</a> &bull; &copy; 2026</p></div></footer>
 
+<!-- Thank You Overlay -->
 <div class="ov" id="ty">
     <div class="ov-in">
-        <img src="assets/lume-logo-transparent.png" alt="LUME" style="height:24px;margin-bottom:28px;opacity:.5">
+        <img src="assets/lume-logo-transparent.png" alt="LUME">
         <h2 id="tyT">Thank you.</h2>
         <p id="tyP">Your application has been received. We'll review it personally and reach out within 48 hours if there's alignment.</p>
-        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-dark" style="font-size:11px;padding:14px 36px">Follow @lumeproject_offl</a>
+        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-dark">Follow @lumeproject_offl</a>
     </div>
 </div>
 
 <script>
-function go(){
-    const n=document.getElementById('fN').value.trim(),p=document.getElementById('fP').value.trim(),e=document.getElementById('fE').value.trim();
-    if(!n||!p||!e){alert('Please fill in name, phone, and email.');return}
-    const d={name:n,phone:p,email:e,role:document.getElementById('fR').value,what_draws_you:document.getElementById('fD').value.trim(),commitment_level:document.getElementById('fC').value,source:document.getElementById('fS').value,tags:['lume-application','fb-lead','mar-2026'],form:'lume-invitation-request'};
-    // Tag high-intent leads
-    if(d.commitment_level==='I regularly invest in premium experiences')d.tags.push('high-intent','premium-ready');
-    else if(d.commitment_level==="I'm open to it if the fit is right")d.tags.push('warm-lead');
-    else d.tags.push('nurture');
-    fetch('https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).catch(()=>{});
-    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'LUME Invitation',commitment:d.commitment_level});
-    document.getElementById('tyT').textContent='Thank you, '+n.split(' ')[0]+'.';
+const answers = {};
+let step = 1;
+const totalSteps = 5;
+let submitted = false;
+
+// Capture UTM params from URL
+const urlParams = new URLSearchParams(window.location.search);
+const utm = {};
+['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => { if (urlParams.get(k)) utm[k] = urlParams.get(k); });
+
+// Quiz option click
+document.querySelectorAll('.q-opt').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (!this.dataset.q) return; // Skip the "Continue" button
+        const q = this.dataset.q;
+        const val = this.textContent.trim();
+
+        // Handle "Other" option on step 1
+        if (this.dataset.other) {
+            document.getElementById('otherField').classList.add('show');
+            this.parentElement.querySelectorAll('.q-opt').forEach(b => b.classList.remove('selected'));
+            this.classList.add('selected');
+            document.getElementById('otherInput').focus();
+            return;
+        }
+
+        // Hide "Other" field if another option selected on step 1
+        const otherField = document.getElementById('otherField');
+        if (otherField) otherField.classList.remove('show');
+
+        answers[q] = val;
+
+        // Visual feedback
+        this.parentElement.querySelectorAll('.q-opt').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+
+        // Advance after brief delay
+        setTimeout(() => {
+            if (step < totalSteps) {
+                nextStep();
+            } else {
+                showLoading();
+            }
+        }, 350);
+    });
+});
+
+function submitOther() {
+    const val = document.getElementById('otherInput').value.trim();
+    if (!val) { document.getElementById('otherInput').focus(); return; }
+    answers.profile = val;
+    setTimeout(() => nextStep(), 200);
+}
+
+function nextStep() {
+    const current = document.querySelector('.q-step.active');
+    current.classList.remove('active');
+    current.classList.add('exit');
+
+    step++;
+    updateProgress();
+
+    setTimeout(() => {
+        current.classList.remove('exit');
+        const next = document.querySelector(`.q-step[data-step="${step}"]`);
+        next.classList.add('active');
+    }, 200);
+}
+
+function prevStep() {
+    if (step <= 1) return;
+    const current = document.querySelector('.q-step.active');
+    current.classList.remove('active');
+
+    step--;
+    updateProgress();
+
+    const prev = document.querySelector(`.q-step[data-step="${step}"]`);
+    prev.classList.add('active');
+}
+
+function updateProgress() {
+    document.getElementById('pBar').style.width = (step / totalSteps * 100) + '%';
+}
+
+function showLoading() {
+    document.getElementById('qSteps').style.display = 'none';
+    document.getElementById('qLoad').classList.add('active');
+
+    // Fire custom event on quiz completion for retargeting
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'ViewContent', { content_name: 'LUME Quiz Complete' });
+        fbq('trackCustom', 'QuizStep5', { commitment: answers.commitment || '' });
+    }
+
+    setTimeout(() => {
+        document.getElementById('qLoad').classList.remove('active');
+        document.getElementById('qLoad').style.display = 'none';
+        document.getElementById('qResult').classList.add('active');
+    }, 2200);
+}
+
+function submitApp() {
+    if (submitted) return;
+
+    const n = document.getElementById('fN').value.trim();
+    const p = document.getElementById('fP').value.trim();
+    const e = document.getElementById('fE').value.trim();
+
+    if (!n) { document.getElementById('fN').focus(); return; }
+    if (!p || p.replace(/\D/g,'').length < 10) { document.getElementById('fP').focus(); return; }
+    if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { document.getElementById('fE').focus(); return; }
+
+    // Prevent double submit
+    submitted = true;
+    document.querySelector('.f-sub').style.opacity = '0.5';
+    document.querySelector('.f-sub').style.pointerEvents = 'none';
+
+    // Lead scoring based on Q5
+    const tags = ['lume-eligibility', 'fb-lead', 'mar-2026'];
+    const commitment = answers.commitment || '';
+
+    if (commitment === 'I regularly invest in premium experiences') {
+        tags.push('high-intent', 'premium-ready');
+    } else if (commitment === "I'm open to it if the fit is right") {
+        tags.push('warm-lead');
+    } else {
+        tags.push('nurture');
+    }
+
+    const payload = {
+        name: n,
+        phone: p,
+        email: e,
+        quiz_answers: {
+            profile: answers.profile || '',
+            evening_type: answers.evening || '',
+            discovery: answers.discovery || '',
+            values: answers.values || '',
+            commitment: commitment
+        },
+        tags: tags,
+        form: 'lume-eligibility-quiz',
+        source: 'meta-ads',
+        utm: utm
+    };
+
+    // Send to GHL webhook (show thank-you regardless of success)
+    fetch('https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    }).catch(() => {
+        // Fallback: store in localStorage so lead is not lost
+        try { const q = JSON.parse(localStorage.getItem('lume_leads') || '[]'); q.push(payload); localStorage.setItem('lume_leads', JSON.stringify(q)); } catch(x){}
+    });
+
+    // Fire FB Lead event
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+            content_name: 'LUME Eligibility',
+            commitment: commitment
+        });
+    }
+
+    // Show thank you
+    document.getElementById('tyT').textContent = 'Thank you, ' + n.split(' ')[0] + '.';
     document.getElementById('ty').classList.add('on');
 }
-document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('vis')},{threshold:.05,rootMargin:'0px 0px -30px 0px'}).observe(el)});
-window.addEventListener('scroll',()=>document.querySelector('nav').classList.toggle('solid',window.scrollY>60));
-document.getElementById('ty').addEventListener('click',e=>{if(e.target.id==='ty')e.target.classList.remove('on')});
+
+// Reveal animations
+document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) e.target.classList.add('vis');
+    }, { threshold: .05, rootMargin: '0px 0px -30px 0px' }).observe(el);
+});
+
+// Nav scroll
+window.addEventListener('scroll', () => document.querySelector('nav').classList.toggle('solid', window.scrollY > 60));
+
+// Close overlay on background click
+document.getElementById('ty').addEventListener('click', e => { if (e.target.id === 'ty') e.target.classList.remove('on'); });
+
+// Fire ViewContent when quiz section enters viewport
+if (typeof fbq !== 'undefined') {
+    new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) fbq('track', 'ViewContent', { content_name: 'LUME Quiz Start' });
+    }, { threshold: .1 }).observe(document.getElementById('quiz'));
+}
+
+// Set initial progress
+updateProgress();
 </script>
 </body>
 </html>
