@@ -10,102 +10,113 @@
     <meta property="og:description" content="Two intimate experiences a month. 30 to 50 selected guests. Hyderabad.">
     <meta property="og:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/ig-melody-mingle-hd.jpg">
     <meta property="og:type" content="website">
-
     <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID_HERE');fbq('track','PageView');</script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-
     <style>
-        :root{--red:#B80000;--black:#0A0A0A;--charcoal:#1C1C1C;--text:#2A2A2A;--soft:#6B6B6B;--muted:#9E9E9E;--faint:#C4C4C4;--border:#E8E5E0;--warm:#F7F5F2;--white:#FFFFFF}
-        *{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-behavior:smooth}
+        :root{--red:#B80000;--black:#0A0A0A;--charcoal:#1C1C1C;--text:#2A2A2A;--soft:#6B6B6B;--muted:#9E9E9E;--faint:#C4C4C4;--border:#E8E5E0;--warm:#F7F5F2;--warm2:#F0EDEA;--white:#FFFFFF}
+        *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
         body{font-family:'Poppins',sans-serif;color:var(--text);line-height:1.7;background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
         h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--charcoal)}
         ::selection{background:rgba(184,0,0,.08)}
         img{display:block;max-width:100%}
         .wrap{max-width:1120px;margin:0 auto;padding:0 40px}
-        .wrap-narrow{max-width:800px;margin:0 auto;padding:0 40px}
 
         /* ═══ NAV ═══ */
         nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
         nav.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:16px 48px;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
+        nav .logo-white{display:block}
+        nav .logo-dark{display:none}
+        nav.solid .logo-white{display:none}
+        nav.solid .logo-dark{display:block}
         nav img{height:28px}
-        nav .n-cta{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--charcoal);text-decoration:none;padding:10px 28px;border:1px solid rgba(0,0,0,.1);border-radius:100px;transition:all .3s}
-        nav .n-cta:hover{border-color:var(--red);color:var(--red)}
+        nav .nc{font-size:12px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.8);text-decoration:none;padding:10px 28px;border:1px solid rgba(255,255,255,.25);border-radius:100px;transition:all .3s;backdrop-filter:blur(8px)}
+        nav .nc:hover{background:rgba(255,255,255,.15)}
+        nav.solid .nc{color:var(--charcoal);border-color:rgba(0,0,0,.1);backdrop-filter:none}
+        nav.solid .nc:hover{border-color:var(--red);color:var(--red)}
 
-        /* ═══ HERO — FULL CINEMATIC ═══ */
-        .hero{position:relative;height:100vh;min-height:680px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+        /* ═══ HERO ═══ */
+        .hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
         .hero-bg{position:absolute;inset:0}
-        .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:brightness(.93) saturate(1.08)}
-        .hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.03) 30%,rgba(0,0,0,.35) 75%,rgba(0,0,0,.55) 100%)}
-        .hero-c{position:relative;z-index:2;max-width:600px;padding:0 24px}
-        .hero-c .tag{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:32px}
-        .hero-c h1{font-size:clamp(2rem,4.2vw,3rem);font-weight:300;color:#fff;letter-spacing:-1px;line-height:1.2;margin-bottom:20px;text-shadow:0 1px 30px rgba(0,0,0,.1)}
+        .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+        .hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.08) 35%,rgba(0,0,0,.15) 60%,rgba(0,0,0,.5) 100%)}
+        .hero-c{position:relative;z-index:2;max-width:580px;padding:0 24px}
+        .hero-c .tag{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:36px}
+        .hero-c h1{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:300;color:#fff;letter-spacing:-.8px;line-height:1.22;margin-bottom:22px;text-shadow:0 2px 48px rgba(0,0,0,.25)}
         .hero-c h1 em{font-style:italic}
-        .hero-c .sub{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:40px;max-width:420px;margin-left:auto;margin-right:auto}
-        .cta-glass{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);padding:16px 48px;border-radius:100px;text-decoration:none;transition:all .35s}
-        .cta-glass:hover{background:var(--red);border-color:var(--red)}
+        .hero-c .sub{font-size:15px;font-weight:300;color:rgba(255,255,255,.58);line-height:1.85;margin-bottom:44px;max-width:400px;margin-left:auto;margin-right:auto}
+        .btn-hero{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.22);padding:18px 52px;border-radius:100px;text-decoration:none;transition:all .4s}
+        .btn-hero:hover{background:var(--red);border-color:var(--red)}
 
         /* ═══ SECTIONS ═══ */
         .s{padding:128px 0}
         .s-warm{padding:128px 0;background:var(--warm)}
         .s-title{margin-bottom:72px}
-        .s-title .line{width:28px;height:1px;background:var(--red);margin-bottom:20px;opacity:.6}
+        .s-title .line{width:28px;height:1px;background:var(--red);margin-bottom:20px;opacity:.5}
         .s-title h2{font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:300;letter-spacing:-.4px;line-height:1.35;margin-bottom:12px}
         .s-title h2 strong{font-weight:600}
         .s-title p{font-size:14px;color:var(--soft);line-height:1.8;max-width:400px}
-        .s-center{text-align:center}
-        .s-center .line{margin:0 auto 20px}
-        .s-center p{margin:0 auto}
+        .s-center{text-align:center}.s-center .line{margin:0 auto 20px}.s-center p{margin:0 auto}
 
-        /* ═══ IDENTITY FILTER ═══ */
-        .filter{display:grid;grid-template-columns:1fr 1fr;gap:100px}
-        .f-col h3{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:32px}
-        .f-yes h3{color:var(--red)}
-        .f-no h3{color:var(--faint)}
-        .f-col ul{list-style:none}
-        .f-col li{font-size:15px;padding:16px 0;border-bottom:1px solid var(--border);line-height:1.55}
-        .f-yes li{color:var(--text)}
-        .f-no li{color:var(--soft)}
+        /* ═══ IDENTITY — CARD DESIGN ═══ */
+        .id-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+        .id-card{padding:48px 40px;border-radius:16px;border:1px solid var(--border)}
+        .id-card.yes{background:var(--white);border-color:rgba(184,0,0,.12)}
+        .id-card.no{background:var(--warm)}
+        .id-card h3{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:28px}
+        .id-card.yes h3{color:var(--red)}
+        .id-card.no h3{color:var(--faint)}
+        .id-card ul{list-style:none}
+        .id-card li{font-size:14px;padding:14px 0;border-bottom:1px solid var(--border);line-height:1.6}
+        .id-card li:last-child{border:none;padding-bottom:0}
+        .id-card.yes li{color:var(--text)}
+        .id-card.no li{color:var(--muted)}
 
         /* ═══ MID CTA ═══ */
-        .mid-cta{text-align:center;padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-        .mid-cta p{font-size:16px;font-weight:300;font-style:italic;color:var(--soft);margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto;line-height:1.7}
-        .cta-dark{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:16px 48px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
-        .cta-dark:hover{background:var(--red)}
+        .mid{text-align:center;padding:72px 0}
+        .mid p{font-size:17px;font-weight:300;font-style:italic;color:var(--soft);margin-bottom:32px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.65}
+        .btn-dark{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:16px 48px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+        .btn-dark:hover{background:var(--red)}
 
-        /* ═══ EXPERIENCE EDITORIAL ═══ */
-        .exp-item{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center;margin-bottom:100px}
-        .exp-item:last-child{margin-bottom:0}
-        .exp-item.flip{grid-template-columns:1fr 1.15fr}
-        .exp-item.flip .exp-img{order:2}
-        .exp-item.flip .exp-body{order:1}
-        .exp-img{border-radius:14px;overflow:hidden;aspect-ratio:3/2}
-        .exp-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.96) saturate(1.05);transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
-        .exp-item:hover .exp-img img{transform:scale(1.025)}
+        /* ═══ EXPERIENCES — EDITORIAL ═══ */
+        .exp{margin-bottom:96px}
+        .exp:last-child{margin-bottom:0}
+        .exp-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+        .exp.flip .exp-layout{grid-template-columns:1fr 1.1fr}
+        .exp.flip .exp-img{order:2}
+        .exp.flip .exp-body{order:1}
+        .exp-img{border-radius:14px;overflow:hidden;aspect-ratio:3/2;position:relative}
+        .exp-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+        .exp:hover .exp-img img{transform:scale(1.02)}
+        .exp-img .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.15);opacity:0;transition:opacity .3s;cursor:pointer;text-decoration:none}
+        .exp-img .play svg{width:48px;height:48px;fill:rgba(255,255,255,.9);filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
+        .exp:hover .exp-img .play{opacity:1}
         .exp-tag{font-size:10px;font-weight:600;color:var(--red);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
-        .exp-body h3{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:400;letter-spacing:-.4px;margin-bottom:16px;line-height:1.3}
+        .exp-body h3{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:400;letter-spacing:-.4px;margin-bottom:16px;line-height:1.35}
         .exp-body .desc{font-size:14px;color:var(--soft);line-height:1.9}
-        .exp-body .meta{font-size:12px;color:var(--muted);margin-top:20px;letter-spacing:.02em}
-        .exp-body .energy{display:inline-block;font-size:11px;font-weight:500;color:var(--red);background:rgba(184,0,0,.06);padding:6px 14px;border-radius:100px;margin-top:16px;letter-spacing:.04em}
+        .exp-body .meta{font-size:12px;color:var(--muted);margin-top:20px}
+        .exp-body .vibe{display:inline-flex;gap:6px;margin-top:14px}
+        .exp-body .vibe span{font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--red);background:rgba(184,0,0,.05);padding:5px 12px;border-radius:100px}
 
-        /* ═══ GALLERY ═══ */
-        .gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-        .gal-item{aspect-ratio:1;border-radius:8px;overflow:hidden}
-        .gal-item img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05);transition:transform .5s}
-        .gal-item:hover img{transform:scale(1.04)}
-        .gal-note{text-align:center;margin-top:24px;font-size:12px;color:var(--muted)}
-        .gal-note a{color:var(--red);text-decoration:none;font-weight:500}
+        /* ═══ REEL GALLERY ═══ */
+        .reels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+        .reel{aspect-ratio:9/16;border-radius:12px;overflow:hidden;position:relative;background:var(--warm2)}
+        .reel iframe{width:100%;height:100%;border:none}
+        .reel-static{position:relative;cursor:pointer}
+        .reel-static img{width:100%;height:100%;object-fit:cover;filter:brightness(.92)}
+        .reel-static .play-sm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+        .reel-static .play-sm svg{width:36px;height:36px;fill:rgba(255,255,255,.85);filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
+        .reels-note{text-align:center;margin-top:24px;font-size:12px;color:var(--muted)}
+        .reels-note a{color:var(--red);text-decoration:none;font-weight:500}
 
         /* ═══ PEOPLE ═══ */
         .people{text-align:center;max-width:520px;margin:0 auto}
         .people p{font-size:15px;color:var(--soft);line-height:1.9;margin-bottom:32px}
-        .p-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-        .p-tag{font-size:12px;padding:10px 22px;border:1px solid var(--border);border-radius:100px;color:var(--text);transition:all .25s}
-        .p-tag:hover{border-color:var(--red);color:var(--red)}
+        .ptags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+        .ptag{font-size:12px;padding:10px 22px;border:1px solid var(--border);border-radius:100px;color:var(--text);background:var(--white);transition:all .25s}
+        .ptag:hover{border-color:var(--red);color:var(--red)}
 
         /* ═══ PROCESS ═══ */
         .proc{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:72px}
@@ -123,8 +134,9 @@
         .ft{resize:vertical;min-height:48px;line-height:1.6}
         .fs{appearance:none;cursor:pointer;color:var(--faint)}
         .fs:valid{color:var(--charcoal)}
-        .f-submit{margin-top:44px;width:100%;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px;background:var(--charcoal);color:var(--white);border:none;border-radius:100px;cursor:pointer;transition:all .3s}
-        .f-submit:hover{background:var(--red)}
+        .fs option{color:var(--charcoal)}
+        .f-sub{margin-top:44px;width:100%;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px;background:var(--charcoal);color:var(--white);border:none;border-radius:100px;cursor:pointer;transition:background .3s}
+        .f-sub:hover{background:var(--red)}
         .f-note{text-align:center;margin-top:20px;font-size:11px;color:var(--muted);font-style:italic}
 
         /* ═══ CLOSE ═══ */
@@ -132,32 +144,25 @@
         .close-s img{height:24px;margin:0 auto 20px;opacity:.5}
         .close-s p{font-size:15px;font-weight:300;font-style:italic;color:var(--soft);max-width:360px;margin:0 auto 24px;line-height:1.7}
         .close-s a{color:var(--red);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.04em}
-        footer{padding:16px 0;text-align:center}
-        footer p{font-size:10px;color:var(--muted)}
-        footer a{color:var(--muted);text-decoration:none}
+        footer{padding:16px 0;text-align:center}footer p{font-size:10px;color:var(--muted)}footer a{color:var(--muted);text-decoration:none}
 
         /* ═══ OVERLAY ═══ */
         .ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(247,245,242,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;text-align:center;padding:32px}
-        .ov.on{display:flex}
-        .ov-in{max-width:380px}
+        .ov.on{display:flex}.ov-in{max-width:380px}
         .ov h2{font-size:1.5rem;font-weight:300;letter-spacing:-.4px;margin-bottom:12px}
         .ov p{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:28px}
 
         @media(max-width:768px){
-            .wrap,.wrap-narrow{padding:0 24px}
-            nav{padding:16px 20px}
-            nav.solid{padding:12px 20px}
+            .wrap{padding:0 24px}nav{padding:16px 20px}nav.solid{padding:12px 20px}
             .hero{height:90vh;min-height:580px}
-            .filter{grid-template-columns:1fr;gap:48px}
-            .exp-item,.exp-item.flip{grid-template-columns:1fr;gap:28px}
-            .exp-item.flip .exp-img{order:0}
-            .exp-item.flip .exp-body{order:0}
-            .gal{grid-template-columns:1fr 1fr}
+            .id-grid{grid-template-columns:1fr;gap:16px}.id-card{padding:36px 28px}
+            .exp-layout,.exp.flip .exp-layout{grid-template-columns:1fr;gap:28px}
+            .exp.flip .exp-img{order:0}.exp.flip .exp-body{order:0}
+            .reels{grid-template-columns:repeat(3,1fr);gap:6px}
             .proc{grid-template-columns:1fr;gap:32px}
             .s,.s-warm{padding:88px 0}
         }
-        @media(max-width:480px){nav{padding:12px 16px}}
-
+        @media(max-width:480px){nav{padding:12px 16px}.reels{grid-template-columns:1fr 1fr 1fr}}
         .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
         .reveal.vis{opacity:1;transform:none}
     </style>
@@ -165,44 +170,51 @@
 <body>
 
 <nav>
-    <a href="https://thelumeproject.com"><img src="assets/lume-logo-transparent.png" alt="LUME"></a>
-    <a href="#apply" class="n-cta">Request an Invitation</a>
+    <a href="https://thelumeproject.com">
+        <img src="assets/lume-logo-white.png" alt="LUME" class="logo-white">
+        <img src="assets/lume-logo-transparent.png" alt="LUME" class="logo-dark">
+    </a>
+    <a href="#apply" class="nc">Request an Invitation</a>
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-    <div class="hero-bg"><img src="assets/ig-melody-mingle-hd.jpg" alt="A LUME Evening" loading="eager"></div>
-    <div class="hero-grad"></div>
+    <div class="hero-bg"><img src="assets/ig-melody-mingle-hd.jpg" alt="A LUME Evening"></div>
+    <div class="hero-shade"></div>
     <div class="hero-c">
         <div class="tag">By Invitation &bull; Hyderabad</div>
         <h1>Some rooms you <em>feel</em> the moment you walk in.</h1>
-        <p class="sub">Intimate cultural experiences for Hyderabad's most interesting people. Two evenings a month. 30 to 50 selected guests.</p>
-        <a href="#apply" class="cta-glass">Request an Invitation</a>
+        <p class="sub">Intimate cultural experiences for Hyderabad's most interesting people. Two evenings a month. Selected guests only.</p>
+        <a href="#apply" class="btn-hero">Request an Invitation</a>
     </div>
 </section>
 
-<!-- ═══════════ IDENTITY FILTER ═══════════ -->
+<!-- ═══════════ IDENTITY ═══════════ -->
 <section class="s">
     <div class="wrap">
-        <div class="filter reveal">
-            <div class="f-col f-yes">
+        <div class="s-title s-center reveal">
+            <div class="line"></div>
+            <h2>Before you scroll further.</h2>
+        </div>
+        <div class="id-grid reveal">
+            <div class="id-card yes">
                 <h3>This is for you if</h3>
                 <ul>
                     <li>You value the quality of a room over the size of a guest list</li>
-                    <li>You seek cultural experiences that surprise you</li>
+                    <li>You seek cultural experiences that genuinely surprise you</li>
                     <li>You care deeply about who you spend your evenings with</li>
-                    <li>You've outgrown what Hyderabad currently offers</li>
-                    <li>You hold your time to the same standard as your work</li>
+                    <li>You've outgrown what Hyderabad currently offers socially</li>
+                    <li>You invest in experiences that match your standards</li>
                 </ul>
             </div>
-            <div class="f-col f-no">
+            <div class="id-card no">
                 <h3>This is not for you if</h3>
                 <ul>
-                    <li>You prefer large-scale networking events</li>
-                    <li>You measure evenings by business cards collected</li>
-                    <li>You want public, open-to-all gatherings</li>
-                    <li>You're looking for a professional conference</li>
-                    <li>You want something free with no filter on attendance</li>
+                    <li>You prefer large-scale public events</li>
+                    <li>You measure evenings by contacts made</li>
+                    <li>You want something casual and open to everyone</li>
+                    <li>You're not ready to commit to a curated community</li>
+                    <li>You prioritize cost over quality of experience</li>
                 </ul>
             </div>
         </div>
@@ -210,64 +222,98 @@
 </section>
 
 <!-- ═══════════ MID CTA ═══════════ -->
-<section class="mid-cta">
+<section class="mid">
     <p>The right room changes everything. The question is whether you should be in it.</p>
-    <a href="#apply" class="cta-dark">Request an Invitation</a>
+    <a href="#apply" class="btn-dark">Request an Invitation</a>
 </section>
 
-<!-- ═══════════ INSIDE THE ROOM ═══════════ -->
+<!-- ═══════════ PAST EXPERIENCES ═══════════ -->
 <section class="s-warm">
     <div class="wrap">
         <div class="s-title reveal">
             <div class="line"></div>
-            <h2>What happens <strong>inside.</strong></h2>
-            <p>Two experiences every month. Each one designed. Never repeated.</p>
+            <h2>Experiences we've <strong>designed.</strong></h2>
+            <p>A glimpse into past LUME evenings. Each one unrepeatable.</p>
         </div>
 
-        <div class="exp-item reveal">
-            <div class="exp-img"><img src="assets/ig-resonance-room-hd.jpg" alt="The Resonance Room" loading="lazy"></div>
-            <div class="exp-body">
-                <div class="exp-tag">Sound &bull; Stillness</div>
-                <h3>The Resonance Room</h3>
-                <p class="desc">A guided sound bath at Aaromale in Film Nagar. Singing bowls fill a candlelit room. Thirty people lie still, eyes closed, letting therapeutic vibrations move through them. No phones. No conversation. Just sound, stillness, and the rare permission to simply be present.</p>
-                <div class="meta">Facilitated by Pallavi Marshall &bull; Aaromale, Film Nagar</div>
-                <div class="energy">Intimate &bull; Restorative &bull; 30 guests</div>
+        <div class="exp reveal">
+            <div class="exp-layout">
+                <div class="exp-img">
+                    <img src="assets/ig-resonance-room-hd.jpg" alt="The Resonance Room">
+                    <a href="https://www.instagram.com/reel/DV6NHbokTSN/" target="_blank" class="play">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </a>
+                </div>
+                <div class="exp-body">
+                    <div class="exp-tag">Sound &bull; Stillness</div>
+                    <h3>The Resonance Room</h3>
+                    <p class="desc">A guided sound bath at Aaromale in Film Nagar. Singing bowls fill a candlelit room. Thirty people lie still, eyes closed, letting therapeutic vibrations move through them. No phones. No conversation. Just sound, stillness, and the rare permission to simply be present.</p>
+                    <div class="meta">Facilitated by Pallavi Marshall &bull; Aaromale, Film Nagar</div>
+                    <div class="vibe"><span>Intimate</span><span>Restorative</span><span>30 guests</span></div>
+                </div>
             </div>
         </div>
 
-        <div class="exp-item flip reveal">
-            <div class="exp-img"><img src="assets/ig-cc3-art-hd.jpg" alt="Chromatic Conversations" loading="lazy"></div>
-            <div class="exp-body">
-                <div class="exp-tag">Art &bull; Investment</div>
-                <h3>Chromatic Conversations</h3>
-                <p class="desc">An evening exploring art as a serious asset class. Forty selected guests. Wine in hand. A gallery director with 13 years across India, Europe, and MENA leading the conversation. Not about decor. About positioning. About understanding what you're really buying when you invest in art.</p>
-                <div class="meta">Elements by Nirvania &bull; Banjara Hills</div>
-                <div class="energy">Cultural &bull; Intellectual &bull; 40 guests</div>
+        <div class="exp flip reveal">
+            <div class="exp-layout">
+                <div class="exp-img">
+                    <img src="assets/ig-cc3-art-hd.jpg" alt="Chromatic Conversations">
+                    <a href="https://www.instagram.com/reel/DVX6sY8kYyr/" target="_blank" class="play">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </a>
+                </div>
+                <div class="exp-body">
+                    <div class="exp-tag">Art &bull; Investment</div>
+                    <h3>Chromatic Conversations</h3>
+                    <p class="desc">An evening exploring art as a serious asset class. Forty selected guests. Wine in hand. A gallery director with 13 years across India, Europe, and MENA leading the conversation. Where collectors began thinking long term. Not about decor. About positioning.</p>
+                    <div class="meta">Elements by Nirvania &bull; Banjara Hills</div>
+                    <div class="vibe"><span>Cultural</span><span>Intellectual</span><span>40 guests</span></div>
+                </div>
             </div>
         </div>
 
-        <div class="exp-item reveal">
-            <div class="exp-img"><img src="assets/ig-melody-mingle-hd.jpg" alt="Melody & Mingle" loading="lazy"></div>
-            <div class="exp-body">
-                <div class="exp-tag">Music &bull; Connection</div>
-                <h3>Melody &amp; Mingle</h3>
-                <p class="desc">An open mic evening where every voice in the room was chosen to be there. Voices shook a little. Smiles stayed a little longer. Between lyrics and laughter, people found their people. The kind of evening you reference months later.</p>
-                <div class="meta">Where hearts found a mic</div>
-                <div class="energy">Warm &bull; Creative &bull; 40 guests</div>
+        <div class="exp reveal">
+            <div class="exp-layout">
+                <div class="exp-img">
+                    <img src="assets/ig-melody-mingle-hd.jpg" alt="Melody & Mingle">
+                    <a href="https://www.instagram.com/reel/DU5PZQ4kaqR/" target="_blank" class="play">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </a>
+                </div>
+                <div class="exp-body">
+                    <div class="exp-tag">Music &bull; Connection</div>
+                    <h3>Melody &amp; Mingle</h3>
+                    <p class="desc">An open mic evening where every voice in the room was chosen. Voices shook a little. Smiles stayed a little longer. Between lyrics and laughter, people found their people. The kind of night you reference months later when someone asks what you did last weekend.</p>
+                    <div class="meta">Where hearts found a mic</div>
+                    <div class="vibe"><span>Warm</span><span>Creative</span><span>40 guests</span></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════ GALLERY ═══════════ -->
+<!-- ═══════════ REELS ═══════════ -->
 <section class="s">
     <div class="wrap">
-        <div class="gal reveal">
-            <div class="gal-item"><img src="assets/ig-melody-mingle-hd.jpg" alt="LUME" loading="lazy"></div>
-            <div class="gal-item"><img src="assets/ig-cc3-poster.jpg" alt="Art" loading="lazy"></div>
-            <div class="gal-item"><img src="assets/ig-resonance-room-hd.jpg" alt="Sound" loading="lazy"></div>
+        <div class="s-title s-center reveal">
+            <div class="line"></div>
+            <h2>Real rooms. <strong>Real people.</strong></h2>
         </div>
-        <p class="gal-note reveal">Real rooms. Real people. &mdash; <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a></p>
+        <div class="reels reveal">
+            <a href="https://www.instagram.com/reel/DVX6sY8kYyr/" target="_blank" class="reel reel-static">
+                <img src="assets/ig-cc3-art.jpg" alt="Art as Investment">
+                <div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="white"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/reel/DV6NHbokTSN/" target="_blank" class="reel reel-static">
+                <img src="assets/ig-resonance-room.jpg" alt="The Resonance Room">
+                <div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="white"/></svg></div>
+            </a>
+            <a href="https://www.instagram.com/reel/DU5PZQ4kaqR/" target="_blank" class="reel reel-static">
+                <img src="assets/ig-cc3-poster.jpg" alt="Chromatic Conversations">
+                <div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="white"/></svg></div>
+            </a>
+        </div>
+        <p class="reels-note reveal">Watch the full reels &mdash; <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a></p>
     </div>
 </section>
 
@@ -280,12 +326,12 @@
                 <h2>The people <strong>in the room.</strong></h2>
             </div>
             <p>Founders building something real. Creative directors shaping culture. Operators who choose their rooms carefully. People who hold their evenings to the same standard as their work.</p>
-            <div class="p-tags">
-                <span class="p-tag">Founders</span>
-                <span class="p-tag">Creative Directors</span>
-                <span class="p-tag">Cultural Leaders</span>
-                <span class="p-tag">Senior Professionals</span>
-                <span class="p-tag">Tastemakers</span>
+            <div class="ptags">
+                <span class="ptag">Founders</span>
+                <span class="ptag">Creative Directors</span>
+                <span class="ptag">Cultural Leaders</span>
+                <span class="ptag">Senior Professionals</span>
+                <span class="ptag">Tastemakers</span>
             </div>
         </div>
     </div>
@@ -303,7 +349,7 @@
             <div class="proc-i reveal">
                 <div class="num">Step 01</div>
                 <h3>Tell us about yourself</h3>
-                <p>A short application. What draws you, what you value, what kind of room you're looking for.</p>
+                <p>A short application. What draws you, what you value, and what kind of room you're looking for.</p>
             </div>
             <div class="proc-i reveal">
                 <div class="num">Step 02</div>
@@ -313,7 +359,7 @@
             <div class="proc-i reveal">
                 <div class="num">Step 03</div>
                 <h3>Your first evening</h3>
-                <p>If invited, join as a guest. Feel the room. Meet the people. Then decide if this is where you belong.</p>
+                <p>If invited, join your first LUME experience. Feel the room. Meet the people. Then decide if this is where you belong.</p>
             </div>
         </div>
     </div>
@@ -357,8 +403,14 @@
                 <textarea class="ft" id="fD" placeholder="What made you curious?"></textarea>
             </div>
             <div class="fg">
-                <label class="fl">The last experience that stayed with you</label>
-                <textarea class="ft" id="fX" placeholder="An evening, a conversation, a place..."></textarea>
+                <label class="fl">LUME membership is an annual commitment to curated experiences. How does that sit with you?</label>
+                <select class="fs" id="fC" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option>I regularly invest in premium experiences</option>
+                    <option>I'm open to it if the fit is right</option>
+                    <option>I'd like to attend as a guest first</option>
+                    <option>I'm just exploring for now</option>
+                </select>
             </div>
             <div class="fg">
                 <label class="fl">How did you hear about us?</label>
@@ -371,7 +423,7 @@
                     <option>Other</option>
                 </select>
             </div>
-            <button class="f-submit" onclick="go()">Request an Invitation</button>
+            <button class="f-sub" onclick="go()">Request an Invitation</button>
             <p class="f-note">Every application reviewed personally. We respond within 48 hours.</p>
         </div>
     </div>
@@ -390,7 +442,7 @@
         <img src="assets/lume-logo-transparent.png" alt="LUME" style="height:24px;margin-bottom:28px;opacity:.5">
         <h2 id="tyT">Thank you.</h2>
         <p id="tyP">Your application has been received. We'll review it personally and reach out within 48 hours if there's alignment.</p>
-        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="cta-dark" style="font-size:11px;padding:14px 36px">Follow @lumeproject_offl</a>
+        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-dark" style="font-size:11px;padding:14px 36px">Follow @lumeproject_offl</a>
     </div>
 </div>
 
@@ -398,13 +450,17 @@
 function go(){
     const n=document.getElementById('fN').value.trim(),p=document.getElementById('fP').value.trim(),e=document.getElementById('fE').value.trim();
     if(!n||!p||!e){alert('Please fill in name, phone, and email.');return}
-    const d={name:n,phone:p,email:e,role:document.getElementById('fR').value,what_draws_you:document.getElementById('fD').value.trim(),last_experience:document.getElementById('fX').value.trim(),source:document.getElementById('fS').value,tags:['lume-application','fb-lead','mar-2026'],form:'lume-invitation-request'};
+    const d={name:n,phone:p,email:e,role:document.getElementById('fR').value,what_draws_you:document.getElementById('fD').value.trim(),commitment_level:document.getElementById('fC').value,source:document.getElementById('fS').value,tags:['lume-application','fb-lead','mar-2026'],form:'lume-invitation-request'};
+    // Tag high-intent leads
+    if(d.commitment_level==='I regularly invest in premium experiences')d.tags.push('high-intent','premium-ready');
+    else if(d.commitment_level==="I'm open to it if the fit is right")d.tags.push('warm-lead');
+    else d.tags.push('nurture');
     fetch('https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).catch(()=>{});
-    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'LUME Invitation'});
+    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'LUME Invitation',commitment:d.commitment_level});
     document.getElementById('tyT').textContent='Thank you, '+n.split(' ')[0]+'.';
     document.getElementById('ty').classList.add('on');
 }
-document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('vis')},{threshold:.05,rootMargin:'0px 0px -40px 0px'}).observe(el)});
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('vis')},{threshold:.05,rootMargin:'0px 0px -30px 0px'}).observe(el)});
 window.addEventListener('scroll',()=>document.querySelector('nav').classList.toggle('solid',window.scrollY>60));
 document.getElementById('ty').addEventListener('click',e=>{if(e.target.id==='ty')e.target.classList.remove('on')});
 </script>
