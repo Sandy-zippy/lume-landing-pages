@@ -4,340 +4,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUME | By Invitation Only</title>
-    <meta name="description" content="Intimate experiences for Hyderabad's most interesting people. By invitation only.">
+    <meta name="description" content="Intimate cultural experiences for Hyderabad's most interesting people. By invitation only.">
     <link rel="icon" type="image/png" href="assets/lume-logo-transparent.png">
     <meta property="og:title" content="LUME | By Invitation Only">
-    <meta property="og:description" content="Intimate experiences. Selected guests. Hyderabad.">
-    <meta property="og:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/ig-melody-mingle.jpg">
+    <meta property="og:description" content="Two intimate experiences a month. 30 to 50 selected guests. Hyderabad.">
+    <meta property="og:image" content="https://sandy-zippy.github.io/lume-landing-pages/assets/ig-melody-mingle-hd.jpg">
     <meta property="og:type" content="website">
+
     <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID_HERE');fbq('track','PageView');</script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
     <style>
-        :root{
-            --red:#B80000;
-            --black:#0A0A0A;
-            --charcoal:#1C1C1C;
-            --text:#2A2A2A;
-            --soft:#6B6B6B;
-            --muted:#9E9E9E;
-            --faint:#C4C4C4;
-            --border:#E8E5E0;
-            --warm:#F7F5F2;
-            --light:#FAF9F7;
-            --white:#FFFFFF;
-        }
+        :root{--red:#B80000;--black:#0A0A0A;--charcoal:#1C1C1C;--text:#2A2A2A;--soft:#6B6B6B;--muted:#9E9E9E;--faint:#C4C4C4;--border:#E8E5E0;--warm:#F7F5F2;--white:#FFFFFF}
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
         body{font-family:'Poppins',sans-serif;color:var(--text);line-height:1.7;background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
         h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--charcoal)}
         ::selection{background:rgba(184,0,0,.08)}
-        img{display:block}
+        img{display:block;max-width:100%}
         .wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+        .wrap-narrow{max-width:800px;margin:0 auto;padding:0 40px}
 
         /* ═══ NAV ═══ */
         nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
-        nav.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(24px);padding:16px 48px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-        nav .logo img{height:28px}
-        nav .nav-cta{font-size:13px;font-weight:500;color:var(--charcoal);text-decoration:none;letter-spacing:.03em;padding:10px 28px;border:1px solid rgba(0,0,0,.12);border-radius:100px;transition:all .3s}
-        nav .nav-cta:hover{border-color:var(--red);color:var(--red)}
-        nav.solid .nav-cta{border-color:rgba(0,0,0,.12)}
+        nav.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);padding:16px 48px;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
+        nav img{height:28px}
+        nav .n-cta{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--charcoal);text-decoration:none;padding:10px 28px;border:1px solid rgba(0,0,0,.1);border-radius:100px;transition:all .3s}
+        nav .n-cta:hover{border-color:var(--red);color:var(--red)}
 
-        /* ═══ HERO ═══ */
-        .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-        .hero-img{position:absolute;inset:0}
-        .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.92) saturate(1.1)}
-        .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.12) 0%,rgba(10,10,10,.06) 40%,rgba(10,10,10,.45) 100%)}
-        .hero-content{position:relative;z-index:2;max-width:640px;padding:0 24px}
-        .hero-tag{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--white);opacity:.7;margin-bottom:28px}
-        .hero h1{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:300;color:var(--white);letter-spacing:-1px;line-height:1.18;margin-bottom:24px;text-shadow:0 2px 40px rgba(0,0,0,.15)}
-        .hero h1 em{font-style:italic}
-        .hero-sub{font-size:15px;font-weight:300;color:rgba(255,255,255,.72);line-height:1.8;margin-bottom:40px;max-width:440px;margin-left:auto;margin-right:auto}
-        .hero-btn{display:inline-block;font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--white);background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);padding:16px 44px;border-radius:100px;text-decoration:none;transition:all .35s}
-        .hero-btn:hover{background:var(--red);border-color:var(--red)}
+        /* ═══ HERO — FULL CINEMATIC ═══ */
+        .hero{position:relative;height:100vh;min-height:680px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+        .hero-bg{position:absolute;inset:0}
+        .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:brightness(.93) saturate(1.08)}
+        .hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.03) 30%,rgba(0,0,0,.35) 75%,rgba(0,0,0,.55) 100%)}
+        .hero-c{position:relative;z-index:2;max-width:600px;padding:0 24px}
+        .hero-c .tag{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:32px}
+        .hero-c h1{font-size:clamp(2rem,4.2vw,3rem);font-weight:300;color:#fff;letter-spacing:-1px;line-height:1.2;margin-bottom:20px;text-shadow:0 1px 30px rgba(0,0,0,.1)}
+        .hero-c h1 em{font-style:italic}
+        .hero-c .sub{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:40px;max-width:420px;margin-left:auto;margin-right:auto}
+        .cta-glass{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);padding:16px 48px;border-radius:100px;text-decoration:none;transition:all .35s}
+        .cta-glass:hover{background:var(--red);border-color:var(--red)}
 
         /* ═══ SECTIONS ═══ */
-        .sec{padding:120px 0}
-        .sec-warm{padding:120px 0;background:var(--warm)}
-        .sec-title{margin-bottom:64px}
-        .sec-title h2{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;letter-spacing:-.5px;margin-bottom:14px;line-height:1.3}
-        .sec-title h2 strong{font-weight:600}
-        .sec-title p{font-size:15px;color:var(--soft);line-height:1.8;max-width:440px}
-        .sec-title-center{text-align:center}
-        .sec-title-center p{margin:0 auto}
-        .divider{width:32px;height:1px;background:var(--red);margin-bottom:24px;opacity:.6}
-        .sec-title-center .divider{margin:0 auto 24px}
+        .s{padding:128px 0}
+        .s-warm{padding:128px 0;background:var(--warm)}
+        .s-title{margin-bottom:72px}
+        .s-title .line{width:28px;height:1px;background:var(--red);margin-bottom:20px;opacity:.6}
+        .s-title h2{font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:300;letter-spacing:-.4px;line-height:1.35;margin-bottom:12px}
+        .s-title h2 strong{font-weight:600}
+        .s-title p{font-size:14px;color:var(--soft);line-height:1.8;max-width:400px}
+        .s-center{text-align:center}
+        .s-center .line{margin:0 auto 20px}
+        .s-center p{margin:0 auto}
 
-        /* ═══ IDENTITY ═══ */
-        .identity{display:grid;grid-template-columns:1fr 1fr;gap:100px}
-        .id-col h3{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
-        .id-yes h3{color:var(--red)}
-        .id-no h3{color:var(--faint)}
-        .id-col ul{list-style:none}
-        .id-col li{font-size:15px;padding:16px 0;border-bottom:1px solid var(--border);color:var(--soft);line-height:1.6}
-        .id-yes li{color:var(--text)}
+        /* ═══ IDENTITY FILTER ═══ */
+        .filter{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+        .f-col h3{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:32px}
+        .f-yes h3{color:var(--red)}
+        .f-no h3{color:var(--faint)}
+        .f-col ul{list-style:none}
+        .f-col li{font-size:15px;padding:16px 0;border-bottom:1px solid var(--border);line-height:1.55}
+        .f-yes li{color:var(--text)}
+        .f-no li{color:var(--soft)}
 
-        /* ═══ EXPERIENCES ═══ */
-        .exp-list{display:flex;flex-direction:column;gap:80px}
-        .exp-item{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
-        .exp-item:nth-child(even){direction:rtl}
-        .exp-item:nth-child(even) > *{direction:ltr}
-        .exp-img{border-radius:16px;overflow:hidden;aspect-ratio:3/2}
-        .exp-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-        .exp-item:hover .exp-img img{transform:scale(1.03)}
-        .exp-body{}
-        .exp-tag{font-size:11px;font-weight:600;color:var(--red);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
-        .exp-body h3{font-size:1.5rem;font-weight:400;letter-spacing:-.5px;margin-bottom:14px;line-height:1.3}
-        .exp-body p{font-size:14px;color:var(--soft);line-height:1.85}
-        .exp-detail{font-size:12px;color:var(--muted);margin-top:16px;letter-spacing:.02em}
+        /* ═══ MID CTA ═══ */
+        .mid-cta{text-align:center;padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .mid-cta p{font-size:16px;font-weight:300;font-style:italic;color:var(--soft);margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto;line-height:1.7}
+        .cta-dark{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--white);background:var(--charcoal);padding:16px 48px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+        .cta-dark:hover{background:var(--red)}
+
+        /* ═══ EXPERIENCE EDITORIAL ═══ */
+        .exp-item{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center;margin-bottom:100px}
+        .exp-item:last-child{margin-bottom:0}
+        .exp-item.flip{grid-template-columns:1fr 1.15fr}
+        .exp-item.flip .exp-img{order:2}
+        .exp-item.flip .exp-body{order:1}
+        .exp-img{border-radius:14px;overflow:hidden;aspect-ratio:3/2}
+        .exp-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.96) saturate(1.05);transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+        .exp-item:hover .exp-img img{transform:scale(1.025)}
+        .exp-tag{font-size:10px;font-weight:600;color:var(--red);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+        .exp-body h3{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:400;letter-spacing:-.4px;margin-bottom:16px;line-height:1.3}
+        .exp-body .desc{font-size:14px;color:var(--soft);line-height:1.9}
+        .exp-body .meta{font-size:12px;color:var(--muted);margin-top:20px;letter-spacing:.02em}
+        .exp-body .energy{display:inline-block;font-size:11px;font-weight:500;color:var(--red);background:rgba(184,0,0,.06);padding:6px 14px;border-radius:100px;margin-top:16px;letter-spacing:.04em}
 
         /* ═══ GALLERY ═══ */
-        .gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-        .gallery-item{aspect-ratio:1;border-radius:10px;overflow:hidden}
-        .gallery-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.95) saturate(1.05);transition:all .5s}
-        .gallery-item:hover img{transform:scale(1.04);filter:brightness(1) saturate(1.1)}
-        .gallery-note{text-align:center;margin-top:28px;font-size:13px;color:var(--muted)}
-        .gallery-note a{color:var(--red);text-decoration:none;font-weight:500}
+        .gal{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+        .gal-item{aspect-ratio:1;border-radius:8px;overflow:hidden}
+        .gal-item img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05);transition:transform .5s}
+        .gal-item:hover img{transform:scale(1.04)}
+        .gal-note{text-align:center;margin-top:24px;font-size:12px;color:var(--muted)}
+        .gal-note a{color:var(--red);text-decoration:none;font-weight:500}
 
         /* ═══ PEOPLE ═══ */
-        .people-content{text-align:center;max-width:560px;margin:0 auto}
-        .people-content p{font-size:15px;color:var(--soft);line-height:1.9;margin-bottom:36px}
-        .people-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-        .people-tag{font-size:13px;font-weight:400;padding:11px 24px;border:1px solid var(--border);border-radius:100px;color:var(--text);background:var(--white);transition:all .25s}
-        .people-tag:hover{border-color:var(--red);color:var(--red)}
+        .people{text-align:center;max-width:520px;margin:0 auto}
+        .people p{font-size:15px;color:var(--soft);line-height:1.9;margin-bottom:32px}
+        .p-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+        .p-tag{font-size:12px;padding:10px 22px;border:1px solid var(--border);border-radius:100px;color:var(--text);transition:all .25s}
+        .p-tag:hover{border-color:var(--red);color:var(--red)}
 
         /* ═══ PROCESS ═══ */
-        .process{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:64px}
-        .process-item{}
-        .process-num{font-size:11px;font-weight:600;color:var(--red);letter-spacing:.12em;margin-bottom:16px}
-        .process-item h3{font-size:1rem;font-weight:500;letter-spacing:-.2px;margin-bottom:10px}
-        .process-item p{font-size:13px;color:var(--soft);line-height:1.75}
+        .proc{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:72px}
+        .proc-i .num{font-size:10px;font-weight:600;color:var(--red);letter-spacing:.14em;margin-bottom:16px}
+        .proc-i h3{font-size:1rem;font-weight:500;letter-spacing:-.2px;margin-bottom:8px}
+        .proc-i p{font-size:13px;color:var(--soft);line-height:1.75}
 
         /* ═══ FORM ═══ */
-        .form-card{max-width:500px;margin:0 auto}
-        .form-group{margin-bottom:28px}
-        .form-label{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;display:block}
-        .form-input,.form-select,.form-textarea{width:100%;font-family:'Poppins',sans-serif;font-size:15px;font-weight:300;padding:16px 0;border:none;border-bottom:1px solid var(--border);background:transparent;color:var(--charcoal);transition:border-color .2s;border-radius:0;outline:none}
-        .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--red)}
-        .form-input::placeholder,.form-textarea::placeholder{color:var(--faint);font-weight:300}
-        .form-textarea{resize:vertical;min-height:60px;line-height:1.6}
-        .form-select{appearance:none;cursor:pointer;color:var(--faint)}
-        .form-select:valid{color:var(--charcoal)}
-        .form-submit{margin-top:40px;width:100%;font-family:'Poppins',sans-serif;font-size:14px;font-weight:500;letter-spacing:.04em;padding:18px;background:var(--charcoal);color:var(--white);border:none;border-radius:100px;cursor:pointer;transition:all .3s}
-        .form-submit:hover{background:var(--red)}
-        .form-note{text-align:center;margin-top:20px;font-size:12px;color:var(--muted);font-style:italic}
+        .form-c{max-width:480px;margin:0 auto}
+        .fg{margin-bottom:32px}
+        .fl{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:block}
+        .fi,.ft,.fs{width:100%;font-family:'Poppins',sans-serif;font-size:15px;font-weight:300;padding:16px 0;border:none;border-bottom:1px solid var(--border);background:transparent;color:var(--charcoal);outline:none;transition:border-color .2s;border-radius:0;-webkit-appearance:none}
+        .fi:focus,.ft:focus,.fs:focus{border-color:var(--red)}
+        .fi::placeholder,.ft::placeholder{color:var(--faint)}
+        .ft{resize:vertical;min-height:48px;line-height:1.6}
+        .fs{appearance:none;cursor:pointer;color:var(--faint)}
+        .fs:valid{color:var(--charcoal)}
+        .f-submit{margin-top:44px;width:100%;font-family:'Poppins',sans-serif;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:18px;background:var(--charcoal);color:var(--white);border:none;border-radius:100px;cursor:pointer;transition:all .3s}
+        .f-submit:hover{background:var(--red)}
+        .f-note{text-align:center;margin-top:20px;font-size:11px;color:var(--muted);font-style:italic}
 
         /* ═══ CLOSE ═══ */
-        .closing{text-align:center;padding:100px 0;border-top:1px solid var(--border)}
-        .closing-logo img{height:28px;margin-bottom:24px;opacity:.6}
-        .closing p{font-size:16px;font-weight:300;font-style:italic;color:var(--soft);max-width:400px;margin:0 auto 28px;line-height:1.7}
-        .closing a{color:var(--red);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.03em}
-
-        /* ═══ FOOTER ═══ */
-        footer{padding:20px 0;text-align:center;border-top:1px solid var(--border)}
-        footer p{font-size:11px;color:var(--muted)}
+        .close-s{text-align:center;padding:100px 0;border-top:1px solid var(--border)}
+        .close-s img{height:24px;margin:0 auto 20px;opacity:.5}
+        .close-s p{font-size:15px;font-weight:300;font-style:italic;color:var(--soft);max-width:360px;margin:0 auto 24px;line-height:1.7}
+        .close-s a{color:var(--red);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.04em}
+        footer{padding:16px 0;text-align:center}
+        footer p{font-size:10px;color:var(--muted)}
         footer a{color:var(--muted);text-decoration:none}
 
         /* ═══ OVERLAY ═══ */
-        .ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(250,249,247,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;text-align:center;padding:32px}
+        .ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(247,245,242,.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;text-align:center;padding:32px}
         .ov.on{display:flex}
-        .ov-in{max-width:400px}
-        .ov h2{font-size:1.6rem;font-weight:300;letter-spacing:-.5px;margin-bottom:12px}
-        .ov p{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:32px}
-        .ov a.hero-btn{color:var(--charcoal);border-color:var(--border);background:transparent}
-        .ov a.hero-btn:hover{border-color:var(--red);color:var(--red);background:transparent}
+        .ov-in{max-width:380px}
+        .ov h2{font-size:1.5rem;font-weight:300;letter-spacing:-.4px;margin-bottom:12px}
+        .ov p{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:28px}
 
-        /* ═══ RESPONSIVE ═══ */
         @media(max-width:768px){
-            .wrap{padding:0 24px}
+            .wrap,.wrap-narrow{padding:0 24px}
             nav{padding:16px 20px}
             nav.solid{padding:12px 20px}
-            .hero{height:85vh;min-height:560px}
-            .hero h1{font-size:2rem}
-            .identity{grid-template-columns:1fr;gap:48px}
-            .exp-item,.exp-item:nth-child(even){grid-template-columns:1fr;direction:ltr;gap:24px}
-            .gallery{grid-template-columns:1fr 1fr}
-            .process{grid-template-columns:1fr;gap:36px}
-            .sec,.sec-warm{padding:80px 0}
+            .hero{height:90vh;min-height:580px}
+            .filter{grid-template-columns:1fr;gap:48px}
+            .exp-item,.exp-item.flip{grid-template-columns:1fr;gap:28px}
+            .exp-item.flip .exp-img{order:0}
+            .exp-item.flip .exp-body{order:0}
+            .gal{grid-template-columns:1fr 1fr}
+            .proc{grid-template-columns:1fr;gap:32px}
+            .s,.s-warm{padding:88px 0}
         }
+        @media(max-width:480px){nav{padding:12px 16px}}
 
-        .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
+        .reveal{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
         .reveal.vis{opacity:1;transform:none}
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo"><a href="https://thelumeproject.com"><img src="assets/lume-logo-transparent.png" alt="LUME"></a></div>
-    <a href="#apply" class="nav-cta">Request an Invitation</a>
+    <a href="https://thelumeproject.com"><img src="assets/lume-logo-transparent.png" alt="LUME"></a>
+    <a href="#apply" class="n-cta">Request an Invitation</a>
 </nav>
 
-<!-- ═══════════════════ HERO ═══════════════════ -->
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-    <div class="hero-img"><img src="assets/ig-melody-mingle.jpg" alt="A LUME Evening"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <div class="hero-tag">By Invitation &bull; Hyderabad</div>
+    <div class="hero-bg"><img src="assets/ig-melody-mingle-hd.jpg" alt="A LUME Evening" loading="eager"></div>
+    <div class="hero-grad"></div>
+    <div class="hero-c">
+        <div class="tag">By Invitation &bull; Hyderabad</div>
         <h1>Some rooms you <em>feel</em> the moment you walk in.</h1>
-        <p class="hero-sub">Intimate experiences for Hyderabad's most interesting people. Two evenings a month. 30 to 50 selected guests.</p>
-        <a href="#apply" class="hero-btn">Request an Invitation</a>
+        <p class="sub">Intimate cultural experiences for Hyderabad's most interesting people. Two evenings a month. 30 to 50 selected guests.</p>
+        <a href="#apply" class="cta-glass">Request an Invitation</a>
     </div>
 </section>
 
-<!-- ═══════════════════ IDENTITY ═══════════════════ -->
-<section class="sec">
+<!-- ═══════════ IDENTITY FILTER ═══════════ -->
+<section class="s">
     <div class="wrap">
-        <div class="identity reveal">
-            <div class="id-col id-yes">
+        <div class="filter reveal">
+            <div class="f-col f-yes">
                 <h3>This is for you if</h3>
                 <ul>
                     <li>You value the quality of a room over the size of a guest list</li>
                     <li>You seek cultural experiences that surprise you</li>
                     <li>You care deeply about who you spend your evenings with</li>
-                    <li>You've outgrown what Hyderabad currently offers socially</li>
+                    <li>You've outgrown what Hyderabad currently offers</li>
                     <li>You hold your time to the same standard as your work</li>
                 </ul>
             </div>
-            <div class="id-col id-no">
+            <div class="f-col f-no">
                 <h3>This is not for you if</h3>
                 <ul>
                     <li>You prefer large-scale networking events</li>
                     <li>You measure evenings by business cards collected</li>
                     <li>You want public, open-to-all gatherings</li>
                     <li>You're looking for a professional conference</li>
-                    <li>You want something free with no filter on who attends</li>
+                    <li>You want something free with no filter on attendance</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════ EXPERIENCES ═══════════════════ -->
-<section class="sec-warm">
+<!-- ═══════════ MID CTA ═══════════ -->
+<section class="mid-cta">
+    <p>The right room changes everything. The question is whether you should be in it.</p>
+    <a href="#apply" class="cta-dark">Request an Invitation</a>
+</section>
+
+<!-- ═══════════ INSIDE THE ROOM ═══════════ -->
+<section class="s-warm">
     <div class="wrap">
-        <div class="sec-title reveal">
-            <div class="divider"></div>
+        <div class="s-title reveal">
+            <div class="line"></div>
             <h2>What happens <strong>inside.</strong></h2>
-            <p>Two experiences every month. Each one designed. Never repeated. Always intimate.</p>
+            <p>Two experiences every month. Each one designed. Never repeated.</p>
         </div>
-        <div class="exp-list">
-            <div class="exp-item reveal">
-                <div class="exp-img"><img src="assets/ig-resonance-room.jpg" alt="The Resonance Room"></div>
-                <div class="exp-body">
-                    <div class="exp-tag">Sound &bull; Stillness</div>
-                    <h3>The Resonance Room</h3>
-                    <p>A guided sound bath experience at Aaromale in Film Nagar. Singing bowls fill a candlelit room. Thirty people lie still, eyes closed, letting therapeutic vibrations wash over them. No phones. No small talk. Just sound, stillness, and the rare permission to simply be present.</p>
-                    <div class="exp-detail">Facilitated by Pallavi Marshall &bull; Aaromale, Film Nagar</div>
-                </div>
+
+        <div class="exp-item reveal">
+            <div class="exp-img"><img src="assets/ig-resonance-room-hd.jpg" alt="The Resonance Room" loading="lazy"></div>
+            <div class="exp-body">
+                <div class="exp-tag">Sound &bull; Stillness</div>
+                <h3>The Resonance Room</h3>
+                <p class="desc">A guided sound bath at Aaromale in Film Nagar. Singing bowls fill a candlelit room. Thirty people lie still, eyes closed, letting therapeutic vibrations move through them. No phones. No conversation. Just sound, stillness, and the rare permission to simply be present.</p>
+                <div class="meta">Facilitated by Pallavi Marshall &bull; Aaromale, Film Nagar</div>
+                <div class="energy">Intimate &bull; Restorative &bull; 30 guests</div>
             </div>
-            <div class="exp-item reveal">
-                <div class="exp-img"><img src="assets/ig-cc3-art.jpg" alt="Chromatic Conversations"></div>
-                <div class="exp-body">
-                    <div class="exp-tag">Art &bull; Investment</div>
-                    <h3>Chromatic Conversations</h3>
-                    <p>An intimate evening exploring art as a serious asset class. Forty selected guests. Wine in hand. A gallery director with 13 years across India, Europe, and MENA guiding the conversation. Not about decor. About positioning. About understanding what you're really buying when you buy art.</p>
-                    <div class="exp-detail">Elements by Nirvania &bull; Banjara Hills</div>
-                </div>
+        </div>
+
+        <div class="exp-item flip reveal">
+            <div class="exp-img"><img src="assets/ig-cc3-art-hd.jpg" alt="Chromatic Conversations" loading="lazy"></div>
+            <div class="exp-body">
+                <div class="exp-tag">Art &bull; Investment</div>
+                <h3>Chromatic Conversations</h3>
+                <p class="desc">An evening exploring art as a serious asset class. Forty selected guests. Wine in hand. A gallery director with 13 years across India, Europe, and MENA leading the conversation. Not about decor. About positioning. About understanding what you're really buying when you invest in art.</p>
+                <div class="meta">Elements by Nirvania &bull; Banjara Hills</div>
+                <div class="energy">Cultural &bull; Intellectual &bull; 40 guests</div>
             </div>
-            <div class="exp-item reveal">
-                <div class="exp-img"><img src="assets/ig-melody-mingle.jpg" alt="Melody & Mingle"></div>
-                <div class="exp-body">
-                    <div class="exp-tag">Music &bull; Connection</div>
-                    <h3>Melody &amp; Mingle</h3>
-                    <p>An open mic evening where every voice in the room was chosen to be there. Voices shook a little. Smiles stayed a little longer. Between lyrics and laughter, people found their people. The kind of night you reference months later when someone asks what you did last weekend.</p>
-                    <div class="exp-detail">Where hearts found a mic</div>
-                </div>
+        </div>
+
+        <div class="exp-item reveal">
+            <div class="exp-img"><img src="assets/ig-melody-mingle-hd.jpg" alt="Melody & Mingle" loading="lazy"></div>
+            <div class="exp-body">
+                <div class="exp-tag">Music &bull; Connection</div>
+                <h3>Melody &amp; Mingle</h3>
+                <p class="desc">An open mic evening where every voice in the room was chosen to be there. Voices shook a little. Smiles stayed a little longer. Between lyrics and laughter, people found their people. The kind of evening you reference months later.</p>
+                <div class="meta">Where hearts found a mic</div>
+                <div class="energy">Warm &bull; Creative &bull; 40 guests</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════ GALLERY ═══════════════════ -->
-<section class="sec">
+<!-- ═══════════ GALLERY ═══════════ -->
+<section class="s">
     <div class="wrap">
-        <div class="gallery reveal">
-            <div class="gallery-item"><img src="assets/ig-melody-mingle.jpg" alt="LUME Evening"></div>
-            <div class="gallery-item"><img src="assets/ig-cc3-poster.jpg" alt="Art as Investment"></div>
-            <div class="gallery-item"><img src="assets/ig-resonance-room.jpg" alt="Sound Bath"></div>
+        <div class="gal reveal">
+            <div class="gal-item"><img src="assets/ig-melody-mingle-hd.jpg" alt="LUME" loading="lazy"></div>
+            <div class="gal-item"><img src="assets/ig-cc3-poster.jpg" alt="Art" loading="lazy"></div>
+            <div class="gal-item"><img src="assets/ig-resonance-room-hd.jpg" alt="Sound" loading="lazy"></div>
         </div>
-        <p class="gallery-note reveal">Real rooms. Real people. &mdash; <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a></p>
+        <p class="gal-note reveal">Real rooms. Real people. &mdash; <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a></p>
     </div>
 </section>
 
-<!-- ═══════════════════ PEOPLE ═══════════════════ -->
-<section class="sec-warm">
+<!-- ═══════════ PEOPLE ═══════════ -->
+<section class="s-warm">
     <div class="wrap">
-        <div class="people-content reveal">
-            <div class="sec-title-center">
-                <div class="divider"></div>
+        <div class="people reveal">
+            <div class="s-center">
+                <div class="line"></div>
                 <h2>The people <strong>in the room.</strong></h2>
             </div>
-            <p>Founders building something real. Creative directors shaping culture. Operators who choose their rooms carefully. People who hold their evenings to the same standard as their work. Not everyone gets in. That's what makes it worth showing up.</p>
-            <div class="people-tags">
-                <span class="people-tag">Founders</span>
-                <span class="people-tag">Creative Directors</span>
-                <span class="people-tag">Cultural Leaders</span>
-                <span class="people-tag">Senior Professionals</span>
-                <span class="people-tag">Tastemakers</span>
+            <p>Founders building something real. Creative directors shaping culture. Operators who choose their rooms carefully. People who hold their evenings to the same standard as their work.</p>
+            <div class="p-tags">
+                <span class="p-tag">Founders</span>
+                <span class="p-tag">Creative Directors</span>
+                <span class="p-tag">Cultural Leaders</span>
+                <span class="p-tag">Senior Professionals</span>
+                <span class="p-tag">Tastemakers</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════ PROCESS ═══════════════════ -->
-<section class="sec">
+<!-- ═══════════ PROCESS ═══════════ -->
+<section class="s">
     <div class="wrap">
-        <div class="sec-title reveal">
-            <div class="divider"></div>
+        <div class="s-title reveal">
+            <div class="line"></div>
             <h2>How you get <strong>invited.</strong></h2>
             <p>We don't sell tickets. Access is through application.</p>
         </div>
-        <div class="process">
-            <div class="process-item reveal">
-                <div class="process-num">Step 01</div>
+        <div class="proc">
+            <div class="proc-i reveal">
+                <div class="num">Step 01</div>
                 <h3>Tell us about yourself</h3>
                 <p>A short application. What draws you, what you value, what kind of room you're looking for.</p>
             </div>
-            <div class="process-item reveal">
-                <div class="process-num">Step 02</div>
+            <div class="proc-i reveal">
+                <div class="num">Step 02</div>
                 <h3>We review personally</h3>
                 <p>Every submission is read by our team. If there's alignment, we reach out within 48 hours.</p>
             </div>
-            <div class="process-item reveal">
-                <div class="process-num">Step 03</div>
+            <div class="proc-i reveal">
+                <div class="num">Step 03</div>
                 <h3>Your first evening</h3>
-                <p>If invited, join your first LUME experience as a guest. Feel the room. Meet the people. Then decide.</p>
+                <p>If invited, join as a guest. Feel the room. Meet the people. Then decide if this is where you belong.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════ APPLICATION ═══════════════════ -->
-<section class="sec-warm" id="apply">
+<!-- ═══════════ APPLICATION ═══════════ -->
+<section class="s-warm" id="apply">
     <div class="wrap">
-        <div class="sec-title sec-title-center reveal">
-            <div class="divider"></div>
+        <div class="s-title s-center reveal">
+            <div class="line"></div>
             <h2>Request an <strong>invitation.</strong></h2>
             <p>Not everyone qualifies. That's what makes this worth your time.</p>
         </div>
-        <div class="form-card reveal">
-            <div class="form-group">
-                <label class="form-label">Your name</label>
-                <input class="form-input" type="text" id="fName" placeholder="Full name">
+        <div class="form-c reveal">
+            <div class="fg">
+                <label class="fl">Your name</label>
+                <input class="fi" type="text" id="fN" placeholder="Full name">
             </div>
-            <div class="form-group">
-                <label class="form-label">Phone</label>
-                <input class="form-input" type="tel" id="fPhone" placeholder="WhatsApp preferred">
+            <div class="fg">
+                <label class="fl">Phone</label>
+                <input class="fi" type="tel" id="fP" placeholder="WhatsApp preferred">
             </div>
-            <div class="form-group">
-                <label class="form-label">Email</label>
-                <input class="form-input" type="email" id="fEmail" placeholder="Email address">
+            <div class="fg">
+                <label class="fl">Email</label>
+                <input class="fi" type="email" id="fE" placeholder="Email address">
             </div>
-            <div class="form-group">
-                <label class="form-label">What do you do?</label>
-                <select class="form-select" id="fRole" required>
+            <div class="fg">
+                <label class="fl">What do you do?</label>
+                <select class="fs" id="fR" required>
                     <option value="" disabled selected>Select one</option>
                     <option>Founder / Business Owner</option>
                     <option>Senior Executive</option>
@@ -347,17 +352,17 @@
                     <option>Other</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label class="form-label">What draws you to LUME?</label>
-                <textarea class="form-textarea" id="fDraw" placeholder="What made you curious?"></textarea>
+            <div class="fg">
+                <label class="fl">What draws you to LUME?</label>
+                <textarea class="ft" id="fD" placeholder="What made you curious?"></textarea>
             </div>
-            <div class="form-group">
-                <label class="form-label">The last experience that stayed with you</label>
-                <textarea class="form-textarea" id="fExp" placeholder="An evening, a conversation, a place..."></textarea>
+            <div class="fg">
+                <label class="fl">The last experience that stayed with you</label>
+                <textarea class="ft" id="fX" placeholder="An evening, a conversation, a place..."></textarea>
             </div>
-            <div class="form-group">
-                <label class="form-label">How did you hear about us?</label>
-                <select class="form-select" id="fSrc" required>
+            <div class="fg">
+                <label class="fl">How did you hear about us?</label>
+                <select class="fs" id="fS" required>
                     <option value="" disabled selected>Select one</option>
                     <option>Instagram</option>
                     <option>A friend or colleague</option>
@@ -366,41 +371,40 @@
                     <option>Other</option>
                 </select>
             </div>
-            <button class="form-submit" onclick="submitApp()">Request an Invitation</button>
-            <p class="form-note">Every application is reviewed personally. We respond within 48 hours.</p>
+            <button class="f-submit" onclick="go()">Request an Invitation</button>
+            <p class="f-note">Every application reviewed personally. We respond within 48 hours.</p>
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════ CLOSING ═══════════════════ -->
-<section class="closing">
-    <div class="closing-logo"><img src="assets/lume-logo-transparent.png" alt="LUME"></div>
+<!-- ═══════════ CLOSING ═══════════ -->
+<section class="close-s">
+    <img src="assets/lume-logo-transparent.png" alt="LUME">
     <p>The next experience is being designed. If you belong in the room, we'll find you.</p>
     <a href="https://www.instagram.com/lumeproject_offl" target="_blank">@lumeproject_offl</a>
 </section>
-
 <footer><div class="wrap"><p>Lume Project Private Limited &bull; Hyderabad &bull; <a href="https://thelumeproject.com">thelumeproject.com</a> &bull; © 2026</p></div></footer>
 
-<!-- OVERLAY -->
 <div class="ov" id="ty">
     <div class="ov-in">
-        <img src="assets/lume-logo-transparent.png" alt="LUME" style="height:28px;margin-bottom:28px;opacity:.6">
+        <img src="assets/lume-logo-transparent.png" alt="LUME" style="height:24px;margin-bottom:28px;opacity:.5">
         <h2 id="tyT">Thank you.</h2>
-        <p id="tyP">Your application has been received. We review every submission personally and will reach out within 48 hours if there's alignment.</p>
-        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="hero-btn">Follow @lumeproject_offl</a>
+        <p id="tyP">Your application has been received. We'll review it personally and reach out within 48 hours if there's alignment.</p>
+        <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="cta-dark" style="font-size:11px;padding:14px 36px">Follow @lumeproject_offl</a>
     </div>
 </div>
 
 <script>
-function submitApp(){
-    const n=document.getElementById('fName').value.trim(),p=document.getElementById('fPhone').value.trim(),e=document.getElementById('fEmail').value.trim(),role=document.getElementById('fRole').value,draw=document.getElementById('fDraw').value.trim(),exp=document.getElementById('fExp').value.trim(),src=document.getElementById('fSrc').value;
-    if(!n||!p||!e){alert('Please fill in your name, phone, and email.');return}
-    fetch('https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,phone:p,email:e,role,what_draws_you:draw,last_experience:exp,source:src,tags:['lume-application','fb-lead','mar-2026'],form:'lume-invitation-request'})}).catch(()=>{});
-    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'LUME Invitation',source:src});
+function go(){
+    const n=document.getElementById('fN').value.trim(),p=document.getElementById('fP').value.trim(),e=document.getElementById('fE').value.trim();
+    if(!n||!p||!e){alert('Please fill in name, phone, and email.');return}
+    const d={name:n,phone:p,email:e,role:document.getElementById('fR').value,what_draws_you:document.getElementById('fD').value.trim(),last_experience:document.getElementById('fX').value.trim(),source:document.getElementById('fS').value,tags:['lume-application','fb-lead','mar-2026'],form:'lume-invitation-request'};
+    fetch('https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).catch(()=>{});
+    if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'LUME Invitation'});
     document.getElementById('tyT').textContent='Thank you, '+n.split(' ')[0]+'.';
     document.getElementById('ty').classList.add('on');
 }
-document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('vis')},{threshold:.06}).observe(el)});
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('vis')},{threshold:.05,rootMargin:'0px 0px -40px 0px'}).observe(el)});
 window.addEventListener('scroll',()=>document.querySelector('nav').classList.toggle('solid',window.scrollY>60));
 document.getElementById('ty').addEventListener('click',e=>{if(e.target.id==='ty')e.target.classList.remove('on')});
 </script>
