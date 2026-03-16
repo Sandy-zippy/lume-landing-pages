@@ -38,17 +38,15 @@
         :root {
             --primary: #C41E3A;
             --primary-light: #FF5149;
-            --dark: #1a1a1a;
-            --dark-card: #222222;
-            --dark-border: #333333;
-            --cream: #f8f6f3;
+            --cream: #FAF9F7;
             --white: #ffffff;
+            --charcoal: #1A1A1A;
+            --gray-dark: #333333;
+            --gray: #666666;
+            --gray-light: #999999;
+            --off-white: #f0eeeb;
+            --border: #e0ddd8;
             --gold: #C9A962;
-            --text-light: #f8f6f3;
-            --text-light-muted: rgba(248,246,243,0.7);
-            --text-light-subtle: rgba(248,246,243,0.5);
-            --text-dark: #1a1a1a;
-            --text-dark-muted: rgba(26,26,26,0.7);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -57,16 +55,17 @@
         body {
             font-family: 'Outfit', sans-serif;
             font-weight: 400;
-            color: var(--text-dark);
+            color: var(--charcoal);
             line-height: 1.6;
             overflow-x: hidden;
-            background: var(--dark);
+            background: var(--cream);
         }
 
         h1, h2, h3, h4 {
             font-family: 'Cormorant', serif;
             font-weight: 600;
             line-height: 1.15;
+            color: var(--charcoal);
         }
 
         .container {
@@ -78,35 +77,30 @@
         /* ═══════════ HEADER ═══════════ */
         .site-header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 16px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(26,26,26,0.95);
+            background: rgba(250,249,247,0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--border);
             transition: padding 0.3s;
         }
-        .site-header.scrolled { padding: 10px 32px; }
+        .site-header.scrolled { padding: 10px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
         .site-header .logo img { height: 32px; }
-        .site-header .cta-btn {
+        .cta-btn {
             font-family: 'Outfit', sans-serif;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 14px; font-weight: 500;
             padding: 10px 28px;
             background: var(--primary);
             color: var(--white);
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
+            border: none; border-radius: 6px;
+            cursor: pointer; text-decoration: none;
             transition: background 0.2s;
         }
-        .site-header .cta-btn:hover { background: var(--primary-light); }
+        .cta-btn:hover { background: var(--primary-light); }
 
         /* ═══════════ HERO ═══════════ */
         .hero {
@@ -116,7 +110,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: var(--dark);
+            background: var(--white);
             overflow: hidden;
         }
         .hero::before {
@@ -124,14 +118,7 @@
             position: absolute;
             inset: 0;
             background: url('assets/hero-banner.png') center/cover no-repeat;
-            opacity: 0.25;
-            filter: blur(1px);
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(26,26,26,0.4) 0%, rgba(26,26,26,0.85) 100%);
+            opacity: 0.08;
         }
         .hero-content {
             position: relative;
@@ -143,22 +130,22 @@
         .hero-logo img { height: 48px; }
         .hero h1 {
             font-size: clamp(2.8rem, 6vw, 4.2rem);
-            color: var(--text-light);
+            color: var(--charcoal);
             margin-bottom: 24px;
             letter-spacing: -0.02em;
         }
         .hero .subtitle {
             font-family: 'Outfit', sans-serif;
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--text-light-muted);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--primary);
             margin-bottom: 16px;
-            font-weight: 300;
-            letter-spacing: 0.04em;
+            font-weight: 500;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
         }
         .hero .body-text {
             font-size: 1.1rem;
-            color: var(--text-light-muted);
+            color: var(--gray);
             max-width: 560px;
             margin: 0 auto 40px;
             line-height: 1.7;
@@ -166,32 +153,28 @@
         .btn-primary {
             display: inline-block;
             font-family: 'Outfit', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 16px; font-weight: 500;
             padding: 16px 48px;
             background: var(--primary);
             color: var(--white);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
+            border: none; border-radius: 8px;
+            cursor: pointer; text-decoration: none;
             transition: all 0.25s;
             letter-spacing: 0.02em;
         }
         .btn-primary:hover {
             background: var(--primary-light);
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(196,30,58,0.3);
+            box-shadow: 0 8px 32px rgba(196,30,58,0.2);
         }
         .scroll-indicator {
             position: absolute;
-            bottom: 40px;
-            left: 50%;
+            bottom: 40px; left: 50%;
             transform: translateX(-50%);
             z-index: 2;
             animation: bounce 2s infinite;
         }
-        .scroll-indicator svg { width: 24px; height: 24px; stroke: var(--text-light-subtle); }
+        .scroll-indicator svg { width: 24px; height: 24px; stroke: var(--gray-light); }
         @keyframes bounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
             50% { transform: translateX(-50%) translateY(8px); }
@@ -199,10 +182,8 @@
 
         /* ═══════════ STATS BAR ═══════════ */
         .stats-bar {
-            background: var(--dark);
-            border-top: 1px solid rgba(255,255,255,0.06);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 28px 0;
+            background: var(--primary);
+            padding: 24px 0;
         }
         .stats-bar .container {
             display: flex;
@@ -213,25 +194,22 @@
         }
         .stat {
             font-family: 'Outfit', sans-serif;
-            font-size: 15px;
-            font-weight: 300;
-            color: var(--text-light-muted);
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
+            font-size: 15px; font-weight: 400;
+            color: var(--white);
+            letter-spacing: 0.04em;
         }
         .stat-divider {
-            width: 1px;
-            height: 20px;
-            background: rgba(255,255,255,0.15);
+            width: 1px; height: 20px;
+            background: rgba(255,255,255,0.3);
         }
 
-        /* ═══════════ CREAM SECTIONS ═══════════ */
+        /* ═══════════ SECTIONS ═══════════ */
         .section-cream {
             background: var(--cream);
             padding: 100px 0;
         }
-        .section-dark {
-            background: var(--dark);
+        .section-white {
+            background: var(--white);
             padding: 100px 0;
         }
         .section-title {
@@ -241,28 +219,32 @@
         .section-title h2 {
             font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 16px;
+            color: var(--charcoal);
         }
         .section-title p {
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
+            color: var(--gray);
         }
-        .section-dark .section-title h2 { color: var(--text-light); }
-        .section-dark .section-title p { color: var(--text-light-muted); }
 
-        /* ═══════════ DIFFERENCE / 3-COLUMN ═══════════ */
+        /* ═══════════ THREE COLUMNS ═══════════ */
         .three-col {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
+            gap: 40px;
         }
         .three-col .col {
             text-align: center;
-            padding: 32px 16px;
+            padding: 40px 24px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
         }
+        .three-col .col:hover { border-color: var(--primary); }
         .three-col .col-icon {
-            width: 56px;
-            height: 56px;
+            width: 56px; height: 56px;
             margin: 0 auto 24px;
             border-radius: 50%;
             background: var(--primary);
@@ -272,13 +254,12 @@
         }
         .three-col .col-icon svg { width: 24px; height: 24px; stroke: var(--white); fill: none; }
         .three-col .col h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-bottom: 16px;
-            color: var(--text-dark);
         }
         .three-col .col p {
             font-size: 1rem;
-            color: var(--text-dark-muted);
+            color: var(--gray);
             line-height: 1.7;
         }
 
@@ -289,28 +270,25 @@
             gap: 16px;
             margin-bottom: 48px;
         }
-        .experience-grid .exp-img {
+        .exp-img {
             aspect-ratio: 16/10;
-            background: var(--dark-card);
-            border-radius: 12px;
+            background: var(--off-white);
+            border-radius: 16px;
             overflow: hidden;
-            position: relative;
         }
-        .experience-grid .exp-img img {
-            width: 100%;
-            height: 100%;
+        .exp-img img {
+            width: 100%; height: 100%;
             object-fit: cover;
-            opacity: 0.8;
-            transition: opacity 0.3s;
+            transition: transform 0.4s;
         }
-        .experience-grid .exp-img:hover img { opacity: 1; }
+        .exp-img:hover img { transform: scale(1.03); }
         .experience-caption {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 32px;
         }
         .experience-caption p {
-            color: var(--text-light-muted);
+            color: var(--gray-dark);
             font-size: 1.05rem;
             line-height: 1.7;
         }
@@ -324,35 +302,23 @@
             margin: 0 auto;
         }
 
-        /* ═══════════ HOW IT WORKS ═══════════ */
+        /* ═══════════ STEPS ═══════════ */
         .steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 32px;
         }
-        .step {
-            text-align: center;
-            padding: 24px 16px;
-        }
+        .step { text-align: center; padding: 24px 16px; }
         .step-number {
             font-family: 'Cormorant', serif;
-            font-size: 3rem;
-            font-weight: 600;
+            font-size: 3rem; font-weight: 600;
             color: var(--primary);
             margin-bottom: 16px;
         }
-        .step h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-        .step p {
-            font-size: 0.95rem;
-            color: var(--text-dark-muted);
-            line-height: 1.6;
-        }
+        .step h3 { font-size: 1.4rem; margin-bottom: 12px; }
+        .step p { font-size: 0.95rem; color: var(--gray); line-height: 1.6; }
 
-        /* ═══════════ UPCOMING EVENTS ═══════════ */
+        /* ═══════════ EVENT CARDS ═══════════ */
         .event-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -360,28 +326,25 @@
             margin-bottom: 32px;
         }
         .event-card {
-            background: var(--dark-card);
-            border: 1px solid var(--dark-border);
+            background: var(--white);
+            border: 1px solid var(--border);
             border-radius: 16px;
             padding: 40px;
             position: relative;
             overflow: hidden;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, transform 0.3s;
         }
-        .event-card:hover { border-color: var(--primary); }
+        .event-card:hover { border-color: var(--primary); transform: translateY(-4px); }
         .event-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
+            top: 0; left: 0; right: 0;
+            height: 4px;
             background: var(--primary);
         }
         .event-tag {
             font-family: 'Outfit', sans-serif;
-            font-size: 12px;
-            font-weight: 500;
+            font-size: 12px; font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--primary);
@@ -389,48 +352,43 @@
         }
         .event-card h3 {
             font-size: 1.8rem;
-            color: var(--text-light);
             margin-bottom: 16px;
         }
         .event-card p {
-            color: var(--text-light-muted);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: var(--gray);
+            font-size: 1rem; line-height: 1.6;
         }
         .event-footer-note {
             text-align: center;
             font-size: 14px;
-            color: var(--text-light-subtle);
+            color: var(--gray-light);
             font-style: italic;
         }
 
         /* ═══════════ QUIZ ═══════════ */
-        .quiz-section { background: var(--cream); padding: 100px 0; }
+        .quiz-section { background: var(--white); padding: 100px 0; }
         .quiz-wrapper {
             max-width: 640px;
             margin: 0 auto;
-            background: var(--white);
+            background: var(--cream);
             border-radius: 20px;
             padding: 48px 40px;
-            box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
         }
         .quiz-progress {
-            display: flex;
-            gap: 6px;
+            display: flex; gap: 6px;
             margin-bottom: 40px;
         }
         .quiz-progress .bar {
-            flex: 1;
-            height: 3px;
-            background: #e0ddd8;
+            flex: 1; height: 3px;
+            background: var(--border);
             border-radius: 3px;
             transition: background 0.3s;
         }
         .quiz-progress .bar.active { background: var(--primary); }
         .quiz-question-num {
             font-family: 'Outfit', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 13px; font-weight: 500;
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -438,26 +396,23 @@
         }
         .quiz-question {
             font-family: 'Cormorant', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--text-dark);
+            font-size: 1.8rem; font-weight: 600;
+            color: var(--charcoal);
             margin-bottom: 32px;
             line-height: 1.3;
         }
         .quiz-options { display: flex; flex-direction: column; gap: 12px; }
         .quiz-option {
-            display: block;
-            width: 100%;
+            display: block; width: 100%;
             text-align: left;
             font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
+            font-size: 1rem; font-weight: 400;
             padding: 18px 24px;
-            background: var(--cream);
+            background: var(--white);
             border: 2px solid transparent;
             border-radius: 12px;
             cursor: pointer;
-            color: var(--text-dark);
+            color: var(--charcoal);
             transition: all 0.2s;
         }
         .quiz-option:hover {
@@ -469,16 +424,10 @@
             background: #fdf5f6;
         }
 
-        /* Quiz Result */
         .quiz-result { text-align: center; }
-        .quiz-result h2 {
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
+        .quiz-result h2 { font-size: 2.2rem; margin-bottom: 16px; }
         .quiz-result p {
-            font-size: 1.05rem;
-            color: var(--text-dark-muted);
+            font-size: 1.05rem; color: var(--gray);
             max-width: 480px;
             margin: 0 auto 32px;
             line-height: 1.7;
@@ -486,8 +435,7 @@
         .quiz-result .score-badge {
             display: inline-block;
             font-family: 'Outfit', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 13px; font-weight: 500;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--primary);
@@ -497,25 +445,21 @@
             margin-bottom: 24px;
         }
 
-        /* Quiz Contact Form */
         .quiz-form { margin-top: 24px; }
         .quiz-form input {
             width: 100%;
             font-family: 'Outfit', sans-serif;
             font-size: 1rem;
             padding: 16px 20px;
-            border: 1px solid #e0ddd8;
+            border: 1px solid var(--border);
             border-radius: 10px;
             margin-bottom: 12px;
-            background: var(--cream);
-            color: var(--text-dark);
+            background: var(--white);
+            color: var(--charcoal);
             transition: border-color 0.2s;
         }
-        .quiz-form input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        .quiz-form input::placeholder { color: #999; }
+        .quiz-form input:focus { outline: none; border-color: var(--primary); }
+        .quiz-form input::placeholder { color: var(--gray-light); }
         .quiz-form .btn-primary { width: 100%; text-align: center; border: none; }
 
         /* ═══════════ MEMBERSHIP CARDS ═══════════ */
@@ -527,29 +471,26 @@
             margin: 0 auto;
         }
         .membership-card {
-            background: var(--dark-card);
-            border: 1px solid var(--dark-border);
+            background: var(--white);
+            border: 1px solid var(--border);
             border-radius: 20px;
             padding: 48px 40px;
             text-align: center;
             transition: border-color 0.3s, transform 0.3s;
         }
-        .membership-card:hover {
-            transform: translateY(-4px);
-        }
+        .membership-card:hover { transform: translateY(-4px); }
         .membership-card.featured {
             border-color: var(--primary);
+            border-width: 2px;
             position: relative;
         }
         .membership-card.featured::after {
             content: 'MOST POPULAR';
             position: absolute;
-            top: -12px;
-            left: 50%;
+            top: -12px; left: 50%;
             transform: translateX(-50%);
             font-family: 'Outfit', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
+            font-size: 11px; font-weight: 600;
             letter-spacing: 0.1em;
             background: var(--primary);
             color: var(--white);
@@ -558,8 +499,7 @@
         }
         .membership-tier {
             font-family: 'Outfit', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 13px; font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--primary);
@@ -567,14 +507,13 @@
         }
         .membership-price {
             font-family: 'Cormorant', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--text-light);
+            font-size: 2.8rem; font-weight: 600;
+            color: var(--charcoal);
             margin-bottom: 8px;
         }
         .membership-period {
             font-size: 14px;
-            color: var(--text-light-subtle);
+            color: var(--gray-light);
             margin-bottom: 32px;
         }
         .membership-features {
@@ -584,35 +523,29 @@
         }
         .membership-features li {
             font-size: 0.95rem;
-            color: var(--text-light-muted);
+            color: var(--gray-dark);
             padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--border);
             padding-left: 24px;
             position: relative;
         }
         .membership-features li::before {
             content: '✓';
-            position: absolute;
-            left: 0;
+            position: absolute; left: 0;
             color: var(--primary);
             font-weight: 600;
         }
         .membership-note {
             text-align: center;
             font-size: 14px;
-            color: var(--text-light-subtle);
+            color: var(--gray-light);
             font-style: italic;
             margin-top: 32px;
         }
 
         /* ═══════════ FAQ ═══════════ */
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid #e0ddd8;
-        }
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
         .faq-question {
             display: flex;
             justify-content: space-between;
@@ -620,17 +553,14 @@
             padding: 24px 0;
             cursor: pointer;
             font-family: 'Cormorant', serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            background: none;
-            border: none;
-            width: 100%;
-            text-align: left;
+            font-size: 1.35rem; font-weight: 600;
+            color: var(--charcoal);
+            background: none; border: none;
+            width: 100%; text-align: left;
         }
         .faq-question svg {
             min-width: 20px;
-            stroke: var(--text-dark);
+            stroke: var(--charcoal);
             transition: transform 0.3s;
         }
         .faq-item.open .faq-question svg { transform: rotate(45deg); }
@@ -642,15 +572,15 @@
         .faq-answer p {
             padding: 0 0 24px;
             font-size: 1rem;
-            color: var(--text-dark-muted);
+            color: var(--gray);
             line-height: 1.7;
         }
         .faq-item.open .faq-answer { max-height: 300px; }
 
         /* ═══════════ FOOTER ═══════════ */
         .site-footer {
-            background: var(--dark);
-            border-top: 1px solid rgba(255,255,255,0.06);
+            background: var(--white);
+            border-top: 1px solid var(--border);
             padding: 64px 0 32px;
             text-align: center;
         }
@@ -659,60 +589,27 @@
             font-family: 'Cormorant', serif;
             font-style: italic;
             font-size: 1.15rem;
-            color: var(--text-light-subtle);
+            color: var(--gray-light);
             margin-bottom: 20px;
         }
         .site-footer .social a {
             color: var(--primary);
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
+            font-size: 15px; font-weight: 500;
         }
         .site-footer .social a:hover { text-decoration: underline; }
         .site-footer .copyright {
             margin-top: 32px;
             font-size: 13px;
-            color: rgba(255,255,255,0.25);
+            color: var(--gray-light);
         }
 
-        /* ═══════════ RESPONSIVE ═══════════ */
-        @media (max-width: 768px) {
-            .three-col { grid-template-columns: 1fr; gap: 32px; }
-            .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
-            .event-cards { grid-template-columns: 1fr; }
-            .membership-cards { grid-template-columns: 1fr; max-width: 440px; }
-            .experience-grid { grid-template-columns: 1fr; }
-            .quiz-wrapper { padding: 32px 24px; }
-            .section-cream, .section-dark { padding: 72px 0; }
-            .hero { min-height: 90vh; }
-            .stat-divider { display: none; }
-            .stats-bar .container { gap: 16px; }
-            .stat { font-size: 13px; }
-        }
-        @media (max-width: 480px) {
-            .steps { grid-template-columns: 1fr; }
-            .site-header { padding: 12px 16px; }
-            .site-header .cta-btn { padding: 8px 20px; font-size: 13px; }
-        }
-
-        /* ═══════════ ANIMATIONS ═══════════ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Thank you overlay */
+        /* ═══════════ THANK YOU OVERLAY ═══════════ */
         .thank-you-overlay {
             display: none;
-            position: fixed;
-            inset: 0;
+            position: fixed; inset: 0;
             z-index: 9999;
-            background: rgba(26,26,26,0.95);
+            background: rgba(250,249,247,0.97);
             backdrop-filter: blur(8px);
             align-items: center;
             justify-content: center;
@@ -722,17 +619,43 @@
         .thank-you-overlay.active { display: flex; }
         .thank-you-content h2 {
             font-size: 2.5rem;
-            color: var(--text-light);
+            color: var(--charcoal);
             margin-bottom: 16px;
         }
         .thank-you-content p {
             font-size: 1.1rem;
-            color: var(--text-light-muted);
+            color: var(--gray);
             max-width: 500px;
             margin: 0 auto 32px;
             line-height: 1.7;
         }
-        .thank-you-content .btn-primary { display: inline-block; }
+
+        /* ═══════════ RESPONSIVE ═══════════ */
+        @media (max-width: 768px) {
+            .three-col { grid-template-columns: 1fr; gap: 20px; }
+            .steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .event-cards { grid-template-columns: 1fr; }
+            .membership-cards { grid-template-columns: 1fr; max-width: 440px; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .quiz-wrapper { padding: 32px 24px; }
+            .section-cream, .section-white { padding: 72px 0; }
+            .hero { min-height: 90vh; }
+            .stat-divider { display: none; }
+            .stats-bar .container { gap: 16px; }
+            .stat { font-size: 13px; }
+        }
+        @media (max-width: 480px) {
+            .steps { grid-template-columns: 1fr; }
+            .site-header { padding: 12px 16px; }
+            .cta-btn { padding: 8px 20px; font-size: 13px; }
+        }
+
+        /* ═══════════ ANIMATIONS ═══════════ */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
@@ -740,7 +663,7 @@
 <!-- HEADER -->
 <header class="site-header">
     <div class="logo">
-        <a href="#"><img src="assets/lume-logo-white.png" alt="LUME"></a>
+        <a href="#"><img src="assets/lume-logo-transparent.png" alt="LUME"></a>
     </div>
     <a href="#quiz" class="cta-btn">See If You're A Fit</a>
 </header>
@@ -749,7 +672,7 @@
 <section class="hero">
     <div class="hero-content">
         <div class="hero-logo">
-            <img src="assets/lume-logo-white.png" alt="LUME">
+            <img src="assets/lume-logo-transparent.png" alt="LUME">
         </div>
         <p class="subtitle">Curated experiences. Selected guests. Designed evenings.</p>
         <h1>Where Hyderabad's most intentional people gather.</h1>
@@ -805,7 +728,7 @@
 </section>
 
 <!-- PAST EXPERIENCES -->
-<section class="section-dark">
+<section class="section-white">
     <div class="container">
         <div class="section-title reveal">
             <h2>What a LUME evening looks like.</h2>
@@ -853,7 +776,7 @@
 </section>
 
 <!-- UPCOMING EXPERIENCES -->
-<section class="section-dark">
+<section class="section-white">
     <div class="container">
         <div class="section-title reveal">
             <h2>What's coming next.</h2>
@@ -881,14 +804,12 @@
             <h2>Is LUME right for you?</h2>
             <p>A 2-minute assessment. Not everyone qualifies — and that's by design.</p>
         </div>
-        <div class="quiz-wrapper reveal" id="quizWrapper">
-            <!-- Quiz content injected by JS -->
-        </div>
+        <div class="quiz-wrapper reveal" id="quizWrapper"></div>
     </div>
 </section>
 
 <!-- MEMBERSHIP -->
-<section class="section-dark" id="membership">
+<section class="section-cream" id="membership">
     <div class="container">
         <div class="section-title reveal">
             <h2>Two ways to belong.</h2>
@@ -925,52 +846,34 @@
 </section>
 
 <!-- FAQ -->
-<section class="section-cream">
+<section class="section-white">
     <div class="container">
         <div class="section-title reveal">
             <h2>Questions worth asking.</h2>
         </div>
         <div class="faq-list">
             <div class="faq-item reveal">
-                <button class="faq-question">
-                    What kind of events does LUME host?
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
+                <button class="faq-question">What kind of events does LUME host?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
                 <div class="faq-answer"><p>Two curated experiences per month. One entertainment: private art evenings, craft tastings, cultural immersion. One education: industry leaders, investment conversations, master practitioners. Never generic. Never mass-market.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">
-                    How many people attend each event?
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
+                <button class="faq-question">How many people attend each event?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
                 <div class="faq-answer"><p>30 to 50. We optimize for the quality of the room, not the size of the guest list.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">
-                    Is LUME only for business owners?
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
+                <button class="faq-question">Is LUME only for business owners?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
                 <div class="faq-answer"><p>LUME welcomes founders, senior executives, creative professionals, and culturally discerning individuals. The filter is taste and intentionality, not title.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">
-                    Can I attend an event before becoming a member?
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
+                <button class="faq-question">Can I attend an event before becoming a member?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
                 <div class="faq-answer"><p>Yes. Select experiences are open to non-members at ₹3,500 to ₹5,000 per evening. It's the best way to feel what a curated room looks like.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">
-                    How is LUME different from other Hyderabad events?
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
+                <button class="faq-question">How is LUME different from other Hyderabad events?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
                 <div class="faq-answer"><p>Most events sell tickets. LUME selects guests. That difference shapes everything: from who's in the room to how the evening unfolds.</p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-question">
-                    What does the membership fee cover?
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
+                <button class="faq-question">What does the membership fee cover?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
                 <div class="faq-answer"><p>All 24 annual experiences, member directory access, priority RSVP, and depending on your tier, VIP privileges, exclusive dinners, and personal introductions.</p></div>
             </div>
         </div>
@@ -980,7 +883,7 @@
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="container">
-        <div class="logo"><img src="assets/lume-logo-white.png" alt="LUME"></div>
+        <div class="logo"><img src="assets/lume-logo-transparent.png" alt="LUME"></div>
         <p class="tagline">The classes, not the masses.</p>
         <div class="social">
             <a href="https://www.instagram.com/lumeproject_offl" target="_blank" rel="noopener">@lumeproject_offl</a>
@@ -992,7 +895,7 @@
 <!-- THANK YOU OVERLAY -->
 <div class="thank-you-overlay" id="thankYou">
     <div class="thank-you-content">
-        <div class="hero-logo"><img src="assets/lume-logo-white.png" alt="LUME" style="height:40px;margin-bottom:32px;"></div>
+        <img src="assets/lume-logo-transparent.png" alt="LUME" style="height:40px;margin-bottom:32px;">
         <h2 id="tyTitle">You belong in the room.</h2>
         <p id="tyBody">Based on your responses, you're exactly the kind of person LUME was designed for. Our team will review your profile and reach out within 24 hours to set up a brief conversation.</p>
         <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary" id="tyCta">Follow LUME on Instagram</a>
@@ -1086,7 +989,6 @@ const wrapper = document.getElementById('quizWrapper');
 function renderQuestion() {
     const q = quizData[currentQ];
     const bars = quizData.map((_, i) => `<div class="bar ${i <= currentQ ? 'active' : ''}"></div>`).join('');
-
     wrapper.innerHTML = `
         <div class="quiz-progress">${bars}</div>
         <div class="quiz-question-num">${q.num}</div>
@@ -1102,48 +1004,32 @@ function renderQuestion() {
 function selectOption(index, score) {
     totalScore += score;
     answers.push({ question: quizData[currentQ].q, answer: quizData[currentQ].options[index].text, score });
-
     const options = wrapper.querySelectorAll('.quiz-option');
     options[index].classList.add('selected');
-
     setTimeout(() => {
         currentQ++;
-        if (currentQ < quizData.length) {
-            renderQuestion();
-        } else {
-            showResult();
-        }
+        if (currentQ < quizData.length) { renderQuestion(); }
+        else { showResult(); }
     }, 300);
 }
 
 function showResult() {
     let tier, title, body;
-
     if (totalScore >= 22) {
-        tier = "Perfect Fit";
-        title = "You belong in the room.";
+        tier = "Perfect Fit"; title = "You belong in the room.";
         body = "Based on your responses, you're exactly the kind of person LUME was designed for. Hyderabad's most curated experience community is selective by design, and your profile signals a strong fit.";
     } else if (totalScore >= 15) {
-        tier = "Strong Fit";
-        title = "You'd be a great addition to the room.";
+        tier = "Strong Fit"; title = "You'd be a great addition to the room.";
         body = "Your responses suggest you value the kind of intentionality LUME brings to every gathering. The next step is a brief conversation with our team about what you're looking for.";
     } else if (totalScore >= 8) {
-        tier = "Potential Fit";
-        title = "Experience LUME first.";
+        tier = "Potential Fit"; title = "Experience LUME first.";
         body = "The best way to understand LUME is to be in the room. We have upcoming experiences designed for people like you. Join us for an evening and see if this is the social layer you've been looking for.";
     } else {
-        tier = "Not Right Now";
-        title = "LUME isn't for everyone.";
+        tier = "Not Right Now"; title = "LUME isn't for everyone.";
         body = "That's by design. We curate every room to ensure the experience matches the expectations of our members. Follow us to see what LUME looks like from the inside, and apply again when the time feels right.";
     }
-
-    // Fire Meta Lead event
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', { content_name: 'LUME Quiz', quiz_tier: tier, quiz_score: totalScore });
-    }
-
+    if (typeof fbq !== 'undefined') { fbq('track', 'Lead', { content_name: 'LUME Quiz', quiz_tier: tier, quiz_score: totalScore }); }
     const bars = quizData.map(() => '<div class="bar active"></div>').join('');
-
     wrapper.innerHTML = `
         <div class="quiz-progress">${bars}</div>
         <div class="quiz-result">
@@ -1156,82 +1042,49 @@ function showResult() {
                 <input type="tel" id="qPhone" placeholder="Phone number" required>
                 <input type="email" id="qEmail" placeholder="Email address" required>
                 <button class="btn-primary" onclick="submitLead()">Reserve Your Conversation</button>
-            </div>
-            ` : totalScore >= 8 ? `
-            <a href="#" class="btn-primary" onclick="document.querySelector('.event-cards').scrollIntoView({behavior:'smooth'});return false;">See Upcoming Experiences</a>
-            ` : `
-            <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary">Follow LUME on Instagram</a>
-            `}
-        </div>
-    `;
+            </div>` : totalScore >= 8 ? `
+            <a href="#" class="btn-primary" onclick="document.querySelector('.event-cards').scrollIntoView({behavior:'smooth'});return false;">See Upcoming Experiences</a>` : `
+            <a href="https://www.instagram.com/lumeproject_offl" target="_blank" class="btn-primary">Follow LUME on Instagram</a>`}
+        </div>`;
 }
 
 function submitLead() {
     const name = document.getElementById('qName').value.trim();
     const phone = document.getElementById('qPhone').value.trim();
     const email = document.getElementById('qEmail').value.trim();
-
-    if (!name || !phone || !email) {
-        alert('Please fill in all fields.');
-        return;
-    }
-
+    if (!name || !phone || !email) { alert('Please fill in all fields.'); return; }
     let tier = totalScore >= 22 ? 'perfect-fit' : 'strong-fit';
-
-    // Submit to GHL webhook
     const payload = {
-        name: name,
-        phone: phone,
-        email: email,
-        quiz_score: totalScore,
-        quiz_tier: tier,
+        name, phone, email,
+        quiz_score: totalScore, quiz_tier: tier,
         source: 'lume-membership-quiz',
         answers: answers.map(a => a.answer).join(' | '),
         tags: ['quiz-completed', 'quiz-' + tier, 'fb-lead', 'mar-2026']
     };
-
-    // GHL Webhook - replace URL with actual webhook
     const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE';
-
-    fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    }).catch(() => {});
-
-    // Fire Meta event
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Schedule', { content_name: 'LUME Discovery Call', value: 118000, currency: 'INR' });
-    }
-
-    // Show thank you
+    fetch(WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(() => {});
+    if (typeof fbq !== 'undefined') { fbq('track', 'Schedule', { content_name: 'LUME Discovery Call', value: 118000, currency: 'INR' }); }
     const ty = document.getElementById('thankYou');
     document.getElementById('tyTitle').textContent = 'Thank you, ' + name.split(' ')[0] + '.';
     document.getElementById('tyBody').textContent = 'Your profile has been submitted. Our team will review it and reach out within 24 hours to schedule a brief conversation. Welcome to the beginning.';
-    document.getElementById('tyCta').textContent = 'Follow LUME on Instagram';
     ty.classList.add('active');
 }
 
-// Initialize quiz
 renderQuestion();
 
-// ═══════════ SCROLL ANIMATIONS ═══════════
+// Scroll animations
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.15 });
 reveals.forEach(el => observer.observe(el));
 
-// ═══════════ HEADER SCROLL ═══════════
+// Header scroll
 window.addEventListener('scroll', () => {
     document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ═══════════ FAQ ACCORDION ═══════════
+// FAQ accordion
 document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
         const item = btn.parentElement;
@@ -1240,13 +1093,10 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     });
 });
 
-// ═══════════ CLOSE THANK YOU ═══════════
+// Close thank you
 document.getElementById('thankYou').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('thankYou')) {
-        document.getElementById('thankYou').classList.remove('active');
-    }
+    if (e.target === document.getElementById('thankYou')) e.target.classList.remove('active');
 });
 </script>
-
 </body>
 </html>
