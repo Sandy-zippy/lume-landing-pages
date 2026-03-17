@@ -1,6 +1,6 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import StatsBar from '@/components/StatsBar'
+// StatsBar removed — stats now integrated into Hero
 import IdentityFilter from '@/components/IdentityFilter'
 import Experiences from '@/components/Experiences'
 import ReelGallery from '@/components/ReelGallery'
@@ -16,7 +16,6 @@ export default function App() {
     <>
       <Nav />
       <Hero />
-      <StatsBar />
       <IdentityFilter />
       {/* Mid CTA */}
       <section className="text-center py-20">
