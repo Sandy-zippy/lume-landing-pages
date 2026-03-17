@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { reels } from '@/data/events'
 import { brand } from '@/data/brand'
@@ -12,52 +12,59 @@ export default function ReelGallery() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-60px' })
 
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = '//www.instagram.com/embed.js'
-    script.async = true
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
   const topReels = reels.slice(0, 3)
 
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-5xl mx-auto px-6 md:px-10">
+    <section className="py-32 bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-10">
         {/* Title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <div className="w-7 h-px bg-lume-red opacity-50 mx-auto mb-6" />
-          <h2 className="font-heading text-3xl md:text-4xl text-lume-charcoal font-normal">
+          <h2 className="font-heading text-4xl md:text-5xl text-lume-charcoal font-normal mb-4">
             Real rooms. <em className="italic text-lume-red">Real people.</em>
           </h2>
+          <p className="text-base text-lume-soft max-w-lg mx-auto leading-relaxed">
+            Watch what happens when the right people share the right room. Straight from our Instagram.
+          </p>
         </div>
 
-        {/* Reel grid */}
+        {/* Reel grid — use blockquote embeds instead of iframes to avoid overlap */}
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 mt-12"
         >
           {topReels.map((reel, i) => (
             <motion.div
               key={reel.url}
-              className="rounded-xl overflow-hidden aspect-[9/16] max-h-[500px] bg-lume-warm"
+              className="rounded-2xl overflow-hidden bg-lume-warm border border-lume-border"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15, ease: 'easeOut' }}
             >
-              <iframe
-                src={`https://www.instagram.com/reel/${extractReelId(reel.url)}/embed/`}
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                scrolling="no"
-                allowTransparency
-                allowFullScreen
-                title={reel.label}
-              />
+              {/* Thumbnail + play link instead of iframe embed */}
+              <a
+                href={reel.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative group"
+              >
+                <div className="aspect-[4/5] bg-lume-warm flex items-center justify-center overflow-hidden">
+                  <iframe
+                    src={`https://www.instagram.com/reel/${extractReelId(reel.url)}/embed/captioned/`}
+                    className="w-full border-0"
+                    style={{ height: '100%', minHeight: 500, overflow: 'hidden' }}
+                    scrolling="no"
+                    allowTransparency
+                    title={reel.label}
+                  />
+                </div>
+              </a>
+              <div className="p-5">
+                <p className="text-sm font-medium text-lume-charcoal">{reel.label}</p>
+                {reel.views && (
+                  <p className="text-xs text-lume-muted mt-1">{reel.views} views</p>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -68,9 +75,9 @@ export default function ReelGallery() {
             href={brand.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-lume-red hover:underline"
+            className="inline-block text-sm font-medium text-lume-red border border-lume-red/20 rounded-full px-8 py-3 hover:bg-lume-red/5 transition-colors"
           >
-            Watch more &mdash; {brand.instagramHandle}
+            Follow {brand.instagramHandle} on Instagram
           </a>
         </div>
       </div>

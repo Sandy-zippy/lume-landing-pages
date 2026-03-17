@@ -34,16 +34,16 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-28 bg-white">
+    <section className="py-32 bg-white">
       <motion.div
         ref={ref}
-        className="max-w-[640px] mx-auto px-6"
+        className="max-w-[700px] mx-auto px-6"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <div className="text-center mb-14">
-          <h2 className="font-heading text-3xl md:text-4xl text-lume-charcoal font-normal">
+        <div className="text-center mb-16">
+          <h2 className="font-heading text-4xl md:text-5xl text-lume-charcoal font-normal">
             Questions you might <em className="italic text-lume-red">have.</em>
           </h2>
         </div>
@@ -53,14 +53,14 @@ export default function FAQ() {
             <div key={i} className="border-b border-lume-border">
               <button
                 onClick={() => toggle(i)}
-                className="flex justify-between items-center w-full py-6 cursor-pointer group text-left"
+                className="flex justify-between items-center w-full py-7 cursor-pointer group text-left"
               >
-                <span className="text-[15px] font-normal text-lume-charcoal group-hover:text-lume-red transition-colors pr-4">
+                <span className="text-base font-normal text-lume-charcoal group-hover:text-lume-red transition-colors pr-4">
                   {faq.q}
                 </span>
                 <svg
-                  width="16"
-                  height="16"
+                  width="18"
+                  height="18"
                   viewBox="0 0 16 16"
                   fill="none"
                   stroke="currentColor"
@@ -84,7 +84,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <p className="text-sm text-lume-soft leading-relaxed pb-6">
+                    <p className="text-base text-lume-soft leading-[1.8] pb-7">
                       {faq.a}
                     </p>
                   </motion.div>

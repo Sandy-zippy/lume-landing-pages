@@ -22,13 +22,16 @@ export default function IdentityFilter() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="py-28 px-6 md:px-10 max-w-5xl mx-auto" ref={ref}>
+    <section className="py-32 px-6 md:px-10 max-w-6xl mx-auto" ref={ref}>
       {/* Title */}
       <div className="text-center mb-16">
         <div className="w-7 h-px bg-lume-red opacity-50 mx-auto mb-6" />
-        <h2 className="font-heading text-3xl md:text-4xl text-lume-charcoal font-normal">
+        <h2 className="font-heading text-4xl md:text-5xl text-lume-charcoal font-normal mb-4">
           Before you scroll <em className="italic text-lume-red">further.</em>
         </h2>
+        <p className="text-base text-lume-soft max-w-lg mx-auto leading-relaxed">
+          LUME isn't for everyone. And that's the point. Read both sides and see where you land.
+        </p>
       </div>
 
       {/* Cards */}
@@ -40,14 +43,14 @@ export default function IdentityFilter() {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <p className="text-[11px] uppercase tracking-[0.14em] text-lume-red font-semibold mb-8">
+          <p className="text-xs uppercase tracking-[0.14em] text-lume-red font-semibold mb-8">
             This is for you if
           </p>
           <ul>
             {forYou.map((item, i) => (
               <li
                 key={i}
-                className={`text-sm text-lume-charcoal leading-relaxed py-4 ${
+                className={`text-base text-lume-charcoal leading-relaxed py-5 ${
                   i < forYou.length - 1 ? 'border-b border-lume-border' : ''
                 }`}
               >
@@ -64,14 +67,14 @@ export default function IdentityFilter() {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
         >
-          <p className="text-[11px] uppercase tracking-[0.14em] text-lume-faint font-semibold mb-8">
+          <p className="text-xs uppercase tracking-[0.14em] text-lume-faint font-semibold mb-8">
             This is not for you if
           </p>
           <ul>
             {notForYou.map((item, i) => (
               <li
                 key={i}
-                className={`text-sm text-lume-muted leading-relaxed py-4 ${
+                className={`text-base text-lume-muted leading-relaxed py-5 ${
                   i < notForYou.length - 1 ? 'border-b border-lume-border' : ''
                 }`}
               >

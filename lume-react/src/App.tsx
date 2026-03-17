@@ -18,14 +18,14 @@ export default function App() {
       <Hero />
       <IdentityFilter />
       {/* Mid CTA */}
-      <section className="text-center py-20">
-        <p className="font-heading text-xl italic text-lume-soft max-w-[420px] mx-auto mb-8 leading-relaxed">
+      <section className="text-center py-24">
+        <p className="font-heading text-2xl md:text-3xl italic text-lume-soft max-w-[500px] mx-auto mb-10 leading-relaxed">
           The right room changes everything. The question is whether you should
           be in it.
         </p>
         <a
           href="#quiz"
-          className="inline-block text-[11px] font-medium tracking-[0.08em] uppercase text-lume-charcoal border border-lume-border rounded-full px-11 py-4 hover:border-lume-red hover:text-lume-red transition-colors"
+          className="inline-block text-sm font-medium tracking-[0.08em] uppercase text-lume-charcoal border border-lume-border rounded-full px-11 py-4 hover:border-lume-red hover:text-lume-red transition-colors"
         >
           Check Your Eligibility
         </a>
