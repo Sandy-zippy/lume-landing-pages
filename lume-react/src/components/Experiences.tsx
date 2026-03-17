@@ -11,7 +11,7 @@ function EventCard({ event, index }: { event: (typeof events)[number]; index: nu
   const imageBlock = (
     <div className="relative rounded-xl overflow-hidden aspect-[3/2] group cursor-pointer">
       <img
-        src={`/lume-landing-pages${event.imageHd || event.image}`}
+        src={event.imageHd || event.image}
         alt={event.name}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
       />

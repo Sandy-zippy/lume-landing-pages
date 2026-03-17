@@ -23,7 +23,7 @@ export default function ThankYouOverlay({ firstName, onClose }: Props) {
         onClick={(e) => e.stopPropagation()}
       >
         <img
-          src="/lume-landing-pages/assets/lume-logo-transparent.png"
+          src="/assets/lume-logo-transparent.png"
           alt="LUME"
           className="h-6 mx-auto mb-10 opacity-50"
         />
