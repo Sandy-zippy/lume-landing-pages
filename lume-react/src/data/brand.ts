@@ -1,0 +1,22 @@
+export const brand = {
+  name: 'LUME',
+  tagline: 'By Invitation Only',
+  instagram: 'https://www.instagram.com/lumeproject_offl',
+  instagramHandle: '@lumeproject_offl',
+  website: 'https://thelumeproject.com',
+  legal: 'Lume Project Private Limited',
+  city: 'Hyderabad',
+  founder: 'Siddharth Penugonda',
+  email: 'info.thelume@gmail.com',
+  membership: { standard: 118000, premium: 236000 },
+  cadence: '2 experiences per month',
+  guestsPerEvent: '30-50',
+  values: ['Realness', 'Initiative', 'Respect', 'Play', 'Accountability'] as const,
+  houses: [
+    { name: 'House of Maurya', traits: 'Strategic, bold, visionary' },
+    { name: 'House of Chola', traits: 'Creative, resilient, culture-led' },
+    { name: 'House of Ahom', traits: 'Curious, community-driven, adaptive' },
+    { name: 'House of Maratha', traits: 'Fearless, fast-moving, dynamic' },
+  ],
+  archetypes: ['Founders', 'Creative Directors', 'Cultural Leaders', 'Senior Professionals', 'Tastemakers'] as const,
+} as const

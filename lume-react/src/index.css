@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-lume-black: #000000;
+  --color-lume-charcoal: #1a1a1a;
+  --color-lume-cream: #f8f6f3;
+  --color-lume-gold: #C9A962;
+  --color-lume-red: #C41E3A;
+  --color-lume-red-soft: #B80000;
+  --color-lume-text: #2A2A2A;
+  --color-lume-soft: #6B6B6B;
+  --color-lume-muted: #9E9E9E;
+  --color-lume-faint: #C4C4C4;
+  --color-lume-border: #E8E5E0;
+  --color-lume-warm: #F7F5F2;
+  --font-heading: 'Cormorant', serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-lume-text);
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background: rgba(196, 30, 58, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
