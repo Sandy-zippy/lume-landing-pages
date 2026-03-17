@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { quizQuestions, getLeadTags } from '@/data/quiz'
 import ThankYouOverlay from './ThankYouOverlay'
 
-const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/WEBHOOK_ID_HERE'
+const WEBHOOK_URL = 'https://sandyautomations.app.n8n.cloud/webhook/lume-quiz'
 
 export default function Quiz() {
   const [step, setStep] = useState(1)
