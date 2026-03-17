@@ -1,44 +1,7 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useEffect, useRef } from 'react'
-
-function FloatingOrb({ delay, size, x, y, duration }: { delay: number; size: number; x: string; y: string; duration: number }) {
-  return (
-    <motion.div
-      className="absolute rounded-full"
-      style={{
-        width: size,
-        height: size,
-        left: x,
-        top: y,
-        background: `radial-gradient(circle, rgba(201,169,98,0.15) 0%, rgba(201,169,98,0) 70%)`,
-        filter: 'blur(1px)',
-      }}
-      animate={{
-        y: [0, -30, 10, -20, 0],
-        x: [0, 15, -10, 5, 0],
-        opacity: [0.3, 0.6, 0.4, 0.7, 0.3],
-      }}
-      transition={{
-        duration,
-        delay,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-    />
-  )
-}
-
-function AnimatedLine({ delay, width }: { delay: number; width: string }) {
-  return (
-    <motion.div
-      className="absolute h-px bg-gradient-to-r from-transparent via-lume-gold/20 to-transparent"
-      style={{ width, left: '50%', transform: 'translateX(-50%)' }}
-      initial={{ opacity: 0, scaleX: 0 }}
-      animate={{ opacity: 1, scaleX: 1 }}
-      transition={{ duration: 1.5, delay, ease: 'easeOut' }}
-    />
-  )
-}
+import { Particles } from '@/components/ui/particles'
+import { ShimmerButton } from '@/components/ui/shimmer-button'
 
 function CountUp({ target, suffix = '' }: { target: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -60,44 +23,81 @@ function CountUp({ target, suffix = '' }: { target: number; suffix?: string }) {
   return <span ref={ref}>0{suffix}</span>
 }
 
-
 export default function Hero() {
   return (
     <section
       className="relative w-full flex items-center justify-center overflow-hidden"
-      style={{ height: '100vh', minHeight: 720, background: 'linear-gradient(180deg, #0a0a0a 0%, #111 40%, #0d0b08 100%)' }}
+      style={{ height: '100vh', minHeight: 720, background: '#f8f6f3' }}
     >
-      {/* Subtle noise texture */}
+      {/* Background image — subtle, faded into cream */}
+      <div className="absolute inset-0">
+        <img
+          src="/assets/ig-melody-mingle-hd.jpg"
+          alt=""
+          className="w-full h-full object-cover object-[center_20%]"
+          style={{ opacity: 0.12, filter: 'saturate(0.4) brightness(1.1)' }}
+        />
+      </div>
+
+      {/* Warm cream overlay for softness */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+          background: 'radial-gradient(ellipse at center, rgba(248,246,243,0.6) 0%, rgba(248,246,243,0.85) 60%, rgba(248,246,243,0.95) 100%)',
         }}
       />
 
-      {/* Floating orbs */}
-      <FloatingOrb delay={0} size={200} x="15%" y="20%" duration={8} />
-      <FloatingOrb delay={1.5} size={140} x="75%" y="15%" duration={10} />
-      <FloatingOrb delay={0.8} size={100} x="60%" y="65%" duration={7} />
-      <FloatingOrb delay={2} size={180} x="25%" y="70%" duration={9} />
-      <FloatingOrb delay={0.5} size={120} x="85%" y="50%" duration={11} />
-      <FloatingOrb delay={1} size={80} x="40%" y="30%" duration={6} />
+      {/* Magic UI Particles — gold floating dots that follow cursor */}
+      <Particles
+        className="absolute inset-0"
+        quantity={60}
+        staticity={30}
+        ease={80}
+        size={1.2}
+        color="#C9A962"
+        vx={0}
+        vy={-0.05}
+      />
 
-      {/* Decorative lines */}
-      <div className="absolute top-[30%]"><AnimatedLine delay={1} width="60vw" /></div>
-      <div className="absolute top-[70%]"><AnimatedLine delay={1.5} width="40vw" /></div>
+      {/* Subtle red particles for depth */}
+      <Particles
+        className="absolute inset-0"
+        quantity={20}
+        staticity={60}
+        ease={100}
+        size={0.6}
+        color="#C41E3A"
+        vx={0}
+        vy={0.02}
+      />
 
-      {/* Radial glow behind text */}
+      {/* Gold radial glow center */}
       <div
-        className="absolute"
+        className="absolute pointer-events-none"
         style={{
-          width: '600px',
-          height: '600px',
+          width: 700,
+          height: 700,
           left: '50%',
           top: '45%',
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle, rgba(201,169,98,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(201,169,98,0.08) 0%, transparent 65%)',
         }}
+      />
+
+      {/* Decorative gold lines */}
+      <motion.div
+        className="absolute h-px bg-gradient-to-r from-transparent via-lume-gold/20 to-transparent"
+        style={{ width: '50vw', top: '28%', left: '25%' }}
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 2, delay: 1.2, ease: 'easeOut' }}
+      />
+      <motion.div
+        className="absolute h-px bg-gradient-to-r from-transparent via-lume-gold/15 to-transparent"
+        style={{ width: '35vw', top: '72%', left: '32%' }}
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 2, delay: 1.6, ease: 'easeOut' }}
       />
 
       {/* Content */}
@@ -109,30 +109,32 @@ export default function Hero() {
       >
         {/* Tag */}
         <motion.p
-          className="text-lume-gold/50 text-[10px] tracking-[0.35em] uppercase mb-10"
+          className="text-[10px] tracking-[0.35em] uppercase mb-10"
+          style={{ color: '#C41E3A', opacity: 0.6 }}
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 0.6, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           By Invitation Only
         </motion.p>
 
-        {/* Main heading with staggered words */}
+        {/* Main heading */}
         <motion.h1
-          className="font-heading text-white font-normal leading-[1.18] mb-7"
-          style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)' }}
+          className="font-heading font-normal leading-[1.18] mb-7"
+          style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', color: '#1a1a1a' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
         >
           Where Hyderabad's most{' '}
-          <em className="italic text-lume-gold">interesting</em>{' '}
+          <em className="italic" style={{ color: '#C41E3A' }}>interesting</em>{' '}
           people spend their evenings
         </motion.h1>
 
         {/* Sub */}
         <motion.p
-          className="text-white/40 text-[15px] font-light leading-[1.9] mb-12 max-w-[460px] mx-auto"
+          className="text-[15px] font-light leading-[1.9] mb-12 max-w-[460px] mx-auto"
+          style={{ color: '#6B6B6B' }}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -140,43 +142,59 @@ export default function Hero() {
           Two curated experiences a month. 30 to 50 selected guests. Founders, creatives, and cultural leaders only.
         </motion.p>
 
-        {/* CTA */}
-        <motion.a
-          href="#quiz"
-          className="inline-block bg-lume-red text-white text-[11px] font-semibold tracking-[0.12em] uppercase rounded-full px-14 py-5 transition-all duration-300 hover:bg-[#9a0000] hover:-translate-y-0.5"
+        {/* CTA — Shimmer Button */}
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
         >
-          Check Your Eligibility
-        </motion.a>
+          <a href="#quiz">
+            <ShimmerButton
+              shimmerColor="#C9A962"
+              shimmerSize="0.08em"
+              shimmerDuration="2.5s"
+              borderRadius="100px"
+              background="rgba(196, 30, 58, 1)"
+              className="px-14 py-5 text-[11px] font-semibold tracking-[0.12em] uppercase"
+            >
+              Check Your Eligibility
+            </ShimmerButton>
+          </a>
+        </motion.div>
 
         {/* Stats below CTA */}
         <motion.div
-          className="flex justify-center gap-12 mt-16 pt-10 border-t border-white/[0.06]"
+          className="flex justify-center gap-12 mt-16 pt-10"
+          style={{ borderTop: '1px solid rgba(201,169,98,0.15)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
           <div className="text-center">
-            <div className="font-heading text-2xl text-white/80"><CountUp target={15} suffix="+" /></div>
-            <div className="text-[10px] text-white/25 tracking-wide mt-1">Experiences</div>
+            <div className="font-heading text-2xl" style={{ color: '#C41E3A' }}>
+              <CountUp target={15} suffix="+" />
+            </div>
+            <div className="text-[10px] tracking-wide mt-1" style={{ color: '#9E9E9E' }}>Experiences</div>
           </div>
           <div className="text-center">
-            <div className="font-heading text-2xl text-white/80"><CountUp target={200} suffix="+" /></div>
-            <div className="text-[10px] text-white/25 tracking-wide mt-1">Guests hosted</div>
+            <div className="font-heading text-2xl" style={{ color: '#C41E3A' }}>
+              <CountUp target={200} suffix="+" />
+            </div>
+            <div className="text-[10px] tracking-wide mt-1" style={{ color: '#9E9E9E' }}>Guests hosted</div>
           </div>
           <div className="text-center">
-            <div className="font-heading text-2xl text-white/80"><CountUp target={4} /></div>
-            <div className="text-[10px] text-white/25 tracking-wide mt-1">Houses</div>
+            <div className="font-heading text-2xl" style={{ color: '#C41E3A' }}>
+              <CountUp target={4} />
+            </div>
+            <div className="text-[10px] tracking-wide mt-1" style={{ color: '#9E9E9E' }}>Houses</div>
           </div>
         </motion.div>
       </motion.div>
 
-      {/* Bottom fade to next section */}
+      {/* Bottom fade to white */}
       <div
         className="absolute bottom-0 left-0 right-0 h-24"
-        style={{ background: 'linear-gradient(to bottom, transparent, #000)' }}
+        style={{ background: 'linear-gradient(to bottom, transparent, #fff)' }}
       />
     </section>
   )
