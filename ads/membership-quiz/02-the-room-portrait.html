@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px; overflow: hidden;
+  background: #f8f6f3;
+  font-family: 'Outfit', sans-serif;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.top-section {
+  width: 100%; height: 540px;
+  background: linear-gradient(160deg, #C41E3A 0%, #a01830 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 60px 80px;
+  position: relative;
+}
+.top-section::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,169,98,0.5), transparent);
+}
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 500;
+  color: #fff; letter-spacing: 12px;
+  margin-bottom: 24px;
+}
+.top-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 400;
+  color: #C9A962; letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.top-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px; font-weight: 400;
+  color: #fff; text-align: center;
+  line-height: 1.15;
+}
+.top-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px; font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  text-align: center; margin-top: 20px;
+  max-width: 600px;
+}
+.bottom-section {
+  flex: 1; padding: 50px 80px 40px;
+  display: flex; flex-direction: column;
+}
+.body-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px; font-weight: 300;
+  color: #444; line-height: 1.8;
+  margin-bottom: 40px;
+}
+.stats-row {
+  display: flex; justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+.stat { text-align: center; flex: 1; }
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 400;
+  color: #C41E3A;
+}
+.stat-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 400;
+  color: #999; margin-top: 4px;
+}
+.stat-divider {
+  width: 1px; background: #ddd; margin: 0 30px;
+}
+.pull-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 400;
+  font-style: italic; color: #C41E3A;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+.cta-btn {
+  align-self: center;
+  background: #C41E3A; color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 2px;
+  padding: 18px 48px;
+  border: none; display: inline-block;
+}
+</style>
+</head>
+<body>
+  <div class="top-section">
+    <div class="logo-text">LUME</div>
+    <div class="top-tag">THE ROOM</div>
+    <div class="top-headline">Selected guests.<br>Designed evenings.</div>
+    <div class="top-sub">The rooms that shape Hyderabad aren't on any guest list.</div>
+  </div>
+  <div class="bottom-section">
+    <div class="body-text">They're private. Curated. Intentional. 40 people, hand-selected. An evening designed, not thrown together. One around culture. One around ideas. Both around people who've earned their place.</div>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-number">40</div>
+        <div class="stat-label">Guests per evening</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Experiences per month</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-number">1</div>
+        <div class="stat-label">City. Hyderabad.</div>
+      </div>
+    </div>
+    <div class="pull-quote">"We don't accept everyone. That's what makes it worth showing up."</div>
+    <div class="cta-btn" style="align-self: center;">SEE IF YOU'RE A FIT &rarr;</div>
+  </div>
+</body>
+</html>

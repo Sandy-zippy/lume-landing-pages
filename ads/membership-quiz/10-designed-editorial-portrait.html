@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px; overflow: hidden;
+  background: #f8f6f3;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+}
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 48px 72px 0;
+}
+.header .logo img { max-height: 42px; }
+.header-right {
+  font-size: 12px; font-weight: 500;
+  color: #999; letter-spacing: 3px;
+}
+.content { padding: 40px 72px; }
+.section-label {
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 5px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.label-red { color: #C41E3A; }
+.label-gold { color: #C9A962; }
+.event-card {
+  background: #fff;
+  border: 1px solid #e8e6e2;
+  border-left: 4px solid #C9A962;
+  padding: 36px 40px;
+  margin-bottom: 32px;
+}
+.event-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; font-weight: 400;
+  color: #1a1a1a; line-height: 1.2;
+}
+.event-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-style: italic;
+  color: #C41E3A; margin-top: 8px;
+}
+.event-details {
+  font-size: 18px; font-weight: 300;
+  color: #555; line-height: 1.7;
+  margin-top: 16px;
+}
+.event-stats {
+  font-size: 14px; font-weight: 400;
+  color: #999; margin-top: 16px;
+  letter-spacing: 1px;
+}
+.grey-divider {
+  width: 100%; height: 1px;
+  background: #e0deda;
+  margin-bottom: 32px;
+}
+.next-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-style: italic;
+  color: #C41E3A; line-height: 1.1;
+  margin-bottom: 24px;
+}
+.body-text {
+  font-size: 20px; font-weight: 300;
+  color: #444; line-height: 1.8;
+  margin-bottom: 32px;
+}
+.pull-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-style: italic;
+  color: #555; text-align: center;
+  margin-bottom: 36px;
+  line-height: 1.4;
+}
+.cta-row {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 16px;
+}
+.cta-btn {
+  display: inline-block;
+  background: #C41E3A; color: #fff;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 2px;
+  padding: 20px 48px;
+}
+.note {
+  font-size: 13px; font-weight: 400;
+  color: #bbb; letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo"><img src="../../assets/lume-logo-transparent.png" alt="LUME"></div>
+    <div class="header-right">HYDERABAD EXPERIENCES</div>
+  </div>
+  <div class="content">
+    <div class="section-label label-red">LAST MONTH</div>
+    <div class="event-card">
+      <div class="event-title">Chromatic Conversations III</div>
+      <div class="event-subtitle">Art as Investment</div>
+      <div class="event-details">An intimate evening with a gallery director who's shaped culture across India, Europe, and MENA.</div>
+      <div class="event-stats">40 selected guests &middot; 1 gallery director &middot; 3 continents of perspective</div>
+    </div>
+    <div class="grey-divider"></div>
+    <div class="section-label label-gold">THIS MONTH</div>
+    <div class="next-headline">Your turn.</div>
+    <div class="body-text">Every LUME evening begins with a question: what experience would the most interesting people in Hyderabad want to share? Then we build it. The setting. The guest list. The flow. Every detail.</div>
+    <div class="pull-quote">"An evening designed, not defaulted to."</div>
+    <div class="cta-row">
+      <div class="cta-btn">APPLY NOW &rarr;</div>
+      <div class="note">Membership by application</div>
+    </div>
+  </div>
+</body>
+</html>

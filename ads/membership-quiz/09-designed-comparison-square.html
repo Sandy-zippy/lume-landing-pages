@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1080px; overflow: hidden;
+  background: #f8f6f3;
+  font-family: 'Outfit', sans-serif;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.columns {
+  flex: 1; display: flex;
+  padding: 50px 0 0;
+}
+.col-left {
+  width: 48%; background: #f0efed;
+  padding: 50px 56px;
+  display: flex; flex-direction: column;
+}
+.col-right {
+  width: 48%; background: #f8f6f3;
+  padding: 50px 56px;
+  display: flex; flex-direction: column;
+}
+.divider-col {
+  width: 4%;
+  display: flex; justify-content: center;
+}
+.gold-line {
+  width: 2px; height: 100%;
+  background: linear-gradient(to bottom, transparent, #C9A962, transparent);
+}
+.label {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 4px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.label-grey { color: #aaa; }
+.label-red { color: #C41E3A; }
+.col-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px; font-weight: 400;
+  margin-bottom: 28px; line-height: 1.1;
+}
+.title-grey {
+  color: #b0b0b0;
+  text-decoration: line-through;
+  text-decoration-color: #ccc;
+}
+.title-red {
+  color: #C41E3A; font-style: italic;
+}
+.list {
+  display: flex; flex-direction: column; gap: 14px;
+}
+.list-item {
+  font-size: 18px; font-weight: 300;
+  line-height: 1.5;
+}
+.list-grey { color: #aaa; }
+.list-dark { color: #1a1a1a; }
+.bullet-grey { color: #ccc; margin-right: 10px; }
+.bullet-gold { color: #C9A962; margin-right: 10px; }
+.bottom-strip {
+  padding: 32px 60px;
+  display: flex;
+  align-items: center; justify-content: space-between;
+  border-top: 1px solid #e8e6e2;
+}
+.bottom-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-style: italic;
+  color: #444;
+}
+.bottom-right {
+  display: flex; align-items: center; gap: 28px;
+}
+.cta {
+  font-size: 14px; font-weight: 600;
+  color: #C41E3A; letter-spacing: 2px;
+}
+.logo img { max-height: 32px; }
+</style>
+</head>
+<body>
+  <div class="columns">
+    <div class="col-left">
+      <div class="label label-grey">EVERY OTHER EVENT</div>
+      <div class="col-title title-grey">Organized.</div>
+      <div class="list">
+        <div class="list-item list-grey"><span class="bullet-grey">&mdash;</span>A venue, a theme</div>
+        <div class="list-item list-grey"><span class="bullet-grey">&mdash;</span>Whoever shows up</div>
+        <div class="list-item list-grey"><span class="bullet-grey">&mdash;</span>500 strangers</div>
+        <div class="list-item list-grey"><span class="bullet-grey">&mdash;</span>Name tags</div>
+        <div class="list-item list-grey"><span class="bullet-grey">&mdash;</span>Small talk that goes nowhere</div>
+        <div class="list-item list-grey"><span class="bullet-grey">&mdash;</span>You leave early</div>
+      </div>
+    </div>
+    <div class="divider-col"><div class="gold-line"></div></div>
+    <div class="col-right">
+      <div class="label label-red">LUME</div>
+      <div class="col-title title-red">Designed.</div>
+      <div class="list">
+        <div class="list-item list-dark"><span class="bullet-gold">&bull;</span>A curated room for 40</div>
+        <div class="list-item list-dark"><span class="bullet-gold">&bull;</span>Every guest selected</div>
+        <div class="list-item list-dark"><span class="bullet-gold">&bull;</span>Shared experiences</div>
+        <div class="list-item list-dark"><span class="bullet-gold">&bull;</span>Conversations that stay with you</div>
+        <div class="list-item list-dark"><span class="bullet-gold">&bull;</span>You don't want to leave</div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-strip">
+    <div class="bottom-quote">"For people who notice the difference."</div>
+    <div class="bottom-right">
+      <div class="cta">TAKE THE ASSESSMENT &rarr;</div>
+      <div class="logo"><img src="../../assets/lume-logo-transparent.png" alt="LUME"></div>
+    </div>
+  </div>
+</body>
+</html>

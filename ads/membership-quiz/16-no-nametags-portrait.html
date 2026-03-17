@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.top-half {
+  background: #ffffff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 80px 40px;
+}
+.bottom-half {
+  background: #f8f6f3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 80px 60px;
+}
+.logo {
+  max-height: 50px;
+  margin-bottom: 50px;
+}
+.section-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.heading-grey { color: #999; }
+.heading-red { color: #C41E3A; }
+.list-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  line-height: 1.7;
+  text-align: center;
+}
+.list-item.struck {
+  color: #aaa;
+  text-decoration: line-through;
+  text-decoration-color: #ccc;
+}
+.list-item.active {
+  color: #2a2a2a;
+}
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: #C9A962;
+  margin: 0 auto;
+}
+.divider-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.divider-bar {
+  width: 60px;
+  height: 2px;
+  background: #C9A962;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cta {
+  display: inline-block;
+  background: #C41E3A;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 20px 48px;
+  border: none;
+  margin-top: auto;
+}
+</style>
+</head>
+<body>
+  <div class="top-half">
+    <img src="../../assets/lume-logo-transparent.png" alt="LUME" class="logo">
+    <div class="section-heading heading-grey">What We Don't Do</div>
+    <div class="list-item struck">Mass events</div>
+    <div class="list-item struck">Name tags</div>
+    <div class="list-item struck">Elevator pitches</div>
+    <div class="list-item struck">Come one, come all</div>
+  </div>
+  <div class="divider-wrap"><div class="divider-bar"></div></div>
+  <div class="bottom-half">
+    <div class="section-heading heading-red">What We Do</div>
+    <div class="list-item active">40 selected guests</div>
+    <div class="list-item active">Designed evenings</div>
+    <div class="list-item active">Curated conversations</div>
+    <div class="list-item active">Rooms worth being in</div>
+    <div class="cta">SEE IF YOU QUALIFY &rarr;</div>
+  </div>
+</body>
+</html>

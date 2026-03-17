@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1080px; overflow: hidden;
+  background: #f8f6f3;
+  font-family: 'Outfit', sans-serif;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.main {
+  flex: 1; display: flex; padding: 60px 60px 0;
+}
+.left, .right {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; padding: 40px;
+}
+.left { align-items: flex-end; text-align: right; }
+.right { align-items: flex-start; text-align: left; }
+.divider {
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #C9A962, transparent);
+  margin: 0 10px;
+}
+.number-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 140px; font-weight: 300;
+  line-height: 1;
+}
+.number-grey { color: #d0d0d0; }
+.number-red { color: #C41E3A; }
+.desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px; font-weight: 400;
+  margin-top: 12px;
+}
+.desc-grey { color: #aaa; }
+.desc-dark { color: #1a1a1a; }
+.tagline {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px; font-weight: 300;
+  margin-top: 16px; line-height: 1.5;
+}
+.tagline-grey { color: #c0c0c0; }
+.tagline-bold { color: #1a1a1a; font-weight: 500; }
+.bottom-strip {
+  padding: 40px 80px 50px;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  background: linear-gradient(to bottom, #f8f6f3, #f3f0ec);
+}
+.bottom-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-style: italic;
+  color: #444; margin-bottom: 24px;
+}
+.bottom-row {
+  display: flex; align-items: center; gap: 32px;
+}
+.cta {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 600;
+  color: #C41E3A; letter-spacing: 2px;
+}
+.bottom-logo img { max-height: 36px; }
+</style>
+</head>
+<body>
+  <div class="main">
+    <div class="left">
+      <div class="number-big number-grey">500</div>
+      <div class="desc desc-grey">people in a ballroom</div>
+      <div class="tagline tagline-grey">Name tags. Small talk. Forgettable.</div>
+    </div>
+    <div class="divider"></div>
+    <div class="right">
+      <div class="number-big number-red">40</div>
+      <div class="desc desc-dark">selected guests at LUME</div>
+      <div class="tagline tagline-bold">Curated. Intentional. Unforgettable.</div>
+    </div>
+  </div>
+  <div class="bottom-strip">
+    <div class="bottom-quote">"The experience is shaped by who's in the room, not how many."</div>
+    <div class="bottom-row">
+      <div class="cta">TAKE THE ASSESSMENT &rarr;</div>
+      <div class="bottom-logo"><img src="../../assets/lume-logo-transparent.png" alt="LUME"></div>
+    </div>
+  </div>
+</body>
+</html>

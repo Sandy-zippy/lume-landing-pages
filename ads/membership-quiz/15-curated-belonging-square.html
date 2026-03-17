@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1080px; overflow: hidden;
+  background: #f8f6f3;
+  font-family: 'Outfit', sans-serif;
+  color: #1a1a1a;
+  display: flex; flex-direction: column;
+  padding: 60px 80px 50px;
+}
+.top-row {
+  display: flex; align-items: center;
+  margin-bottom: 24px;
+}
+.logo { max-height: 50px; }
+.eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: #C41E3A;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 68px; font-weight: 600;
+  color: #444;
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+.body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px; font-weight: 300;
+  color: #555;
+  line-height: 1.7;
+  max-width: 880px;
+  flex-grow: 1;
+}
+.bottom {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+.stat-line {
+  display: flex; align-items: center;
+  gap: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 400;
+  color: #777;
+}
+.stat-line .dot {
+  width: 6px; height: 6px;
+  background: #C41E3A;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cta {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px; font-weight: 600;
+  color: #C41E3A;
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+  <div class="top-row">
+    <img src="../../assets/lume-logo-transparent.png" alt="LUME" class="logo">
+  </div>
+  <div class="eyebrow">THIS IS NOT NETWORKING</div>
+  <div class="headline">This is curated belonging.</div>
+  <div class="body">500 people in a room = noise. 40 selected people in a room = LUME.<br><br>Two curated experiences per month. Art evenings. Private tastings. Conversations with industry leaders. Every gathering intimate. Every guest intentional.</div>
+  <div class="bottom">
+    <div class="stat-line">
+      <span>40 guests</span>
+      <span class="dot"></span>
+      <span>2 evenings/month</span>
+      <span class="dot"></span>
+      <span>Hyderabad</span>
+    </div>
+    <div class="cta">ARE YOU A FIT? &rarr;</div>
+  </div>
+</body>
+</html>

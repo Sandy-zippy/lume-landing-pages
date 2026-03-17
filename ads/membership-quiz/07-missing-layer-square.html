@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1080px; overflow: hidden;
+  background: #f8f6f3;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  padding: 60px 80px;
+}
+.logo {
+  position: absolute; top: 56px; right: 72px;
+}
+.logo img { max-height: 40px; }
+.tag {
+  font-size: 13px; font-weight: 500;
+  color: #C41E3A; letter-spacing: 5px;
+  margin-bottom: 44px;
+}
+.checklist {
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 12px;
+}
+.check-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-weight: 400;
+  line-height: 1.2;
+}
+.check-done {
+  color: #b8b5b0;
+}
+.check-done .mark { color: #ccc; margin-left: 16px; }
+.check-gap {
+  color: #C41E3A;
+}
+.check-gap .blank {
+  display: inline-block;
+  width: 120px; height: 4px;
+  background: #C41E3A;
+  vertical-align: middle;
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+.gold-divider {
+  width: 50px; height: 2px;
+  background: #C9A962;
+  margin: 32px 0;
+}
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 400;
+  color: #1a1a1a; line-height: 1.2;
+  margin-bottom: 28px;
+}
+.body-text {
+  font-size: 19px; font-weight: 300;
+  color: #555; line-height: 1.75;
+  max-width: 840px;
+}
+.cta {
+  position: absolute; bottom: 60px; left: 80px;
+  font-size: 15px; font-weight: 600;
+  color: #C41E3A; letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+  <div class="logo"><img src="../../assets/lume-logo-transparent.png" alt="LUME"></div>
+  <div class="tag">A QUESTION WORTH ASKING</div>
+  <div class="checklist">
+    <div class="check-item check-done">Career <span class="mark">&#10003;</span></div>
+    <div class="check-item check-done">Lifestyle <span class="mark">&#10003;</span></div>
+    <div class="check-item check-gap">The room? <span class="blank"></span></div>
+  </div>
+  <div class="gold-divider"></div>
+  <div class="headline">The social layer you've been missing.</div>
+  <div class="body-text">LUME is what happens when someone finally designs premium social life with intention. Curated guest lists. Designed evenings. Rooms where everyone earned their place. Two experiences per month for Hyderabad's most discerning professionals.</div>
+  <div class="cta">SEE IF YOU BELONG &rarr;</div>
+</body>
+</html>

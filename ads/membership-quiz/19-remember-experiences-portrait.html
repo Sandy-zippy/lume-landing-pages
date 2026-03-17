@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: #f8f6f3;
+  display: flex;
+  flex-direction: row;
+}
+.accent-bar {
+  width: 4px;
+  height: 100%;
+  background: #C41E3A;
+  flex-shrink: 0;
+}
+.content {
+  flex: 1;
+  padding: 60px 80px 60px 64px;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  max-height: 50px;
+  align-self: flex-start;
+  margin-bottom: 40px;
+}
+.tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: #C41E3A;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #2a2a2a;
+  line-height: 1.15;
+}
+.headline-grey {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #bbb;
+  line-height: 1.15;
+  margin-bottom: 44px;
+}
+.body-para {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  line-height: 1.7;
+  color: #3a3a3a;
+  margin-bottom: 20px;
+}
+.pull-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #C41E3A;
+  line-height: 1.4;
+  margin: 32px 0;
+  padding-left: 24px;
+  border-left: 3px solid #C9A962;
+}
+.stats {
+  font-family: 'Outfit', sans-serif;
+  font-size: 17px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 36px;
+}
+.cta {
+  display: inline-block;
+  align-self: flex-start;
+  background: #C41E3A;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 20px 44px;
+  margin-top: auto;
+}
+</style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="content">
+    <img src="../../assets/lume-logo-transparent.png" alt="LUME" class="logo">
+    <div class="tag">For the Experience Collector</div>
+    <div class="headline">You remember experiences.</div>
+    <div class="headline-grey">Not events.</div>
+    <p class="body-para">The best memories don't come from events with 500 people.</p>
+    <p class="body-para">They come from intimate rooms. Curated guest lists. Evenings where every detail was designed, from the setting to the conversation to the people beside you.</p>
+    <p class="body-para">LUME creates these rooms in Hyderabad. Two per month. 40 guests per evening. Application-based membership.</p>
+    <div class="pull-quote">For people who value experiences above all else.</div>
+    <div class="stats">40 guests &middot; 2 evenings &middot; By application</div>
+    <div class="cta">SEE IF YOU QUALIFY &rarr;</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px; overflow: hidden;
+  background: #f8f6f3;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+}
+.accent-bar {
+  position: absolute; left: 60px; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #C41E3A, #C9A962, #C41E3A);
+}
+.content {
+  margin-left: 100px; margin-right: 80px;
+  padding-top: 60px;
+}
+.logo img { max-height: 46px; }
+.tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 500;
+  color: #C41E3A; letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+.headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 88px; font-weight: 400;
+  color: #1a1a1a; line-height: 1.05;
+  margin-top: 24px;
+}
+.headline-fade {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 88px; font-weight: 400;
+  color: #c0bdb8; line-height: 1.05;
+}
+.body-block {
+  margin-top: 44px;
+  display: flex; flex-direction: column; gap: 28px;
+}
+.body-para {
+  font-family: 'Outfit', sans-serif;
+  font-size: 21px; font-weight: 300;
+  color: #444; line-height: 1.8;
+}
+.stats {
+  margin-top: 44px;
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 400;
+  color: #888;
+}
+.red-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #C41E3A; display: inline-block;
+}
+.stats span { margin: 0 8px; }
+.cta-btn {
+  margin-top: 44px;
+  display: inline-block;
+  background: #C41E3A; color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 20px 40px;
+}
+</style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="content">
+    <div class="logo"><img src="../../assets/lume-logo-transparent.png" alt="LUME"></div>
+    <div class="tag">HYDERABAD</div>
+    <div class="headline">Curated,</div>
+    <div class="headline-fade">not crowded.</div>
+    <div class="body-block">
+      <div class="body-para">You know the feeling. 300 strangers. Someone shoves a name tag at you. By 9pm you're calculating how early you can leave.</div>
+      <div class="body-para">LUME is the opposite. 40 curated guests. An evening designed around a single, meaningful experience. People who are there because someone with taste decided they should be.</div>
+      <div class="body-para">Two experiences per month. One cultural. One intellectual. Every guest chosen. Every detail considered. Zero noise.</div>
+    </div>
+    <div class="stats">
+      <span class="red-dot"></span><span>40 selected guests</span>
+      <span class="red-dot"></span><span>By application</span>
+      <span class="red-dot"></span><span>Zero noise</span>
+    </div>
+    <div class="cta-btn">SEE IF THIS ROOM WAS DESIGNED FOR YOU &rarr;</div>
+  </div>
+</body>
+</html>
